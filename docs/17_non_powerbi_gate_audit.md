@@ -13,11 +13,14 @@ Audit scope: every plan phase that can be completed before Power BI.
 | Customer and operations analytics | customer_repeat_summary, mart_order_experience, category/geography outputs | Verified |
 | Statistical validation | reports/qa/statistical_validation.csv and notebooks/06_statistical_validation.ipynb | Verified; associative only |
 | Root causes and decisions | docs/09_root_cause_cases.md and docs/10_executive_decisions.md | Verified |
-| SQL portfolio coverage | 31 PostgreSQL-parsed SQL files; real joins, CTEs, CASE, windows, percentile, cohort, funnel and reconciliation logic | Verified |
+| SQL portfolio coverage | 32 SQL files executed in a clean UTF8 PostgreSQL rebuild; real joins, CTEs, CASE, windows, percentile, cohort, funnel and reconciliation logic | Verified |
 | Python portfolio coverage | reusable ingestion, COPY loader, config/env handling, validation, logging, tests, exports and asset generation | Verified |
-| Reproducibility and QA | Makefile, CI workflow, six executed notebooks, nine tests, pipeline log, release manifest | Verified |
+| Reproducibility and QA | Makefile, CI workflow, six notebooks, controlled-fixture tests, pipeline log, release manifest, and rebuild_verification.json | Verified |
 | Remote-only artifact storage | raw archives and all data/chart/report artifacts in Drive; code and reviewable artifacts in GitHub | Verified |
+| Clean PostgreSQL rebuild | 10 raw tables, 1,559,693 rows loaded, 0 warnings/errors; PK, orphan, date, GMV and retention-origin checks recorded in reports/qa/rebuild_verification.json | Passed |
 | Power BI | PBIX, six pages and SQL-to-Power BI reconciliation | Deliberately deferred to final stage |
 
 The PostgreSQL command is credential-driven through PGHOST, PGPORT, PGDATABASE, PGUSER and PGPASSWORD. No credential is stored in the repository. Power BI is the only plan area intentionally left for the final stage.
+
+
 
