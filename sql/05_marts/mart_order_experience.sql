@@ -1,0 +1,2 @@
+CREATE TABLE IF NOT EXISTS marts.mart_order_experience AS SELECT CASE WHEN order_delivered_customer_date > order_estimated_delivery_date THEN 'late' ELSE 'on_time_or_early' END AS delivery_bucket, COUNT(DISTINCT order_id) AS orders, AVG(review_score) AS avg_review_score, AVG(CASE WHEN review_score <= 2 THEN 1.0 ELSE 0 END) AS low_review_rate FROM facts.fct_order o LEFT JOIN raw.olist_order_reviews r USING(order_id) WHERE order_status='delivered' GROUP BY 1;
+

@@ -1,7 +1,14 @@
-# Power BI semantic model plan
+# Power BI — final stage only
 
-The six-page Power BI design is defined in the plan and metric dictionary.
+The Power BI semantic model and six-page layout are specified in the execution plan, metric dictionary and SQL-to-Power BI reconciliation protocol.
 
-Recommended pages: Executive Marketplace Health; Seller Acquisition Funnel; Seller Activation & Retention; Commercial Performance; Customer & Operations; Root Cause / Decisions.
+Required pages:
+1. Executive Marketplace Health
+2. Seller Acquisition Funnel
+3. Seller Activation & Retention
+4. Commercial Performance
+5. Customer & Operations
+6. Diagnostic / Seller 360
 
-Measures should bind to the CSV marts in `reports/tables` and reconcile to `mart_marketplace_monthly.csv`, `mart_seller_cohort.csv`, `seller_concentration.csv`, and `mart_order_experience.csv`. A `.pbix` binary is not generated in this runtime because Power BI Desktop is unavailable.
+The PBIX, dashboard PDF and reports/qa/powerbi_reconciliation.csv remain intentionally pending because the user requested Power BI last. All upstream marts, charts, notebook evidence, SQL metric definitions, diagrams and QA artifacts are ready for that final stage.
+

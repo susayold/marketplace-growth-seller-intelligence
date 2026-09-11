@@ -1,0 +1,2 @@
+CREATE TABLE IF NOT EXISTS facts.fct_order AS SELECT o.*, v.gmv_proxy, v.freight_value, COUNT(i.order_item_id) AS item_count FROM staging.orders o INNER JOIN staging.order_value v USING (order_id) LEFT JOIN staging.order_items i USING (order_id) GROUP BY o.order_id, o.customer_id, o.order_status, o.order_purchase_timestamp, o.order_delivered_customer_date, o.order_estimated_delivery_date, v.gmv_proxy, v.freight_value;
+

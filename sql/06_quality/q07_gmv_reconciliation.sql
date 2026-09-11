@@ -1,0 +1,2 @@
+WITH item_gmv AS (SELECT SUM(price) AS gmv_proxy FROM raw.olist_order_items), payment_gmv AS (SELECT SUM(payment_value) AS paid_value FROM raw.olist_order_payments), naive AS (SELECT SUM(i.price) AS naive_value FROM raw.olist_order_items i INNER JOIN raw.olist_order_payments p USING(order_id)) SELECT item_gmv.gmv_proxy, payment_gmv.paid_value, naive.naive_value, naive.naive_value - item_gmv.gmv_proxy AS fanout_difference, naive.naive_value / NULLIF(item_gmv.gmv_proxy,0) AS fanout_multiple FROM item_gmv CROSS JOIN payment_gmv CROSS JOIN naive;
+

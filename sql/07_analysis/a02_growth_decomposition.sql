@@ -1,0 +1,2 @@
+WITH m AS (SELECT month_start, gmv_proxy, orders, active_sellers, aov, LAG(gmv_proxy) OVER (ORDER BY month_start) AS prior_gmv, LAG(orders) OVER (ORDER BY month_start) AS prior_orders, LAG(active_sellers) OVER (ORDER BY month_start) AS prior_sellers FROM marts.mart_marketplace_monthly) SELECT month_start, gmv_proxy, gmv_proxy-prior_gmv AS gmv_change, orders-prior_orders AS order_change, active_sellers-prior_sellers AS seller_change, aov-LAG(aov) OVER (ORDER BY month_start) AS aov_change FROM m;
+

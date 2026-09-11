@@ -1,4 +1,4 @@
-# Exports
+# SQL exports
 
-BI exports must reconcile to the mart CSVs and retain metric definitions, period, grain, denominator, and observation-eligibility fields.
+Use this folder for stable downstream extracts after the model and QA schemas are built. Export names should match reports/tables and include the metric grain in their README.
 

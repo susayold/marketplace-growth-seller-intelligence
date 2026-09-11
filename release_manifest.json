@@ -1,15 +1,51 @@
 [
   {
-    "path": "README.md",
-    "bytes": 1225
+    "path": ".github/workflows/ci.yml",
+    "bytes": 342
   },
   {
-    "path": "release_manifest.json",
-    "bytes": 3893
+    "path": ".pytest_cache/.gitignore",
+    "bytes": 37
   },
   {
-    "path": "requirements.txt",
-    "bytes": 60
+    "path": ".pytest_cache/CACHEDIR.TAG",
+    "bytes": 191
+  },
+  {
+    "path": ".pytest_cache/README.md",
+    "bytes": 302
+  },
+  {
+    "path": ".pytest_cache/v/cache/lastfailed",
+    "bytes": 2
+  },
+  {
+    "path": ".pytest_cache/v/cache/nodeids",
+    "bytes": 721
+  },
+  {
+    "path": "assets/architecture.png",
+    "bytes": 75988
+  },
+  {
+    "path": "assets/dashboard/executive_marketplace_health.png",
+    "bytes": 138275
+  },
+  {
+    "path": "assets/dashboard/retention_heatmap.png",
+    "bytes": 241975
+  },
+  {
+    "path": "assets/dashboard/seller_funnel.png",
+    "bytes": 50931
+  },
+  {
+    "path": "assets/data_model.png",
+    "bytes": 66048
+  },
+  {
+    "path": "assets/pipeline.png",
+    "bytes": 47992
   },
   {
     "path": "config/settings.yaml",
@@ -64,40 +100,56 @@
     "bytes": 441
   },
   {
+    "path": "docs/13_cv_bullets.md",
+    "bytes": 804
+  },
+  {
+    "path": "docs/14_plan_completion_matrix.md",
+    "bytes": 1357
+  },
+  {
+    "path": "docs/15_sql_powerbi_reconciliation_protocol.md",
+    "bytes": 763
+  },
+  {
+    "path": "docs/16_release_notes.md",
+    "bytes": 548
+  },
+  {
     "path": "notebooks/01_data_profiling.ipynb",
-    "bytes": 800
+    "bytes": 43591
+  },
+  {
+    "path": "notebooks/02_marketplace_health.ipynb",
+    "bytes": 83080
+  },
+  {
+    "path": "notebooks/03_seller_funnel.ipynb",
+    "bytes": 68249
+  },
+  {
+    "path": "notebooks/04_seller_retention.ipynb",
+    "bytes": 75097
+  },
+  {
+    "path": "notebooks/05_operations_analysis.ipynb",
+    "bytes": 35793
+  },
+  {
+    "path": "notebooks/06_statistical_validation.ipynb",
+    "bytes": 57915
   },
   {
     "path": "powerbi/README.md",
     "bytes": 579
   },
   {
-    "path": "reports/executive_summary.pdf",
-    "bytes": 355215
+    "path": "README.md",
+    "bytes": 1225
   },
   {
-    "path": "src/build_marts.py",
-    "bytes": 400
-  },
-  {
-    "path": "sql/06_quality/q01_fanout_audit.sql",
-    "bytes": 298
-  },
-  {
-    "path": "sql/07_analysis/a01_monthly_marketplace_kpis.sql",
-    "bytes": 484
-  },
-  {
-    "path": "sql/07_analysis/b02_conversion_by_origin.sql",
-    "bytes": 327
-  },
-  {
-    "path": "sql/07_analysis/d02_monthly_retention.sql",
-    "bytes": 164
-  },
-  {
-    "path": "sql/07_analysis/f05_review_vs_delay.sql",
-    "bytes": 200
+    "path": "release_manifest.json",
+    "bytes": 3893
   },
   {
     "path": "reports/charts/01_marketplace_health.png",
@@ -120,6 +172,10 @@
     "bytes": 30551
   },
   {
+    "path": "reports/executive_summary.pdf",
+    "bytes": 355215
+  },
+  {
     "path": "reports/qa/data_profile_summary.csv",
     "bytes": 5365
   },
@@ -128,12 +184,20 @@
     "bytes": 182
   },
   {
+    "path": "reports/qa/pipeline_run.log",
+    "bytes": 759
+  },
+  {
     "path": "reports/qa/raw_inventory.csv",
     "bytes": 931
   },
   {
     "path": "reports/qa/README.md",
     "bytes": 154
+  },
+  {
+    "path": "reports/qa/reconciliation_result.json",
+    "bytes": 180
   },
   {
     "path": "reports/qa/statistical_validation.csv",
@@ -198,5 +262,261 @@
   {
     "path": "reports/tables/seller_concentration.csv",
     "bytes": 168
+  },
+  {
+    "path": "requirements.txt",
+    "bytes": 60
+  },
+  {
+    "path": "sql/00_admin/00_schemas.sql",
+    "bytes": 250
+  },
+  {
+    "path": "sql/01_raw/raw_tables.sql",
+    "bytes": 2283
+  },
+  {
+    "path": "sql/02_staging/stg_core.sql",
+    "bytes": 739
+  },
+  {
+    "path": "sql/03_dimensions/dim_channel.sql",
+    "bytes": 134
+  },
+  {
+    "path": "sql/03_dimensions/dim_customer.sql",
+    "bytes": 160
+  },
+  {
+    "path": "sql/03_dimensions/dim_date.sql",
+    "bytes": 561
+  },
+  {
+    "path": "sql/03_dimensions/dim_product.sql",
+    "bytes": 203
+  },
+  {
+    "path": "sql/03_dimensions/dim_seller.sql",
+    "bytes": 130
+  },
+  {
+    "path": "sql/04_facts/fct_order.sql",
+    "bytes": 423
+  },
+  {
+    "path": "sql/04_facts/fct_order_item.sql",
+    "bytes": 209
+  },
+  {
+    "path": "sql/04_facts/fct_payment.sql",
+    "bytes": 89
+  },
+  {
+    "path": "sql/04_facts/fct_seller_funnel.sql",
+    "bytes": 259
+  },
+  {
+    "path": "sql/05_marts/mart_acquisition_channel.sql",
+    "bytes": 321
+  },
+  {
+    "path": "sql/05_marts/mart_marketplace_monthly.sql",
+    "bytes": 764
+  },
+  {
+    "path": "sql/05_marts/mart_order_experience.sql",
+    "bytes": 463
+  },
+  {
+    "path": "sql/05_marts/mart_seller_cohort.sql",
+    "bytes": 669
+  },
+  {
+    "path": "sql/05_marts/mart_seller_lifetime.sql",
+    "bytes": 573
+  },
+  {
+    "path": "sql/05_marts/mart_seller_monthly.sql",
+    "bytes": 383
+  },
+  {
+    "path": "sql/06_quality/q01_fanout_audit.sql",
+    "bytes": 298
+  },
+  {
+    "path": "sql/06_quality/q02_primary_key_audit.sql",
+    "bytes": 403
+  },
+  {
+    "path": "sql/06_quality/q03_foreign_key_audit.sql",
+    "bytes": 315
+  },
+  {
+    "path": "sql/06_quality/q04_date_sequence_audit.sql",
+    "bytes": 238
+  },
+  {
+    "path": "sql/06_quality/q07_gmv_reconciliation.sql",
+    "bytes": 550
+  },
+  {
+    "path": "sql/07_analysis/a01_monthly_marketplace_kpis.sql",
+    "bytes": 484
+  },
+  {
+    "path": "sql/07_analysis/a02_growth_decomposition.sql",
+    "bytes": 501
+  },
+  {
+    "path": "sql/07_analysis/a05_seller_concentration.sql",
+    "bytes": 622
+  },
+  {
+    "path": "sql/07_analysis/b02_conversion_by_origin.sql",
+    "bytes": 327
+  },
+  {
+    "path": "sql/07_analysis/b06_activation.sql",
+    "bytes": 712
+  },
+  {
+    "path": "sql/07_analysis/b07_channel_downstream_value.sql",
+    "bytes": 295
+  },
+  {
+    "path": "sql/07_analysis/d02_monthly_retention.sql",
+    "bytes": 164
+  },
+  {
+    "path": "sql/07_analysis/f05_review_vs_delay.sql",
+    "bytes": 200
+  },
+  {
+    "path": "sql/08_exports/README.md",
+    "bytes": 192
+  },
+  {
+    "path": "src/__init__.py",
+    "bytes": 57
+  },
+  {
+    "path": "src/__pycache__/__init__.cpython-314.pyc",
+    "bytes": 237
+  },
+  {
+    "path": "src/__pycache__/export_marts.cpython-314.pyc",
+    "bytes": 2180
+  },
+  {
+    "path": "src/__pycache__/reconcile.cpython-314.pyc",
+    "bytes": 2904
+  },
+  {
+    "path": "src/__pycache__/validate.cpython-314.pyc",
+    "bytes": 2385
+  },
+  {
+    "path": "src/build_database.py",
+    "bytes": 940
+  },
+  {
+    "path": "src/build_marts.py",
+    "bytes": 352
+  },
+  {
+    "path": "src/build_project.py",
+    "bytes": 43101
+  },
+  {
+    "path": "src/export_marts.py",
+    "bytes": 815
+  },
+  {
+    "path": "src/generate_assets.py",
+    "bytes": 2199
+  },
+  {
+    "path": "src/ingest.py",
+    "bytes": 1357
+  },
+  {
+    "path": "src/profile.py",
+    "bytes": 1254
+  },
+  {
+    "path": "src/reconcile.py",
+    "bytes": 1144
+  },
+  {
+    "path": "src/utils/__init__.py",
+    "bytes": 36
+  },
+  {
+    "path": "src/utils/dates.py",
+    "bytes": 334
+  },
+  {
+    "path": "src/utils/db.py",
+    "bytes": 1006
+  },
+  {
+    "path": "src/utils/io.py",
+    "bytes": 632
+  },
+  {
+    "path": "src/utils/logging.py",
+    "bytes": 583
+  },
+  {
+    "path": "src/validate.py",
+    "bytes": 1025
+  },
+  {
+    "path": "tests/__pycache__/test_business_rules.cpython-314-pytest-9.1.1.pyc",
+    "bytes": 4835
+  },
+  {
+    "path": "tests/__pycache__/test_dates.cpython-314-pytest-9.1.1.pyc",
+    "bytes": 2365
+  },
+  {
+    "path": "tests/__pycache__/test_keys.cpython-314-pytest-9.1.1.pyc",
+    "bytes": 3836
+  },
+  {
+    "path": "tests/__pycache__/test_metrics.cpython-314-pytest-9.1.1.pyc",
+    "bytes": 4001
+  },
+  {
+    "path": "tests/__pycache__/test_raw_schema.cpython-314-pytest-9.1.1.pyc",
+    "bytes": 3087
+  },
+  {
+    "path": "tests/__pycache__/test_reconciliation.cpython-314-pytest-9.1.1.pyc",
+    "bytes": 2195
+  },
+  {
+    "path": "tests/test_business_rules.py",
+    "bytes": 760
+  },
+  {
+    "path": "tests/test_dates.py",
+    "bytes": 384
+  },
+  {
+    "path": "tests/test_keys.py",
+    "bytes": 435
+  },
+  {
+    "path": "tests/test_metrics.py",
+    "bytes": 517
+  },
+  {
+    "path": "tests/test_raw_schema.py",
+    "bytes": 510
+  },
+  {
+    "path": "tests/test_reconciliation.py",
+    "bytes": 344
   }
 ]

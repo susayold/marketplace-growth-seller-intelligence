@@ -2,34 +2,50 @@
 
 Historical Olist case study focused on seller acquisition → activation → retention → commercial value → customer experience.
 
-## v1 execution status
+## Execution status
 
-- Raw ZIPs downloaded from the official Olist Kaggle dataset pages and stored in Drive.
-- Inventory, profiling, fan-out audit, marts, cohort retention, seller concentration, operations analysis, charts, executive PDF, and QA outputs generated.
-- SQL templates and Power BI semantic-model plan included.
-- PostgreSQL/Power BI execution is pending because those runtimes are not installed in the current desktop session.
+Non-Power-BI scope is complete and released as a reproducible v1.1 package. The only intentionally pending area is the six-page Power BI build and the final SQL ↔ Power BI reconciliation.
 
-## Core evidence
+## Evidence-backed findings
 
 - GMV proxy: R$ 13,591,644; orders: 98,666; sellers: 3,095.
 - Repeat customer rate: 3.1%.
-- Top 20% seller GMV share: 82.7%.
+- Top 20% seller GMV proxy share: 82.7%.
 - Activation within 90 days among valid closed-seller links: 87.5%.
+- Naive item × payment GMV overstates the grain-safe item GMV by R$617,472, or 4.54%.
+
+## Repository map
+
+- src: ingestion, profiling, PostgreSQL loading, mart build, reconciliation, validation and release-manifest entrypoints.
+- sql: raw, staging, dimensions, facts, marts, quality audits, analysis modules and exports.
+- notebooks: six executable analysis notebooks with embedded tables and figures.
+- reports/tables: decision-facing marts and QA extracts.
+- reports/charts and assets: visual evidence, architecture, data-model, pipeline and dashboard hero assets.
+- tests: raw-schema, key, date, reconciliation, metric and business-rule checks.
+- docs: business context, methodology, metric dictionary, root causes, decisions, limitations, interview guide and completion matrix.
+
+## Reproduce
+
+1. Materialize the two raw ZIPs from the Drive workspace folder into a temporary directory; do not commit them.
+2. Set OLIST_RAW_DIR to that temporary directory and OLIST_PROJECT_DIR to the repository path.
+3. Run python src/ingest.py, python src/profile.py and python src/build_marts.py.
+4. Run python -m pytest -q and python src/validate.py.
+5. Use python src/build_database.py only after PGHOST, PGPORT, PGDATABASE, PGUSER and PGPASSWORD are configured.
+6. Review reports/qa/pipeline_run.log and release_manifest.json.
+
+The SQL files are PostgreSQL-compatible and pass static PostgreSQL parsing. Live database execution is credential-driven; no password is stored in the repository.
 
 ## Metric guardrails
 
-GMV is a proxy from order-item price, not platform revenue. The project preserves observation eligibility for retention and treats association as non-causal.
+GMV is a proxy from order-item price, not platform revenue. Orders use distinct order IDs. Repeat-customer analysis uses customer_unique_id. Retention uses observation eligibility. Late-delivery and review results are associative, not causal. Multi-seller order attribution remains limited.
 
 ## Remote storage
 
-Raw data and all chart/report/table artifacts are stored in the Drive folder `marketplace-growth-seller-intelligence`; code and documentation are mirrored in GitHub.
-## Reproduce v1
+Raw ZIPs, tables, charts and reports are stored in the Drive workspace:
+https://drive.google.com/drive/folders/1PBOPGZzxiPfTG_0O-b0suxy6cAYVt37G
 
-1. Download the two raw ZIPs from the project Drive folder into a local temporary data/raw/ directory.
-2. Create an environment and install requirements.txt.
-3. Set OLIST_RAW_DIR to the raw ZIP directory and OLIST_PROJECT_DIR to the checkout root.
-4. Run python src/build_project.py, then python -m pytest -q.
+Code and reviewable artifacts are mirrored in the private GitHub repository:
+https://github.com/susayold/marketplace-growth-seller-intelligence
 
-The pipeline reads ZIP members directly, writes grain-safe marts/charts/QA outputs, and does not require extracting raw CSVs into the repository. Raw archives are intentionally kept in Drive rather than GitHub.
+Power BI is deliberately reserved for the final stage.
 
-Drive workspace: https://drive.google.com/drive/folders/1PBOPGZzxiPfTG_0O-b0suxy6cAYVt37G

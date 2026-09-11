@@ -1,0 +1,3 @@
+CREATE TABLE IF NOT EXISTS marts.mart_seller_cohort AS
+WITH first_sale AS (SELECT seller_id, DATE_TRUNC('month', MIN(order_purchase_timestamp))::date AS cohort_month FROM facts.fct_order_item i INNER JOIN staging.orders o USING(order_id) GROUP BY seller_id), activity AS (SELECT f.seller_id, f.cohort_month, DATE_PART('month', AGE(DATE_TRUNC('month', o.order_purchase_timestamp), f.cohort_month))::int AS cohort_age, 1 AS active_flag FROM first_sale f INNER JOIN facts.fct_order_item i USING(seller_id) INNER JOIN staging.orders o USING(order_id) GROUP BY 1,2,3) SELECT cohort_month, cohort_age, COUNT(DISTINCT seller_id) AS active_sellers FROM activity GROUP BY 1,2;
+

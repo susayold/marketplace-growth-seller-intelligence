@@ -419,3 +419,4 @@ def compute() -> dict:
 if __name__ == "__main__":
     result = compute()
     print(json.dumps({"project": str(result["project"]), "files": len(list(result["project"].rglob('*'))), "months": len(result["monthly"]), "sellers": len(result["seller_lifetime"])}, default=str))
+
