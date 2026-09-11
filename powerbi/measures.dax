@@ -1,0 +1,130 @@
+/* Marketplace Growth & Seller Intelligence — canonical Power BI measures.
+   Create a blank table named Measures and place these measures there.
+   Table/column names assume the Power Query normalization described in the implementation pack. */
+
+GMV Proxy =
+SUM ( mart_marketplace_monthly[gmv_proxy] )
+
+Orders =
+SUM ( mart_marketplace_monthly[orders] )
+
+Items =
+SUM ( mart_marketplace_monthly[items] )
+
+Active Sellers =
+DISTINCTCOUNT ( mart_seller_monthly[seller_id] )
+
+Active Customers =
+SUM ( mart_marketplace_monthly[active_customers] )
+
+AOV =
+DIVIDE ( [GMV Proxy], [Orders] )
+
+GMV per Seller =
+DIVIDE ( [GMV Proxy], [Active Sellers] )
+
+Orders per Seller =
+DIVIDE ( [Orders], [Active Sellers] )
+
+Late Orders =
+CALCULATE (
+    SUM ( mart_order_experience[orders] ),
+    mart_order_experience[is_late] = 1
+)
+
+Late Delivery Rate =
+DIVIDE (
+    [Late Orders],
+    SUM ( mart_order_experience[orders] )
+)
+
+Average Review Score =
+DIVIDE (
+    SUMX (
+        mart_order_experience,
+        mart_order_experience[orders] * mart_order_experience[avg_review_score]
+    ),
+    SUM ( mart_order_experience[orders] )
+)
+
+Low Review Orders =
+SUMX (
+    mart_order_experience,
+    mart_order_experience[orders] * mart_order_experience[low_review_rate]
+)
+
+Low Review Rate =
+DIVIDE ( [Low Review Orders], SUM ( mart_order_experience[orders] ) )
+
+MQLs =
+SUM ( mart_acquisition_channel[mqls] )
+
+Converted Sellers =
+SUM ( mart_acquisition_channel[converted_sellers] )
+
+Conversion Rate =
+DIVIDE ( [Converted Sellers], [MQLs] )
+
+Activated Sellers =
+SUM ( activation_summary[valid_activation_link] )
+
+Closed Sellers =
+SUM ( activation_summary[closed_sellers] )
+
+Activation Rate =
+DIVIDE ( [Activated Sellers], [Closed Sellers] )
+
+GMV Previous Month =
+CALCULATE (
+    [GMV Proxy],
+    DATEADD ( dim_date[full_date], -1, MONTH )
+)
+
+GMV MoM % =
+DIVIDE (
+    [GMV Proxy] - [GMV Previous Month],
+    [GMV Previous Month]
+)
+
+Orders Previous Month =
+CALCULATE (
+    [Orders],
+    DATEADD ( dim_date[full_date], -1, MONTH )
+)
+
+Orders MoM % =
+DIVIDE (
+    [Orders] - [Orders Previous Month],
+    [Orders Previous Month]
+)
+
+Active Sellers Previous Month =
+CALCULATE (
+    [Active Sellers],
+    DATEADD ( dim_date[full_date], -1, MONTH )
+)
+
+Seller Growth % =
+DIVIDE (
+    [Active Sellers] - [Active Sellers Previous Month],
+    [Active Sellers Previous Month]
+)
+
+Repeat Customer Rate =
+DIVIDE (
+    SUM ( customer_repeat_summary[repeat_customers] ),
+    SUM ( customer_repeat_summary[unique_customers] )
+)
+
+Top 10 Seller Share =
+CALCULATE (
+    MAX ( seller_concentration[gmv_proxy_share] ),
+    seller_concentration[top_seller_share] = 0.1
+)
+
+/* Recommended display formats:
+   GMV/AOV/GMV per Seller: currency, 2 decimals
+   Orders/Items/Sellers/Customers/MQLs: whole number with thousands separator
+   Rates/Growth: percentage, 1 decimal
+   Review score: 2 decimals; days: 1 decimal */
+
