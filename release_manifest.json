@@ -1,27 +1,15 @@
 [
   {
+    "path": ".env.example",
+    "bytes": 123
+  },
+  {
     "path": ".github/workflows/ci.yml",
     "bytes": 342
   },
   {
-    "path": ".pytest_cache/.gitignore",
-    "bytes": 37
-  },
-  {
-    "path": ".pytest_cache/CACHEDIR.TAG",
-    "bytes": 191
-  },
-  {
-    "path": ".pytest_cache/README.md",
-    "bytes": 302
-  },
-  {
-    "path": ".pytest_cache/v/cache/lastfailed",
-    "bytes": 2
-  },
-  {
-    "path": ".pytest_cache/v/cache/nodeids",
-    "bytes": 721
+    "path": ".gitignore",
+    "bytes": 143
   },
   {
     "path": "assets/architecture.png",
@@ -81,11 +69,11 @@
   },
   {
     "path": "docs/08_analysis_log.md",
-    "bytes": 649
+    "bytes": 2124
   },
   {
     "path": "docs/09_root_cause_cases.md",
-    "bytes": 1109
+    "bytes": 3866
   },
   {
     "path": "docs/10_executive_decisions.md",
@@ -97,7 +85,7 @@
   },
   {
     "path": "docs/12_interview_guide.md",
-    "bytes": 441
+    "bytes": 2696
   },
   {
     "path": "docs/13_cv_bullets.md",
@@ -114,6 +102,14 @@
   {
     "path": "docs/16_release_notes.md",
     "bytes": 548
+  },
+  {
+    "path": "LICENSE",
+    "bytes": 1059
+  },
+  {
+    "path": "Makefile",
+    "bytes": 440
   },
   {
     "path": "notebooks/01_data_profiling.ipynb",
@@ -141,15 +137,15 @@
   },
   {
     "path": "powerbi/README.md",
-    "bytes": 579
+    "bytes": 638
   },
   {
     "path": "README.md",
-    "bytes": 1225
+    "bytes": 2783
   },
   {
     "path": "release_manifest.json",
-    "bytes": 3893
+    "bytes": 10251
   },
   {
     "path": "reports/charts/01_marketplace_health.png",
@@ -265,7 +261,7 @@
   },
   {
     "path": "requirements.txt",
-    "bytes": 60
+    "bytes": 102
   },
   {
     "path": "sql/00_admin/00_schemas.sql",
@@ -408,16 +404,8 @@
     "bytes": 2180
   },
   {
-    "path": "src/__pycache__/reconcile.cpython-314.pyc",
-    "bytes": 2904
-  },
-  {
-    "path": "src/__pycache__/validate.cpython-314.pyc",
-    "bytes": 2385
-  },
-  {
     "path": "src/build_database.py",
-    "bytes": 940
+    "bytes": 1007
   },
   {
     "path": "src/build_marts.py",
@@ -437,11 +425,11 @@
   },
   {
     "path": "src/ingest.py",
-    "bytes": 1357
+    "bytes": 1478
   },
   {
     "path": "src/profile.py",
-    "bytes": 1254
+    "bytes": 1337
   },
   {
     "path": "src/reconcile.py",
@@ -470,30 +458,6 @@
   {
     "path": "src/validate.py",
     "bytes": 1025
-  },
-  {
-    "path": "tests/__pycache__/test_business_rules.cpython-314-pytest-9.1.1.pyc",
-    "bytes": 4835
-  },
-  {
-    "path": "tests/__pycache__/test_dates.cpython-314-pytest-9.1.1.pyc",
-    "bytes": 2365
-  },
-  {
-    "path": "tests/__pycache__/test_keys.cpython-314-pytest-9.1.1.pyc",
-    "bytes": 3836
-  },
-  {
-    "path": "tests/__pycache__/test_metrics.cpython-314-pytest-9.1.1.pyc",
-    "bytes": 4001
-  },
-  {
-    "path": "tests/__pycache__/test_raw_schema.cpython-314-pytest-9.1.1.pyc",
-    "bytes": 3087
-  },
-  {
-    "path": "tests/__pycache__/test_reconciliation.cpython-314-pytest-9.1.1.pyc",
-    "bytes": 2195
   },
   {
     "path": "tests/test_business_rules.py",
