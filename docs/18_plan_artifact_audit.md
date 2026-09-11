@@ -9,6 +9,7 @@ This audit separates explicit user instructions from the attached execution blue
 - Drive project folder and subfolders exist; raw archives and generated artifacts are remote.
 - GitHub repository contains source SQL, Python, notebooks, documentation, charts, PDF, QA evidence, and the Power BI implementation pack.
 - Clean rebuild evidence covers 10 raw tables, 1,559,693 loaded rows, 32 SQL files, zero warnings/errors, key tests, fan-out detection, and grain-safe GMV reconciliation.
+- Daily and seller-month SQL definitions are present and pass PostgreSQL static parsing; the parameterized Python build script reproduces the published CSVs.
 - Analytical tables are present for marketplace monthly, seller lifetime, cohorts, acquisition channel, activation, retention by origin, category, geography, order experience, customer repeat, concentration, growth decomposition, and seller segmentation.
 - Derived plan outputs now added: daily marketplace, seller-month, time-to-first-sale, Pareto seller curve, delivery-performance summary, and automated test report.
 

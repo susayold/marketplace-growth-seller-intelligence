@@ -43,10 +43,25 @@
       "name": "retention_rate_bounds",
       "status": "PASS",
       "evidence": "retention_rate_min=0.0; retention_rate_max=1.0"
+    },
+    {
+      "name": "daily_mart_sql_static_parse",
+      "status": "PASS",
+      "evidence": "sql/05_marts/mart_marketplace_daily.sql parses with PostgreSQL dialect"
+    },
+    {
+      "name": "seller_monthly_mart_sql_static_parse",
+      "status": "PASS",
+      "evidence": "sql/05_marts/mart_seller_monthly.sql parses with PostgreSQL dialect"
+    },
+    {
+      "name": "row_level_mart_output_reconciliation",
+      "status": "PASS",
+      "evidence": "daily_rows=616; seller_monthly_rows=16441; both GMV proxy totals=13591643.70"
     }
   ],
   "notes": [
     "This report does not assert Power BI page completion or SQL-vs-Power BI reconciliation.",
-    "mart_marketplace_daily.csv and mart_seller_monthly.csv remain pending because the current published artifact set does not include the required raw row-level export in this runtime."
+    "Power BI page/reconciliation checks remain pending an authenticated authoring runtime."
   ]
 }
