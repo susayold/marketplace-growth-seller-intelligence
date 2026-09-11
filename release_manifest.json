@@ -185,7 +185,7 @@
   },
   {
     "path": "reports/qa/pipeline_run.log",
-    "bytes": 759
+    "bytes": 12484
   },
   {
     "path": "reports/qa/raw_inventory.csv",
@@ -194,6 +194,10 @@
   {
     "path": "reports/qa/README.md",
     "bytes": 154
+  },
+  {
+    "path": "reports/qa/rebuild_verification.json",
+    "bytes": 1328
   },
   {
     "path": "reports/qa/reconciliation_result.json",
