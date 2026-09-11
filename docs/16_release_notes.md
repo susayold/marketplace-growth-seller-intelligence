@@ -10,3 +10,9 @@
 
 Power BI remains intentionally last.
 
+
+## v1.2 additional analytical coverage
+
+- Added reusable seller segmentation and eligibility-aware retention by acquisition origin.
+- Added conversion confidence intervals, Cramers V, Mann-Whitney plus bootstrap review validation, and eligible M3 retention-by-origin testing.
+- Updated the statistical-validation notebook and added detailed QA output.

@@ -4,7 +4,7 @@ Historical Olist case study focused on seller acquisition → activation → ret
 
 ## Execution status
 
-Non-Power-BI scope is complete and released as a reproducible v1.1 package. The only intentionally pending area is the six-page Power BI build and the final SQL ↔ Power BI reconciliation.
+Non-Power-BI scope is complete and released as a reproducible v1.2 package with seller segmentation and full statistical validation. The only intentionally pending area is the six-page Power BI build and the final SQL ↔ Power BI reconciliation.
 
 ## Evidence-backed findings
 
@@ -12,6 +12,7 @@ Non-Power-BI scope is complete and released as a reproducible v1.1 package. The 
 - Repeat customer rate: 3.1%.
 - Top 20% seller GMV proxy share: 82.7%.
 - Activation within 90 days among valid closed-seller links: 87.5%.
+- M3 seller retention is available by acquisition origin with eligibility-aware denominators.
 - Naive item × payment GMV overstates the grain-safe item GMV by R$617,472, or 4.54%.
 
 ## Repository map
@@ -19,7 +20,8 @@ Non-Power-BI scope is complete and released as a reproducible v1.1 package. The 
 - src: ingestion, profiling, PostgreSQL loading, mart build, reconciliation, validation and release-manifest entrypoints.
 - sql: raw, staging, dimensions, facts, marts, quality audits, analysis modules and exports.
 - notebooks: six executable analysis notebooks with embedded tables and figures.
-- reports/tables: decision-facing marts and QA extracts.
+- reports/tables: decision-facing marts, seller segmentation and retention-by-origin outputs.
+- reports/qa: statistical tests with confidence intervals, effect sizes, robustness checks and reconciliation evidence.
 - reports/charts and assets: visual evidence, architecture, data-model, pipeline and dashboard hero assets.
 - tests: raw-schema, key, date, reconciliation, metric and business-rule checks.
 - docs: business context, methodology, metric dictionary, root causes, decisions, limitations, interview guide and completion matrix.

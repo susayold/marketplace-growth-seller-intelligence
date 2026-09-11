@@ -69,7 +69,7 @@
   },
   {
     "path": "docs/08_analysis_log.md",
-    "bytes": 2124
+    "bytes": 2903
   },
   {
     "path": "docs/09_root_cause_cases.md",
@@ -93,7 +93,7 @@
   },
   {
     "path": "docs/14_plan_completion_matrix.md",
-    "bytes": 1357
+    "bytes": 1684
   },
   {
     "path": "docs/15_sql_powerbi_reconciliation_protocol.md",
@@ -101,7 +101,7 @@
   },
   {
     "path": "docs/16_release_notes.md",
-    "bytes": 548
+    "bytes": 901
   },
   {
     "path": "LICENSE",
@@ -133,7 +133,7 @@
   },
   {
     "path": "notebooks/06_statistical_validation.ipynb",
-    "bytes": 57915
+    "bytes": 96783
   },
   {
     "path": "powerbi/README.md",
@@ -141,7 +141,7 @@
   },
   {
     "path": "README.md",
-    "bytes": 2783
+    "bytes": 3080
   },
   {
     "path": "release_manifest.json",
@@ -172,6 +172,10 @@
     "bytes": 355215
   },
   {
+    "path": "reports/qa/additional_analysis_manifest.json",
+    "bytes": 144
+  },
+  {
     "path": "reports/qa/data_profile_summary.csv",
     "bytes": 5365
   },
@@ -196,8 +200,12 @@
     "bytes": 180
   },
   {
+    "path": "reports/qa/statistical_validation_detail.csv",
+    "bytes": 2953
+  },
+  {
     "path": "reports/qa/statistical_validation.csv",
-    "bytes": 378
+    "bytes": 2953
   },
   {
     "path": "reports/tables/activation_summary.csv",
@@ -252,12 +260,20 @@
     "bytes": 1261799
   },
   {
+    "path": "reports/tables/retention_by_origin.csv",
+    "bytes": 1920
+  },
+  {
     "path": "reports/tables/seller_activation.csv",
     "bytes": 132958
   },
   {
     "path": "reports/tables/seller_concentration.csv",
     "bytes": 168
+  },
+  {
+    "path": "reports/tables/seller_segmentation.csv",
+    "bytes": 341347
   },
   {
     "path": "requirements.txt",
@@ -296,12 +312,12 @@
     "bytes": 130
   },
   {
-    "path": "sql/04_facts/fct_order.sql",
-    "bytes": 423
-  },
-  {
     "path": "sql/04_facts/fct_order_item.sql",
     "bytes": 209
+  },
+  {
+    "path": "sql/04_facts/fct_order.sql",
+    "bytes": 423
   },
   {
     "path": "sql/04_facts/fct_payment.sql",
@@ -384,6 +400,10 @@
     "bytes": 164
   },
   {
+    "path": "sql/07_analysis/d03_retention_by_origin.sql",
+    "bytes": 1647
+  },
+  {
     "path": "sql/07_analysis/f05_review_vs_delay.sql",
     "bytes": 200
   },
@@ -396,12 +416,8 @@
     "bytes": 57
   },
   {
-    "path": "src/__pycache__/__init__.cpython-314.pyc",
-    "bytes": 237
-  },
-  {
-    "path": "src/__pycache__/export_marts.cpython-314.pyc",
-    "bytes": 2180
+    "path": "src/additional_analysis.py",
+    "bytes": 11046
   },
   {
     "path": "src/build_database.py",
@@ -409,7 +425,7 @@
   },
   {
     "path": "src/build_marts.py",
-    "bytes": 352
+    "bytes": 478
   },
   {
     "path": "src/build_project.py",
