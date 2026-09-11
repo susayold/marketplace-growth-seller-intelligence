@@ -10,22 +10,21 @@ Import the governed marts and dimensions from the GitHub repository, or from the
 
 Recommended import set:
 
-- `dim_date`
-- `dim_seller`
-- `dim_product`
-- `dim_customer`
-- `dim_channel`
 - `mart_marketplace_monthly`
-- `mart_seller_monthly`
+- `mart_seller_lifetime`
 - `mart_acquisition_channel`
 - `mart_seller_cohort`
 - `mart_order_experience`
 - `mart_category_performance`
+- `mart_geography_performance`
+- `seller_activation`
 - `activation_summary`
 - `customer_repeat_summary`
 - `seller_concentration`
 
-The current CSV exports are already aggregated to their documented grains. In Power Query, normalize date fields to Date and numeric fields to Decimal Number/Whole Number. The current exports use both `purchase_month` and `month_start` in different marts; rename them to `month_start` before modelling. Preserve `is_late` as a numeric 0/1 flag.
+Create `dim_date` in Power BI from the min/max `purchase_month` values. Create a small `dim_seller` from distinct `seller_id` values in `mart_seller_lifetime` and `seller_activation` when a seller slicer is needed. Category, geography, and channel labels can be sourced directly from their marts because the published exports are already aggregated.
+
+The current CSV exports are already aggregated to their documented grains. In Power Query, normalize date fields to Date and numeric fields to Decimal Number/Whole Number. The current exports use `purchase_month`, `cohort_month`, and `first_sale_month`; create first-of-month Date columns named `month_start`, `cohort_month_start`, and `first_sale_month_start` as appropriate. Preserve `is_late` as a numeric 0/1 flag.
 
 ## 2. Semantic model
 
@@ -34,15 +33,12 @@ Create a dedicated `Measures` table and hide technical keys from report view. Us
 | From | To | Key |
 |---|---|---|
 | `dim_date` | `mart_marketplace_monthly` | `month_start` → `month_start` |
-| `dim_date` | `mart_seller_monthly` | `month_start` → `month_start` |
+| `dim_date` | `mart_category_performance` | `month_start` → `month_start` |
 | `dim_date` | `mart_seller_cohort` | `month_start` → `cohort_month` |
-| `dim_date` | `mart_order_experience` | use only if a row-level date exists; otherwise keep this mart as an aggregate QA source |
-| `dim_seller` | `mart_seller_monthly` | `seller_id` |
-| `dim_seller` | `mart_seller_cohort` | `seller_id` |
-| `dim_product` | `mart_category_performance` | `product_category_name` or the documented category key |
-| `dim_channel` | `mart_acquisition_channel` | `origin_group` |
+| `dim_seller` | `mart_seller_lifetime` | `seller_id` |
+| `dim_seller` | `seller_activation` | `seller_id` |
 
-If a mart does not contain the dimension key needed for a relationship, leave it disconnected and use it only for its own aggregate visuals. Do not create many-to-many relationships merely to make a visual populate.
+`mart_order_experience`, `mart_acquisition_channel`, `activation_summary`, `customer_repeat_summary`, `seller_concentration`, and `mart_geography_performance` are aggregate marts. Keep them disconnected unless a documented conformed key is present; use them for their own scorecards and QA visuals. Do not create many-to-many relationships merely to make a visual populate.
 
 Create `dim_date` as a contiguous calendar covering the observed purchase and funnel periods. Mark it as the date table. Add `Year`, `Month Number`, `Month`, `Year-Month`, and `Quarter` columns; sort `Month` by `Month Number` and `Year-Month` by a numeric year-month key.
 

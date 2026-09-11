@@ -12,7 +12,10 @@ Items =
 SUM ( mart_marketplace_monthly[items] )
 
 Active Sellers =
-DISTINCTCOUNT ( mart_seller_monthly[seller_id] )
+DISTINCTCOUNT ( mart_seller_lifetime[seller_id] )
+
+Monthly Active Sellers =
+SUM ( mart_marketplace_monthly[active_sellers] )
 
 Active Customers =
 SUM ( mart_marketplace_monthly[active_customers] )
@@ -121,6 +124,9 @@ CALCULATE (
     MAX ( seller_concentration[gmv_proxy_share] ),
     seller_concentration[top_seller_share] = 0.1
 )
+
+Median Days to First Sale =
+MAX ( activation_summary[median_days_to_first_sale] )
 
 /* Recommended display formats:
    GMV/AOV/GMV per Seller: currency, 2 decimals
