@@ -4,7 +4,7 @@ Historical Olist case study focused on seller acquisition → activation → ret
 
 ## Execution status
 
-Non-Power-BI scope is complete and released as a reproducible v1.2 package with seller segmentation and full statistical validation. The only intentionally pending area is the six-page Power BI build and the final SQL ↔ Power BI reconciliation.
+The data, SQL, Python, marts, QA, statistical validation, row-level daily/seller-month outputs and decision layer are released as a reproducible package. The only incomplete gate is the six-page Power BI build and final SQL ↔ Power BI reconciliation, which remains last per the user instruction.
 
 ## Evidence-backed findings
 
@@ -20,7 +20,7 @@ Non-Power-BI scope is complete and released as a reproducible v1.2 package with 
 - src: ingestion, profiling, PostgreSQL loading, mart build, reconciliation, validation and release-manifest entrypoints.
 - sql: raw, staging, dimensions, facts, marts, quality audits, analysis modules and exports.
 - notebooks: six executable analysis notebooks with embedded tables and figures.
-- reports/tables: decision-facing marts, seller segmentation and retention-by-origin outputs.
+- reports/tables: daily/monthly marketplace marts, seller-month/lifetime/cohort marts, funnel, activation, retention, category, geography, operations, concentration, segmentation and decision outputs.
 - reports/qa: statistical tests with confidence intervals, effect sizes, robustness checks and reconciliation evidence.
 - reports/charts and assets: visual evidence, architecture, data-model, pipeline and dashboard hero assets.
 - tests: raw-schema, key, date, reconciliation, metric and business-rule checks.
@@ -49,5 +49,10 @@ https://drive.google.com/drive/folders/1PBOPGZzxiPfTG_0O-b0suxy6cAYVt37G
 Code and reviewable artifacts are mirrored in the private GitHub repository:
 https://github.com/susayold/marketplace-growth-seller-intelligence
 
-Power BI is deliberately reserved for the final stage.
+Power BI is deliberately reserved for the final stage. The implementation pack, DAX measures and reconciliation template are in `powerbi/`; the PBIX/PDF remain pending an authenticated authoring session.
 
+
+
+## Latest release update
+
+The latest release adds `mart_marketplace_daily`, `mart_seller_monthly`, a parameterized build script, source provenance QA, and a current plan artifact audit. A read-only website preview is available at https://marketplace-growth-demo-20260912.sangkenny200.chatgpt.site.

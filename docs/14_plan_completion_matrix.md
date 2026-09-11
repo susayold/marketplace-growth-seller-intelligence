@@ -1,6 +1,6 @@
 # Plan completion matrix
 
-Last verified after the non-Power-BI build pass.
+Last verified on 2026-09-12 after the raw row-level mart build.
 
 | Plan area | Evidence | Status |
 |---|---|---|

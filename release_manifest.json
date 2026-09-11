@@ -21,7 +21,7 @@
   },
   {
     "path": "assets/dashboard/retention_heatmap.png",
-    "bytes": 241975
+    "bytes": 150058
   },
   {
     "path": "assets/dashboard/seller_funnel.png",
@@ -36,6 +36,10 @@
     "bytes": 47992
   },
   {
+    "path": "config/metric_thresholds.yaml",
+    "bytes": 147
+  },
+  {
     "path": "config/settings.yaml",
     "bytes": 320
   },
@@ -44,12 +48,20 @@
     "bytes": 282
   },
   {
+    "path": "docs/00_execution_status.md",
+    "bytes": 1773
+  },
+  {
     "path": "docs/01_business_context.md",
     "bytes": 371
   },
   {
     "path": "docs/02_data_sources.md",
     "bytes": 541
+  },
+  {
+    "path": "docs/03_data_dictionary.md",
+    "bytes": 1213
   },
   {
     "path": "docs/04_data_model.md",
@@ -69,7 +81,7 @@
   },
   {
     "path": "docs/08_analysis_log.md",
-    "bytes": 2903
+    "bytes": 2904
   },
   {
     "path": "docs/09_root_cause_cases.md",
@@ -93,7 +105,7 @@
   },
   {
     "path": "docs/14_plan_completion_matrix.md",
-    "bytes": 1684
+    "bytes": 2110
   },
   {
     "path": "docs/15_sql_powerbi_reconciliation_protocol.md",
@@ -101,7 +113,15 @@
   },
   {
     "path": "docs/16_release_notes.md",
-    "bytes": 901
+    "bytes": 1210
+  },
+  {
+    "path": "docs/17_non_powerbi_gate_audit.md",
+    "bytes": 2434
+  },
+  {
+    "path": "docs/18_plan_artifact_audit.md",
+    "bytes": 2024
   },
   {
     "path": "LICENSE",
@@ -136,16 +156,24 @@
     "bytes": 96783
   },
   {
+    "path": "powerbi/implementation_pack.md",
+    "bytes": 7827
+  },
+  {
+    "path": "powerbi/measures.dax",
+    "bytes": 3022
+  },
+  {
     "path": "powerbi/README.md",
-    "bytes": 638
+    "bytes": 1246
   },
   {
     "path": "README.md",
-    "bytes": 3080
+    "bytes": 3698
   },
   {
     "path": "release_manifest.json",
-    "bytes": 10251
+    "bytes": 10500
   },
   {
     "path": "reports/charts/01_marketplace_health.png",
@@ -176,6 +204,10 @@
     "bytes": 144
   },
   {
+    "path": "reports/qa/automated_test_report.json",
+    "bytes": 1736
+  },
+  {
     "path": "reports/qa/data_profile_summary.csv",
     "bytes": 5365
   },
@@ -184,8 +216,16 @@
     "bytes": 182
   },
   {
+    "path": "reports/qa/missing_marts_build.json",
+    "bytes": 1178
+  },
+  {
     "path": "reports/qa/pipeline_run.log",
-    "bytes": 12484
+    "bytes": 759
+  },
+  {
+    "path": "reports/qa/powerbi_reconciliation.csv",
+    "bytes": 491
   },
   {
     "path": "reports/qa/raw_inventory.csv",
@@ -197,7 +237,7 @@
   },
   {
     "path": "reports/qa/rebuild_verification.json",
-    "bytes": 1328
+    "bytes": 1330
   },
   {
     "path": "reports/qa/reconciliation_result.json",
@@ -216,12 +256,12 @@
     "bytes": 311
   },
   {
-    "path": "reports/tables/customer_order_frequency.csv",
-    "bytes": 7303355
-  },
-  {
     "path": "reports/tables/customer_repeat_summary.csv",
     "bytes": 119
+  },
+  {
+    "path": "reports/tables/delivery_performance.csv",
+    "bytes": 209
   },
   {
     "path": "reports/tables/growth_decomposition.csv",
@@ -240,6 +280,10 @@
     "bytes": 991
   },
   {
+    "path": "reports/tables/mart_marketplace_daily.csv",
+    "bytes": 56527
+  },
+  {
     "path": "reports/tables/mart_marketplace_monthly.csv",
     "bytes": 5468
   },
@@ -252,16 +296,16 @@
     "bytes": 5678
   },
   {
-    "path": "reports/tables/mart_seller_funnel.csv",
-    "bytes": 1052688
-  },
-  {
     "path": "reports/tables/mart_seller_lifetime.csv",
     "bytes": 476627
   },
   {
     "path": "reports/tables/mart_seller_monthly.csv",
-    "bytes": 1261799
+    "bytes": 480116
+  },
+  {
+    "path": "reports/tables/pareto_seller_curve.csv",
+    "bytes": 298042
   },
   {
     "path": "reports/tables/retention_by_origin.csv",
@@ -280,6 +324,10 @@
     "bytes": 341347
   },
   {
+    "path": "reports/tables/time_to_first_sale.csv",
+    "bytes": 289
+  },
+  {
     "path": "requirements.txt",
     "bytes": 102
   },
@@ -290,6 +338,14 @@
   {
     "path": "sql/01_raw/raw_tables.sql",
     "bytes": 2283
+  },
+  {
+    "path": "sql/01_raw/README.md",
+    "bytes": 173
+  },
+  {
+    "path": "sql/02_staging/README.md",
+    "bytes": 129
   },
   {
     "path": "sql/02_staging/stg_core.sql",
@@ -316,6 +372,10 @@
     "bytes": 130
   },
   {
+    "path": "sql/03_dimensions/README.md",
+    "bytes": 111
+  },
+  {
     "path": "sql/04_facts/fct_order_item.sql",
     "bytes": 209
   },
@@ -332,12 +392,16 @@
     "bytes": 259
   },
   {
+    "path": "sql/04_facts/README.md",
+    "bytes": 165
+  },
+  {
     "path": "sql/05_marts/mart_acquisition_channel.sql",
     "bytes": 321
   },
   {
     "path": "sql/05_marts/mart_marketplace_monthly.sql",
-    "bytes": 764
+    "bytes": 762
   },
   {
     "path": "sql/05_marts/mart_order_experience.sql",
@@ -356,8 +420,12 @@
     "bytes": 383
   },
   {
+    "path": "sql/05_marts/README.md",
+    "bytes": 184
+  },
+  {
     "path": "sql/06_quality/q01_fanout_audit.sql",
-    "bytes": 298
+    "bytes": 308
   },
   {
     "path": "sql/06_quality/q02_primary_key_audit.sql",
@@ -377,19 +445,19 @@
   },
   {
     "path": "sql/07_analysis/a01_monthly_marketplace_kpis.sql",
-    "bytes": 484
+    "bytes": 485
   },
   {
     "path": "sql/07_analysis/a02_growth_decomposition.sql",
-    "bytes": 501
+    "bytes": 927
   },
   {
     "path": "sql/07_analysis/a05_seller_concentration.sql",
-    "bytes": 622
+    "bytes": 1180
   },
   {
     "path": "sql/07_analysis/b02_conversion_by_origin.sql",
-    "bytes": 327
+    "bytes": 299
   },
   {
     "path": "sql/07_analysis/b06_activation.sql",
@@ -401,7 +469,7 @@
   },
   {
     "path": "sql/07_analysis/d02_monthly_retention.sql",
-    "bytes": 164
+    "bytes": 517
   },
   {
     "path": "sql/07_analysis/d03_retention_by_origin.sql",
@@ -409,7 +477,7 @@
   },
   {
     "path": "sql/07_analysis/f05_review_vs_delay.sql",
-    "bytes": 200
+    "bytes": 145
   },
   {
     "path": "sql/08_exports/README.md",
@@ -425,11 +493,15 @@
   },
   {
     "path": "src/build_database.py",
-    "bytes": 1007
+    "bytes": 5226
   },
   {
     "path": "src/build_marts.py",
     "bytes": 478
+  },
+  {
+    "path": "src/build_missing_marts.py",
+    "bytes": 5352
   },
   {
     "path": "src/build_project.py",
@@ -465,7 +537,7 @@
   },
   {
     "path": "src/utils/db.py",
-    "bytes": 1006
+    "bytes": 2248
   },
   {
     "path": "src/utils/io.py",
@@ -481,11 +553,11 @@
   },
   {
     "path": "tests/test_business_rules.py",
-    "bytes": 760
+    "bytes": 1262
   },
   {
     "path": "tests/test_dates.py",
-    "bytes": 384
+    "bytes": 643
   },
   {
     "path": "tests/test_keys.py",
@@ -493,7 +565,7 @@
   },
   {
     "path": "tests/test_metrics.py",
-    "bytes": 517
+    "bytes": 1019
   },
   {
     "path": "tests/test_raw_schema.py",

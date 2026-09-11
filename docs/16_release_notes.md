@@ -16,3 +16,8 @@ Power BI remains intentionally last.
 - Added reusable seller segmentation and eligibility-aware retention by acquisition origin.
 - Added conversion confidence intervals, Cramers V, Mann-Whitney plus bootstrap review validation, and eligible M3 retention-by-origin testing.
 - Updated the statistical-validation notebook and added detailed QA output.
+
+
+## Release update — 2026-09-12
+
+Added and verified the daily marketplace and seller-month marts from row-level source, added a parameterized build script and provenance QA, updated the Power BI pack to consume the new grains, and refreshed the plan audit. Power BI remains the final pending runtime gate.
