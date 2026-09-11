@@ -30,8 +30,8 @@ SOURCE_SPECS = [
     ("brazilian-ecommerce.zip", "olist_sellers_dataset.csv", "raw.olist_sellers", ["seller_id", "seller_zip_code_prefix", "seller_city", "seller_state"]),
     ("brazilian-ecommerce.zip", "olist_products_dataset.csv", "raw.olist_products", ["product_id", "product_category_name", "product_name_lenght", "product_description_lenght", "product_photos_qty", "product_weight_g", "product_length_cm", "product_height_cm", "product_width_cm"]),
     ("brazilian-ecommerce.zip", "olist_geolocation_dataset.csv", "raw.olist_geolocation", ["geolocation_zip_code_prefix", "geolocation_lat", "geolocation_lng", "geolocation_city", "geolocation_state"]),
-    ("marketing-funnel-olist.zip", "olist_marketing_qualified_leads_dataset.csv", "raw.mql", ["mql_id", "first_contact_date", "landing_page_id", "origin"]),
-    ("marketing-funnel-olist.zip", "olist_closed_deals_dataset.csv", "raw.closed_deals", ["mql_id", "seller_id", "sdr_id", "sr_id", "won_date", "business_segment", "lead_type", "lead_behaviour_profile", "has_company", "has_gtin", "average_stock", "business_type", "declared_product_catalog_size", "declared_monthly_revenue"]),
+    ("marketing-funnel-olist.zip", "marketing_qualified_leads_olist.csv", "raw.mql", ["mql_id", "first_contact_date", "landing_page_id", "origin"]),
+    ("marketing-funnel-olist.zip", "closed_deals_olist.csv", "raw.closed_deals", ["mql_id", "seller_id", "sdr_id", "sr_id", "won_date", "business_segment", "lead_type", "lead_behaviour_profile", "has_company", "has_gtin", "average_stock", "business_type", "declared_product_catalog_size", "declared_monthly_revenue"]),
 ]
 
 
