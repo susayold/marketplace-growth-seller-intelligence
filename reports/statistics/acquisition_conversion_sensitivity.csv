@@ -1,0 +1,4 @@
+specification,origins_included,n_mql,conversion_rate,chi_square_p_value,cramers_v
+all_origins,direct_traffic|display|email|organic_search|other|other_publicities|paid_search|referral|social|unknown,8000,0.10525,3.0961535354297734e-25,0.1311902637909271
+major_actionable_origins,organic_search|paid_search|social,5232,0.10340214067278287,1.5515190317190583e-10,0.09291946888669235
+

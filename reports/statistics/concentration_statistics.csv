@@ -1,0 +1,8 @@
+metric,value,unit,population
+seller_count,3095.0,sellers,sellers_with_positive_item_gmv
+gini,0.7915146728964931,index,sellers_with_positive_item_gmv
+top_1_pct_share,0.26073787308006025,share,seller GMV proxy
+top_5_pct_share,0.5330246289490358,share,seller GMV proxy
+top_10_pct_share,0.6756485795754048,share,seller GMV proxy
+top_20_pct_share,0.8269167790206272,share,seller GMV proxy
+

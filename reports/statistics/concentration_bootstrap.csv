@@ -1,0 +1,3 @@
+metric,estimate,ci_low,ci_high,bootstrap_reps,seed
+gini,0.7915146728964931,0.7727806793876711,0.8073280069738499,800,20260912
+

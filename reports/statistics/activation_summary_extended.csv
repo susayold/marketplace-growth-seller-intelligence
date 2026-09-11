@@ -1,0 +1,3 @@
+closed_sellers,matched_sellers,valid_activation_links,activated_le_7d,activation_rate_le_7d,ci_low_le_7d,ci_high_le_7d,activated_le_30d,activation_rate_le_30d,ci_low_le_30d,ci_high_le_30d,activated_le_60d,activation_rate_le_60d,ci_low_le_60d,ci_high_le_60d,activated_le_90d,activation_rate_le_90d,ci_low_le_90d,ci_high_le_90d,median_days_to_first_sale,median_ci_low,median_ci_high
+842,380,380,15,0.039473684210526314,0.02406515904100089,0.06410004053037388,130,0.34210526315789475,0.2961988902858504,0.3911720352814782,247,0.65,0.6007593312582534,0.6962382894527847,324,0.8526315789473684,0.8134659561895865,0.8847389767100466,44.293130787037036,39.1267701099537,50.299247685185186
+

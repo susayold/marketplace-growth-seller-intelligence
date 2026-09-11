@@ -1,0 +1,6 @@
+finding,absolute_difference,relative_difference,population_scope,business_interpretation
+late delivery low-review risk gap,0.44789140477431716,5.872863940787512,reviewed delivered orders,late orders carry a materially higher observed low-review rate
+late delivery review penalty,-1.7275883057642907,,reviewed delivered orders,late orders have lower observed review scores; association is not causal proof
+paid_search vs social conversion,6.739526411657559,,MQLs,"conversion gap should be interpreted with volume, value and FDR"
+top 20 percent seller GMV share,0.8269167790206272,,sellers with positive item GMV,marketplace value is concentrated; monitor category breadth before generic diversification
+

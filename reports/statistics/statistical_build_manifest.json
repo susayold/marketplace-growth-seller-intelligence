@@ -1,0 +1,32 @@
+{
+  "run_date": "2026-09-12",
+  "source": "Olist Brazilian E-Commerce + Marketing Funnel public source copy",
+  "raw_rows": {
+    "orders": 99441,
+    "items": 112650,
+    "reviews": 99224,
+    "customers": 99441,
+    "sellers": 3095,
+    "products": 32951,
+    "leads": 8000,
+    "closed": 842
+  },
+  "order_detail_rows": 99441,
+  "complete_month_rule": "interior observed calendar months with at least 5% of median interior-month order volume; first/last and low-volume tails are partial",
+  "sample_size_rules": {
+    "insufficient": "n<10",
+    "small": "10<=n<30",
+    "usable": "30<=n<100",
+    "strong": "n>=100"
+  },
+  "ci_rules": {
+    "proportions": "Wilson 95%",
+    "means_and_medians": "deterministic bootstrap 95%"
+  },
+  "model_rules": {
+    "retention": "binomial GLM with HC3 robust SE",
+    "low_review": "binomial GLM with HC3 robust SE"
+  },
+  "outputs": 29,
+  "status": "PASS_WITH_ASSOCIATIVE_LIMITATIONS"
+}

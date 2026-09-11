@@ -1,58 +1,30 @@
 # Marketplace Growth & Seller Intelligence
 
-Historical Olist case study focused on seller acquisition → activation → retention → commercial value → customer experience.
+Decision-support analysis of marketplace growth, seller activation, retention, concentration and customer experience.
 
-## Execution status
+## Current release
 
-The data, SQL, Python, marts, QA, statistical validation, row-level daily/seller-month outputs and decision layer are released as a reproducible package. The only incomplete gate is the six-page Power BI build and final SQL ↔ Power BI reconciliation, which remains last per the user instruction.
+The pre-Power-BI statistical showcase is complete with 61 charts, 29 statistical outputs, 6 root-cause cases, 20 hypotheses and 5 decision cards. The evidence status is `PASS_WITH_ASSOCIATIVE_LIMITATIONS`: observational results are suitable for prioritization and experiment design, not causal attribution.
 
-## Evidence-backed findings
+Start with:
 
-- GMV proxy: R$ 13,591,644; orders: 98,666; sellers: 3,095.
-- Repeat customer rate: 3.1%.
-- Top 20% seller GMV proxy share: 82.7%.
-- Activation within 90 days among valid closed-seller links: 87.5%.
-- M3 seller retention is available by acquisition origin with eligibility-aware denominators.
-- Naive item × payment GMV overstates the grain-safe item GMV by R$617,472, or 4.54%.
+- `docs/18_statistical_rigor_upgrade.md` — measurement, uncertainty and model rules
+- `docs/19_root_cause_playbook.md` — six evidence-backed investigation cases
+- `docs/20_business_decision_layer.md` — KPI/guardrail decision cards
+- `docs/21_chart_catalog.md` — chart map and Power BI candidates
+- `docs/22_claims_and_evidence_register.md` — allowed wording and boundaries
+- `reports/qa/analysis_showcase_verification.json` — acceptance checks
 
-## Repository map
+## Rebuild
 
-- src: ingestion, profiling, PostgreSQL loading, mart build, reconciliation, validation and release-manifest entrypoints.
-- sql: raw, staging, dimensions, facts, marts, quality audits, analysis modules and exports.
-- notebooks: six executable analysis notebooks with embedded tables and figures.
-- reports/tables: daily/monthly marketplace marts, seller-month/lifetime/cohort marts, funnel, activation, retention, category, geography, operations, concentration, segmentation and decision outputs.
-- reports/qa: statistical tests with confidence intervals, effect sizes, robustness checks and reconciliation evidence.
-- reports/charts and assets: visual evidence, architecture, data-model, pipeline and dashboard hero assets.
-- tests: raw-schema, key, date, reconciliation, metric and business-rule checks.
-- docs: business context, methodology, metric dictionary, root causes, decisions, limitations, interview guide and completion matrix.
+Set `OLIST_RAW_DIR` to a temporary source directory and `OLIST_PROJECT_DIR` to the project path, then run `make analysis-showcase` or execute the five Python scripts in `src/`. Raw data is an input only and is not committed to the repository.
 
-## Reproduce
+## Core findings
 
-1. Materialize the two raw ZIPs from the Drive workspace folder into a temporary directory; do not commit them.
-2. Set OLIST_RAW_DIR to that temporary directory and OLIST_PROJECT_DIR to the repository path.
-3. Run python src/ingest.py, python src/profile.py and python src/build_marts.py.
-4. Run python -m pytest -q and python src/validate.py.
-5. Use python src/build_database.py only after PGHOST, PGPORT, PGDATABASE, PGUSER and PGPASSWORD are configured.
-6. Review reports/qa/pipeline_run.log and release_manifest.json.
+- Acquisition conversion differs by origin; pairwise comparisons are FDR-adjusted and downstream activation/retention remain guardrails.
+- Activation speed is descriptively associated with M3 retention; it is a testable onboarding mechanism, not a causal conclusion.
+- Seller value is concentrated: Gini is approximately 0.792 and the top 20% account for approximately 82.7% of positive-GMV seller value.
+- Late delivery is associated with a 44.8 percentage-point higher low-review rate in reviewed delivered orders; an adjusted model retains the association after observed controls.
 
-The SQL files are PostgreSQL-compatible and pass static PostgreSQL parsing. Live database execution is credential-driven; no password is stored in the repository.
+Power BI is deliberately the next phase after this analytical release gate.
 
-## Metric guardrails
-
-GMV is a proxy from order-item price, not platform revenue. Orders use distinct order IDs. Repeat-customer analysis uses customer_unique_id. Retention uses observation eligibility. Late-delivery and review results are associative, not causal. Multi-seller order attribution remains limited.
-
-## Remote storage
-
-Raw ZIPs, tables, charts and reports are stored in the Drive workspace:
-https://drive.google.com/drive/folders/1PBOPGZzxiPfTG_0O-b0suxy6cAYVt37G
-
-Code and reviewable artifacts are mirrored in the private GitHub repository:
-https://github.com/susayold/marketplace-growth-seller-intelligence
-
-Power BI is deliberately reserved for the final stage. The implementation pack, DAX measures and reconciliation template are in `powerbi/`; the PBIX/PDF remain pending an authenticated authoring session.
-
-
-
-## Latest release update
-
-The latest release adds `mart_marketplace_daily`, `mart_seller_monthly`, a parameterized build script, source provenance QA, and a current plan artifact audit. A read-only website preview is available at https://marketplace-growth-demo-20260912.sangkenny200.chatgpt.site.
