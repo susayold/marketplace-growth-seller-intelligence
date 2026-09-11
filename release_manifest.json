@@ -121,7 +121,7 @@
   },
   {
     "path": "docs/18_plan_artifact_audit.md",
-    "bytes": 2024
+    "bytes": 2182
   },
   {
     "path": "LICENSE",
@@ -173,7 +173,7 @@
   },
   {
     "path": "release_manifest.json",
-    "bytes": 10500
+    "bytes": 10583
   },
   {
     "path": "reports/charts/01_marketplace_health.png",
@@ -205,7 +205,7 @@
   },
   {
     "path": "reports/qa/automated_test_report.json",
-    "bytes": 1736
+    "bytes": 2182
   },
   {
     "path": "reports/qa/data_profile_summary.csv",
@@ -400,6 +400,10 @@
     "bytes": 321
   },
   {
+    "path": "sql/05_marts/mart_marketplace_daily.sql",
+    "bytes": 2073
+  },
+  {
     "path": "sql/05_marts/mart_marketplace_monthly.sql",
     "bytes": 762
   },
@@ -417,11 +421,11 @@
   },
   {
     "path": "sql/05_marts/mart_seller_monthly.sql",
-    "bytes": 383
+    "bytes": 1479
   },
   {
     "path": "sql/05_marts/README.md",
-    "bytes": 184
+    "bytes": 591
   },
   {
     "path": "sql/06_quality/q01_fanout_audit.sql",
