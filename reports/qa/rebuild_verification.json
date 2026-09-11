@@ -1,0 +1,48 @@
+{
+  "run_date": "2026-09-12",
+  "environment": "temporary PostgreSQL UTF8 cluster; destroyed after verification",
+  "power_bi": "deferred per user request",
+  "pipeline": {
+    "status": "pass",
+    "raw_tables_loaded": 10,
+    "rows_loaded": 1559693,
+    "sql_files_executed": 32,
+    "warnings": 0,
+    "errors": 0
+  },
+  "row_counts": {
+    "raw_orders": 99441,
+    "raw_order_items": 112650,
+    "raw_order_payments": 103886,
+    "raw_order_reviews": 99224,
+    "raw_geolocation": 1000163,
+    "raw_mql": 8000,
+    "raw_closed_deals": 842,
+    "fact_orders": 98666,
+    "fact_order_items": 112650,
+    "fact_payments": 103886,
+    "fact_seller_funnel": 8000,
+    "seller_lifetime_rows": 3095,
+    "seller_cohort_rows": 201
+  },
+  "reconciliation": {
+    "raw_item_gmv": 13591643.70,
+    "fact_item_gmv": 13591643.70,
+    "fact_order_gmv_proxy": 13591643.70,
+    "raw_payment_value": 16008872.12,
+    "naive_item_payment_join_gmv": 14209115.34,
+    "grain_safe_item_gmv_match": true,
+    "fanout_difference_is_visible": true
+  },
+  "quality_gates": {
+    "orders_primary_key": true,
+    "order_item_composite_key": true,
+    "orphan_items": 0,
+    "invalid_date_sequences": 0,
+    "retention_by_origin_sql_rows": 65,
+    "retention_by_origin_age3_rows": 14,
+    "retention_rate_min": 0.0,
+    "retention_rate_max": 1.0
+  }
+}
+
