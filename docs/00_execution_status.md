@@ -1,0 +1,23 @@
+# Execution status
+
+## Completed in v1
+
+- Workspace created on Drive and private GitHub repository created.
+- Olist Brazilian E-Commerce and Marketing Funnel ZIP archives stored in Drive.
+- Raw inventory and profiling outputs generated.
+- Grain/fan-out audit generated; naive order-item × payment join overstates GMV proxy by 4.54%.
+- Grain-safe monthly marketplace, seller lifetime, acquisition, activation, retention, category, geography, customer-repeat, concentration, and order-experience outputs generated.
+- Statistical validation and five decision-facing charts generated.
+- Executive PDF, methodology, metric dictionary, quality report, root-cause cases, executive decisions, limitations, and interview guide generated.
+- Pytest checks pass locally for the generated v1 artifact set.
+
+## Pending runtime gates
+
+- PostgreSQL deployment/rebuild: PostgreSQL is not installed in the current desktop runtime.
+- Power BI `.pbix`: Power BI Desktop is not available in the current desktop runtime. The semantic-model/page plan is included.
+- Final BI reconciliation: run after the PostgreSQL/Power BI runtime is available.
+
+## Storage policy
+
+The local `work/` directory is only a temporary processing area. Raw data, tables, charts, PDF, code bundle, and documentation are stored in the project Drive folder; code, documentation, charts, small QA tables, and the PDF are mirrored in GitHub.
+
