@@ -1,0 +1,8 @@
+project_name: marketplace-growth-seller-intelligence
+raw_sources:
+  ecommerce_zip: brazilian-ecommerce.zip
+  funnel_zip: marketing-funnel-olist.zip
+metric_policy:
+  gmv_proxy: order_item.price
+  active_seller: seller with at least one order-item in period
+  retention: seller active in eligible cohort-age month

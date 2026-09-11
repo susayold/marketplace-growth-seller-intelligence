@@ -1,0 +1,5 @@
+late_delivery_rate_watch: 0.10
+low_review_rate_watch: 0.15
+minimum_channel_mqls_for_comparison: 100
+retention_m6_minimum_eligible_cohort_size: 50
+

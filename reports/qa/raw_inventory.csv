@@ -1,0 +1,12 @@
+﻿table_name,row_count,column_count,candidate_key,duplicate_key_count,date_min,date_max,file_size_mb
+olist_customers_dataset,99441,5,customer_id,0,,,
+olist_geolocation_dataset,1000163,5,zip_code_prefix + geolocation_lat + geolocation_lng,261831,,,
+olist_order_items_dataset,112650,7,order_id + order_item_id,0,2016-09-19 00:15:34,2020-04-09 22:35:08,
+olist_order_payments_dataset,103886,5,order_id + payment_sequential,0,,,
+olist_order_reviews_dataset,99224,7,review_id,814,2016-10-02 00:00:00,2018-10-29 12:27:35,
+olist_orders_dataset,99441,8,order_id,0,2016-09-04 21:15:19,2018-11-12 00:00:00,
+olist_products_dataset,32951,9,product_id,0,,,
+olist_sellers_dataset,3095,4,seller_id,0,,,
+product_category_name_translation,71,2,product_category_name,0,,,
+closed_deals_olist,842,14,mql_id,0,2017-12-05 02:00:00,2018-11-14 18:04:19,
+marketing_qualified_leads_olist,8000,4,mql_id,0,2017-06-14 00:00:00,2018-05-31 00:00:00,

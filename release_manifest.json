@@ -1,0 +1,202 @@
+[
+  {
+    "path": "README.md",
+    "bytes": 1225
+  },
+  {
+    "path": "release_manifest.json",
+    "bytes": 3893
+  },
+  {
+    "path": "requirements.txt",
+    "bytes": 60
+  },
+  {
+    "path": "config/settings.yaml",
+    "bytes": 320
+  },
+  {
+    "path": "data/README.md",
+    "bytes": 282
+  },
+  {
+    "path": "docs/01_business_context.md",
+    "bytes": 371
+  },
+  {
+    "path": "docs/02_data_sources.md",
+    "bytes": 541
+  },
+  {
+    "path": "docs/04_data_model.md",
+    "bytes": 583
+  },
+  {
+    "path": "docs/05_metric_dictionary.md",
+    "bytes": 1087
+  },
+  {
+    "path": "docs/06_data_quality_report.md",
+    "bytes": 1320
+  },
+  {
+    "path": "docs/07_methodology.md",
+    "bytes": 753
+  },
+  {
+    "path": "docs/08_analysis_log.md",
+    "bytes": 649
+  },
+  {
+    "path": "docs/09_root_cause_cases.md",
+    "bytes": 1109
+  },
+  {
+    "path": "docs/10_executive_decisions.md",
+    "bytes": 764
+  },
+  {
+    "path": "docs/11_limitations.md",
+    "bytes": 488
+  },
+  {
+    "path": "docs/12_interview_guide.md",
+    "bytes": 441
+  },
+  {
+    "path": "notebooks/01_data_profiling.ipynb",
+    "bytes": 800
+  },
+  {
+    "path": "powerbi/README.md",
+    "bytes": 579
+  },
+  {
+    "path": "reports/executive_summary.pdf",
+    "bytes": 355215
+  },
+  {
+    "path": "src/build_marts.py",
+    "bytes": 400
+  },
+  {
+    "path": "sql/06_quality/q01_fanout_audit.sql",
+    "bytes": 298
+  },
+  {
+    "path": "sql/07_analysis/a01_monthly_marketplace_kpis.sql",
+    "bytes": 484
+  },
+  {
+    "path": "sql/07_analysis/b02_conversion_by_origin.sql",
+    "bytes": 327
+  },
+  {
+    "path": "sql/07_analysis/d02_monthly_retention.sql",
+    "bytes": 164
+  },
+  {
+    "path": "sql/07_analysis/f05_review_vs_delay.sql",
+    "bytes": 200
+  },
+  {
+    "path": "reports/charts/01_marketplace_health.png",
+    "bytes": 138275
+  },
+  {
+    "path": "reports/charts/02_acquisition_funnel.png",
+    "bytes": 50931
+  },
+  {
+    "path": "reports/charts/03_retention_cohort.png",
+    "bytes": 241975
+  },
+  {
+    "path": "reports/charts/04_seller_concentration.png",
+    "bytes": 71583
+  },
+  {
+    "path": "reports/charts/05_late_delivery_reviews.png",
+    "bytes": 30551
+  },
+  {
+    "path": "reports/qa/data_profile_summary.csv",
+    "bytes": 5365
+  },
+  {
+    "path": "reports/qa/fanout_audit.csv",
+    "bytes": 182
+  },
+  {
+    "path": "reports/qa/raw_inventory.csv",
+    "bytes": 931
+  },
+  {
+    "path": "reports/qa/README.md",
+    "bytes": 154
+  },
+  {
+    "path": "reports/qa/statistical_validation.csv",
+    "bytes": 378
+  },
+  {
+    "path": "reports/tables/activation_summary.csv",
+    "bytes": 311
+  },
+  {
+    "path": "reports/tables/customer_order_frequency.csv",
+    "bytes": 7303355
+  },
+  {
+    "path": "reports/tables/customer_repeat_summary.csv",
+    "bytes": 119
+  },
+  {
+    "path": "reports/tables/growth_decomposition.csv",
+    "bytes": 3277
+  },
+  {
+    "path": "reports/tables/mart_acquisition_channel.csv",
+    "bytes": 868
+  },
+  {
+    "path": "reports/tables/mart_category_performance.csv",
+    "bytes": 94098
+  },
+  {
+    "path": "reports/tables/mart_geography_performance.csv",
+    "bytes": 991
+  },
+  {
+    "path": "reports/tables/mart_marketplace_monthly.csv",
+    "bytes": 5468
+  },
+  {
+    "path": "reports/tables/mart_order_experience.csv",
+    "bytes": 197
+  },
+  {
+    "path": "reports/tables/mart_seller_cohort.csv",
+    "bytes": 5678
+  },
+  {
+    "path": "reports/tables/mart_seller_funnel.csv",
+    "bytes": 1052688
+  },
+  {
+    "path": "reports/tables/mart_seller_lifetime.csv",
+    "bytes": 476627
+  },
+  {
+    "path": "reports/tables/mart_seller_monthly.csv",
+    "bytes": 1261799
+  },
+  {
+    "path": "reports/tables/seller_activation.csv",
+    "bytes": 132958
+  },
+  {
+    "path": "reports/tables/seller_concentration.csv",
+    "bytes": 168
+  }
+]

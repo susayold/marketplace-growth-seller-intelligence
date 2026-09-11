@@ -1,0 +1,4 @@
+﻿test,statistic,p_value,sample_size,interpretation
+lead_origin_vs_conversion,137.68708250826433,3.0961535354297734e-25,8000,association detected; not causal
+late_delivery_vs_low_review,12402.56222708526,0.0,96478,association detected; direction requires operational investigation
+activation_days_distribution,39.0,,327,"median days to first sale; descriptive, not causal"
