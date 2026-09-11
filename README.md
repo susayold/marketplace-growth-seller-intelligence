@@ -23,3 +23,13 @@ GMV is a proxy from order-item price, not platform revenue. The project preserve
 ## Remote storage
 
 Raw data and all chart/report/table artifacts are stored in the Drive folder `marketplace-growth-seller-intelligence`; code and documentation are mirrored in GitHub.
+## Reproduce v1
+
+1. Download the two raw ZIPs from the project Drive folder into a local temporary data/raw/ directory.
+2. Create an environment and install requirements.txt.
+3. Set OLIST_RAW_DIR to the raw ZIP directory and OLIST_PROJECT_DIR to the checkout root.
+4. Run python src/build_project.py, then python -m pytest -q.
+
+The pipeline reads ZIP members directly, writes grain-safe marts/charts/QA outputs, and does not require extracting raw CSVs into the repository. Raw archives are intentionally kept in Drive rather than GitHub.
+
+Drive workspace: https://drive.google.com/drive/folders/1PBOPGZzxiPfTG_0O-b0suxy6cAYVt37G
