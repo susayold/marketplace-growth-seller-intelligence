@@ -12,7 +12,7 @@ Items =
 SUM ( mart_marketplace_monthly[items] )
 
 Active Sellers =
-DISTINCTCOUNT ( mart_seller_lifetime[seller_id] )
+DISTINCTCOUNT ( mart_seller_monthly[seller_id] )
 
 Monthly Active Sellers =
 SUM ( mart_marketplace_monthly[active_sellers] )
@@ -133,4 +133,6 @@ MAX ( activation_summary[median_days_to_first_sale] )
    Orders/Items/Sellers/Customers/MQLs: whole number with thousands separator
    Rates/Growth: percentage, 1 decimal
    Review score: 2 decimals; days: 1 decimal */
+
+
 

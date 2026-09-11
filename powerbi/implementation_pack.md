@@ -11,6 +11,8 @@ Import the governed marts and dimensions from the GitHub repository, or from the
 Recommended import set:
 
 - `mart_marketplace_monthly`
+- `mart_marketplace_daily`
+- `mart_seller_monthly`
 - `mart_seller_lifetime`
 - `mart_acquisition_channel`
 - `mart_seller_cohort`
@@ -33,9 +35,12 @@ Create a dedicated `Measures` table and hide technical keys from report view. Us
 | From | To | Key |
 |---|---|---|
 | `dim_date` | `mart_marketplace_monthly` | `month_start` → `month_start` |
+| `dim_date` | `mart_marketplace_daily` | `full_date` → `purchase_date` |
 | `dim_date` | `mart_category_performance` | `month_start` → `month_start` |
+| `dim_date` | `mart_seller_monthly` | `month_start` → `month_start` |
 | `dim_date` | `mart_seller_cohort` | `month_start` → `cohort_month` |
 | `dim_seller` | `mart_seller_lifetime` | `seller_id` |
+| `dim_seller` | `mart_seller_monthly` | `seller_id` |
 | `dim_seller` | `seller_activation` | `seller_id` |
 
 `mart_order_experience`, `mart_acquisition_channel`, `activation_summary`, `customer_repeat_summary`, `seller_concentration`, and `mart_geography_performance` are aggregate marts. Keep them disconnected unless a documented conformed key is present; use them for their own scorecards and QA visuals. Do not create many-to-many relationships merely to make a visual populate.
@@ -113,4 +118,6 @@ The concentration export uses `top_seller_share` (for example, 0.1) and `gmv_pro
 ## 8. Current blocker
 
 The environment currently has no Power BI Desktop executable and the Windows computer-use bridge is unavailable. The next execution step is therefore to install/open Power BI Desktop (or provide an enabled Power BI-connected session), then implement this pack and replace the blocked reconciliation template with measured values.
+
+
 

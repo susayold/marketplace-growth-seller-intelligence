@@ -25,4 +25,4 @@ The local `work/` directory is only a temporary processing area. Raw data, table
 
 ## Current audit update (2026-09-12)
 
-Added remote derived outputs for time-to-first-sale, Pareto seller curve, delivery performance, and automated test evidence. Daily marketplace and seller-monthly marts remain explicitly pending because they require row-level raw data in a live SQL runtime. Power BI remains last per user instruction and is pending an authenticated authoring session.
+Added and verified `mart_marketplace_daily` (616 rows) and `mart_seller_monthly` (16,441 rows) from raw row-level source; both reproduce the 13,591,643.70 GMV proxy control total. Added the parameterized build script and source provenance QA. Power BI remains last per user instruction and is pending an authenticated authoring session.

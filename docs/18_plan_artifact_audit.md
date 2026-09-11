@@ -14,11 +14,11 @@ This audit separates explicit user instructions from the attached execution blue
 
 ## Still pending / not fabricated
 
-- reports/tables/mart_marketplace_daily.csv: requires a raw row-level order/item export or a live PostgreSQL rebuild; it cannot be reconstructed honestly from monthly aggregates.
-- reports/tables/mart_seller_monthly.csv: requires seller-month grain from order-item/order timestamps; lifetime and monthly marketplace aggregates are insufficient.
+- reports/tables/mart_marketplace_daily.csv: completed; 616 daily rows and GMV proxy 13,591,643.70.
+- reports/tables/mart_seller_monthly.csv: completed; 16,441 seller-month rows and GMV proxy 13,591,643.70.
 - powerbi/marketplace_growth_seller_intelligence.pbix: requires an authenticated Power BI Desktop/Web authoring runtime.
 - Power BI PDF export, measured slicer/drill-through QA, and PASS values in reports/qa/powerbi_reconciliation.csv remain pending for the same reason.
 
 ## Current decision
 
-Do not tag the project as fully complete yet. The non-Power-BI evidence is publishable and the remaining gaps are explicit runtime/artifact gaps, not hidden assumptions. When a Power BI authoring session and raw row-level SQL runtime are available, fill the two missing marts, build the six pages, run reconciliation, and update this audit.
+Do not tag the project as fully complete yet. The non-Power-BI evidence is publishable and the remaining gaps are explicit runtime/artifact gaps, not hidden assumptions. When an authenticated Power BI authoring session is available, build the six pages, run reconciliation, and update this audit.

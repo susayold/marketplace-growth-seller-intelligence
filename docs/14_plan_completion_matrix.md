@@ -21,4 +21,4 @@ Last verified after the non-Power-BI build pass.
 
 ## Current artifact-level exceptions
 
-The published repository has complete evidence for the listed non-Power-BI modules. Two plan-specified marts (mart_marketplace_daily, mart_seller_monthly) are not currently exported because the available remote artifact set does not contain the row-level source needed to derive them in this runtime. The Power BI pack is ready, but the PBIX, PDF, and measured reconciliation remain pending an authenticated authoring runtime. See docs/18_plan_artifact_audit.md.
+The two previously missing plan-specified marts (`mart_marketplace_daily`, `mart_seller_monthly`) are now published and GMV-reconciled from raw row-level source. The remaining incomplete gate is Power BI: the PBIX, PDF, measured slicer/drill-through QA, and SQL-vs-Power BI reconciliation require an authenticated authoring runtime. See `docs/18_plan_artifact_audit.md`.
