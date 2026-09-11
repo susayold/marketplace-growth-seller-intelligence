@@ -21,3 +21,8 @@
 
 The local `work/` directory is only a temporary processing area. Raw data, tables, charts, PDF, code bundle, and documentation are stored in the project Drive folder; code, documentation, charts, small QA tables, and the PDF are mirrored in GitHub.
 
+
+
+## Current audit update (2026-09-12)
+
+Added remote derived outputs for time-to-first-sale, Pareto seller curve, delivery performance, and automated test evidence. Daily marketplace and seller-monthly marts remain explicitly pending because they require row-level raw data in a live SQL runtime. Power BI remains last per user instruction and is pending an authenticated authoring session.

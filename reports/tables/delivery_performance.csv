@@ -1,0 +1,3 @@
+delivery_bucket,is_late,orders,order_share,avg_review_score,low_review_rate,avg_delay_days
+on_time,0,88652,0.91888306,4.29431068,0.09137978,-13.00828017
+late,1,7826,0.08111694,2.56650568,0.52849476,9.55177592

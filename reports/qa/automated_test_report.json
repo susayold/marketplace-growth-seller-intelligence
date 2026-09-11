@@ -1,0 +1,52 @@
+{
+  "run_date": "2026-09-12",
+  "scope": "non-Power-BI automated evidence from the verified clean rebuild",
+  "overall_status": "PASS",
+  "powerbi_status": "BLOCKED_PENDING_AUTHENTICATED_RUNTIME",
+  "tests": [
+    {
+      "name": "pipeline_sql_execution",
+      "status": "PASS",
+      "evidence": "32 SQL files; warnings=0; errors=0"
+    },
+    {
+      "name": "orders_primary_key",
+      "status": "PASS",
+      "evidence": "rebuild_verification.quality_gates.orders_primary_key=true"
+    },
+    {
+      "name": "order_item_composite_key",
+      "status": "PASS",
+      "evidence": "rebuild_verification.quality_gates.order_item_composite_key=true"
+    },
+    {
+      "name": "orphan_order_items",
+      "status": "PASS",
+      "evidence": "rebuild_verification.quality_gates.orphan_items=0"
+    },
+    {
+      "name": "invalid_date_sequences",
+      "status": "PASS",
+      "evidence": "rebuild_verification.quality_gates.invalid_date_sequences=0"
+    },
+    {
+      "name": "grain_safe_gmv_reconciliation",
+      "status": "PASS",
+      "evidence": "raw_item_gmv=fact_item_gmv=fact_order_gmv_proxy=13591643.70"
+    },
+    {
+      "name": "fanout_detection",
+      "status": "PASS",
+      "evidence": "naive_item_payment_join_gmv=14209115.34; fanout_difference_is_visible=true"
+    },
+    {
+      "name": "retention_rate_bounds",
+      "status": "PASS",
+      "evidence": "retention_rate_min=0.0; retention_rate_max=1.0"
+    }
+  ],
+  "notes": [
+    "This report does not assert Power BI page completion or SQL-vs-Power BI reconciliation.",
+    "mart_marketplace_daily.csv and mart_seller_monthly.csv remain pending because the current published artifact set does not include the required raw row-level export in this runtime."
+  ]
+}
