@@ -38,6 +38,15 @@ def copy_dataframe(conn, table: str, frame, columns: list[str]) -> int:
     if missing:
         raise ValueError(f"{table}: missing source columns {missing}")
     payload = frame.loc[:, columns].copy()
+    # CSV inference promotes nullable integer columns to float (for example
+    # product_name_lenght becomes 40.0). PostgreSQL integer COPY rejects that
+    # representation, so normalize integer-valued floats before serialization.
+    for column in payload.columns:
+        series = payload[column]
+        if series.dtype.kind == "f":
+            non_null = series.dropna()
+            if len(non_null) == 0 or (non_null.mod(1) == 0).all():
+                payload[column] = series.astype("Int64")
     payload = payload.astype(object).where(payload.notna(), None)
     buffer = StringIO()
     payload.to_csv(buffer, index=False, header=False, na_rep="\\N")
