@@ -1,41 +1,29 @@
-# Interview guide
+# Interview guide — Marketplace Growth & Seller Intelligence
 
-## Three-minute story
+## Five-minute showcase
 
-**Problem:** Marketplace leadership needed to understand which seller acquisition sources created sustainable commercial value, where sellers failed to activate, and whether growth was concentrated or durable.
+### Minute 0–1 — Can I trust the number?
+Start with grain and denominator. The analysis uses 99,441 orders, 112,650 order items and 99,224 reviews. GMV is aggregated at order-item grain before payment joins; partial edge months are flagged before trend claims. Delivery/review metrics use reviewed delivered orders, while M3 retention excludes right-censored cohorts.
 
-**Data:** I combined the Olist Brazilian E-Commerce Public Dataset with the Olist Marketing Funnel dataset, covering orders, items, payments, reviews, customers, sellers, products and leads.
+### Minute 1–2 — What pattern is visible?
+Acquisition conversion differs by origin: paid search is 12.30%, organic search 11.80% and social 5.56% in the observed funnel. Pairwise comparisons retain effect sizes, intervals and Benjamini–Hochberg FDR context.
 
-**Challenge:** The hardest issue was grain mismatch. Items and payments are both one-to-many under an order, so a naive join inflates GMV. Seller attribution is also limited in multi-seller orders, and recent seller cohorts are right-censored.
+### Minute 2–3 — What does the statistical evidence support?
+Activation is a time-to-event process. Faster activation buckets show higher observed M3 retention, but the pattern is treated as an onboarding hypothesis, not causal proof. The adjusted retention GLM is cohort-aware and restricted to major origins to avoid sparse headline claims.
 
-**Solution:** I created a PostgreSQL-compatible raw/staging/dimension/fact/mart design, a Python ZIP-backed pipeline, explicit metric definitions, fan-out and reconciliation tests, and six executable analysis notebooks. I calculated GMV proxy from order-item price, counted orders distinctly, used customer_unique_id for repeat behavior, and kept retention eligibility visible.
+### Minute 3–4 — Where is the marketplace fragile?
+Seller value is concentrated: Gini is approximately 0.792; the top 1%, 5%, 10% and 20% account for approximately 26.1%, 53.3%, 67.6% and 82.7% of positive-GMV seller value. This supports monitoring breadth and top-seller resilience, not indiscriminate diversification.
 
-**Analysis:** I evaluated marketplace health, lead conversion, time-to-first-sale, cohort retention, seller concentration, category/geography performance, repeat customers and delivery/review association.
+### Minute 4–5 — What should the business do?
+Late delivery is associated with a 44.8 percentage-point higher low-review rate, with a risk ratio of about 5.9. Investigate category, state, route and carrier pathways. The decision register turns this and the other cases into five cards with primary KPI, guardrail, owner, cadence and stop condition.
 
-**Output:** The non-Power-BI package includes decision marts, charts, executive summary, root-cause cases, five operating recommendations, diagrams, QA artifacts and a final-stage dashboard specification. Power BI is intentionally the last implementation stage.
+## Questions to expect
 
-**Key learning:** Metric definitions and grain control mattered more than adding a predictive model.
+- **Why is this not causal?** The data is observational and may contain selection, mix, reverse-causality and unmeasured operational confounding. Adjusted models improve comparability but do not create randomization.
+- **Why keep unknown acquisition origin?** It is part of the observed denominator and can reveal attribution problems, but it is not automatically an actionable channel.
+- **Why not rank every segment?** Minimum sample flags, eligibility and uncertainty prevent small groups from driving decisions.
+- **What would you do next?** Freeze the measurement contract, run acquisition and onboarding experiments with downstream guardrails, and launch a delivery pathway investigation. Power BI comes after this analytical gate.
 
-## Questions to rehearse
+## Remote artifacts
 
-1. Why is GMV called a proxy?
-2. How did you prove the payment/order-item fan-out?
-3. Why count orders with distinct order_id?
-4. Why use customer_unique_id rather than customer_id?
-5. How did you define an active seller?
-6. What is the activation denominator?
-7. Why are recent retention cells blank rather than zero?
-8. What does 87.5% activation within 90 days actually mean?
-9. Why can conversion rate alone mislead channel decisions?
-10. How did you handle unmatched funnel sellers?
-11. Why is seller attribution risky for multi-seller orders?
-12. What does the late-delivery/review result prove?
-13. Which alternative explanations did you consider?
-14. What are the top five operating decisions?
-15. Which KPI would you monitor weekly?
-16. What would you validate before acting on the historical findings?
-17. How would you productionize the raw ZIP ingestion?
-18. How would you reconcile Power BI to SQL?
-19. What additional data is needed for CAC or ROAS?
-20. What would make the analysis causal rather than associative?
-
+The production scripts, statistical outputs, chart registry, root-cause evidence and decision register are in the repository and mirrored to Drive. No raw or staging data is retained locally.
