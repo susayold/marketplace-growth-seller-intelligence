@@ -1,5 +1,15 @@
 # Data quality report
 
+## Reporting Boundary Contract
+
+The project distinguishes three boundaries:
+
+- **Raw observation boundary:** latest source date physically present.
+- **Analytical eligibility boundary:** latest point where a specific metric can be validly computed.
+- **Executive reporting boundary:** latest complete period allowed in headline trend reporting.
+
+The mechanical period rule excludes the first and final observed health months, requires at least 5% of the median interior-month order volume, and requires active-day coverage in the daily mart. The detailed register is `reports/qa/reporting_boundary_register.csv`; the period-level result is `reports/qa/period_completeness.csv`. Executive trend charts must either exclude incomplete periods or show them as a separate flagged style.
+
 ## Scope
 The source is the anonymized Olist Brazilian E-Commerce Public Dataset plus the Olist Marketing Funnel dataset. The intended facts are order, order-item, seller, customer, review, payment, and lead grain.
 

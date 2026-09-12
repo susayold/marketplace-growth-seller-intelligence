@@ -1,6 +1,6 @@
 # Chart catalog
 
-The release contains 61 PNG charts and 92 registry rows spanning the required decision-support domains. `reports/chart_registry.csv` is the source of truth for chart IDs, questions, denominators, methods, claim strength, Power BI candidacy and README candidacy.
+The release contains 61 registered chart entries and 66 rendered PNGs spanning the required decision-support domains. Five retained legacy summary PNGs are intentionally outside the active registry; `reports/chart_registry.csv` is the source of truth for active chart IDs, questions, denominators, methods, claim strength, Power BI candidacy and README candidacy.
 
 | Folder | Domain | PNGs | Registry rows |
 |---|---|---:|---:|

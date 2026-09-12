@@ -12,8 +12,11 @@ def test_customer_repeat_rate_uses_unique_customer_identity():
 
 def test_activation_and_retention_rules():
     activation = pd.read_csv(ROOT / "reports/tables/activation_summary.csv")
-    assert activation.loc[0, "valid_activation_link"] <= activation.loc[0, "matched_to_sales"]
-    assert activation.loc[0, "activation_rate_any_sale"] <= 1
+    row = activation.loc[0]
+    assert row["observed_activated_sellers"] <= row["activation_eligible_sellers"]
+    assert row["observed_activated_sellers"] + row["censored_sellers"] == row["activation_eligible_sellers"]
+    assert row["activation_rate_le_30d"] <= 1
+    assert row["activation_rate_le_90d"] <= 1
     cohort = pd.read_csv(ROOT / "reports/tables/mart_seller_cohort.csv")
     assert {"eligible_flag", "retention_rate"}.issubset(cohort.columns)
     assert cohort.loc[cohort["eligible_flag"] == 0, "retention_rate"].isna().all()

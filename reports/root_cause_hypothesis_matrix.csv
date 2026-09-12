@@ -6,7 +6,7 @@ RC1,H4 data incompleteness,The last observed months fail the documented complete
 RC2,H1 optimize raw MQL volume alone,"MQL volume and conversion rank different origins; social contributes 1,350 MQLs but converts at 5.6%.",Rejected hypothesis,use a multidimensional channel scorecard,Rejected hypothesis
 RC2,H2 origin is associated with conversion,Global origin test and FDR-adjusted pairwise tests provide evidence of conversion differences.,Plausible contributor,separate acquisition efficiency from retention claims,Plausible contributor
 RC2,H3 origin-specific retention advantage is established,M3 retention CI table is eligibility-aware.,Rejected by current evidence,do not optimize channels on M3 retention alone,Rejected by current evidence
-RC3,H1 seller onboarding has a long time-to-value,Activation timing distribution and cumulative curve show a delayed first sale.,Supported business signal,instrument 7/30/60-day onboarding checkpoints,Supported business signal
+RC3,H1 seller onboarding has a long time-to-value,The eligibility-aware fixed-window table and right-censored survival curve show delayed first sale among activation-eligible sellers.,Supported business signal,instrument 7/30/60-day onboarding checkpoints,Supported business signal
 RC3,H2 faster activation is associated with stronger M3 retention,M3 retention rates decline across activation-speed buckets after the small ≤7d bucket.,Plausible contributor,test onboarding interventions with retention as guardrail,Plausible contributor
 RC3,H3 origin alone explains activation speed,Activation speed varies by origin in the CI table.,Inconclusive,target the onboarding journey rather than a channel proxy,Inconclusive
 RC4,H1 marketplace value is concentrated,Lorenz/Gini and top-share statistics show a long-tailed seller distribution.,Supported risk signal,monitor top 1/5/10/20% shares,Supported risk signal
@@ -19,4 +19,3 @@ RC6,H1 category demand/GMV deterioration,"The category is selected using materia
 RC6,H2 orders versus AOV explains the category movement,"Category tables separate GMV, orders and AOV/productivity proxies.",Supported diagnostic path,choose an intervention only after driver split,Supported diagnostic path
 RC6,H3 seller breadth/productivity explains the decline,Active sellers and GMV per seller are tracked by category.,Inconclusive until drilldown,monitor category seller breadth and productivity,Inconclusive until drilldown
 RC6,H4 category experience explains the decline,Category late rate and review metrics are available for further investigation.,Inconclusive,keep CX in the category decision card as a guardrail,Inconclusive
-

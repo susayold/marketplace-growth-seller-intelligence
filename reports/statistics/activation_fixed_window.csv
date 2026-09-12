@@ -1,0 +1,5 @@
+window_days,eligible_n,activated_n,activation_rate,wilson_ci_low,wilson_ci_high,metric_version,denominator_rule
+7,838,15,0.017899761336515514,0.01087702590183824,0.029322299595983425,v3,event by window or observed/censored through window
+30,825,130,0.15757575757575756,0.13430803846320913,0.1840175665277591,v3,event by window or observed/censored through window
+60,803,247,0.30759651307596514,0.2766556353131039,0.3403694981602744,v3,event by window or observed/censored through window
+90,769,324,0.4213263979193758,0.3869032473525152,0.45653165301548765,v3,event by window or observed/censored through window

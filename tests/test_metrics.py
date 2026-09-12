@@ -9,8 +9,9 @@ def test_metric_outputs_are_non_negative_and_bounded():
     assert (monthly["orders"] >= 0).all()
     assert (monthly["gmv_proxy"] >= 0).all()
     activation = pd.read_csv(ROOT / "reports/tables/activation_summary.csv")
-    assert activation["activation_rate_any_sale"].between(0, 1).all()
-    assert activation["activation_within_90d"].between(0, 1).all()
+    assert activation["activation_rate_le_30d"].between(0, 1).all()
+    assert activation["activation_rate_le_60d"].between(0, 1).all()
+    assert activation["activation_rate_le_90d"].between(0, 1).all()
 
 
 def test_controlled_fixture_expected_gmv_aov_and_active_sellers():

@@ -20,3 +20,7 @@ The decision register converts evidence into bounded operating actions. Priority
 
 The machine-readable source is `reports/decision_register.csv`; chart-ready decision views are under `reports/charts/10_decision_layer/`.
 
+## Canonical metric policy
+
+D01 consumes the reporting-boundary register and period-completeness table. D02 uses the repaired pooled-quarter retention comparison as a guardrail. D03 uses activation v3 fixed-window rates and keeps the observed activator median separate from cumulative activation. D04 and D05 remain on their existing concentration and late-review evidence unless the headline reconciliation changes their inputs.
+

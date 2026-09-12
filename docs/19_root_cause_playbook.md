@@ -13,6 +13,12 @@ Root-cause language is governed by evidence status. `supported` means the data i
 
 Each case has a matching SQL query under `sql/08_root_cause/` and evidence rows in `reports/root_cause_evidence.csv` and `reports/root_cause_hypothesis_matrix.csv`.
 
+## Repair-specific evidence sources
+
+- **RC1:** `reports/qa/period_completeness.csv` and `reports/qa/reporting_boundary_register.csv`; the tail is a measurement/reporting-boundary issue, not confirmed upstream intent.
+- **RC2:** `reports/statistics/retention_model_comparison.csv` and `retention_model_diagnostics.csv`; the repaired headline retention model has no separation flag, but origin contrasts remain imprecise.
+- **RC3:** canonical v3 activation outputs in `reports/tables/seller_activation_timing.csv`, `reports/statistics/activation_fixed_window.csv` and `activation_survival.csv`.
+
 ## Operating pattern
 
 1. Define the metric tree and eligible population.

@@ -1,0 +1,26 @@
+month,raw_orders,gmv_eligible_orders,gmv_proxy,active_sellers,active_days,is_edge_month,volume_flag,coverage_flag,is_executive_complete,reason,volume_threshold
+2016-09,4,4,267.36,3.0,3.0,True,False,False,False,edge month,216.55
+2016-10,324,324,49507.66,143.0,9.0,False,True,True,True,complete interior month,216.55
+2016-12,1,1,10.9,1.0,1.0,False,False,True,False,below volume threshold,216.55
+2017-01,800,800,120312.87,227.0,27.0,False,True,True,True,complete interior month,216.55
+2017-02,1780,1780,247303.02,427.0,28.0,False,True,True,True,complete interior month,216.55
+2017-03,2682,2682,374344.3,499.0,31.0,False,True,True,True,complete interior month,216.55
+2017-04,2404,2404,359927.23,506.0,30.0,False,True,True,True,complete interior month,216.55
+2017-05,3700,3700,506071.14,583.0,31.0,False,True,True,True,complete interior month,216.55
+2017-06,3245,3245,433038.6,539.0,30.0,False,True,True,True,complete interior month,216.55
+2017-07,4026,4026,498031.48,606.0,31.0,False,True,True,True,complete interior month,216.55
+2017-08,4331,4331,573971.68,708.0,31.0,False,True,True,True,complete interior month,216.55
+2017-09,4285,4285,624401.6900000001,731.0,30.0,False,True,True,True,complete interior month,216.55
+2017-10,4631,4631,664219.43,776.0,31.0,False,True,True,True,complete interior month,216.55
+2017-11,7544,7544,1010271.37,965.0,30.0,False,True,True,True,complete interior month,216.55
+2017-12,5673,5673,743914.17,861.0,31.0,False,True,True,True,complete interior month,216.55
+2018-01,7269,7269,950030.36,970.0,31.0,False,True,True,True,complete interior month,216.55
+2018-02,6728,6728,844178.71,947.0,28.0,False,True,True,True,complete interior month,216.55
+2018-03,7211,7211,983213.44,996.0,31.0,False,True,True,True,complete interior month,216.55
+2018-04,6939,6939,996647.75,1123.0,30.0,False,True,True,True,complete interior month,216.55
+2018-05,6873,6873,996517.68,1115.0,31.0,False,True,True,True,complete interior month,216.55
+2018-06,6167,6167,865124.31,1175.0,30.0,False,True,True,True,complete interior month,216.55
+2018-07,6292,6292,895507.22,1261.0,31.0,False,True,True,True,complete interior month,216.55
+2018-08,6512,6512,854686.33,1278.0,29.0,False,True,True,True,complete interior month,216.55
+2018-09,16,16,145.0,1.0,1.0,False,False,True,False,below volume threshold,216.55
+2018-10,4,4,0.0,,,True,False,False,False,edge month,216.55

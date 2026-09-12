@@ -1,0 +1,8 @@
+website_component,displayed_metric,canonical_metric,canonical_value,match,status
+activation cards,842 closed · 380 matched · 840 eligible · 460 censored,activation population ladder,840,True,PASS
+activation funnel,15.8% / 30.8% / 42.1% at 30/60/90 days,activation_30d/60d/90d,reports/statistics/activation_fixed_window.csv,True,PASS
+retention language,pooled-quarter R2; association only,pooled-cohort model,reports/statistics/retention_model_comparison.csv,True,PASS
+tail-period language,partial edge months excluded,executive complete period,2018-08-31,True,PASS
+seller concentration,Top 20% 82.7%,top20_seller_gmv_share,0.8269167790206272,True,PASS
+late-review finding,Δ −1.73,late_review_mean_difference,-1.727588305764291,True,PASS
+decision cards,D01–D05,decision_register.csv,5,True,PASS

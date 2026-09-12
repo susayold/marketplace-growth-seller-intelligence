@@ -8,7 +8,7 @@ This is the pre-Power-BI analytical release required by the new showcase plan. I
 
 - Raw evidence: orders, items, reviews, marketing funnel and linked seller metrics rebuilt.
 - Statistical outputs: 29 CSV/JSON files in `reports/statistics/`.
-- Charts: 61 PNGs; 92 registry rows; all chart files have source/method/denominator metadata.
+- Charts: 61 registered entries and 66 rendered PNGs; active registry rows have source/method/denominator metadata, with five retained legacy summaries explicitly outside the active registry.
 - Root-cause layer: 6 cases, 20 hypotheses, no causal overclaim.
 - Decision layer: 5 decision cards with KPI, guardrail, owner, cadence and stop condition.
 - QA: verification JSON includes counts, required files, chart count, registry status and warnings.

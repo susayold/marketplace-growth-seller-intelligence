@@ -1,0 +1,13 @@
+# Mechanical reporting-boundary thresholds for the pre-Power-BI freeze.
+period_completeness:
+  edge_months_excluded: true
+  min_order_volume_fraction_of_interior_median: 0.05
+  min_active_days: 1
+retention:
+  pooled_cohort_period: quarter
+  min_eligible_sellers_per_period: 30
+  separation_max_abs_beta: 10
+  separation_max_standard_error: 10
+activation:
+  fixed_windows_days: [7, 30, 60, 90]
+  denominator: "event by window or observed/censored through window"

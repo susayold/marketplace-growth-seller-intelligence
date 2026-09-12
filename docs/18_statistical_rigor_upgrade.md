@@ -20,6 +20,13 @@ This release upgrades the marketplace analysis from descriptive dashboarding to 
 - The low-review model controls for delay, category, customer state, log order value, freight ratio and purchase month, but is explicitly associative.
 - Every claim is paired with an alternative explanation and a decision boundary in `reports/claims_and_evidence_register.csv`.
 
+## Consistency repair contract
+
+- Activation v3 is the canonical definition: exact first-sale timestamps, activation-eligible population, explicit censoring and observable fixed-window denominators. The reconciliation is in `reports/qa/activation_definition_reconciliation.csv`.
+- Retention R2 is `M3_retained ~ origin + cohort_period`, where `cohort_period` is the defensible quarter-level pool with at least 30 eligible sellers and both outcomes. The cell audit, model comparison and separation diagnostics are in `reports/statistics/retention_cohort_outcome_cells.csv`, `retention_model_comparison.csv` and `retention_model_diagnostics.csv`.
+- The raw/analytical/executive reporting-boundary contract is in `reports/qa/reporting_boundary_register.csv` and `reports/qa/period_completeness.csv`.
+- `reports/headline_metrics.json` is the single source for recruiter-facing headline values. Downstream charts, root-cause cases, decision cards, README and website must reconcile to it.
+
 ## Results
 
 - 99,441 orders, 112,650 order items and 99,224 reviews were loaded at governed grains.
