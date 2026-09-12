@@ -397,6 +397,22 @@ def build_retention(project: Path, activation_timing: pd.DataFrame) -> tuple[pd.
     usable_periods = period_support[(period_support.eligible_n >= 30) & (period_support.retained_n > 0) & (period_support.not_retained_n > 0)].index.tolist()
     major = eligible[eligible.origin.isin(MAJOR_ORIGINS) & eligible.cohort_period.isin(usable_periods)].copy()
     actionable = eligible[eligible.origin.isin(ACTIONABLE_ORIGINS) & eligible.cohort_period.isin(usable_periods)].copy()
+
+    # R0 is descriptive: origin cells plus a global chi-square/Cramer's V
+    # check.  It is kept separate from the regression specifications so the
+    # headline does not confuse an omnibus association test with an adjusted
+    # origin effect.
+    contingency = pd.crosstab(major["origin"], major["retained"])
+    if contingency.shape[0] > 1 and contingency.shape[1] > 1:
+        chi2, chi_p, _, _ = stats.chi2_contingency(contingency, correction=False)
+        cramers_v = math.sqrt(float(chi2) / (len(major) * min(contingency.shape[0] - 1, contingency.shape[1] - 1)))
+    else:
+        chi2, chi_p, cramers_v = np.nan, np.nan, np.nan
+    r0_rows = []
+    for origin, group in major.groupby("origin"):
+        rate, lo, hi = wilson(int(group.retained.sum()), len(group))
+        r0_rows.append({"model_id": "R0_descriptive", "origin": origin, "eligible_n": len(group), "retained_n": int(group.retained.sum()), "not_retained_n": int((1 - group.retained).sum()), "retention_rate": rate, "ci_low": lo, "ci_high": hi, "global_chi_square": chi2, "global_p_value": chi_p, "cramers_v": cramers_v, "cohort_rule": "usable pooled quarters with >=30 eligible and both outcomes", "conclusion": "descriptive association; no causal interpretation"})
+    write_csv(pd.DataFrame(r0_rows), stats_dir / "retention_r0_descriptive.csv")
     r1, d1 = fit_retention_model(major, "R1_origin_only", "M3_retained ~ origin", False)
     r2, d2 = fit_retention_model(major, "R2_origin_plus_pooled_cohort", "M3_retained ~ origin + cohort_period", True)
     r3, d3 = fit_retention_model(actionable, "R3_major_actionable_plus_pooled_cohort", "M3_retained ~ origin + cohort_period", True)

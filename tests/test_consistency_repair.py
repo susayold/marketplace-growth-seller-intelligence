@@ -28,6 +28,8 @@ def test_activation_metric_version():
     d = pd.read_csv(ROOT / "reports" / "statistics" / "activation_summary_extended.csv").iloc[0]
     assert d.metric_version == "v3"
     assert d.observed_activated_sellers == 380
+    verification = json.loads((ROOT / "reports" / "qa" / "analysis_showcase_verification.json").read_text(encoding="utf-8"))
+    assert verification["activation_metric_version"] == "v3"
 
 
 def test_retention_cell_support():
@@ -36,6 +38,13 @@ def test_retention_cell_support():
     assert len(pooled) > 0
     assert (pooled.eligible_n == pooled.retained_n + pooled.not_retained_n).all()
     assert (pooled.sample_size_flag != "insufficient").any()
+
+
+def test_retention_r0_descriptive_output():
+    d = pd.read_csv(ROOT / "reports" / "statistics" / "retention_r0_descriptive.csv")
+    assert len(d) >= 4
+    assert d.global_chi_square.notna().all()
+    assert d.cramers_v.between(0, 1).all()
 
 
 def test_retention_headline_no_separation():

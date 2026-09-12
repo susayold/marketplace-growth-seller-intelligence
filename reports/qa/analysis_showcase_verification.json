@@ -1,7 +1,7 @@
 {
   "status": "PASS_WITH_ASSOCIATIVE_LIMITATIONS",
   "run_date": "2026-09-12",
-  "stats_csv_count": 33,
+  "stats_csv_count": 34,
   "required_statistical_outputs_present": true,
   "charts_png_count": 66,
   "chart_registry_rows": 61,
@@ -15,6 +15,7 @@
     "retention_m3_glm"
   ],
   "metric_version": "v3",
+  "activation_metric_version": "v3",
   "activation_definition_reconciled": true,
   "retention_separation_resolved": true,
   "retention_headline_model": "origin_plus_pooled_cohort",

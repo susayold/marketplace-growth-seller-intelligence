@@ -1,5 +1,5 @@
 model_id,formula,converged,n,event_rate,max_abs_beta,max_standard_error,zero_event_levels,zero_nonevent_levels,condition_number,separation_flag,notes
-R0_legacy_month_cohort,M3_retained ~ origin + cohort_month,True,265,,0.4308639985167488,,cohort_month=2018-06,,,False,Legacy monthly cohort model retained for audit; extreme 2018-06 coefficient indicates sparse/separated cells.
+R0_legacy_month_cohort,M3_retained ~ origin + cohort_month,True,265,,0.4308639985167488,0.638696057884133,cohort_month=2018-06,,,False,Legacy monthly cohort model retained for audit; extreme 2018-06 coefficient indicates sparse/separated cells.
 R1_origin_only,M3_retained ~ origin,True,265,0.4490566037735849,0.4344161546239867,0.6305220040235866,,,9.034386020322131,False,HC3 robust SE; origin effects only are exported.
 R2_origin_plus_pooled_cohort,M3_retained ~ origin + cohort_period,True,265,0.4490566037735849,1.525660148167223,0.638696057884133,,,11.34725855622181,False,HC3 robust SE; origin effects only are exported.
 R3_major_actionable_plus_pooled_cohort,M3_retained ~ origin + cohort_period,True,205,0.4292682926829268,1.4069536861293441,0.6321549953298877,,,9.297785134878193,False,HC3 robust SE; origin effects only are exported.
