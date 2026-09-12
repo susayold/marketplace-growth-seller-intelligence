@@ -1,0 +1,52 @@
+table DimMonth
+	lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0201
+
+	column MonthStart
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: MonthStart
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0202
+
+	column Date
+		dataType: string
+		summarizeBy: none
+		sourceColumn: YearMonth
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0203
+
+	column MonthLabel
+		dataType: string
+		summarizeBy: none
+		sourceColumn: MonthLabel
+		sortByColumn: MonthIndex
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0206
+
+	column MonthIndex
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: MonthIndex
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0204
+
+	column is_executive_complete
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: is_executive_complete
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0205
+
+	partition DimMonth = m
+		mode: import
+		source =
+			let
+				Source = Csv.Document(File.Contents("C:\\Users\\sangk\\Documents\\Codex\\2026-09-12\\che\\outputs\\Marketplace_Growth_Seller_Intelligence_Page1\\data\\release_v3_final\\reports\\qa\\period_completeness.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				Typed = Table.TransformColumnTypes(Promoted, {{"month", type date}, {"is_executive_complete", type logical}}, "en-US"),
+				Selected = Table.SelectColumns(Typed, {"month", "is_executive_complete"}),
+				Renamed = Table.RenameColumns(Selected, {{"month", "MonthStart"}}),
+				AddYearMonth = Table.AddColumn(Renamed, "YearMonth", each Date.ToText([MonthStart], "yyyy-MM"), type text),
+				AddMonthLabel = Table.AddColumn(AddYearMonth, "MonthLabel", each Date.ToText([MonthStart], "MMM yy", "en-US"), type text),
+				AddMonthIndex = Table.AddColumn(AddMonthLabel, "MonthIndex", each Date.Year([MonthStart]) * 12 + Date.Month([MonthStart]), Int64.Type),
+				CompleteOnly = Table.SelectRows(AddMonthIndex, each [is_executive_complete] = true)
+			in
+				CompleteOnly
+
+	annotation PBI_ResultType = Table
+

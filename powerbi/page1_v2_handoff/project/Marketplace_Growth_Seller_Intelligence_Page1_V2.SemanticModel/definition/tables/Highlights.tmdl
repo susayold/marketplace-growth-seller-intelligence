@@ -1,0 +1,34 @@
+table Highlights
+	lineageTag: 864a0d5e-c16f-560a-80aa-603ecf053d76
+
+	column Metric
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Metric
+		lineageTag: d63a8af2-8cd8-597c-ab4b-b3aff8a5c62b
+
+	column Delta
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Delta
+		lineageTag: 3ee3c787-8d1e-562a-83b5-595586809c30
+
+	column Interpretation
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Interpretation
+		lineageTag: ba4b5f36-f690-524a-9670-05be241408ab
+
+	partition Highlights = m
+		mode: import
+		source =
+			#table(type table [Metric=text, Delta=text, Interpretation=text], {
+				{"GMV proxy", "-4.6%", "Latest complete period: 2018-08"},
+			{"Orders", "+2.9%", "Volume expanded"},
+			{"Active sellers", "+1.3%", "Seller breadth expanded"},
+			{"Average order value", "-7.2%", "Value per order softened"},
+			{"Late delivery rate", "+5.9 pp", "Operational watch item"}
+			})
+
+	annotation PBI_ResultType = Table
+

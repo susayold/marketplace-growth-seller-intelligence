@@ -1,0 +1,67 @@
+table SellerLifetime
+	lineageTag: 4d7bfd4a-c681-5f10-8421-720c8e914414
+
+	measure 'Cumulative GMV Share Value' = MAX ( SellerLifetime[cumulative_gmv_share] )
+		formatString: 0.0%
+		lineageTag: d1feeef5-918e-53c5-b9f5-70cc08b62e58
+
+	column seller_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: seller_id
+		lineageTag: 04f6e748-3849-55a8-8394-80379cf27636
+
+	column total_gmv_proxy
+		dataType: double
+		formatString: R$ #,0.00
+		summarizeBy: sum
+		sourceColumn: total_gmv_proxy
+		lineageTag: c60bb58f-e278-5dab-a686-ae3dc41fa7b2
+
+	column total_orders
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: total_orders
+		lineageTag: dd403d4f-4efb-5b6e-8ba4-f770caa5c353
+
+	column active_months
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: active_months
+		lineageTag: 1423ef5c-166d-51dd-ab4a-15a2a720ce9f
+
+	column seller_rank
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: seller_rank
+		lineageTag: c84a3c06-40c3-5366-8488-3573a759cb77
+
+	column cumulative_gmv_share
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: cumulative_gmv_share
+		lineageTag: 7aeb18cb-7de9-57e5-b14b-1fbae563917c
+
+	column cumulative_seller_share
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: cumulative_seller_share
+		lineageTag: a797eb5c-f6b2-5ab2-8085-cb6304df8771
+
+	partition SellerLifetime = m
+		mode: import
+		source =
+			let
+			Source = Csv.Document(File.Contents("C:\\Users\\sangk\\Documents\\Codex\\2026-09-12\\che\\outputs\\Marketplace_Growth_Seller_Intelligence_Page1\\data\\release_v3_final\\reports\\tables\\mart_seller_lifetime.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			Typed = Table.TransformColumnTypes(Promoted, {{"seller_id", type text}, {"total_gmv_proxy", type number}, {"total_orders", Int64.Type}, {"active_months", Int64.Type}, {"seller_rank", Int64.Type}, {"cumulative_gmv_share", type number}, {"cumulative_seller_share", type number}}, "en-US")
+			in
+			Typed
+
+	annotation PBI_ResultType = Table
+

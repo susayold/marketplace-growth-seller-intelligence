@@ -1,0 +1,40 @@
+table ConcentrationStats
+	lineageTag: 1d81f9d2-b5ae-58e0-b43c-a8edaca003bf
+
+	column metric
+		dataType: string
+		summarizeBy: none
+		sourceColumn: metric
+		lineageTag: 14286b70-ba9b-5ed3-b660-2812a912cd1b
+
+	column value
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: value
+		lineageTag: a8cc09f0-4c11-5f56-9e4c-bb742d29112d
+
+	column unit
+		dataType: string
+		summarizeBy: none
+		sourceColumn: unit
+		lineageTag: 603b0570-744e-567d-b253-3d133c2f4a5f
+
+	column population
+		dataType: string
+		summarizeBy: none
+		sourceColumn: population
+		lineageTag: 9721099c-1243-5d5c-970c-fb16b51d6d58
+
+	partition ConcentrationStats = m
+		mode: import
+		source =
+			let
+			Source = Csv.Document(File.Contents("C:\\Users\\sangk\\Documents\\Codex\\2026-09-12\\che\\outputs\\Marketplace_Growth_Seller_Intelligence_Page1\\data\\release_v3_final\\reports\\statistics\\concentration_statistics.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			Typed = Table.TransformColumnTypes(Promoted, {{"metric", type text}, {"value", type number}, {"unit", type text}, {"population", type text}}, "en-US")
+			in
+			Typed
+
+	annotation PBI_ResultType = Table
+

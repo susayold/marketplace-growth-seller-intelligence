@@ -1,0 +1,158 @@
+-- Extracted from the Page 1 V2 semantic-model TMDL files.
+-- Source of truth remains the corresponding .tmdl files beside this file.
+-- Generated: 2026-09-13
+
+-- CategoryTop5
+MEASURE 'CategoryTop5'[Category GMV (R$M)] = SUM ( CategoryTop5[gmv_proxy] )
+
+-- Geo
+MEASURE 'Geo'[Seller Count] = SUM ( Geo[active_sellers] )
+
+-- Lorenz
+MEASURE 'Lorenz'[Seller GMV Proxy] = MAX ( Lorenz[cumulative_gmv_share_lorenz] )
+
+MEASURE 'Lorenz'[Line of Equality] = MAX ( Lorenz[equality_line] )
+
+-- Monthly
+MEASURE 'Monthly'[Orders Total] = SUM ( Monthly[orders] )
+
+MEASURE 'Monthly'[GMV Proxy Total] = SUM ( Monthly[gmv_proxy] )
+
+MEASURE 'Monthly'[Legacy Monthly GMV Trend RSM] = DIVIDE ( SUM ( Monthly[gmv_proxy] ), 1000000 )
+
+MEASURE 'Monthly'[Legacy Monthly Orders Trend K] = DIVIDE ( SUM ( Monthly[orders] ), 1000 )
+
+-- SellerLifetime
+MEASURE 'SellerLifetime'[Cumulative GMV Share Value] = MAX ( SellerLifetime[cumulative_gmv_share] )
+
+-- Snapshot
+MEASURE 'Snapshot'[Page Number] = "Page 1 of 7"
+
+MEASURE 'Snapshot'[Page Title] = "Marketplace Growth & Seller Intelligence"
+
+MEASURE 'Snapshot'[Page Subtitle] = "Executive Overview | Turning marketplace data into trusted insights for better decisions"
+
+MEASURE 'Snapshot'[Report Note] = "Historical Olist case study | Executive-complete through Aug 2018"
+
+MEASURE 'Snapshot'[Data Note] = "GMV is a proxy from order-item price; not platform revenue or profit"
+
+MEASURE 'Snapshot'[Nav Overview] = "Overview"
+
+MEASURE 'Snapshot'[Nav Acquisition] = "Acquisition"
+
+MEASURE 'Snapshot'[Nav Activation] = "Activation & Retention"
+
+MEASURE 'Snapshot'[Nav Commercial] = "Commercial"
+
+MEASURE 'Snapshot'[Nav Customer] = "Customer Experience"
+
+MEASURE 'Snapshot'[Nav Root Cause] = "Root Cause"
+
+MEASURE 'Snapshot'[Nav Decision] = "Decision Center"
+
+MEASURE 'Snapshot'[Footer] = "Report build | Sep 12, 2026 | Historical Olist case study | Executive-complete through Aug 2018"
+
+MEASURE 'Snapshot'[Trend Title] = "GMV Proxy & Orders Trend"
+
+MEASURE 'Snapshot'[Concentration Title] = "Seller Concentration"
+
+MEASURE 'Snapshot'[Category Title] = "Top 5 Categories"
+
+MEASURE 'Snapshot'[State Title] = "Top 5 States"
+
+MEASURE 'Snapshot'[Map Title] = "Seller Map by State"
+
+MEASURE 'Snapshot'[Insights Title] = "Key Insights"
+
+MEASURE 'Snapshot'[Highlights Title] = "Highlights"
+
+MEASURE 'Snapshot'[Lorenz Tab] = "Lorenz Curve"
+
+MEASURE 'Snapshot'[Top Share Tab] = "Top Share"
+
+MEASURE 'Snapshot'[Gini Trend Tab] = "Gini Trend"
+
+MEASURE 'Snapshot'[Reset Filters] = "Reset Filters"
+
+MEASURE 'Snapshot'[Insight Momentum] = VAR G = [GMV Delta] VAR O = [Orders Delta] RETURN "1  Growth | GMV " & FORMAT ( G, "+0.0%;-0.0%;0.0%" ) & " | Orders " & FORMAT ( O, "+0.0%;-0.0%;0.0%" )
+
+MEASURE 'Snapshot'[Insight Concentration] = "2  Concentration | Top20 " & FORMAT ( [Top 20% GMV], "0.0%" ) & " | Gini " & FORMAT ( [Seller Gini], "0.000" )
+
+MEASURE 'Snapshot'[Insight Delivery] = "3  Delivery Risk | Late " & FORMAT ( [Late Delivery Rate], "0.0%" ) & " | " & FORMAT ( [Late Delivery Delta PP] * 100, "+0.0;-0.0;0.0" ) & " pp"
+
+MEASURE 'Snapshot'[Insight Seller Base] = "4  Seller Base | " & FORMAT ( [Active Sellers], "#,0" ) & " active"
+
+MEASURE 'Snapshot'[Seller Gini Card] = "Gini  " & FORMAT ( [Seller Gini], "0.000" )
+
+MEASURE 'Snapshot'[Top 20 Card] = "Top 20%  " & FORMAT ( [Top 20% GMV], "0.0%" )
+
+MEASURE 'Snapshot'[GMV KPI Label] = "GMV PROXY"
+
+MEASURE 'Snapshot'[Orders KPI Label] = "ORDERS"
+
+MEASURE 'Snapshot'[Active Sellers KPI Label] = "ACTIVE SELLERS"
+
+MEASURE 'Snapshot'[AOV KPI Label] = "AVERAGE ORDER VALUE"
+
+MEASURE 'Snapshot'[Late Delivery KPI Label] = "LATE DELIVERY RATE"
+
+MEASURE 'Snapshot'[SP Map Callout] = "SP  " & FORMAT ( CALCULATE ( [Active Sellers], DimState[Seller State] = "SP" ), "#,0" ) & " sellers"
+
+MEASURE 'Snapshot'[RJ Map Callout] = "RJ  " & FORMAT ( CALCULATE ( [Active Sellers], DimState[Seller State] = "RJ" ), "#,0" ) & " sellers"
+
+MEASURE 'Snapshot'[Highlight Activation 30D] = "30D activation  15.8%"
+
+MEASURE 'Snapshot'[Highlight Activation 90D] = "90D activation  42.1%"
+
+MEASURE 'Snapshot'[Highlight Review Gap] = "Review gap  -1.73 pts"
+
+MEASURE 'Snapshot'[GMV Proxy] = SUM ( bi_fact_marketplace_item[gmv_proxy] )
+
+MEASURE 'Snapshot'[Orders] = DISTINCTCOUNT ( bi_fact_marketplace_item[order_id] )
+
+MEASURE 'Snapshot'[Active Sellers] = DISTINCTCOUNT ( bi_fact_marketplace_item[seller_id] )
+
+MEASURE 'Snapshot'[Average Order Value] = DIVIDE ( [GMV Proxy], [Orders] )
+
+MEASURE 'Snapshot'[Delivered Orders] = CALCULATE ( DISTINCTCOUNT ( bi_fact_marketplace_item[order_id] ), bi_fact_marketplace_item[delivered_order_flag] = 1 )
+
+MEASURE 'Snapshot'[Late Orders] = CALCULATE ( DISTINCTCOUNT ( bi_fact_marketplace_item[order_id] ), bi_fact_marketplace_item[late_order_flag] = 1 )
+
+MEASURE 'Snapshot'[Late Delivery Rate] = DIVIDE ( [Late Orders], [Delivered Orders] )
+
+MEASURE 'Snapshot'[GMV Proxy Display] = "R$ " & FORMAT ( DIVIDE ( [GMV Proxy], 1000000 ), "0.00" ) & "M"
+
+MEASURE 'Snapshot'[Orders Display] = FORMAT ( DIVIDE ( [Orders], 1000 ), "0.0" ) & "K"
+
+MEASURE 'Snapshot'[Active Sellers Display] = FORMAT ( [Active Sellers], "#,0" )
+
+MEASURE 'Snapshot'[Average Order Value Display] = "R$ " & FORMAT ( [Average Order Value], "0.00" )
+
+MEASURE 'Snapshot'[Late Delivery Rate Display] = FORMAT ( [Late Delivery Rate], "0.0%" )
+
+MEASURE 'Snapshot'[GMV Proxy (R$M)] = DIVIDE ( [GMV Proxy], 1000000 )
+
+MEASURE 'Snapshot'[Orders (K)] = DIVIDE ( [Orders], 1000 )
+
+MEASURE 'Snapshot'[Trend GMV Proxy (R$M)] = IF ( ISBLANK ( SELECTEDVALUE ( DimMonth[MonthStart] ) ), BLANK (), [GMV Proxy (R$M)] )
+
+MEASURE 'Snapshot'[Trend Orders (K)] = IF ( ISBLANK ( SELECTEDVALUE ( DimMonth[MonthStart] ) ), BLANK (), [Orders (K)] )
+
+MEASURE 'Snapshot'[Seller Gini] = MAXX ( FILTER ( ConcentrationStats, ConcentrationStats[metric] = "gini" ), ConcentrationStats[value] )
+
+MEASURE 'Snapshot'[Top 20% GMV] = MAXX ( FILTER ( ConcentrationStats, ConcentrationStats[metric] = "top_20_pct_share" ), ConcentrationStats[value] )
+
+MEASURE 'Snapshot'[GMV Delta] = VAR Complete = FILTER ( ALL ( Monthly ), Monthly[is_executive_complete] = TRUE () ) VAR LatestMonth = MAXX ( Complete, Monthly[purchase_month] ) VAR PriorMonth = MAXX ( FILTER ( Complete, Monthly[purchase_month] < LatestMonth ), Monthly[purchase_month] ) VAR LatestValue = MAXX ( FILTER ( Complete, Monthly[purchase_month] = LatestMonth ), Monthly[gmv_proxy] ) VAR PriorValue = MAXX ( FILTER ( Complete, Monthly[purchase_month] = PriorMonth ), Monthly[gmv_proxy] ) RETURN DIVIDE ( LatestValue - PriorValue, PriorValue )
+
+MEASURE 'Snapshot'[Orders Delta] = VAR Complete = FILTER ( ALL ( Monthly ), Monthly[is_executive_complete] = TRUE () ) VAR LatestMonth = MAXX ( Complete, Monthly[purchase_month] ) VAR PriorMonth = MAXX ( FILTER ( Complete, Monthly[purchase_month] < LatestMonth ), Monthly[purchase_month] ) VAR LatestValue = MAXX ( FILTER ( Complete, Monthly[purchase_month] = LatestMonth ), Monthly[orders] ) VAR PriorValue = MAXX ( FILTER ( Complete, Monthly[purchase_month] = PriorMonth ), Monthly[orders] ) RETURN DIVIDE ( LatestValue - PriorValue, PriorValue )
+
+MEASURE 'Snapshot'[Active Sellers Delta] = VAR Complete = FILTER ( ALL ( Monthly ), Monthly[is_executive_complete] = TRUE () ) VAR LatestMonth = MAXX ( Complete, Monthly[purchase_month] ) VAR PriorMonth = MAXX ( FILTER ( Complete, Monthly[purchase_month] < LatestMonth ), Monthly[purchase_month] ) VAR LatestValue = MAXX ( FILTER ( Complete, Monthly[purchase_month] = LatestMonth ), Monthly[active_sellers] ) VAR PriorValue = MAXX ( FILTER ( Complete, Monthly[purchase_month] = PriorMonth ), Monthly[active_sellers] ) RETURN DIVIDE ( LatestValue - PriorValue, PriorValue )
+
+MEASURE 'Snapshot'[AOV Delta] = VAR Complete = FILTER ( ALL ( Monthly ), Monthly[is_executive_complete] = TRUE () ) VAR LatestMonth = MAXX ( Complete, Monthly[purchase_month] ) VAR PriorMonth = MAXX ( FILTER ( Complete, Monthly[purchase_month] < LatestMonth ), Monthly[purchase_month] ) VAR LatestValue = MAXX ( FILTER ( Complete, Monthly[purchase_month] = LatestMonth ), Monthly[aov] ) VAR PriorValue = MAXX ( FILTER ( Complete, Monthly[purchase_month] = PriorMonth ), Monthly[aov] ) RETURN DIVIDE ( LatestValue - PriorValue, PriorValue )
+
+MEASURE 'Snapshot'[Late Delivery Delta PP] = VAR Complete = FILTER ( ALL ( Monthly ), Monthly[is_executive_complete] = TRUE () ) VAR LatestMonth = MAXX ( Complete, Monthly[purchase_month] ) VAR PriorMonth = MAXX ( FILTER ( Complete, Monthly[purchase_month] < LatestMonth ), Monthly[purchase_month] ) VAR LatestRate = MAXX ( FILTER ( Complete, Monthly[purchase_month] = LatestMonth ), Monthly[late_delivery_rate] ) VAR PriorRate = MAXX ( FILTER ( Complete, Monthly[purchase_month] = PriorMonth ), Monthly[late_delivery_rate] ) RETURN LatestRate - PriorRate
+
+-- StateTop5
+MEASURE 'StateTop5'[State GMV (R$M)] = SUM ( StateTop5[gmv_proxy] )
+
+

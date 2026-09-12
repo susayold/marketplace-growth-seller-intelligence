@@ -1,0 +1,26 @@
+table DimCategory
+	lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0211
+
+	column product_category
+		dataType: string
+		summarizeBy: none
+		sourceColumn: product_category
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0212
+
+	column Category
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CategoryLabel
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0213
+
+	partition DimCategory = m
+		mode: import
+		source =
+			let
+				Source = Table.Distinct(Table.SelectColumns(bi_fact_marketplace_item, {"product_category"})),
+				AddLabel = Table.AddColumn(Source, "CategoryLabel", each if [product_category] = "health_beauty" then "Health & Beauty" else if [product_category] = "bed_bath_table" then "Bed Bath & Table" else if [product_category] = "sports_leisure" then "Sports & Leisure" else if [product_category] = "watches_gifts" then "Watches & Gifts" else if [product_category] = "computers_accessories" then "Computers & Accessories" else Text.Proper(Text.Replace([product_category], "_", " ")), type text)
+			in
+				AddLabel
+
+	annotation PBI_ResultType = Table
+

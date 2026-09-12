@@ -1,0 +1,483 @@
+{
+    "$schema":  "https://developer.microsoft.com/json-schemas/fabric/item/report/definitionProperties/2.0.0/schema.json",
+    "version":  "4.0",
+    "datasetReference":  {
+                             "byPath":  {
+                                            "path":  "../Marketplace_Growth_Seller_Intelligence_Page1_V2.SemanticModel"
+                                        }
+                         },
+    "config":  "{\"version\":\"5.9\",\"themeCollection\":{\"baseTheme\":{\"name\":\"MarketLens Executive Light\",\"version\":\"1.0.0\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true}}",
+    "layoutOptimization":  0,
+    "resourcePackages":  [
+                             {
+                                 "resourcePackage":  {
+                                                         "disabled":  false,
+                                                         "name":  "SharedResources",
+                                                         "type":  2,
+                                                         "items":  [
+                                                                       {
+                                                                           "name":  "MarketLens Executive Light",
+                                                                           "path":  "BaseThemes/MarketLensExecutiveLight.json",
+                                                                           "type":  202
+                                                                       }
+                                                                   ]
+                                                     }
+                             },
+                             {
+                                 "resourcePackage":  {
+                                                         "disabled":  false,
+                                                         "name":  "RegisteredResources",
+                                                         "type":  1,
+                                                         "items":  [
+                                                                       {
+                                                                           "name":  "page_background.png",
+                                                                           "path":  "page_background.png",
+                                                                           "type":  "Image"
+                                                                       },
+                                                                       {
+                                                                           "name":  "seller_distribution_map.png",
+                                                                           "path":  "seller_distribution_map.png",
+                                                                           "type":  "Image"
+                                                                       }
+                                                                   ]
+                                                     }
+                             }
+                         ],
+    "sections":  [
+                     {
+                         "name":  "ReportSection01",
+                         "displayName":  "Executive Overview",
+                         "displayOption":  1,
+                         "width":  1920,
+                         "height":  1080,
+                         "ordinal":  0,
+                         "config":  "{}",
+                         "filters":  "[]",
+                         "visualContainers":  [
+                                                  {
+                                                      "x":  0,
+                                                      "y":  0,
+                                                      "z":  1,
+                                                      "width":  1920,
+                                                      "height":  1080,
+                                                      "config":  "{\"name\":\"v001\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1,\"width\":1920,\"height\":1080}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"page_background.png\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  245,
+                                                      "y":  18,
+                                                      "z":  3,
+                                                      "width":  260,
+                                                      "height":  28,
+                                                      "config":  "{\"name\":\"v003\",\"layouts\":[{\"id\":0,\"position\":{\"x\":245,\"y\":18,\"z\":3,\"width\":260,\"height\":28}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Page Number\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Page Number\"},\"Name\":\"Snapshot.Page Number\",\"NativeReferenceName\":\"Page Number\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  245,
+                                                      "y":  43,
+                                                      "z":  4,
+                                                      "width":  720,
+                                                      "height":  40,
+                                                      "config":  "{\"name\":\"v004\",\"layouts\":[{\"id\":0,\"position\":{\"x\":245,\"y\":43,\"z\":4,\"width\":720,\"height\":40}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Page Title\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Page Title\"},\"Name\":\"Snapshot.Page Title\",\"NativeReferenceName\":\"Page Title\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"22D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  245,
+                                                      "y":  82,
+                                                      "z":  5,
+                                                      "width":  920,
+                                                      "height":  26,
+                                                      "config":  "{\"name\":\"v005\",\"layouts\":[{\"id\":0,\"position\":{\"x\":245,\"y\":82,\"z\":5,\"width\":920,\"height\":26}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Page Subtitle\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Page Subtitle\"},\"Name\":\"Snapshot.Page Subtitle\",\"NativeReferenceName\":\"Page Subtitle\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1270,
+                                                      "y":  32,
+                                                      "z":  7,
+                                                      "width":  170,
+                                                      "height":  48,
+                                                      "config":  "{\"name\":\"v007\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1270,\"y\":32,\"z\":7,\"width\":170,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"DimMonth.Date\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"DimMonth\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Date\"},\"Name\":\"DimMonth.Date\",\"NativeReferenceName\":\"Date\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Date\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1448,
+                                                      "y":  32,
+                                                      "z":  8,
+                                                      "width":  140,
+                                                      "height":  48,
+                                                      "config":  "{\"name\":\"v008\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1448,\"y\":32,\"z\":8,\"width\":140,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"DimCategory.Category\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"DimCategory\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Category\"},\"Name\":\"DimCategory.Category\",\"NativeReferenceName\":\"Category\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Category\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1596,
+                                                      "y":  32,
+                                                      "z":  9,
+                                                      "width":  145,
+                                                      "height":  48,
+                                                      "config":  "{\"name\":\"v009\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1596,\"y\":32,\"z\":9,\"width\":145,\"height\":48}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"DimState.Seller State\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"DimState\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Seller State\"},\"Name\":\"DimState.Seller State\",\"NativeReferenceName\":\"Seller State\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Seller State\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1750,
+                                                      "y":  32,
+                                                      "z":  10,
+                                                      "width":  140,
+                                                      "height":  48,
+                                                      "config":  "{\"name\":\"v010\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1750,\"y\":32,\"z\":10,\"width\":140,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Data Note\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Data Note\"},\"Name\":\"Snapshot.Data Note\",\"NativeReferenceName\":\"Data Note\"}]},\"drillFilterOtherVisuals\":true}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  245,
+                                                      "y":  125,
+                                                      "z":  11,
+                                                      "width":  315,
+                                                      "height":  145,
+                                                      "config":  "{\"name\":\"v011\",\"layouts\":[{\"id\":0,\"position\":{\"x\":245,\"y\":125,\"z\":11,\"width\":315,\"height\":145}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.GMV Proxy Display\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"GMV Proxy Display\"},\"Name\":\"Snapshot.GMV Proxy Display\",\"NativeReferenceName\":\"GMV Proxy\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"GMV PROXY\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#DCEBFF\\\"\"}}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"20D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  575,
+                                                      "y":  125,
+                                                      "z":  12,
+                                                      "width":  315,
+                                                      "height":  145,
+                                                      "config":  "{\"name\":\"v012\",\"layouts\":[{\"id\":0,\"position\":{\"x\":575,\"y\":125,\"z\":12,\"width\":315,\"height\":145}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Orders Display\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Orders Display\"},\"Name\":\"Snapshot.Orders Display\",\"NativeReferenceName\":\"Orders\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"ORDERS\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#D9F5EC\\\"\"}}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"20D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  905,
+                                                      "y":  125,
+                                                      "z":  13,
+                                                      "width":  315,
+                                                      "height":  145,
+                                                      "config":  "{\"name\":\"v013\",\"layouts\":[{\"id\":0,\"position\":{\"x\":905,\"y\":125,\"z\":13,\"width\":315,\"height\":145}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Active Sellers Display\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Active Sellers Display\"},\"Name\":\"Snapshot.Active Sellers Display\",\"NativeReferenceName\":\"Active Sellers\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"ACTIVE SELLERS\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#E8DFFF\\\"\"}}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"20D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1235,
+                                                      "y":  125,
+                                                      "z":  14,
+                                                      "width":  315,
+                                                      "height":  145,
+                                                      "config":  "{\"name\":\"v014\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1235,\"y\":125,\"z\":14,\"width\":315,\"height\":145}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Average Order Value Display\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Average Order Value Display\"},\"Name\":\"Snapshot.Average Order Value Display\",\"NativeReferenceName\":\"Average Order Value\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"AVERAGE ORDER VALUE\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#FFF0D4\\\"\"}}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"20D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1565,
+                                                      "y":  125,
+                                                      "z":  15,
+                                                      "width":  325,
+                                                      "height":  145,
+                                                      "config":  "{\"name\":\"v015\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1565,\"y\":125,\"z\":15,\"width\":325,\"height\":145}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Late Delivery Rate Display\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Late Delivery Rate Display\"},\"Name\":\"Snapshot.Late Delivery Rate Display\",\"NativeReferenceName\":\"Late Delivery Rate\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"LATE DELIVERY RATE\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#FFE0E4\\\"\"}}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"20D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  245,
+                                                      "y":  285,
+                                                      "z":  16,
+                                                      "width":  790,
+                                                      "height":  405,
+                                                      "config":  "{\"name\":\"v016\",\"layouts\":[{\"id\":0,\"position\":{\"x\":245,\"y\":285,\"z\":16,\"width\":790,\"height\":405}}],\"singleVisual\":{\"visualType\":\"lineClusteredColumnComboChart\",\"projections\":{\"Category\":[{\"queryRef\":\"DimMonth.MonthLabel\"}],\"Y\":[{\"queryRef\":\"Snapshot.Trend GMV Proxy (R$M)\"}],\"Y2\":[{\"queryRef\":\"Snapshot.Trend Orders (K)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"DimMonth\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"MonthLabel\"},\"Name\":\"DimMonth.MonthLabel\",\"NativeReferenceName\":\"MMM YY\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Trend GMV Proxy (R$M)\"},\"Name\":\"Snapshot.Trend GMV Proxy (R$M)\",\"NativeReferenceName\":\"GMV Proxy (R$M)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Trend Orders (K)\"},\"Name\":\"Snapshot.Trend Orders (K)\",\"NativeReferenceName\":\"Orders (K)\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"MonthIndex\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"GMV Proxy \\u0026 Orders Trend\\\"\"}}}}}],\"legend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"position\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"top\\\"\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"labelColor\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#10213A\\\"\"}}}}}}],\"categoryAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"labelColor\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#68758A\\\"\"}}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"GMV Proxy (R$M)\\\"\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"labelColor\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#68758A\\\"\"}}}},\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"valueAxis2\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Orders (K)\\\"\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"labelColor\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#68758A\\\"\"}}}},\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1050,
+                                                      "y":  285,
+                                                      "z":  17,
+                                                      "width":  540,
+                                                      "height":  405,
+                                                      "config":  "{\"name\":\"v017\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1050,\"y\":285,\"z\":17,\"width\":540,\"height\":405}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Lorenz.Cumulative % of Sellers\"}],\"Y\":[{\"queryRef\":\"Lorenz.Seller GMV Proxy\"},{\"queryRef\":\"Lorenz.Line of Equality\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Lorenz\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Cumulative % of Sellers\"},\"Name\":\"Lorenz.Cumulative % of Sellers\",\"NativeReferenceName\":\"Cumulative % of Sellers\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Seller GMV Proxy\"},\"Name\":\"Lorenz.Seller GMV Proxy\",\"NativeReferenceName\":\"Seller GMV Proxy\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Line of Equality\"},\"Name\":\"Lorenz.Line of Equality\",\"NativeReferenceName\":\"Line of Equality\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"seller_rank_asc\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"legend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"position\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"top\\\"\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"labelColor\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#10213A\\\"\"}}}}}}],\"categoryAxis\":[{\"properties\":{\"type\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"continuous\\\"\"}}},\"start\":{\"expr\":{\"Literal\":{\"Value\":\"0\"}}},\"end\":{\"expr\":{\"Literal\":{\"Value\":\"1\"}}},\"formatString\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"0%\\\"\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Cumulative % of Sellers\\\"\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"labelColor\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#68758A\\\"\"}}}}}}],\"valueAxis\":[{\"properties\":{\"start\":{\"expr\":{\"Literal\":{\"Value\":\"0\"}}},\"end\":{\"expr\":{\"Literal\":{\"Value\":\"1\"}}},\"formatString\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"0%\\\"\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Cumulative Share of GMV\\\"\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"labelColor\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#68758A\\\"\"}}}},\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  245,
+                                                      "y":  705,
+                                                      "z":  19,
+                                                      "width":  390,
+                                                      "height":  335,
+                                                      "config":  "{\"name\":\"v019\",\"layouts\":[{\"id\":0,\"position\":{\"x\":245,\"y\":705,\"z\":19,\"width\":390,\"height\":335}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"CategoryTop5.CategoryLabel\"}],\"Y\":[{\"queryRef\":\"CategoryTop5.Category GMV (R$M)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"CategoryTop5\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"CategoryTop5\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"CategoryLabel\"},\"Name\":\"CategoryTop5.CategoryLabel\",\"NativeReferenceName\":\"CategoryLabel\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"Category GMV (R$M)\"},\"Name\":\"CategoryTop5.Category GMV (R$M)\",\"NativeReferenceName\":\"GMV\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Top 5 Categories by GMV\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"legend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#10213A\\\"\"}}}},\"displayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"0\"}}},\"precision\":{\"expr\":{\"Literal\":{\"Value\":\"1\"}}}}}],\"categoryAxis\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"labelColor\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#10213A\\\"\"}}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"GMV (R$M)\\\"\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"9D\"}}},\"labelColor\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#68758A\\\"\"}}}},\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  650,
+                                                      "y":  705,
+                                                      "z":  20,
+                                                      "width":  375,
+                                                      "height":  335,
+                                                      "config":  "{\"name\":\"v020\",\"layouts\":[{\"id\":0,\"position\":{\"x\":650,\"y\":705,\"z\":20,\"width\":375,\"height\":335}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"StateTop5.seller_state\"}],\"Y\":[{\"queryRef\":\"StateTop5.State GMV (R$M)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"StateTop5\",\"Type\":0},{\"Name\":\"t1\",\"Entity\":\"StateTop5\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"seller_state\"},\"Name\":\"StateTop5.seller_state\",\"NativeReferenceName\":\"seller_state\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t1\"}},\"Property\":\"State GMV (R$M)\"},\"Name\":\"StateTop5.State GMV (R$M)\",\"NativeReferenceName\":\"State GMV (R$M)\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Top 5 States by GMV\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"legend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#10213A\\\"\"}}}},\"displayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"0\"}}},\"precision\":{\"expr\":{\"Literal\":{\"Value\":\"1\"}}}}}],\"categoryAxis\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"labelColor\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#10213A\\\"\"}}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"GMV (R$M)\\\"\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"9D\"}}},\"labelColor\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#68758A\\\"\"}}}},\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1040,
+                                                      "y":  705,
+                                                      "z":  21,
+                                                      "width":  535,
+                                                      "height":  335,
+                                                      "config":  "{\"name\":\"v021\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1040,\"y\":705,\"z\":21,\"width\":535,\"height\":335}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"seller_distribution_map.png\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  245,
+                                                      "y":  285,
+                                                      "z":  23,
+                                                      "width":  790,
+                                                      "height":  35,
+                                                      "config":  "{\"name\":\"v023\",\"layouts\":[{\"id\":0,\"position\":{\"x\":245,\"y\":285,\"z\":23,\"width\":790,\"height\":35}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Trend Title\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Trend Title\"},\"Name\":\"Snapshot.Trend Title\",\"NativeReferenceName\":\"Trend Title\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1050,
+                                                      "y":  285,
+                                                      "z":  24,
+                                                      "width":  540,
+                                                      "height":  35,
+                                                      "config":  "{\"name\":\"v024\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1050,\"y\":285,\"z\":24,\"width\":540,\"height\":35}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Concentration Title\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Concentration Title\"},\"Name\":\"Snapshot.Concentration Title\",\"NativeReferenceName\":\"Concentration Title\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1605,
+                                                      "y":  285,
+                                                      "z":  25,
+                                                      "width":  285,
+                                                      "height":  35,
+                                                      "config":  "{\"name\":\"v025\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1605,\"y\":285,\"z\":25,\"width\":285,\"height\":35}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Insights Title\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Insights Title\"},\"Name\":\"Snapshot.Insights Title\",\"NativeReferenceName\":\"Insights Title\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  245,
+                                                      "y":  705,
+                                                      "z":  26,
+                                                      "width":  390,
+                                                      "height":  35,
+                                                      "config":  "{\"name\":\"v026\",\"layouts\":[{\"id\":0,\"position\":{\"x\":245,\"y\":705,\"z\":26,\"width\":390,\"height\":35}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Category Title\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Category Title\"},\"Name\":\"Snapshot.Category Title\",\"NativeReferenceName\":\"Category Title\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  650,
+                                                      "y":  705,
+                                                      "z":  27,
+                                                      "width":  375,
+                                                      "height":  35,
+                                                      "config":  "{\"name\":\"v027\",\"layouts\":[{\"id\":0,\"position\":{\"x\":650,\"y\":705,\"z\":27,\"width\":375,\"height\":35}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.State Title\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"State Title\"},\"Name\":\"Snapshot.State Title\",\"NativeReferenceName\":\"State Title\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1040,
+                                                      "y":  705,
+                                                      "z":  28,
+                                                      "width":  535,
+                                                      "height":  35,
+                                                      "config":  "{\"name\":\"v028\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1040,\"y\":705,\"z\":28,\"width\":535,\"height\":35}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Map Title\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Map Title\"},\"Name\":\"Snapshot.Map Title\",\"NativeReferenceName\":\"Map Title\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1590,
+                                                      "y":  705,
+                                                      "z":  29,
+                                                      "width":  300,
+                                                      "height":  35,
+                                                      "config":  "{\"name\":\"v029\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1590,\"y\":705,\"z\":29,\"width\":300,\"height\":35}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Highlights Title\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Highlights Title\"},\"Name\":\"Snapshot.Highlights Title\",\"NativeReferenceName\":\"Highlights Title\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1390,
+                                                      "y":  365,
+                                                      "z":  30,
+                                                      "width":  185,
+                                                      "height":  92,
+                                                      "config":  "{\"name\":\"v030\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1390,\"y\":365,\"z\":30,\"width\":185,\"height\":92}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Seller Gini Card\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Seller Gini Card\"},\"Name\":\"Snapshot.Seller Gini Card\",\"NativeReferenceName\":\"Seller Gini Card\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Seller Gini\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#E8FBF6\\\"\"}}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1390,
+                                                      "y":  465,
+                                                      "z":  31,
+                                                      "width":  185,
+                                                      "height":  92,
+                                                      "config":  "{\"name\":\"v031\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1390,\"y\":465,\"z\":31,\"width\":185,\"height\":92}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Top 20 Card\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Top 20 Card\"},\"Name\":\"Snapshot.Top 20 Card\",\"NativeReferenceName\":\"Top 20 Card\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Top 20% GMV\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#E8FBF6\\\"\"}}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1065,
+                                                      "y":  325,
+                                                      "z":  32,
+                                                      "width":  145,
+                                                      "height":  34,
+                                                      "config":  "{\"name\":\"v032\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1065,\"y\":325,\"z\":32,\"width\":145,\"height\":34}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Lorenz Tab\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Lorenz Tab\"},\"Name\":\"Snapshot.Lorenz Tab\",\"NativeReferenceName\":\"Lorenz Tab\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Lorenz Curve\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#E8F0FF\\\"\"}}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1215,
+                                                      "y":  325,
+                                                      "z":  33,
+                                                      "width":  145,
+                                                      "height":  34,
+                                                      "config":  "{\"name\":\"v033\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1215,\"y\":325,\"z\":33,\"width\":145,\"height\":34}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Top Share Tab\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Top Share Tab\"},\"Name\":\"Snapshot.Top Share Tab\",\"NativeReferenceName\":\"Top Share Tab\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Top Share\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#E8F0FF\\\"\"}}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1365,
+                                                      "y":  325,
+                                                      "z":  34,
+                                                      "width":  145,
+                                                      "height":  34,
+                                                      "config":  "{\"name\":\"v034\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1365,\"y\":325,\"z\":34,\"width\":145,\"height\":34}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Gini Trend Tab\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Gini Trend Tab\"},\"Name\":\"Snapshot.Gini Trend Tab\",\"NativeReferenceName\":\"Gini Trend Tab\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Gini Trend\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#E8F0FF\\\"\"}}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1750,
+                                                      "y":  32,
+                                                      "z":  35,
+                                                      "width":  140,
+                                                      "height":  48,
+                                                      "config":  "{\"name\":\"v035\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1750,\"y\":32,\"z\":35,\"width\":140,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Reset Filters\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Reset Filters\"},\"Name\":\"Snapshot.Reset Filters\",\"NativeReferenceName\":\"Reset Filters\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Reset Filters\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#E8F0FF\\\"\"}}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1625,
+                                                      "y":  345,
+                                                      "z":  36,
+                                                      "width":  255,
+                                                      "height":  68,
+                                                      "config":  "{\"name\":\"v036\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1625,\"y\":345,\"z\":36,\"width\":255,\"height\":68}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Insight Momentum\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Insight Momentum\"},\"Name\":\"Snapshot.Insight Momentum\",\"NativeReferenceName\":\"Insight Momentum\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"1  Momentum\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#E8F0FF\\\"\"}}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1625,
+                                                      "y":  420,
+                                                      "z":  37,
+                                                      "width":  255,
+                                                      "height":  68,
+                                                      "config":  "{\"name\":\"v037\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1625,\"y\":420,\"z\":37,\"width\":255,\"height\":68}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Insight Concentration\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Insight Concentration\"},\"Name\":\"Snapshot.Insight Concentration\",\"NativeReferenceName\":\"Insight Concentration\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"2  Concentration\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#E8FBF6\\\"\"}}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1625,
+                                                      "y":  495,
+                                                      "z":  38,
+                                                      "width":  255,
+                                                      "height":  68,
+                                                      "config":  "{\"name\":\"v038\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1625,\"y\":495,\"z\":38,\"width\":255,\"height\":68}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Insight Delivery\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Insight Delivery\"},\"Name\":\"Snapshot.Insight Delivery\",\"NativeReferenceName\":\"Insight Delivery\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"3  Delivery Risk\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#FFF3E0\\\"\"}}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1625,
+                                                      "y":  570,
+                                                      "z":  39,
+                                                      "width":  255,
+                                                      "height":  68,
+                                                      "config":  "{\"name\":\"v039\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1625,\"y\":570,\"z\":39,\"width\":255,\"height\":68}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Insight Seller Base\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Insight Seller Base\"},\"Name\":\"Snapshot.Insight Seller Base\",\"NativeReferenceName\":\"Insight Seller Base\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"4  Seller Base\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#F0E8FF\\\"\"}}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1600,
+                                                      "y":  750,
+                                                      "z":  40,
+                                                      "width":  280,
+                                                      "height":  48,
+                                                      "config":  "{\"name\":\"v040\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1600,\"y\":750,\"z\":40,\"width\":280,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Seller Gini\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Seller Gini\"},\"Name\":\"Snapshot.Seller Gini\",\"NativeReferenceName\":\"Gini\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Seller concentration\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#E8FBF6\\\"\"}}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1600,
+                                                      "y":  805,
+                                                      "z":  41,
+                                                      "width":  280,
+                                                      "height":  48,
+                                                      "config":  "{\"name\":\"v041\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1600,\"y\":805,\"z\":41,\"width\":280,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Top 20% GMV\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Top 20% GMV\"},\"Name\":\"Snapshot.Top 20% GMV\",\"NativeReferenceName\":\"Top20 GMV\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Top seller share\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#E8FBF6\\\"\"}}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1600,
+                                                      "y":  860,
+                                                      "z":  42,
+                                                      "width":  280,
+                                                      "height":  48,
+                                                      "config":  "{\"name\":\"v042\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1600,\"y\":860,\"z\":42,\"width\":280,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Highlight Activation 30D\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Highlight Activation 30D\"},\"Name\":\"Snapshot.Highlight Activation 30D\",\"NativeReferenceName\":\"Highlight Activation 30D\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Activation 30D\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#E8F0FF\\\"\"}}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1600,
+                                                      "y":  915,
+                                                      "z":  43,
+                                                      "width":  280,
+                                                      "height":  48,
+                                                      "config":  "{\"name\":\"v043\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1600,\"y\":915,\"z\":43,\"width\":280,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Highlight Activation 90D\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Highlight Activation 90D\"},\"Name\":\"Snapshot.Highlight Activation 90D\",\"NativeReferenceName\":\"Highlight Activation 90D\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Activation 90D\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#E8F0FF\\\"\"}}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1600,
+                                                      "y":  970,
+                                                      "z":  44,
+                                                      "width":  280,
+                                                      "height":  48,
+                                                      "config":  "{\"name\":\"v044\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1600,\"y\":970,\"z\":44,\"width\":280,\"height\":48}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Highlight Review Gap\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Highlight Review Gap\"},\"Name\":\"Snapshot.Highlight Review Gap\",\"NativeReferenceName\":\"Highlight Review Gap\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"\\\"Late review gap\\\"\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"Literal\":{\"Value\":\"\\\"#FFF3E0\\\"\"}}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  245,
+                                                      "y":  129,
+                                                      "z":  45,
+                                                      "width":  315,
+                                                      "height":  28,
+                                                      "config":  "{\"name\":\"v045\",\"layouts\":[{\"id\":0,\"position\":{\"x\":245,\"y\":129,\"z\":45,\"width\":315,\"height\":28}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.GMV KPI Label\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"GMV KPI Label\"},\"Name\":\"Snapshot.GMV KPI Label\",\"NativeReferenceName\":\"GMV KPI Label\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"9D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  575,
+                                                      "y":  129,
+                                                      "z":  46,
+                                                      "width":  315,
+                                                      "height":  28,
+                                                      "config":  "{\"name\":\"v046\",\"layouts\":[{\"id\":0,\"position\":{\"x\":575,\"y\":129,\"z\":46,\"width\":315,\"height\":28}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Orders KPI Label\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Orders KPI Label\"},\"Name\":\"Snapshot.Orders KPI Label\",\"NativeReferenceName\":\"Orders KPI Label\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"9D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  905,
+                                                      "y":  129,
+                                                      "z":  47,
+                                                      "width":  315,
+                                                      "height":  28,
+                                                      "config":  "{\"name\":\"v047\",\"layouts\":[{\"id\":0,\"position\":{\"x\":905,\"y\":129,\"z\":47,\"width\":315,\"height\":28}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Active Sellers KPI Label\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Active Sellers KPI Label\"},\"Name\":\"Snapshot.Active Sellers KPI Label\",\"NativeReferenceName\":\"Active Sellers KPI Label\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"9D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1235,
+                                                      "y":  129,
+                                                      "z":  48,
+                                                      "width":  315,
+                                                      "height":  28,
+                                                      "config":  "{\"name\":\"v048\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1235,\"y\":129,\"z\":48,\"width\":315,\"height\":28}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.AOV KPI Label\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"AOV KPI Label\"},\"Name\":\"Snapshot.AOV KPI Label\",\"NativeReferenceName\":\"AOV KPI Label\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"9D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1565,
+                                                      "y":  129,
+                                                      "z":  49,
+                                                      "width":  325,
+                                                      "height":  28,
+                                                      "config":  "{\"name\":\"v049\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1565,\"y\":129,\"z\":49,\"width\":325,\"height\":28}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.Late Delivery KPI Label\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"Late Delivery KPI Label\"},\"Name\":\"Snapshot.Late Delivery KPI Label\",\"NativeReferenceName\":\"Late Delivery KPI Label\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"9D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1320,
+                                                      "y":  925,
+                                                      "z":  50,
+                                                      "width":  180,
+                                                      "height":  28,
+                                                      "config":  "{\"name\":\"v050\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1320,\"y\":925,\"z\":50,\"width\":180,\"height\":28}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.SP Map Callout\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"SP Map Callout\"},\"Name\":\"Snapshot.SP Map Callout\",\"NativeReferenceName\":\"SP Map Callout\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"9D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  },
+                                                  {
+                                                      "x":  1320,
+                                                      "y":  965,
+                                                      "z":  51,
+                                                      "width":  180,
+                                                      "height":  28,
+                                                      "config":  "{\"name\":\"v051\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1320,\"y\":965,\"z\":51,\"width\":180,\"height\":28}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Snapshot.RJ Map Callout\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t0\",\"Entity\":\"Snapshot\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t0\"}},\"Property\":\"RJ Map Callout\"},\"Name\":\"Snapshot.RJ Map Callout\",\"NativeReferenceName\":\"RJ Map Callout\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"9D\"}}}}}]}}}",
+                                                      "filters":  "[]"
+                                                  }
+                                              ]
+                     }
+                 ]
+}

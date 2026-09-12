@@ -1,0 +1,28 @@
+table Pillars
+	lineageTag: 0502bc71-587c-501d-afc9-d7cd70088459
+
+	column Sort
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Sort
+		lineageTag: a68362b1-a736-5ed5-9c22-79f297e8e7d0
+
+	column Pillar
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Pillar
+		lineageTag: 4a212492-a5e9-563f-a300-5d78f0b4ffdc
+
+	column Scope
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Scope
+		lineageTag: e6d9b985-00a6-5a32-8c98-474a7a796a38
+
+	partition Pillars = m
+		mode: import
+		source =
+			#table(type table [Sort=Int64.Type, Pillar=text, Scope=text], {{1, "Seller Acquisition", "Channels and seller value"}, {2, "Activation & Retention", "90-day onboarding and cohorts"}, {3, "Commercial", "Concentration and productivity"}, {4, "Customer Experience", "Delivery and reviews"}, {5, "Root Cause & Decisions", "Evidence-led action system"}})
+
+	annotation PBI_ResultType = Table
+

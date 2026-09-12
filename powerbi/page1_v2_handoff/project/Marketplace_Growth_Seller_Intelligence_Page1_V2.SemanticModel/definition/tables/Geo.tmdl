@@ -1,0 +1,55 @@
+table Geo
+	lineageTag: f1036f37-64d7-54b6-8773-40d07d054a6e
+
+	measure 'Seller Count' = SUM ( Geo[active_sellers] )
+		formatString: #,0
+		lineageTag: 15259096-de21-5460-aa3b-7eea3b4cb5f4
+
+	column seller_state
+		dataType: string
+		summarizeBy: none
+		sourceColumn: seller_state
+		lineageTag: 4d09e08e-6a33-52f9-89cc-717ad3be8759
+
+	column gmv_proxy
+		dataType: double
+		formatString: R$ #,0.00
+		summarizeBy: sum
+		sourceColumn: gmv_proxy
+		lineageTag: f01dcdc9-8bd0-5e40-978c-a1c3c8302655
+
+	column orders
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: orders
+		lineageTag: 6a6a7fbc-1aa2-56d6-aca8-9d814c46e9ea
+
+	column active_sellers
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: active_sellers
+		lineageTag: 909d7c11-b857-5fe1-8ad3-c214f92d2277
+
+	column gmv_share
+		dataType: double
+		formatString: 0.0%
+		summarizeBy: sum
+		sourceColumn: gmv_share
+		lineageTag: d7be4973-b010-5ba2-9747-8c9a0c2dfd47
+
+	partition Geo = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents("C:\\Users\\sangk\\Documents\\Codex\\2026-09-12\\che\\outputs\\Marketplace_Growth_Seller_Intelligence_Page1\\data\\release_v3_final\\reports\\tables\\mart_geography_performance.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    Typed = Table.TransformColumnTypes(Promoted, {{"seller_state", type text}, {"gmv_proxy", type number}, {"orders", Int64.Type}, {"active_sellers", Int64.Type}, {"gmv_share", type number}}, "en-US"),
+			    Sorted = Table.Sort(Typed, {{"gmv_proxy", Order.Descending}}),
+			    Top = Typed
+			in
+			    Top
+
+	annotation PBI_ResultType = Table
+
