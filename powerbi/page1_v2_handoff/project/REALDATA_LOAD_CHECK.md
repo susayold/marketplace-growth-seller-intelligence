@@ -43,7 +43,7 @@ The distinction above is intentional: the Page 1 KPI uses `DISTINCTCOUNT ( bi_fa
 - Corrected the trend combo projection so Orders render as columns and GMV renders as a line on the secondary axis.
 - Set the Page 1 Active Sellers measure to the governed all-period distinct seller count so the default KPI reconciles to 3,095 rather than the latest-month snapshot of 1,278.
 - Added native trend measures that suppress the unmatched blank dimension member caused by incomplete edge months.
-- Kept state distribution as a native clustered bar visual for Desktop stability; the supplied reference uses a map, but the underlying Geo data is present and verified.
+- Kept state distribution as a source-backed map image fallback in `v021` because the native map visual was unavailable in the current Desktop configuration; the underlying Geo data is present and verified.
 
 Note: a PBIP import model can show the `Refresh now` banner on its first open because the CSV-backed import cache is not stored in the text project. After the first refresh, the page renders and the checks above pass.
 
