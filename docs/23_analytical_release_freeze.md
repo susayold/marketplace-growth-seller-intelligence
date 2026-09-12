@@ -37,4 +37,4 @@ The analytical layer is frozen for the current extract when every gate below is 
 
 Power BI may begin only after `power_bi_ready=true` in `reports/qa/analysis_showcase_verification.json`. The semantic model must import the frozen definitions above, preserve the boundary fields, and expose population, denominator, censoring and uncertainty metadata alongside every headline measure.
 
-**Verification base commit:** recorded in the release commit history after the final automated run.
+**Verification base commit:** `19e6e6496c104be83b62aa1855e13b31d7084eb4` (the analytical artifacts validated by the final automated run).
