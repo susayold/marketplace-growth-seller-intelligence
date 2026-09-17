@@ -1,0 +1,64 @@
+name: Deploy MarketLens Website
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - feat/marketlens-real-data-website
+    paths:
+      - 'website/**'
+      - 'reports/tables/mart_marketplace_monthly.csv'
+      - 'reports/tables/mart_category_performance.csv'
+      - 'reports/tables/mart_geography_performance.csv'
+      - 'reports/tables/delivery_performance.csv'
+      - 'reports/tables/seller_concentration.csv'
+      - 'reports/tables/activation_summary.csv'
+      - 'reports/tables/seller_segmentation.csv'
+      - 'reports/qa/statistical_validation.csv'
+      - '.github/workflows/deploy-marketlens-pages.yml'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble static site with real aggregate data
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir -p _site/data
+          cp -R website/. _site/
+          cp reports/tables/mart_marketplace_monthly.csv _site/data/
+          cp reports/tables/mart_category_performance.csv _site/data/
+          cp reports/tables/mart_geography_performance.csv _site/data/
+          cp reports/tables/delivery_performance.csv _site/data/
+          cp reports/tables/seller_concentration.csv _site/data/
+          cp reports/tables/activation_summary.csv _site/data/
+          cp reports/tables/seller_segmentation.csv _site/data/
+          cp reports/qa/statistical_validation.csv _site/data/
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
