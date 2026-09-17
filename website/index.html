@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="MarketLens — Marketplace Growth & Seller Intelligence, real-data executive dashboard." />
+  <title>MarketLens | Executive Overview</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">G</div><div class="brand-copy"><strong>MarketLens</strong><span>Seller Intelligence</span></div></div>
+      <nav class="nav" aria-label="Dashboard pages">
+        <button class="nav-item active"><span>⌂</span>Overview</button>
+        <button class="nav-item disabled" title="Coming next"><span>♙</span>Acquisition</button>
+        <button class="nav-item disabled" title="Coming next"><span>▥</span>Activation & Retention</button>
+        <button class="nav-item disabled" title="Coming next"><span>◇</span>Commercial</button>
+        <button class="nav-item disabled" title="Coming next"><span>◌</span>Customer Experience</button>
+        <button class="nav-item disabled" title="Coming next"><span>⌕</span>Root Cause</button>
+        <button class="nav-item disabled" title="Coming next"><span>⚙</span>Decision Center</button>
+      </nav>
+      <div class="sidebar-art" aria-hidden="true"><div class="bars"><i></i><i></i><i></i><i></i><i></i></div><div class="arrow">↗</div></div>
+      <div class="tagline">Better Data.<br/>Stronger Marketplaces.</div>
+    </aside>
+    <main class="main">
+      <header class="header">
+        <div><h1>Marketplace Growth & Seller Intelligence</h1><p>Executive Overview <span>│</span> Turning marketplace data into trusted insights for better decisions</p></div>
+        <div class="filters"><label>Month<select id="monthFilter"></select></label><label>Category<select id="categoryFilter"></select></label><label>Seller State<select id="stateFilter"></select></label><button id="resetFilters">↻ Reset Filters</button></div>
+      </header>
+      <section class="kpi-grid" id="kpiGrid"></section>
+      <section class="row-main">
+        <article class="panel panel-trend"><div class="panel-head"><div><h2>GMV Proxy & Orders Trend</h2><p>Executive-complete periods only</p></div></div><div id="trendChart" class="chart chart-large"></div></article>
+        <article class="panel panel-lorenz"><div class="panel-head"><div><h2>Seller Concentration (Lorenz Curve)</h2><p>Anchored to observed seller-share concentration</p></div></div><div id="lorenzChart" class="chart chart-medium"></div><div class="mini-stats"><div class="mini-stat"><strong id="giniValue">—</strong><span>Seller Gini</span></div><div class="mini-stat"><strong id="top20Value">—</strong><span>Top 20% Seller Share</span></div></div></article>
+        <article class="panel panel-insights"><div class="panel-head"><div><h2>Key Insights</h2></div></div><div id="insights" class="insights"></div></article>
+      </section>
+      <section class="row-bottom">
+        <article class="panel"><div class="panel-head"><div><h2>Top 5 Categories by GMV</h2></div></div><div id="categoryChart" class="chart chart-small"></div></article>
+        <article class="panel"><div class="panel-head"><div><h2>Top 5 States by GMV</h2></div></div><div id="stateChart" class="chart chart-small"></div></article>
+        <article class="panel"><div class="panel-head"><div><h2>Seller Footprint by State</h2></div></div><div class="table-wrap"><table id="stateTable" class="data-table"></table></div><div class="source-note">Source: mart_geography_performance.csv</div></article>
+        <article class="panel"><div class="panel-head"><div><h2>Recent Highlights</h2></div></div><div id="highlights" class="highlight-list"></div></article>
+      </section>
+      <footer class="footer"><span>Marketplace Growth & Seller Intelligence</span><span>REAL DATA • OLIST 2016–2018</span><span>Page 1 of 7</span></footer>
+    </main>
+  </div>
+  <div class="loading" id="loading"><div class="spinner"></div><span>Loading real project data…</span></div><div class="error" id="errorBox" hidden></div>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.min.js"></script><script src="app.js"></script>
+</body>
+</html>
