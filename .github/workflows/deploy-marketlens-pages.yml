@@ -8,12 +8,13 @@ on:
     paths:
       - 'website/**'
       - 'reports/tables/mart_marketplace_monthly.csv'
-      - 'reports/tables/mart_category_performance.csv'
+      - 'reports/tables/category_analysis_extended.csv'
       - 'reports/tables/mart_geography_performance.csv'
       - 'reports/tables/delivery_performance.csv'
       - 'reports/tables/seller_concentration.csv'
       - 'reports/tables/activation_summary.csv'
-      - 'reports/tables/seller_segmentation.csv'
+      - 'reports/qa/period_completeness.csv'
+      - 'reports/headline_metrics.json'
       - 'reports/qa/statistical_validation.csv'
       - '.github/workflows/deploy-marketlens-pages.yml'
 
@@ -39,12 +40,13 @@ jobs:
           mkdir -p _site/data
           cp -R website/. _site/
           cp reports/tables/mart_marketplace_monthly.csv _site/data/
-          cp reports/tables/mart_category_performance.csv _site/data/
+          cp reports/tables/category_analysis_extended.csv _site/data/
           cp reports/tables/mart_geography_performance.csv _site/data/
           cp reports/tables/delivery_performance.csv _site/data/
           cp reports/tables/seller_concentration.csv _site/data/
           cp reports/tables/activation_summary.csv _site/data/
-          cp reports/tables/seller_segmentation.csv _site/data/
+          cp reports/qa/period_completeness.csv _site/data/
+          cp reports/headline_metrics.json _site/data/
           cp reports/qa/statistical_validation.csv _site/data/
           touch _site/.nojekyll
       - name: Configure GitHub Pages
