@@ -75,12 +75,12 @@
             <div class="dashboard-main">
               <header class="header">
                 <div><h1>Marketplace Growth & Seller Intelligence</h1><p>Executive Overview <span>│</span> Turning marketplace data into trusted insights for better decisions</p></div>
-                <div class="filters"><label>Month<select id="monthFilter"></select></label><label>Category<select id="categoryFilter"></select></label><label>Seller State<select id="stateFilter"></select></label><button id="resetFilters">↻ Reset Filters</button></div>
+                <div class="filters"><label>Month<select id="monthFilter"></select></label><label>Category<select id="categoryFilter"></select></label><label>Seller State (state panels)<select id="stateFilter"></select></label><button id="resetFilters">↻ Reset Filters</button></div>
               </header>
               <section class="kpi-grid" id="kpiGrid"></section>
               <section class="row-main">
                 <article class="panel panel-trend"><div class="panel-head"><div><h2>GMV Proxy & Orders Trend</h2><p>Executive-complete periods only</p></div></div><div id="trendChart" class="chart chart-large"></div></article>
-                <article class="panel panel-lorenz"><div class="panel-head"><div><h2>Seller Concentration (Lorenz Curve)</h2><p>Anchored to observed seller-share concentration</p></div></div><div id="lorenzChart" class="chart chart-medium"></div><div class="mini-stats"><div class="mini-stat"><strong id="giniValue">—</strong><span>Seller Gini</span></div><div class="mini-stat"><strong id="top20Value">—</strong><span>Top 20% Seller Share</span></div></div></article>
+                <article class="panel panel-lorenz"><div class="panel-head"><div><h2>Seller Concentration (Observed Top-Share Curve)</h2><p>Direct observed points from seller_concentration.csv</p></div></div><div id="lorenzChart" class="chart chart-medium"></div><div class="mini-stats"><div class="mini-stat"><strong id="giniValue">—</strong><span>Seller Gini</span></div><div class="mini-stat"><strong id="top20Value">—</strong><span>Top 20% Seller Share</span></div></div></article>
                 <article class="panel panel-insights"><div class="panel-head"><div><h2>Key Insights</h2></div></div><div id="insights" class="insights"></div></article>
               </section>
               <section class="row-bottom">
@@ -95,7 +95,7 @@
         </div>
 
         <div class="dashboard-caption">
-          <div><strong>Interactive</strong><span>Month, category, and seller-state filters refresh the analytical view.</span></div>
+          <div><strong>Interactive</strong><span>Month and category drive the page-level commercial view; seller state is scoped to state panels because the geography mart has no month grain.</span></div>
           <div><strong>Governed</strong><span>Headline trends stop at the executive-complete reporting boundary.</span></div>
           <div><strong>Grain-safe</strong><span>Metrics are calculated from documented marts rather than naive item × payment joins.</span></div>
         </div>
