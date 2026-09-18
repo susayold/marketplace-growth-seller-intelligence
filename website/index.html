@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="MarketLens — Marketplace Growth & Seller Intelligence. A real-data marketplace analytics case study using Olist 2016–2018." />
+  <title>MarketLens | Marketplace Growth & Seller Intelligence</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="portfolio-page">
+    <header class="portfolio-nav">
+      <a class="portfolio-brand" href="#top" aria-label="MarketLens home">
+        <span class="portfolio-brand-mark">M</span>
+        <span><strong>MarketLens</strong><small>Marketplace Intelligence</small></span>
+      </a>
+      <nav class="portfolio-nav-links" aria-label="Case study navigation">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#findings">Findings</a>
+        <a href="#methodology">Methodology</a>
+        <a href="#limitations">Limitations</a>
+        <a class="nav-cta" href="https://github.com/susayold/marketplace-growth-seller-intelligence" target="_blank" rel="noreferrer">View GitHub ↗</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="portfolio-hero section-wrap">
+        <div class="hero-copy">
+          <div class="eyebrow">DATA ANALYTICS CASE STUDY · MARKETPLACE</div>
+          <h1>Marketplace Growth<br/><span>& Seller Intelligence</span></h1>
+          <p class="hero-lede">An end-to-end analytics system built to understand marketplace growth, seller acquisition, activation, concentration, and customer experience — with decision-ready metrics, explicit reporting boundaries, and reproducible evidence.</p>
+          <div class="hero-actions">
+            <a class="button-primary" href="#dashboard">Explore Executive Dashboard ↓</a>
+            <a class="button-secondary" href="#methodology">See how it was built</a>
+          </div>
+          <div class="tech-row" aria-label="Project stack">
+            <span>SQL</span><span>Python</span><span>Power BI</span><span>Power Query</span><span>DAX</span><span>DuckDB</span><span>GitHub</span>
+          </div>
+        </div>
+        <aside class="hero-brief">
+          <div class="brief-label">PROJECT BRIEF</div>
+          <dl>
+            <div><dt>Objective</dt><dd>Turn fragmented marketplace and seller-funnel data into a trusted decision layer.</dd></div>
+            <div><dt>Data</dt><dd>Olist Brazilian E-Commerce + Marketing Funnel, historical 2016–2018.</dd></div>
+            <div><dt>Core lens</dt><dd>Growth · Acquisition · Activation · Concentration · Customer Experience</dd></div>
+            <div><dt>Reporting stance</dt><dd>Historical, associative, grain-safe, and explicit about limitations.</dd></div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="showcase section-wrap" id="dashboard">
+        <div class="section-heading split-heading">
+          <div><span class="section-index">01</span><div><p class="section-kicker">EXECUTIVE OVERVIEW</p><h2>The dashboard first.<br/>The reasoning follows.</h2></div></div>
+          <p>This is the primary executive view reconstructed as an interactive web experience using the same governed project outputs. The visual sits first, like a Power BI report embedded in a portfolio; scroll below for the analytical story, metric definitions, methodology, decisions, and caveats.</p>
+        </div>
+
+        <div class="dashboard-frame">
+          <div class="dashboard-topbar"><span></span><span></span><span></span><strong>MarketLens — Executive Overview</strong><em>REAL PROJECT DATA</em></div>
+          <div class="app-shell">
+            <aside class="sidebar">
+              <div class="brand"><div class="brand-mark">G</div><div class="brand-copy"><strong>MarketLens</strong><span>Seller Intelligence</span></div></div>
+              <nav class="nav" aria-label="Dashboard pages">
+                <button class="nav-item active"><span>⌂</span>Overview</button>
+                <button class="nav-item disabled" title="Coming next"><span>♙</span>Acquisition</button>
+                <button class="nav-item disabled" title="Coming next"><span>▥</span>Activation & Retention</button>
+                <button class="nav-item disabled" title="Coming next"><span>◇</span>Commercial</button>
+                <button class="nav-item disabled" title="Coming next"><span>◌</span>Customer Experience</button>
+                <button class="nav-item disabled" title="Coming next"><span>⌕</span>Root Cause</button>
+                <button class="nav-item disabled" title="Coming next"><span>⚙</span>Decision Center</button>
+              </nav>
+              <div class="sidebar-art" aria-hidden="true"><div class="bars"><i></i><i></i><i></i><i></i><i></i></div><div class="arrow">↗</div></div>
+              <div class="tagline">Better Data.<br/>Stronger Marketplaces.</div>
+            </aside>
+            <div class="dashboard-main">
+              <header class="header">
+                <div><h1>Marketplace Growth & Seller Intelligence</h1><p>Executive Overview <span>│</span> Turning marketplace data into trusted insights for better decisions</p></div>
+                <div class="filters"><label>Month<select id="monthFilter"></select></label><label>Category<select id="categoryFilter"></select></label><label>Seller State<select id="stateFilter"></select></label><button id="resetFilters">↻ Reset Filters</button></div>
+              </header>
+              <section class="kpi-grid" id="kpiGrid"></section>
+              <section class="row-main">
+                <article class="panel panel-trend"><div class="panel-head"><div><h2>GMV Proxy & Orders Trend</h2><p>Executive-complete periods only</p></div></div><div id="trendChart" class="chart chart-large"></div></article>
+                <article class="panel panel-lorenz"><div class="panel-head"><div><h2>Seller Concentration (Lorenz Curve)</h2><p>Anchored to observed seller-share concentration</p></div></div><div id="lorenzChart" class="chart chart-medium"></div><div class="mini-stats"><div class="mini-stat"><strong id="giniValue">—</strong><span>Seller Gini</span></div><div class="mini-stat"><strong id="top20Value">—</strong><span>Top 20% Seller Share</span></div></div></article>
+                <article class="panel panel-insights"><div class="panel-head"><div><h2>Key Insights</h2></div></div><div id="insights" class="insights"></div></article>
+              </section>
+              <section class="row-bottom">
+                <article class="panel"><div class="panel-head"><div><h2>Top 5 Categories by GMV</h2></div></div><div id="categoryChart" class="chart chart-small"></div></article>
+                <article class="panel"><div class="panel-head"><div><h2>Top 5 States by GMV</h2></div></div><div id="stateChart" class="chart chart-small"></div></article>
+                <article class="panel"><div class="panel-head"><div><h2>Seller Footprint by State</h2></div></div><div class="table-wrap"><table id="stateTable" class="data-table"></table></div><div class="source-note">Source: mart_geography_performance.csv</div></article>
+                <article class="panel"><div class="panel-head"><div><h2>Recent Highlights</h2></div></div><div id="highlights" class="highlight-list"></div></article>
+              </section>
+              <footer class="footer"><span>Marketplace Growth & Seller Intelligence</span><span>REAL DATA · OLIST 2016–2018</span><span>Page 1 of 7</span></footer>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-caption">
+          <div><strong>Interactive</strong><span>Month, category, and seller-state filters refresh the analytical view.</span></div>
+          <div><strong>Governed</strong><span>Headline trends stop at the executive-complete reporting boundary.</span></div>
+          <div><strong>Grain-safe</strong><span>Metrics are calculated from documented marts rather than naive item × payment joins.</span></div>
+        </div>
+      </section>
+
+      <section class="story-section" id="case-study">
+        <div class="story-shell section-wrap">
+          <aside class="story-toc">
+            <p>CASE STUDY</p>
+            <a href="#overview">Overview</a>
+            <a href="#questions">Business questions</a>
+            <a href="#trust">Trust layer</a>
+            <a href="#findings">Key findings</a>
+            <a href="#decisions">Decision layer</a>
+            <a href="#methodology">Methodology</a>
+            <a href="#limitations">Limitations</a>
+            <a href="#implementation">Implementation</a>
+          </aside>
+
+          <div class="story-content">
+            <section class="story-block opening-block" id="overview">
+              <p class="section-kicker">02 · THE CASE</p>
+              <h2>From marketplace activity to an executive decision system.</h2>
+              <p class="story-lead">The project is not a collection of isolated charts. It is an analytical operating layer: define trustworthy grains, reconcile the commercial scorecard, distinguish acquisition from seller value, measure activation under censoring, surface concentration, and connect delivery performance to customer experience without overstating causality.</p>
+
+              <div class="metric-strip">
+                <div><strong>R$13.59M</strong><span>GMV proxy</span><small>Sum of item price; not platform revenue</small></div>
+                <div><strong>98,666</strong><span>Orders</span><small>Distinct order_id</small></div>
+                <div><strong>3,095</strong><span>Active sellers</span><small>Sellers with observed marketplace activity</small></div>
+                <div><strong>8.1%</strong><span>Late delivery rate</span><small>Delivered later than estimated date</small></div>
+              </div>
+
+              <div class="two-col-copy">
+                <div><h3>The problem</h3><p>Marketplace growth can look healthy in aggregate while hiding seller concentration, low-quality acquisition, slow activation, or customer-experience deterioration. A decision-maker needs one view that shows scale and risk together.</p></div>
+                <div><h3>The analytical response</h3><p>Build a consistent semantic layer across marketplace, seller, funnel, retention, and experience domains — then expose the most decision-relevant evidence in a dashboard that always retains the underlying denominator and caveat.</p></div>
+              </div>
+            </section>
+
+            <section class="story-block" id="questions">
+              <p class="section-kicker">03 · BUSINESS QUESTIONS</p>
+              <h2>Four questions the executive page is designed to answer quickly.</h2>
+              <div class="question-grid">
+                <article><span>01</span><h3>Is marketplace momentum real?</h3><p>Separate volume, GMV proxy, seller count, and AOV so a change in one component is not mistaken for broad-based growth.</p></article>
+                <article><span>02</span><h3>How concentrated is seller value?</h3><p>Quantify whether commercial performance depends on a narrow seller cohort rather than a diversified seller base.</p></article>
+                <article><span>03</span><h3>Where is the commercial contribution coming from?</h3><p>Expose category and geographic contribution without confusing sales value with platform revenue or profitability.</p></article>
+                <article><span>04</span><h3>Is customer experience becoming an operating risk?</h3><p>Track late delivery and review outcomes as diagnostic signals while keeping causal claims out of the dashboard.</p></article>
+              </div>
+            </section>
+
+            <section class="story-block trust-block" id="trust">
+              <div class="split-heading compact">
+                <div><p class="section-kicker">04 · TRUST LAYER</p><h2>Before visualizing anything, define what each number is allowed to mean.</h2></div>
+                <p>The core design principle is metric governance: grain, denominator, reporting boundary, and inference limit are part of the metric — not footnotes added later.</p>
+              </div>
+
+              <div class="trust-grid">
+                <article class="trust-card"><span class="trust-icon">GMV</span><h3>GMV proxy</h3><p>Sum of <code>order_item.price</code>. It represents merchandise-sales value in the historical dataset, not Olist revenue, profit, or margin.</p></article>
+                <article class="trust-card"><span class="trust-icon">#</span><h3>Orders</h3><p>Distinct <code>order_id</code>. Counts are protected from item/payment fan-out instead of counting rows after one-to-many joins.</p></article>
+                <article class="trust-card"><span class="trust-icon">S</span><h3>Active sellers</h3><p>Distinct sellers with at least one item in the period. The operating grain is explicitly seller-period, not raw transaction row.</p></article>
+                <article class="trust-card"><span class="trust-icon">⌁</span><h3>Late delivery</h3><p>Delivered after the estimated date divided by delivered orders. It is an order-level signal and is not assigned as direct seller causality.</p></article>
+              </div>
+
+              <div class="boundary-panel">
+                <div class="boundary-copy"><span>REPORTING BOUNDARY CONTRACT</span><h3>Incomplete edge periods are not allowed to drive executive trend claims.</h3><p>A month is treated as executive-complete only when it is not an edge month and passes the configured activity/completeness gate. Raw observation, analytical eligibility, and executive reporting boundaries are kept separate.</p></div>
+                <div class="boundary-flow"><div><b>01</b><span>Raw observation</span></div><i>→</i><div><b>02</b><span>Analytical eligibility</span></div><i>→</i><div class="active"><b>03</b><span>Executive reporting</span></div></div>
+              </div>
+            </section>
+
+            <section class="story-block findings-block" id="findings">
+              <p class="section-kicker">05 · KEY FINDINGS</p>
+              <h2>What the evidence says — and what it does not.</h2>
+
+              <article class="finding finding-blue">
+                <div class="finding-number">01</div>
+                <div class="finding-copy"><span class="finding-label">SELLER CONCENTRATION</span><h3>Marketplace scale is broad, but value creation is highly concentrated.</h3><p>The top 20% of sellers account for <strong>82.7% of GMV proxy</strong>. This makes concentration a commercial resilience issue: seller count alone overstates how diversified marketplace value actually is.</p><div class="finding-action"><b>Decision implication</b><span>Track seller concentration alongside GMV growth and maintain a diversification watchlist for high-value seller dependence.</span></div></div>
+                <div class="finding-stat"><strong>82.7%</strong><span>GMV proxy from top 20% of sellers</span><small>Historical portfolio concentration</small></div>
+              </article>
+
+              <article class="finding finding-rose">
+                <div class="finding-number">02</div>
+                <div class="finding-copy"><span class="finding-label">CUSTOMER EXPERIENCE</span><h3>Late delivery is strongly associated with worse review outcomes.</h3><p>On-time orders average about <strong>4.29</strong> review points versus <strong>2.57</strong> for late orders. The observed mean review gap is approximately <strong>−1.73 points</strong>; low-review incidence is also substantially higher among late orders.</p><div class="finding-action"><b>Decision implication</b><span>Prioritize delivery-risk diagnostics by volume, delay severity, geography, category, and carrier before assigning operational ownership.</span></div></div>
+                <div class="finding-stat rose"><strong>−1.73</strong><span>Review-point gap</span><small>Late minus on-time; association only</small></div>
+              </article>
+
+              <article class="finding finding-teal">
+                <div class="finding-number">03</div>
+                <div class="finding-copy"><span class="finding-label">SELLER ACTIVATION</span><h3>Activation is a time-to-event problem, not a simple matched/unmatched ratio.</h3><p>Among sellers observable through each fixed window, activation reaches <strong>15.8% by 30 days</strong>, <strong>30.8% by 60 days</strong>, and <strong>42.1% by 90 days</strong>. The median exact time among the 380 observed activators is <strong>44.3 days</strong>.</p><div class="finding-action"><b>Decision implication</b><span>Instrument onboarding around 30/60/90-day milestones and treat sellers without an observed event as censored where appropriate rather than silently dropping them.</span></div></div>
+                <div class="activation-steps"><div><strong>15.8%</strong><span>30D</span></div><i></i><div><strong>30.8%</strong><span>60D</span></div><i></i><div><strong>42.1%</strong><span>90D</span></div></div>
+              </article>
+            </section>
+
+            <section class="story-block" id="decisions">
+              <p class="section-kicker">06 · DECISION LAYER</p>
+              <h2>The analysis ends with actions, not charts.</h2>
+              <div class="decision-stack">
+                <article><span>01</span><div><h3>Protect the operating scorecard</h3><p>Use grain-safe monthly GMV proxy, orders, active sellers, and AOV; reconcile every refresh and block partial periods from headline trend interpretation.</p></div><em>Data governance</em></article>
+                <article><span>02</span><div><h3>Evaluate acquisition on quality, not lead volume</h3><p>Read origin performance across conversion, matched sellers, activation, and downstream GMV together. CAC and ROAS remain unavailable until spend is added.</p></div><em>Growth</em></article>
+                <article><span>03</span><div><h3>Instrument seller onboarding</h3><p>Monitor first-sale milestones at 7/30/60/90 days and preserve the eligible/censored population logic when comparing channels or segments.</p></div><em>Activation</em></article>
+                <article><span>04</span><div><h3>Monitor concentration explicitly</h3><p>Pair marketplace growth with seller-dependence indicators so strong GMV does not hide fragility in the seller portfolio.</p></div><em>Commercial risk</em></article>
+                <article><span>05</span><div><h3>Prioritize delivery diagnostics</h3><p>Use order volume, delay severity, and review outcomes to prioritize investigation. Do not assign a causal seller fault where multi-seller orders make attribution ambiguous.</p></div><em>Customer experience</em></article>
+              </div>
+            </section>
+
+            <section class="story-block methodology-block" id="methodology">
+              <p class="section-kicker">07 · METHODOLOGY</p>
+              <h2>A reproducible path from raw files to decision-facing evidence.</h2>
+              <div class="pipeline">
+                <article><b>01</b><span>INGEST</span><h3>Read source CSVs from ZIP</h3><p>Preserve raw source boundaries and avoid manual spreadsheet manipulation.</p></article>
+                <article><b>02</b><span>PROFILE</span><h3>Audit keys, nulls & dates</h3><p>Test distinctness, candidate keys, domain values, and observation ranges.</p></article>
+                <article><b>03</b><span>MODEL</span><h3>Build grain-safe marts</h3><p>Create SQL/pandas-shaped marts for marketplace, seller, funnel, cohort, and experience domains.</p></article>
+                <article><b>04</b><span>VALIDATE</span><h3>Reconcile & test</h3><p>Demonstrate fan-out risk, reconcile metrics, and use association tests with explicit caveats.</p></article>
+                <article><b>05</b><span>DECIDE</span><h3>Publish the executive layer</h3><p>Present units, denominators, evidence, limitations, and action implications together.</p></article>
+              </div>
+
+              <div class="method-detail-grid">
+                <article><span>WHY FAN-OUT MATTERS</span><h3>One wrong join can make a good-looking dashboard financially wrong.</h3><p>The project explicitly demonstrates the item × payment fan-out risk before metric calculation. Commercial values are calculated at documented grains and reconciled back to canonical outputs.</p></article>
+                <article><span>WHY CENSORING MATTERS</span><h3>Recent sellers have not had equal time to activate or retain.</h3><p>Activation and retention denominators only include sellers observable through the relevant time window. This prevents newer cohorts from being penalized simply because their future has not happened yet.</p></article>
+              </div>
+            </section>
+
+            <section class="story-block" id="limitations">
+              <p class="section-kicker">08 · LIMITATIONS & INFERENCE BOUNDARY</p>
+              <h2>Credibility comes from showing where the analysis stops.</h2>
+              <div class="limitations-grid">
+                <article><b>Historical data</b><p>The dataset is anonymized and historical. The project does not claim to describe the current Brazilian e-commerce market.</p></article>
+                <article><b>GMV ≠ revenue</b><p>GMV proxy is merchandise value from item prices. Platform revenue, margin, CAC, and ROAS are unavailable.</p></article>
+                <article><b>Sampled funnel</b><p>The marketing funnel is sampled and not every lead links to an observed marketplace seller.</p></article>
+                <article><b>Association ≠ causation</b><p>Late delivery and review outcomes are observational associations, not experimental causal estimates.</p></article>
+                <article><b>Attribution limits</b><p>Multi-seller orders make seller-level delivery/review attribution ambiguous.</p></article>
+                <article><b>Right censoring</b><p>Recent cohorts do not have complete future observation windows; ineligible retention cells remain null rather than being forced to zero.</p></article>
+              </div>
+            </section>
+
+            <section class="story-block implementation-block" id="implementation">
+              <p class="section-kicker">09 · IMPLEMENTATION</p>
+              <h2>Built as an auditable analytics project, not a one-off dashboard file.</h2>
+              <div class="implementation-grid">
+                <div class="stack-card"><span>TRANSFORMATION</span><strong>Python + SQL</strong><p>Reusable transformations, analysis scripts, documented marts, and quality checks.</p></div>
+                <div class="stack-card"><span>ANALYTICAL ENGINE</span><strong>DuckDB / PostgreSQL target</strong><p>Local reproducibility with production-oriented SQL specifications.</p></div>
+                <div class="stack-card"><span>BI LAYER</span><strong>Power BI + DAX</strong><p>Executive reporting logic, native visuals, and semantic measures.</p></div>
+                <div class="stack-card"><span>VERSIONING</span><strong>Git + GitHub</strong><p>Source-controlled SQL, documentation, QA artifacts, charts, and release manifests.</p></div>
+              </div>
+
+              <div class="closing-card">
+                <div><span>PORTFOLIO TAKEAWAY</span><h3>The value of the project is not the number of visuals. It is the chain from raw data → trusted metric → evidence → decision.</h3></div>
+                <div class="closing-actions"><a class="button-primary" href="#dashboard">Back to dashboard ↑</a><a class="button-secondary dark" href="https://github.com/susayold/marketplace-growth-seller-intelligence" target="_blank" rel="noreferrer">Open repository ↗</a></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="portfolio-footer section-wrap"><span>MarketLens · Marketplace Growth & Seller Intelligence</span><span>Historical analytics case study · Olist 2016–2018</span></footer>
+  </div>
+
+  <div class="loading" id="loading"><div class="spinner"></div><span>Loading real project data…</span></div>
+  <div class="error" id="errorBox" hidden></div>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
