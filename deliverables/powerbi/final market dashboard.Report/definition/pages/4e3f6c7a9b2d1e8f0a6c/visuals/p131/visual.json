@@ -5,7 +5,7 @@
     "x": 1638,
     "y": 356,
     "z": 60000,
-    "height": 58,
+    "height": 64,
     "width": 226,
     "tabOrder": 60000
   },
@@ -22,7 +22,7 @@
                     "value": "Marketplace Momentum",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "12px",
+                      "fontSize": "14px",
                       "color": "#1557A6"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "GMV and orders remain strong in the latest complete period.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "10px",
+                      "fontSize": "11px",
                       "color": "#344054"
                     }
                   }

@@ -5,7 +5,7 @@
     "x": 1660,
     "y": 355,
     "z": 35000,
-    "height": 60,
+    "height": 64,
     "width": 195,
     "tabOrder": 35000
   },
@@ -22,7 +22,7 @@
                     "value": "Partner converts best",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "12px",
+                      "fontSize": "14px",
                       "color": "#0F766E"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "\n24.7% conversion with the fastest close time.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "10px",
+                      "fontSize": "11px",
                       "color": "#475569"
                     }
                   }

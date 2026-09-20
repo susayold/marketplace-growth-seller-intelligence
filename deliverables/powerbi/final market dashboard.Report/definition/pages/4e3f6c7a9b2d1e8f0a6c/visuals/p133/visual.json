@@ -5,7 +5,7 @@
     "x": 1638,
     "y": 436,
     "z": 61000,
-    "height": 58,
+    "height": 64,
     "width": 226,
     "tabOrder": 61000
   },
@@ -22,7 +22,7 @@
                     "value": "High Concentration",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "12px",
+                      "fontSize": "14px",
                       "color": "#8A5A00"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Top 20% of sellers contribute 82.7% of GMV.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "10px",
+                      "fontSize": "11px",
                       "color": "#344054"
                     }
                   }

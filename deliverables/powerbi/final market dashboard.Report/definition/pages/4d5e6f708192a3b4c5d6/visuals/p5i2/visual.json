@@ -5,7 +5,7 @@
     "x": 1610,
     "y": 838,
     "z": 33000,
-    "height": 50,
+    "height": 56,
     "width": 248,
     "tabOrder": 33000
   },
@@ -22,7 +22,7 @@
                     "value": "Delivery risk is concentrated",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "12px",
+                      "fontSize": "14px",
                       "color": "#BE123C"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Slightly Late and Late carry the clearest operational exposure.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "10px",
+                      "fontSize": "11px",
                       "color": "#475569"
                     }
                   }

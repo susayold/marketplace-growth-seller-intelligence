@@ -5,7 +5,7 @@
     "x": 1660,
     "y": 435,
     "z": 36000,
-    "height": 60,
+    "height": 64,
     "width": 195,
     "tabOrder": 36000
   },
@@ -22,7 +22,7 @@
                     "value": "Organic drives volume",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "12px",
+                      "fontSize": "14px",
                       "color": "#1D4ED8"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "\nLargest lead pool, but conversion trails Partner.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "10px",
+                      "fontSize": "11px",
                       "color": "#475569"
                     }
                   }

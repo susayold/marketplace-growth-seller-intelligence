@@ -5,7 +5,7 @@
     "x": 1610,
     "y": 960,
     "z": 36000,
-    "height": 50,
+    "height": 56,
     "width": 248,
     "tabOrder": 36000
   },
@@ -22,7 +22,7 @@
                     "value": "Retention stays distinct",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "12px",
+                      "fontSize": "14px",
                       "color": "#1D4ED8"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Post-activation engagement tracks a separate outcome.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "10px",
+                      "fontSize": "11px",
                       "color": "#475569"
                     }
                   }

@@ -5,7 +5,7 @@
     "x": 1610,
     "y": 960,
     "z": 39000,
-    "height": 50,
+    "height": 56,
     "width": 248,
     "tabOrder": 39000
   },
@@ -22,7 +22,7 @@
                     "value": "Scale efficient acquisition",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "12px",
+                      "fontSize": "14px",
                       "color": "#1D4ED8"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Test Referral while building the category playbook.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "10px",
+                      "fontSize": "11px",
                       "color": "#475569"
                     }
                   }

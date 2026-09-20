@@ -5,7 +5,7 @@
     "x": 1610,
     "y": 777,
     "z": 32000,
-    "height": 50,
+    "height": 56,
     "width": 248,
     "tabOrder": 32000
   },
@@ -22,7 +22,7 @@
                     "value": "Late Delivery is P1",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "12px",
+                      "fontSize": "14px",
                       "color": "#BE123C"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Highest severity and frequency create the top investigation priority.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "10px",
+                      "fontSize": "11px",
                       "color": "#475569"
                     }
                   }

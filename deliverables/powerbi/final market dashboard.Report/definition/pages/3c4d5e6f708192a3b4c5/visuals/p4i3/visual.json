@@ -5,7 +5,7 @@
     "x": 1610,
     "y": 899,
     "z": 35000,
-    "height": 50,
+    "height": 56,
     "width": 248,
     "tabOrder": 35000
   },
@@ -22,7 +22,7 @@
                     "value": "Concentration is visible",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "12px",
+                      "fontSize": "14px",
                       "color": "#1D4ED8"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Strategic plus Growth account for most value contribution.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "10px",
+                      "fontSize": "11px",
                       "color": "#475569"
                     }
                   }
