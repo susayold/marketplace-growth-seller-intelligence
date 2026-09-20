@@ -1,0 +1,90 @@
+table DemoRootCause
+	lineageTag: 8b558f6b-9456-4c77-ad2d-e8c3fe41d02e
+
+	measure 'Root P1 Drivers' = COUNTROWS ( FILTER ( DemoRootCause, DemoRootCause[PriorityScore] >= 20 ) )
+		formatString: #,0
+		lineageTag: cc86556a-6097-4ae0-8836-e397bcf2c6e0
+
+	measure 'Root Highest Priority' = MAX ( DemoRootCause[PriorityScore] )
+		formatString: #,0
+		lineageTag: 9ec1ddd2-1745-4078-953c-5b62e291b299
+
+	measure 'Root High Severity' = COUNTROWS ( FILTER ( DemoRootCause, DemoRootCause[Severity] >= 4 ) )
+		formatString: #,0
+		lineageTag: a6959914-a005-4f3a-802a-1ea5f0b58f8a
+
+	measure 'Root Commercial Risk' = COUNTROWS ( FILTER ( DemoRootCause, DemoRootCause[Owner] = "Commercial" ) )
+		formatString: #,0
+		lineageTag: d2ab40b8-6f6c-481a-af5c-bb975d90c013
+
+	measure 'Root Operational Risk' = COUNTROWS ( FILTER ( DemoRootCause, DemoRootCause[Owner] = "Operations" || DemoRootCause[Owner] = "Seller Ops" || DemoRootCause[Owner] = "Marketplace" ) )
+		formatString: #,0
+		lineageTag: e8630587-f4b6-4f81-8ed6-5dc3b746f3be
+
+	measure 'Root GMV Impact Delta Label' = VAR Total = COUNTROWS ( DemoRootCause ) RETURN "▲ " & FORMAT ( DIVIDE ( [Root P1 Drivers], Total ), "0.0%" ) & " high-priority share"
+		formatString: General
+		lineageTag: 5f1a0e21-36f0-4d1f-9b08-1d0ad2b4f501
+
+	measure 'Root Order Impact Delta Label' = "▲ +" & FORMAT ( [Root Highest Priority] - 20, "0" ) & " vs P1 threshold"
+		formatString: General
+		lineageTag: 6a2b1f32-47f1-4e20-ac19-2e1be3c5f602
+
+	measure 'Root Top Driver Delta Label' = VAR Total = COUNTROWS ( DemoRootCause ) RETURN "▲ " & FORMAT ( DIVIDE ( [Root High Severity], Total ), "0.0%" ) & " high-severity share"
+		formatString: General
+		lineageTag: 7b3c2043-58a2-4f31-bd2a-3f2cf4d60703
+
+	measure 'Root Second Driver Delta Label' = VAR Total = COUNTROWS ( DemoRootCause ) RETURN "▲ " & FORMAT ( DIVIDE ( [Root Commercial Risk], Total ), "0.0%" ) & " commercial share"
+		formatString: General
+		lineageTag: 8c4d3154-69b3-4042-ce3b-4a3da5e71804
+
+	measure 'Root Risk Register Delta Label' = VAR Total = COUNTROWS ( DemoRootCause ) RETURN "▲ " & FORMAT ( DIVIDE ( [Root Operational Risk], Total ), "0.0%" ) & " operational share"
+		formatString: General
+		lineageTag: 9d5e4265-70c4-4153-df4c-5a4ea6f82905
+
+	column Driver
+		dataType: string
+		lineageTag: 0f6d0743-bc23-41b1-a94f-4248c769c588
+		summarizeBy: none
+		sourceColumn: Driver
+
+	column Metric
+		dataType: string
+		lineageTag: 828809ee-74bd-40dd-a473-4756b5622834
+		summarizeBy: none
+		sourceColumn: Metric
+
+	column Impact
+		dataType: double
+		formatString: 0.000
+		lineageTag: d22d9f2b-48c3-4fda-bb93-33603cdaa7b3
+		summarizeBy: sum
+		sourceColumn: Impact
+
+	column Severity
+		dataType: int64
+		lineageTag: c5397a47-4ef7-4631-b51f-59b38d9702cb
+		summarizeBy: sum
+		sourceColumn: Severity
+
+	column Frequency
+		dataType: int64
+		lineageTag: 3d337664-c1ea-44d2-aa03-6346ba953b0e
+		summarizeBy: sum
+		sourceColumn: Frequency
+
+	column PriorityScore
+		dataType: int64
+		lineageTag: 9423a915-e87f-4a62-816c-e2158160f980
+		summarizeBy: sum
+		sourceColumn: PriorityScore
+
+	column Owner
+		dataType: string
+		lineageTag: 67ce9a1e-b193-430d-831d-f51c900dfcd8
+		summarizeBy: none
+		sourceColumn: Owner
+
+	partition DemoRootCause = m
+		mode: import
+		source = let Raw = Csv.Document(File.Contents("C:\Users\sangk\final market dashboard.SemanticModel\source-data\demo_root_cause_register.csv"), [Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Driver", type text}, {"Metric", type text}, {"Impact", type number}, {"Severity", Int64.Type}, {"Frequency", Int64.Type}, {"PriorityScore", Int64.Type}, {"Owner", type text}}) in Typed
+

@@ -1,0 +1,139 @@
+table DemoActivation
+	lineageTag: 5395afb7-fe32-497c-bf2c-700d1e4a84f9
+
+	measure 'Activation Closed Sellers' = MAX ( DemoActivation[ClosedSellersSummary] )
+		formatString: #,0
+		lineageTag: 9788516f-d286-4e79-942d-cef269017e94
+
+	measure 'Activation 30D Rate' = MAX ( DemoActivation[Activation30RateSummary] )
+		formatString: 0.0%
+		lineageTag: 3c36bb96-5c65-4e3a-91b0-79f618fd1c37
+
+	measure 'Activation 60D Rate' = MAX ( DemoActivation[Activation60RateSummary] )
+		formatString: 0.0%
+		lineageTag: 697eba7c-baec-4bee-9b2e-77d8e274f095
+
+	measure 'Activation 90D Rate' = MAX ( DemoActivation[Activation90RateSummary] )
+		formatString: 0.0%
+		lineageTag: 0209240e-8ae1-47ff-87b0-07376c15b700
+
+	measure 'Activation Median Days' = MAX ( DemoActivation[MedianActivationDaysSummary] )
+		formatString: 0.0
+		lineageTag: 3c4e3e6a-8034-41d4-90df-d9c285316f42
+
+	measure 'Activation Closed Sellers Delta Label' = VAR Cohorts = FILTER ( ALL ( DemoActivation ), NOT ISBLANK ( DemoActivation[SellersClosed] ) && DemoActivation[SellersClosed] > 0 ) VAR LatestCohort = MAXX ( Cohorts, DemoActivation[Cohort] ) VAR PriorCohort = MAXX ( FILTER ( Cohorts, DemoActivation[Cohort] < LatestCohort ), DemoActivation[Cohort] ) VAR LatestValue = MAXX ( FILTER ( Cohorts, DemoActivation[Cohort] = LatestCohort ), DemoActivation[SellersClosed] ) VAR PriorValue = MAXX ( FILTER ( Cohorts, DemoActivation[Cohort] = PriorCohort ), DemoActivation[SellersClosed] ) VAR Delta = DIVIDE ( LatestValue - PriorValue, PriorValue ) RETURN IF ( ISBLANK ( Delta ), BLANK (), IF ( Delta >= 0, "▲ ", "▼ " ) & FORMAT ( Delta, "+0.0%;-0.0%;0.0%" ) & " vs prior cohort" )
+		formatString: General
+		lineageTag: 5f1a0e21-36f0-4d1f-9b08-1d0ad2b4f101
+
+	measure 'Activation 30D Delta Label' = VAR Cohorts = FILTER ( ALL ( DemoActivation ), NOT ISBLANK ( DemoActivation[Activation30Rate] ) ) VAR LatestCohort = MAXX ( Cohorts, DemoActivation[Cohort] ) VAR PriorCohort = MAXX ( FILTER ( Cohorts, DemoActivation[Cohort] < LatestCohort ), DemoActivation[Cohort] ) VAR LatestValue = MAXX ( FILTER ( Cohorts, DemoActivation[Cohort] = LatestCohort ), DemoActivation[Activation30Rate] ) VAR PriorValue = MAXX ( FILTER ( Cohorts, DemoActivation[Cohort] = PriorCohort ), DemoActivation[Activation30Rate] ) VAR Delta = ( LatestValue - PriorValue ) * 100 RETURN IF ( ISBLANK ( Delta ), BLANK (), IF ( Delta >= 0, "▲ ", "▼ " ) & FORMAT ( Delta, "+0.0;-0.0;0.0" ) & " pp vs prior cohort" )
+		formatString: General
+		lineageTag: 6a2b1f32-47f1-4e20-ac19-2e1be3c5f212
+
+	measure 'Activation 60D Delta Label' = VAR Cohorts = FILTER ( ALL ( DemoActivation ), NOT ISBLANK ( DemoActivation[Activation60Rate] ) ) VAR LatestCohort = MAXX ( Cohorts, DemoActivation[Cohort] ) VAR PriorCohort = MAXX ( FILTER ( Cohorts, DemoActivation[Cohort] < LatestCohort ), DemoActivation[Cohort] ) VAR LatestValue = MAXX ( FILTER ( Cohorts, DemoActivation[Cohort] = LatestCohort ), DemoActivation[Activation60Rate] ) VAR PriorValue = MAXX ( FILTER ( Cohorts, DemoActivation[Cohort] = PriorCohort ), DemoActivation[Activation60Rate] ) VAR Delta = ( LatestValue - PriorValue ) * 100 RETURN IF ( ISBLANK ( Delta ), BLANK (), IF ( Delta >= 0, "▲ ", "▼ " ) & FORMAT ( Delta, "+0.0;-0.0;0.0" ) & " pp vs prior cohort" )
+		formatString: General
+		lineageTag: 7b3c2043-58a2-4f31-bd2a-3f2cf4d60323
+
+	measure 'Activation 90D Delta Label' = VAR Cohorts = FILTER ( ALL ( DemoActivation ), NOT ISBLANK ( DemoActivation[Activation90Rate] ) ) VAR LatestCohort = MAXX ( Cohorts, DemoActivation[Cohort] ) VAR PriorCohort = MAXX ( FILTER ( Cohorts, DemoActivation[Cohort] < LatestCohort ), DemoActivation[Cohort] ) VAR LatestValue = MAXX ( FILTER ( Cohorts, DemoActivation[Cohort] = LatestCohort ), DemoActivation[Activation90Rate] ) VAR PriorValue = MAXX ( FILTER ( Cohorts, DemoActivation[Cohort] = PriorCohort ), DemoActivation[Activation90Rate] ) VAR Delta = ( LatestValue - PriorValue ) * 100 RETURN IF ( ISBLANK ( Delta ), BLANK (), IF ( Delta >= 0, "▲ ", "▼ " ) & FORMAT ( Delta, "+0.0;-0.0;0.0" ) & " pp vs prior cohort" )
+		formatString: General
+		lineageTag: 8c4d3154-69b3-4042-ce3b-4a3da5e71434
+
+	measure 'Activation Median Days Delta Label' = VAR Cohorts = FILTER ( ALL ( DemoActivation ), NOT ISBLANK ( DemoActivation[MedianDaysToActivate] ) && DemoActivation[MedianDaysToActivate] > 0 ) VAR LatestCohort = MAXX ( Cohorts, DemoActivation[Cohort] ) VAR PriorCohort = MAXX ( FILTER ( Cohorts, DemoActivation[Cohort] < LatestCohort ), DemoActivation[Cohort] ) VAR LatestValue = MAXX ( FILTER ( Cohorts, DemoActivation[Cohort] = LatestCohort ), DemoActivation[MedianDaysToActivate] ) VAR PriorValue = MAXX ( FILTER ( Cohorts, DemoActivation[Cohort] = PriorCohort ), DemoActivation[MedianDaysToActivate] ) VAR Delta = DIVIDE ( LatestValue - PriorValue, PriorValue ) RETURN IF ( ISBLANK ( Delta ), BLANK (), IF ( Delta <= 0, "▼ ", "▲ " ) & FORMAT ( Delta, "+0.0%;-0.0%;0.0%" ) & " vs prior cohort" )
+		formatString: General
+		lineageTag: 9d5e4265-70c4-4153-df4c-5a4ea6f82545
+
+	column Cohort
+		dataType: string
+		lineageTag: 37eb523c-9e98-49db-8e73-9c750b3d4e5c
+		summarizeBy: none
+		sourceColumn: Cohort
+
+	column SellersClosed
+		dataType: int64
+		lineageTag: 626dd8d7-ce0e-4992-86eb-aafb3d3e258f
+		summarizeBy: sum
+		sourceColumn: SellersClosed
+
+	column Activated30D
+		dataType: int64
+		lineageTag: 342cdaaa-d05b-4af9-9a3a-659a4a1ae118
+		summarizeBy: sum
+		sourceColumn: Activated30D
+
+	column Activated60D
+		dataType: int64
+		lineageTag: 97476e70-fc06-4cd0-87a7-6afa41bb203d
+		summarizeBy: sum
+		sourceColumn: Activated60D
+
+	column Activated90D
+		dataType: int64
+		lineageTag: c86bc865-58eb-443a-bd65-e3c1d6f15521
+		summarizeBy: sum
+		sourceColumn: Activated90D
+
+	column Activation30Rate
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 9cf3876e-2061-4752-ab1c-1428e592ea69
+		summarizeBy: average
+		sourceColumn: Activation30Rate
+
+	column Activation60Rate
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 3b289207-9081-422d-b26d-d9f61ee7444f
+		summarizeBy: average
+		sourceColumn: Activation60Rate
+
+	column Activation90Rate
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 423c3b14-cab1-429b-9dbe-12f81449341f
+		summarizeBy: average
+		sourceColumn: Activation90Rate
+
+	column MedianDaysToActivate
+		dataType: double
+		formatString: 0.0
+		lineageTag: b00835e1-44a2-4842-ad1a-d3af51617bbf
+		summarizeBy: average
+		sourceColumn: MedianDaysToActivate
+
+	column ClosedSellersSummary
+		dataType: int64
+		lineageTag: 6c2fcb11-8b2f-4b1b-9f0e-8a7d8e0b5f21
+		summarizeBy: max
+		sourceColumn: ClosedSellersSummary
+
+	column Activation30RateSummary
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 0f7b0c6e-3af7-4fd8-b4bb-b7e8c7f8a1d2
+		summarizeBy: max
+		sourceColumn: Activation30RateSummary
+
+	column Activation60RateSummary
+		dataType: double
+		formatString: 0.0%
+		lineageTag: a3f40c0c-d5c8-4675-98af-43b6d9859f7e
+		summarizeBy: max
+		sourceColumn: Activation60RateSummary
+
+	column Activation90RateSummary
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 1b3cbf62-8d9a-4c4c-90d2-2b1c39b0b4e7
+		summarizeBy: max
+		sourceColumn: Activation90RateSummary
+
+	column MedianActivationDaysSummary
+		dataType: double
+		formatString: 0.0
+		lineageTag: 4e43e8a1-0f4c-4d4e-8a24-7d9d4c3a7d65
+		summarizeBy: max
+		sourceColumn: MedianActivationDaysSummary
+
+	partition DemoActivation = m
+		mode: import
+		source = let Raw = Csv.Document(File.Contents("C:\Users\sangk\final market dashboard.SemanticModel\source-data\demo_activation_cohort.csv"), [Delimiter=",", Columns=14, Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Raw, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Cohort", type text}, {"SellersClosed", Int64.Type}, {"Activated30D", Int64.Type}, {"Activated60D", Int64.Type}, {"Activated90D", Int64.Type}, {"Activation30Rate", type number}, {"Activation60Rate", type number}, {"Activation90Rate", type number}, {"MedianDaysToActivate", type number}, {"ClosedSellersSummary", Int64.Type}, {"Activation30RateSummary", type number}, {"Activation60RateSummary", type number}, {"Activation90RateSummary", type number}, {"MedianActivationDaysSummary", type number}}) in Typed
+

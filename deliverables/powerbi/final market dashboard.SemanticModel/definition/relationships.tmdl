@@ -1,0 +1,20 @@
+relationship rel-dim-month-fact
+	fromColumn: bi_fact_marketplace_item.month_start
+	toColumn: DimMonth.MonthStart
+
+relationship rel-dim-category-fact
+	fromColumn: bi_fact_marketplace_item.product_category
+	toColumn: DimCategory.product_category
+
+relationship rel-dim-state-fact
+	fromColumn: bi_fact_marketplace_item.seller_state
+	toColumn: DimState.'Seller State'
+
+relationship rel-dim-category-top5
+	fromColumn: CategoryTop5.product_category_name_english
+	toColumn: DimCategory.product_category
+
+relationship rel-dim-state-top5
+	fromColumn: StateTop5.seller_state
+	toColumn: DimState.'Seller State'
+

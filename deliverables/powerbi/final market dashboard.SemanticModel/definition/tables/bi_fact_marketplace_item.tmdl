@@ -1,0 +1,129 @@
+table bi_fact_marketplace_item
+	lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a9001
+
+	column order_id
+		dataType: string
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a9002
+		summarizeBy: none
+		sourceColumn: order_id
+
+	column order_item_id
+		dataType: int64
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a9003
+		summarizeBy: none
+		sourceColumn: order_item_id
+
+	column purchase_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a9004
+		summarizeBy: none
+		sourceColumn: purchase_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column month_start
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a9005
+		summarizeBy: none
+		sourceColumn: month_start
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column customer_id
+		dataType: string
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a9006
+		summarizeBy: none
+		sourceColumn: customer_id
+
+	column seller_id
+		dataType: string
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a9007
+		summarizeBy: none
+		sourceColumn: seller_id
+
+	column seller_state
+		dataType: string
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a9008
+		summarizeBy: none
+		sourceColumn: seller_state
+
+	column product_id
+		dataType: string
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a9009
+		summarizeBy: none
+		sourceColumn: product_id
+
+	column product_category
+		dataType: string
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a010
+		summarizeBy: none
+		sourceColumn: product_category
+
+	column gmv_proxy
+		dataType: double
+		formatString: R$ #,0.00
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a011
+		summarizeBy: sum
+		sourceColumn: gmv_proxy
+
+	column freight_value
+		dataType: double
+		formatString: R$ #,0.00
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a012
+		summarizeBy: sum
+		sourceColumn: freight_value
+
+	column delivered_order_flag
+		dataType: int64
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a013
+		summarizeBy: sum
+		sourceColumn: delivered_order_flag
+
+	column late_order_flag
+		dataType: int64
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a014
+		summarizeBy: sum
+		sourceColumn: late_order_flag
+
+	partition bi_fact_marketplace_item = m
+		mode: import
+		source =
+				let
+					ItemSource = Csv.Document(File.Contents("C:\\Users\\sangk\\final market dashboard.SemanticModel\\source-data\\data\\raw_source\\brazilian_ecommerce\\olist_order_items_dataset.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Items = Table.PromoteHeaders(ItemSource, [PromoteAllScalars=true]),
+					ItemsTyped = Table.TransformColumnTypes(Items, {{"order_id", type text}, {"order_item_id", Int64.Type}, {"product_id", type text}, {"seller_id", type text}, {"price", type number}, {"freight_value", type number}}, "en-US"),
+					OrderSource = Csv.Document(File.Contents("C:\\Users\\sangk\\final market dashboard.SemanticModel\\source-data\\data\\raw_source\\brazilian_ecommerce\\olist_orders_dataset.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Orders = Table.PromoteHeaders(OrderSource, [PromoteAllScalars=true]),
+					OrdersSelected = Table.SelectColumns(Orders, {"order_id", "customer_id", "order_status", "order_purchase_timestamp", "order_delivered_customer_date", "order_estimated_delivery_date"}),
+					OrdersTyped = Table.TransformColumnTypes(OrdersSelected, {{"order_id", type text}, {"customer_id", type text}, {"order_status", type text}, {"order_purchase_timestamp", type datetime}, {"order_delivered_customer_date", type datetime}, {"order_estimated_delivery_date", type datetime}}, "en-US"),
+					MergeOrders = Table.NestedJoin(ItemsTyped, {"order_id"}, OrdersTyped, {"order_id"}, "Order", JoinKind.Inner),
+					ExpandOrders = Table.ExpandTableColumn(MergeOrders, "Order", {"customer_id", "order_status", "order_purchase_timestamp", "order_delivered_customer_date", "order_estimated_delivery_date"}, {"customer_id", "order_status", "order_purchase_timestamp", "order_delivered_customer_date", "order_estimated_delivery_date"}),
+					SellerSource = Csv.Document(File.Contents("C:\\Users\\sangk\\final market dashboard.SemanticModel\\source-data\\data\\raw_source\\brazilian_ecommerce\\olist_sellers_dataset.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Sellers = Table.PromoteHeaders(SellerSource, [PromoteAllScalars=true]),
+					SellersTyped = Table.TransformColumnTypes(Table.SelectColumns(Sellers, {"seller_id", "seller_state"}), {{"seller_id", type text}, {"seller_state", type text}}, "en-US"),
+					MergeSellers = Table.NestedJoin(ExpandOrders, {"seller_id"}, SellersTyped, {"seller_id"}, "Seller", JoinKind.LeftOuter),
+					ExpandSellers = Table.ExpandTableColumn(MergeSellers, "Seller", {"seller_state"}, {"seller_state"}),
+					ProductSource = Csv.Document(File.Contents("C:\\Users\\sangk\\final market dashboard.SemanticModel\\source-data\\data\\raw_source\\brazilian_ecommerce\\olist_products_dataset.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Products = Table.PromoteHeaders(ProductSource, [PromoteAllScalars=true]),
+					ProductsTyped = Table.TransformColumnTypes(Table.SelectColumns(Products, {"product_id", "product_category_name"}), {{"product_id", type text}, {"product_category_name", type text}}, "en-US"),
+					TranslationSource = Csv.Document(File.Contents("C:\\Users\\sangk\\final market dashboard.SemanticModel\\source-data\\data\\raw_source\\brazilian_ecommerce\\product_category_name_translation.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Translations = Table.PromoteHeaders(TranslationSource, [PromoteAllScalars=true]),
+					TranslationsTyped = Table.TransformColumnTypes(Translations, {{"product_category_name", type text}, {"product_category_name_english", type text}}, "en-US"),
+					MergeProducts = Table.NestedJoin(ExpandSellers, {"product_id"}, ProductsTyped, {"product_id"}, "Product", JoinKind.LeftOuter),
+					ExpandProducts = Table.ExpandTableColumn(MergeProducts, "Product", {"product_category_name"}, {"product_category_name"}),
+					MergeTranslations = Table.NestedJoin(ExpandProducts, {"product_category_name"}, TranslationsTyped, {"product_category_name"}, "Translation", JoinKind.LeftOuter),
+					ExpandTranslations = Table.ExpandTableColumn(MergeTranslations, "Translation", {"product_category_name_english"}, {"product_category_name_english"}),
+					AddPurchaseDate = Table.AddColumn(ExpandTranslations, "purchase_date", each Date.From([order_purchase_timestamp]), type date),
+					AddMonthStart = Table.AddColumn(AddPurchaseDate, "month_start", each Date.StartOfMonth([purchase_date]), type date),
+					AddCategory = Table.AddColumn(AddMonthStart, "product_category", each if [product_category_name_english] <> null and [product_category_name_english] <> "" then [product_category_name_english] else if [product_category_name] <> null and [product_category_name] <> "" then [product_category_name] else "Unknown", type text),
+					AddDelivered = Table.AddColumn(AddCategory, "delivered_order_flag", each if [order_status] = "delivered" then 1 else 0, Int64.Type),
+					AddLate = Table.AddColumn(AddDelivered, "late_order_flag", each if [delivered_order_flag] = 1 and [order_delivered_customer_date] <> null and [order_estimated_delivery_date] <> null and [order_delivered_customer_date] > [order_estimated_delivery_date] then 1 else 0, Int64.Type),
+					RenameGMV = Table.RenameColumns(AddLate, {{"price", "gmv_proxy"}}),
+					Final = Table.SelectColumns(RenameGMV, {"order_id", "order_item_id", "purchase_date", "month_start", "customer_id", "seller_id", "seller_state", "product_id", "product_category", "gmv_proxy", "freight_value", "delivered_order_flag", "late_order_flag"})
+				in
+					Final
+
+	annotation PBI_ResultType = Table
+

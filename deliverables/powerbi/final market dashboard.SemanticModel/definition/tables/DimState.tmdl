@@ -1,0 +1,26 @@
+table DimState
+	lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0221
+
+	column 'Seller State'
+		dataType: string
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0222
+		summarizeBy: none
+		sourceColumn: seller_state
+
+	column StateCountry
+		dataType: string
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0223
+		summarizeBy: none
+		sourceColumn: StateCountry
+
+	partition DimState = m
+		mode: import
+		source =
+				let
+					Source = Table.Distinct(Table.SelectColumns(bi_fact_marketplace_item, {"seller_state"})),
+					AddCountry = Table.AddColumn(Source, "StateCountry", each [seller_state] & ", Brazil", type text)
+				in
+					AddCountry
+
+	annotation PBI_ResultType = Table
+

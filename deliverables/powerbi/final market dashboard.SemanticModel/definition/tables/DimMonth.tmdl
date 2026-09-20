@@ -1,0 +1,55 @@
+table DimMonth
+	lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0201
+
+	column MonthStart
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0202
+		summarizeBy: none
+		sourceColumn: MonthStart
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Date
+		dataType: string
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0203
+		summarizeBy: none
+		sourceColumn: YearMonth
+
+	column MonthLabel
+		dataType: string
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0206
+		summarizeBy: none
+		sourceColumn: MonthLabel
+		sortByColumn: MonthIndex
+
+	column MonthIndex
+		dataType: int64
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0204
+		summarizeBy: none
+		sourceColumn: MonthIndex
+
+	column is_executive_complete
+		dataType: boolean
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0205
+		summarizeBy: none
+		sourceColumn: is_executive_complete
+
+	partition DimMonth = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents("C:\\Users\\sangk\\final market dashboard.SemanticModel\\source-data\\data\\release_v3_final\\reports\\qa\\period_completeness.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Promoted, {{"month", type date}, {"is_executive_complete", type logical}}, "en-US"),
+					Selected = Table.SelectColumns(Typed, {"month", "is_executive_complete"}),
+					Renamed = Table.RenameColumns(Selected, {{"month", "MonthStart"}}),
+					AddYearMonth = Table.AddColumn(Renamed, "YearMonth", each Date.ToText([MonthStart], "yyyy-MM"), type text),
+					AddMonthLabel = Table.AddColumn(AddYearMonth, "MonthLabel", each Date.ToText([MonthStart], "MMM yy", "en-US"), type text),
+					AddMonthIndex = Table.AddColumn(AddMonthLabel, "MonthIndex", each Date.Year([MonthStart]) * 12 + Date.Month([MonthStart]), Int64.Type),
+					CompleteOnly = Table.SelectRows(AddMonthIndex, each [is_executive_complete] = true)
+				in
+					CompleteOnly
+
+	annotation PBI_ResultType = Table
+

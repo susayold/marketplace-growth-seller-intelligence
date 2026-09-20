@@ -1,0 +1,115 @@
+table SellerLifetime
+	lineageTag: 4d7bfd4a-c681-5f10-8421-720c8e914414
+
+	measure 'Cumulative GMV Share Value' = MAX ( SellerLifetime[cumulative_gmv_share] )
+		formatString: 0.0%
+		lineageTag: d1feeef5-918e-53c5-b9f5-70cc08b62e58
+
+	column seller_id
+		dataType: string
+		lineageTag: 04f6e748-3849-55a8-8394-80379cf27636
+		summarizeBy: none
+		sourceColumn: seller_id
+
+	column total_gmv_proxy
+		dataType: double
+		formatString: R$ #,0.00
+		lineageTag: c60bb58f-e278-5dab-a686-ae3dc41fa7b2
+		summarizeBy: sum
+		sourceColumn: total_gmv_proxy
+
+	column total_orders
+		dataType: int64
+		formatString: #,0
+		lineageTag: dd403d4f-4efb-5b6e-8ba4-f770caa5c353
+		summarizeBy: sum
+		sourceColumn: total_orders
+
+	column active_months
+		dataType: int64
+		formatString: #,0
+		lineageTag: 1423ef5c-166d-51dd-ab4a-15a2a720ce9f
+		summarizeBy: sum
+		sourceColumn: active_months
+
+	column seller_rank
+		dataType: int64
+		formatString: #,0
+		lineageTag: c84a3c06-40c3-5366-8488-3573a759cb77
+		summarizeBy: sum
+		sourceColumn: seller_rank
+
+	column cumulative_gmv_share
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 7aeb18cb-7de9-57e5-b14b-1fbae563917c
+		summarizeBy: sum
+		sourceColumn: cumulative_gmv_share
+
+	column cumulative_seller_share
+		dataType: double
+		formatString: 0.0%
+		lineageTag: a797eb5c-f6b2-5ab2-8085-cb6304df8771
+		summarizeBy: sum
+		sourceColumn: cumulative_seller_share
+
+	column total_items
+		dataType: string
+		lineageTag: 7b8ae8f4-9827-44cb-b917-517f63ae9abb
+		summarizeBy: none
+		sourceColumn: total_items
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_review_score
+		dataType: string
+		lineageTag: c56cefc3-47b5-4562-93e5-418be502dfaa
+		summarizeBy: none
+		sourceColumn: avg_review_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_sale_month
+		dataType: string
+		lineageTag: 0fcc515c-2316-4f71-b0fe-30694be56a69
+		summarizeBy: none
+		sourceColumn: first_sale_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_sale_month
+		dataType: string
+		lineageTag: 684bb7f7-3f91-458a-95f5-0e9c5b319ca1
+		summarizeBy: none
+		sourceColumn: last_sale_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_order_value
+		dataType: string
+		lineageTag: b32ec9be-d87c-4ad2-b533-9d8e3c3b5d01
+		summarizeBy: none
+		sourceColumn: avg_order_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_share
+		dataType: string
+		lineageTag: 08fc104e-8f95-4ccb-ae3c-8655929ec3d6
+		summarizeBy: none
+		sourceColumn: seller_share
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SellerLifetime = m
+		mode: import
+		source =
+				let
+				Source = Csv.Document(File.Contents("C:\\Users\\sangk\\final market dashboard.SemanticModel\\source-data\\data\\release_v3_final\\reports\\tables\\mart_seller_lifetime.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				Typed = Table.TransformColumnTypes(Promoted, {{"seller_id", type text}, {"total_gmv_proxy", type number}, {"total_orders", Int64.Type}, {"active_months", Int64.Type}, {"seller_rank", Int64.Type}, {"cumulative_gmv_share", type number}, {"cumulative_seller_share", type number}}, "en-US")
+				in
+				Typed
+
+	annotation PBI_ResultType = Table
+

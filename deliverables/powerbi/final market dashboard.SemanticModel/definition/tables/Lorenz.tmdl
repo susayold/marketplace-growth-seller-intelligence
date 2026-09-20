@@ -1,0 +1,74 @@
+table Lorenz
+	lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0231
+
+	measure 'Seller GMV Proxy' = MAX ( Lorenz[cumulative_gmv_share_lorenz] )
+		formatString: 0.0%
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0240
+
+	measure 'Line of Equality' = MAX ( Lorenz[equality_line] )
+		formatString: 0.0%
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0241
+
+	column seller_id
+		dataType: string
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0232
+		summarizeBy: none
+		sourceColumn: seller_id
+
+	column seller_rank_asc
+		dataType: int64
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0233
+		summarizeBy: none
+		sourceColumn: seller_rank_asc
+
+	column 'Cumulative % of Sellers'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0234
+		summarizeBy: none
+		sourceColumn: cumulative_seller_share_lorenz
+
+	column cumulative_gmv_value_lorenz
+		dataType: double
+		formatString: R$ #,0.00
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0235
+		summarizeBy: none
+		sourceColumn: cumulative_gmv_value_lorenz
+
+	column cumulative_gmv_share_lorenz
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 4e5c7f8a-9a25-4f6f-9d4e-1e5c7f8a0236
+		summarizeBy: none
+		sourceColumn: cumulative_gmv_share_lorenz
+
+	column equality_line
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0237
+		summarizeBy: none
+		sourceColumn: equality_line
+
+	partition Lorenz = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents("C:\\Users\\sangk\\final market dashboard.SemanticModel\\source-data\\data\\release_v3_final\\reports\\tables\\mart_seller_lifetime.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					Typed = Table.TransformColumnTypes(Promoted, {{"seller_id", type text}, {"total_gmv_proxy", type number}}, "en-US"),
+					Positive = Table.SelectRows(Typed, each [total_gmv_proxy] > 0),
+					Sorted = Table.Sort(Positive, {{"total_gmv_proxy", Order.Ascending}, {"seller_id", Order.Ascending}}),
+					BufferedGMV = List.Buffer(Sorted[total_gmv_proxy]),
+					Indexed = Table.AddIndexColumn(Sorted, "seller_rank_asc", 1, 1, Int64.Type),
+					SellerCount = Table.RowCount(Indexed),
+					TotalGMV = List.Sum(BufferedGMV),
+					AddCumSeller = Table.AddColumn(Indexed, "cumulative_seller_share_lorenz", each [seller_rank_asc] / SellerCount, type number),
+					AddCumValue = Table.AddColumn(AddCumSeller, "cumulative_gmv_value_lorenz", each List.Sum(List.FirstN(BufferedGMV, [seller_rank_asc])), type number),
+					AddCumShare = Table.AddColumn(AddCumValue, "cumulative_gmv_share_lorenz", each [cumulative_gmv_value_lorenz] / TotalGMV, type number),
+					AddEquality = Table.AddColumn(AddCumShare, "equality_line", each [cumulative_seller_share_lorenz], type number),
+					Final = Table.SelectColumns(AddEquality, {"seller_id", "seller_rank_asc", "cumulative_seller_share_lorenz", "cumulative_gmv_value_lorenz", "cumulative_gmv_share_lorenz", "equality_line"})
+				in
+					Final
+
+	annotation PBI_ResultType = Table
+

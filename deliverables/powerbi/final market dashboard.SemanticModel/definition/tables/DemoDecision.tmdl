@@ -1,0 +1,95 @@
+table DemoDecision
+	lineageTag: ded1461d-9029-431d-89c8-c83042182527
+
+	measure 'Decision P1 Actions' = COUNTROWS ( FILTER ( DemoDecision, DemoDecision[Priority] = "P1" ) )
+		formatString: #,0
+		lineageTag: 503f185b-9dec-4c90-a8a3-d6ff505a310c
+
+	measure 'Decision Ready Actions' = COUNTROWS ( FILTER ( DemoDecision, DemoDecision[Status] = "Ready" ) )
+		formatString: #,0
+		lineageTag: aa8b917b-4b12-4822-9b07-ca61db752a5c
+
+	measure 'Decision Backlog' = COUNTROWS ( DemoDecision )
+		formatString: #,0
+		lineageTag: 90a3c1f1-0c49-4a52-9f99-1a322090da68
+
+	measure 'Decision High Impact' = COUNTROWS ( FILTER ( DemoDecision, DemoDecision[ExpectedImpact] >= 4 ) )
+		formatString: #,0
+		lineageTag: 58be5882-6bd3-4d19-9a71-e93d976894f7
+
+	measure 'Decision 30-60D' = COUNTROWS ( FILTER ( DemoDecision, DemoDecision[TimeHorizon] = "30D" || DemoDecision[TimeHorizon] = "60D" ) )
+		formatString: #,0
+		lineageTag: 9e56f147-ee3b-4492-90b0-029d2499c3df
+
+	measure 'Decision P1 Delta Label' = VAR Total = COUNTROWS ( DemoDecision ) RETURN "▲ " & FORMAT ( DIVIDE ( [Decision P1 Actions], Total ), "0.0%" ) & " high-priority share"
+		formatString: General
+		lineageTag: 5f1a0e21-36f0-4d1f-9b08-1d0ad2b4f601
+
+	measure 'Decision Ready Delta Label' = VAR Total = COUNTROWS ( DemoDecision ) RETURN "▲ " & FORMAT ( DIVIDE ( [Decision Ready Actions], Total ), "0.0%" ) & " ready to execute"
+		formatString: General
+		lineageTag: 6a2b1f32-47f1-4e20-ac19-2e1be3c5f702
+
+	measure 'Decision Backlog Delta Label' = "• " & FORMAT ( [Decision Backlog], "0" ) & " actions in register"
+		formatString: General
+		lineageTag: 7b3c2043-58a2-4f31-bd2a-3f2cf4d60803
+
+	measure 'Decision High Impact Delta Label' = VAR Total = COUNTROWS ( DemoDecision ) RETURN "▲ " & FORMAT ( DIVIDE ( [Decision High Impact], Total ), "0.0%" ) & " high-impact share"
+		formatString: General
+		lineageTag: 8c4d3154-69b3-4042-ce3b-4a3da5e71904
+
+	measure 'Decision 30-60D Delta Label' = VAR Total = COUNTROWS ( DemoDecision ) RETURN "▲ " & FORMAT ( DIVIDE ( [Decision 30-60D], Total ), "0.0%" ) & " within 30–60D"
+		formatString: General
+		lineageTag: 9d5e4265-70c4-4153-df4c-5a4ea6f83005
+
+	column Action
+		dataType: string
+		lineageTag: d80d21d5-754d-485b-9635-ec285bd68280
+		summarizeBy: none
+		sourceColumn: Action
+
+	column Pillar
+		dataType: string
+		lineageTag: dfbde3de-e107-4cda-9b03-89d866451f36
+		summarizeBy: none
+		sourceColumn: Pillar
+
+	column Priority
+		dataType: string
+		lineageTag: 792597a5-0552-4d84-b64d-3d9d2d3d9d3e
+		summarizeBy: none
+		sourceColumn: Priority
+
+	column ExpectedImpact
+		dataType: int64
+		lineageTag: 7e41cc63-79da-4cd4-b056-4b99c3253965
+		summarizeBy: sum
+		sourceColumn: ExpectedImpact
+
+	column Effort
+		dataType: int64
+		lineageTag: def32f0e-d326-45c1-8a21-aa94129e961f
+		summarizeBy: sum
+		sourceColumn: Effort
+
+	column Owner
+		dataType: string
+		lineageTag: ce93b829-3e62-4a48-a87c-a53b8d519529
+		summarizeBy: none
+		sourceColumn: Owner
+
+	column TimeHorizon
+		dataType: string
+		lineageTag: ca56bfb6-0e20-46aa-b3e6-b217f0af7c5b
+		summarizeBy: none
+		sourceColumn: TimeHorizon
+
+	column Status
+		dataType: string
+		lineageTag: c2da28f0-d658-41b2-8143-c3fbfb816f54
+		summarizeBy: none
+		sourceColumn: Status
+
+	partition DemoDecision = m
+		mode: import
+		source = let Source = #table(type table [Action=text, Pillar=text, Priority=text, ExpectedImpact=Int64.Type, Effort=Int64.Type, Owner=text, TimeHorizon=text, Status=text], {{"Exclude incomplete periods from trend decisions","Data / BI","P1",5,1,"Data / BI","30D","Ready"},{"Govern acquisition channels with a value scorecard","Acquisition","P1",4,3,"Seller Acquisition","60D","Planned"},{"Instrument 7/30/60D seller onboarding checkpoints","Activation","P1",4,3,"Seller Operations","60D","Ready"},{"Prioritize late-delivery investigation and testing","Customer Experience","P1",5,2,"Customer Experience","30D","Ready"},{"Monitor top 1/5/10/20% seller concentration","Commercial","P2",3,4,"Commercial Analytics","90D","Planned"},{"Build category playbook after Cool Stuff decline","Commercial","P2",3,3,"Category","90D","Planned"}}) in Source
+

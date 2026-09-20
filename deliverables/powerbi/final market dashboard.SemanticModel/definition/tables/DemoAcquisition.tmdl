@@ -1,0 +1,107 @@
+table DemoAcquisition
+	lineageTag: 721e375e-fb53-4caf-a23e-68206510c806
+
+	measure 'Total MQLs' = SUM ( DemoAcquisition[mqls] )
+		formatString: #,0
+		lineageTag: b56383cf-96d3-4d2e-8759-01a9c389e3d3
+
+	measure 'Total Converted Sellers' = SUM ( DemoAcquisition[converted_sellers] )
+		formatString: #,0
+		lineageTag: e045867d-aa49-4bb2-b8d0-2ec229017529
+
+	measure 'Total Matched Sellers' = SUM ( DemoAcquisition[matched_sellers] )
+		formatString: #,0
+		lineageTag: 6b0565b3-da04-4ea3-b8be-7d3c4a558419
+
+	measure 'Overall Conversion Rate' = DIVIDE ( [Total Converted Sellers], [Total MQLs] )
+		formatString: 0.0%
+		lineageTag: 9df78d2a-6034-475a-996c-45b9d6c84aed
+
+	measure 'Total Downstream GMV Proxy' = SUM ( DemoAcquisition[downstream_gmv_proxy] )
+		formatString: R$ #,##0.00
+		lineageTag: aaae6aa5-4f4b-4c93-b134-cfaaeb2fdf14
+
+	measure 'Total Downstream Orders' = SUM ( DemoAcquisition[downstream_orders] )
+		formatString: #,##0.0
+		lineageTag: c6b8c7b7-7b72-43f4-b5f0-2e6f0bfa8e11
+
+	measure 'Total GMV per Matched Seller' = DIVIDE ( [Total Downstream GMV Proxy], [Total Matched Sellers] )
+		formatString: R$ #,##0.00
+		lineageTag: 49a94eb6-6fe4-48df-8ac4-1c0f2af9c9a1
+
+	measure 'Acq MQL Delta Label' = VAR CurrentValue = [Total MQLs] VAR Largest = MAX ( DemoAcquisition[mqls] ) RETURN "▲ " & FORMAT ( DIVIDE ( Largest, CurrentValue ), "0.0%" ) & " top-channel share"
+		formatString: General
+		lineageTag: 80a2b0c1-d2e3-4f50-a6b7-c8d9e0f10201
+
+	measure 'Acq Converted Delta Label' = VAR CurrentValue = [Total Converted Sellers] VAR Largest = MAX ( DemoAcquisition[converted_sellers] ) RETURN "▲ " & FORMAT ( DIVIDE ( Largest, CurrentValue ), "0.0%" ) & " top-channel share"
+		formatString: General
+		lineageTag: 80a2b0c1-d2e3-4f50-a6b7-c8d9e0f10202
+
+	measure 'Acq Matched Delta Label' = VAR CurrentValue = [Total Matched Sellers] VAR Largest = MAX ( DemoAcquisition[matched_sellers] ) RETURN "▲ " & FORMAT ( DIVIDE ( Largest, CurrentValue ), "0.0%" ) & " top-channel share"
+		formatString: General
+		lineageTag: 80a2b0c1-d2e3-4f50-a6b7-c8d9e0f10203
+
+	measure 'Acq Conversion Delta Label' = VAR Benchmark = MEDIANX ( ALL ( DemoAcquisition[Channel] ), CALCULATE ( AVERAGE ( DemoAcquisition[conversion_rate] ) ) ) VAR Delta = [Overall Conversion Rate] - Benchmark RETURN IF ( Delta >= 0, "▲ ", "▼ " ) & FORMAT ( Delta * 100, "+0.0;-0.0;0.0" ) & " pp vs median"
+		formatString: General
+		lineageTag: 80a2b0c1-d2e3-4f50-a6b7-c8d9e0f10204
+
+	measure 'Acq GMV Per Seller Delta Label' = VAR Benchmark = MEDIANX ( ALL ( DemoAcquisition[Channel] ), CALCULATE ( AVERAGE ( DemoAcquisition[gmv_per_matched_seller] ) ) ) VAR Delta = DIVIDE ( [Total GMV per Matched Seller] - Benchmark, Benchmark ) RETURN IF ( Delta >= 0, "▲ ", "▼ " ) & FORMAT ( Delta, "+0.0%;-0.0%;0.0%" ) & " vs median"
+		formatString: General
+		lineageTag: 80a2b0c1-d2e3-4f50-a6b7-c8d9e0f10205
+
+	column Channel
+		dataType: string
+		lineageTag: a19091cc-a9e9-420e-a65a-69af218df7c6
+		summarizeBy: none
+		sourceColumn: origin_group
+
+	column mqls
+		dataType: int64
+		lineageTag: 505e0e17-729e-4404-a28c-4da22260538c
+		summarizeBy: sum
+		sourceColumn: mqls
+
+	column converted_sellers
+		dataType: int64
+		lineageTag: 2be75166-aa73-4650-8187-195512a896c6
+		summarizeBy: sum
+		sourceColumn: converted_sellers
+
+	column conversion_rate
+		dataType: double
+		formatString: 0.0%
+		lineageTag: d0f0bf36-7d59-4d37-847c-4f02d03e6cd2
+		summarizeBy: average
+		sourceColumn: conversion_rate
+
+	column matched_sellers
+		dataType: int64
+		lineageTag: 8a9f1272-d6aa-4504-9db6-a13186ef2149
+		summarizeBy: sum
+		sourceColumn: matched_sellers
+
+	column gmv_per_matched_seller
+		dataType: double
+		formatString: R$ #,##0.00
+		lineageTag: 7450aaa7-9b2e-4b8a-ae5f-1fbe032a7453
+		summarizeBy: average
+		sourceColumn: gmv_per_matched_seller
+
+	column downstream_gmv_proxy
+		dataType: double
+		formatString: R$ #,##0.00
+		lineageTag: f6d74291-51e2-4ff2-9d8f-9e878fae20e0
+		summarizeBy: sum
+		sourceColumn: downstream_gmv_proxy
+
+	column downstream_orders
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: 6f51aa2d-87bf-4b4d-aef7-6d1a8c6e5a9c
+		summarizeBy: sum
+		sourceColumn: downstream_orders
+
+	partition DemoAcquisition = m
+		mode: import
+		source = let Source = Csv.Document(File.Contents("C:\\Users\\sangk\\final market dashboard.SemanticModel\\source-data\\data\\release_v3_final\\reports\\tables\\mart_acquisition_channel.csv"), [Delimiter=",", Columns=8, Encoding=65001, QuoteStyle=QuoteStyle.Csv]), PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), ChangedType = Table.TransformColumnTypes(PromotedHeaders, {{"origin_group", type text}, {"mqls", Int64.Type}, {"converted_sellers", Int64.Type}, {"conversion_rate", type number}, {"matched_sellers", Int64.Type}, {"downstream_gmv_proxy", type number}, {"downstream_orders", type number}, {"gmv_per_matched_seller", type number}}) in ChangedType
+

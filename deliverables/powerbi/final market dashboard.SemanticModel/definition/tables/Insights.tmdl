@@ -1,0 +1,33 @@
+table Insights
+	lineageTag: 05c4277a-892b-573a-87b6-69c6150672ea
+
+	column Rank
+		dataType: int64
+		lineageTag: 6dff63e3-8a85-5660-87ac-18569d22e7d1
+		summarizeBy: none
+		sourceColumn: Rank
+
+	column Headline
+		dataType: string
+		lineageTag: 957b18fa-97a7-530f-b68e-70331727f993
+		summarizeBy: none
+		sourceColumn: Headline
+
+	column Detail
+		dataType: string
+		lineageTag: cdf8abb4-313a-5a93-90b2-79c4545d13a1
+		summarizeBy: none
+		sourceColumn: Detail
+
+	partition Insights = m
+		mode: import
+		source =
+				#table(type table [Rank=Int64.Type, Headline=text, Detail=text], {
+					{1, "Volume Up, Value Softened", "Orders rose +2.9% while GMV moved -4.6% in 2018-08; monitor mix and ticket size."},
+				{2, "High Concentration", "Top 20% of sellers contribute 82.7% of GMV proxy (Gini 0.792); concentration is a resilience risk."},
+				{3, "Operational Risk", "Late delivery rate moved +5.9 pp vs prior complete month; use delivery diagnostics before scaling volume."},
+				{4, "Growing Seller Base", "Active sellers reached 1,278 in 2018-08, up +1.3% vs prior complete month."}
+				})
+
+	annotation PBI_ResultType = Table
+
