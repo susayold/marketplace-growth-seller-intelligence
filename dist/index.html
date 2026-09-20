@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="MarketLens marketplace growth and seller intelligence executive case study." />
+  <meta name="description" content="MarketLens — marketplace growth and seller intelligence executive case study." />
   <title>MarketLens — Marketplace Growth & Seller Intelligence</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -12,250 +13,248 @@
   <div class="shell header-inner">
     <a class="brand" href="#overview">
       <span class="brand-cube">M</span>
-      <span><b>MarketLens</b><small>Data for Better Marketplaces</small></span>
+      <span class="brand-copy"><b>MarketLens</b><small>Data for Better Marketplaces</small></span>
     </a>
-    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">Menu</button>
-    <nav class="main-nav" id="mainNav">
+    <button id="menuBtn" class="menu-btn" aria-label="Toggle navigation">Menu</button>
+    <nav id="mainNav" class="main-nav">
       <a href="#overview">Overview</a>
       <a href="#insights">Insights</a>
       <a href="#dashboard">Dashboard</a>
-      <a href="#analysis">Analysis</a>
       <a href="#methodology">Methodology</a>
-      <a href="#download">Download</a>
+      <a href="#lessons">Lessons</a>
+      <a href="./assets/final-market-dashboard.pdf" target="_blank" rel="noopener">Download</a>
     </nav>
-    <a class="header-cta" href="./assets/final-market-dashboard.pdf" target="_blank" rel="noopener">View Full Report →</a>
+    <a class="report-btn" href="./assets/final-market-dashboard.pdf" target="_blank" rel="noopener">View Full Report <span>→</span></a>
   </div>
 </header>
 
 <main>
 <section class="hero" id="overview">
-  <div class="shell hero-inner">
+  <div class="hero-shade"></div>
+  <div class="shell hero-grid">
     <div class="hero-copy">
       <div class="eyebrow">MARKETPLACE GROWTH &amp; SELLER INTELLIGENCE</div>
-      <h1>Turning marketplace data into trusted insights for better decisions.</h1>
-      <p>An end-to-end analytics project covering marketplace performance, seller acquisition, activation, retention, commercial concentration, customer experience, root cause and decision governance.</p>
+      <h1>Turning marketplace data<br>into trusted insights<br>for better decisions.</h1>
+      <p>An end-to-end data analytics project connecting marketplace performance, seller behavior, data quality, and operating decisions.</p>
       <div class="hero-actions">
         <a class="btn btn-blue" href="#dashboard">Explore Dashboard ↓</a>
-        <a class="btn btn-ghost" href="./assets/final-market-dashboard.pdf" target="_blank" rel="noopener">▣ Download Full Report</a>
+        <a class="btn btn-ghost" href="./assets/final-market-dashboard.pdf" target="_blank" rel="noopener">▱&nbsp; Download Full Report</a>
       </div>
-      <div class="hero-proof">
-        <div class="proof"><span class="proof-icon">↗</span><span><b>Actionable Insights</b><span>Not just reporting</span></span></div>
-        <div class="proof"><span class="proof-icon">◫</span><span><b>End-to-End Analysis</b><span>Acquisition to retention</span></span></div>
-        <div class="proof"><span class="proof-icon">◎</span><span><b>Decision Governance</b><span>KPI + guardrail + owner</span></span></div>
+      <div class="hero-value-row">
+        <div><span class="mini-icon">↗</span><p><b>Actionable Insights</b><small>Not just descriptive reporting</small></p></div>
+        <div><span class="mini-icon">▤</span><p><b>End-to-End Analysis</b><small>Acquisition to retention</small></p></div>
+        <div><span class="mini-icon">◇</span><p><b>Business Impact</b><small>Growth + Efficiency + Decisions</small></p></div>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-message">More trusted measurement.<br>Better seller decisions.<small>— MarketLens</small></div>
-      <div class="hero-screen-wrap"><canvas class="hero-screen" id="heroCanvas" aria-label="Power BI executive overview preview"></canvas></div>
+
+    <div class="hero-visual" aria-label="Power BI dashboard preview">
+      <div class="hero-message">More Trusted Data<br>Stronger Marketplaces<br>Better Decisions<br><i>—</i></div>
+      <div class="laptop">
+        <div class="laptop-screen">
+          <canvas id="heroPdfCanvas" aria-label="Power BI executive overview"></canvas>
+        </div>
+        <div class="laptop-base"></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="kpi-section">
+<section class="kpi-band" aria-label="Headline KPIs">
   <div class="shell">
     <div class="kpi-strip">
-      <div class="kpi"><span class="kpi-icon">◎</span><div><strong>R$ 13.59M</strong><span>GMV Proxy</span><small class="down">▼ 4.6% vs. Jul 2018</small></div></div>
-      <div class="kpi"><span class="kpi-icon">▣</span><div><strong>98.7K</strong><span>Orders</span><small class="up">▲ 2.9% vs. previous complete period</small></div></div>
-      <div class="kpi"><span class="kpi-icon">♙</span><div><strong>3,095</strong><span>Sellers</span><small class="up">▲ 1.3% vs. previous complete period</small></div></div>
-      <div class="kpi"><span class="kpi-icon">◇</span><div><strong>R$ 137.75</strong><span>Avg. Order Value</span><small class="down">▼ 7.2% vs. previous period</small></div></div>
-      <div class="kpi"><span class="kpi-icon">▤</span><div><strong>8.1%</strong><span>Late Delivery Rate</span><small class="risk">▲ 5.9 p.p. vs. previous period</small></div></div>
+      <div class="kpi-item"><span class="kpi-icon">◎</span><div><strong>R$ 13.59M</strong><b>GMV Proxy</b><small class="down">↓ 4.6% · Aug vs Jul 2018</small></div></div>
+      <div class="kpi-item"><span class="kpi-icon">▱</span><div><strong>98.7K</strong><b>Orders</b><small class="up">↑ 3.5% · Aug vs Jul 2018</small></div></div>
+      <div class="kpi-item"><span class="kpi-icon">♙</span><div><strong>3,095</strong><b>Active Sellers</b><small class="up">↑ 1.3% · Aug vs Jul 2018</small></div></div>
+      <div class="kpi-item"><span class="kpi-icon">◇</span><div><strong>R$ 137.75</strong><b>Avg. Order Value</b><small class="down">↓ 7.8% · Aug vs Jul 2018</small></div></div>
+      <div class="kpi-item"><span class="kpi-icon">▣</span><div><strong>8.1%</strong><b>Late Delivery Rate</b><small class="risk">+5.9pp · Aug vs Jul 2018</small></div></div>
     </div>
+    <p class="scope-note">Headline values use the governed historical analytical scope. Directional arrows compare the final two complete months, Jul → Aug 2018.</p>
   </div>
 </section>
 
-<section class="section" id="insights">
+<section class="section insights-section" id="insights">
   <div class="shell">
-    <div class="section-head">
+    <div class="insight-intro">
       <div>
-        <div class="section-kicker">KEY INSIGHTS</div>
-        <h2>Scale is meaningful, but growth quality has clear management risks.</h2>
+        <div class="section-label">KEY INSIGHTS</div>
+        <h2>Substantial marketplace scale, with clear growth-quality risks to address.</h2>
       </div>
-      <p>The project does not treat topline marketplace size as sufficient evidence of health. The strongest decision signals sit in measurement quality, seller concentration, seller activation and delivery-related customer experience.</p>
+      <p>The marketplace has meaningful breadth, but the operating story is not simply “growth.” Seller value is concentrated, seller activation is slow, and delivery performance is strongly associated with customer-experience risk.</p>
     </div>
-    <div class="insight-grid">
-      <article class="insight-card"><span class="insight-num">1</span><div><h3>Measurement boundary matters</h3><p>Executive-complete reporting ends 31 Aug 2018. The sparse Sep–Oct tail is not decision-eligible for trend interpretation.</p></div></article>
-      <article class="insight-card"><span class="insight-num">2</span><div><h3>High seller concentration</h3><p>The top 20% of positive-GMV sellers contribute 82.7% of seller GMV proxy; Gini = 0.792.</p></div></article>
-      <article class="insight-card"><span class="insight-num">3</span><div><h3>Activation is a bottleneck</h3><p>Only 15.8% of observable closed sellers activate within 30 days; 90-day activation reaches 42.1%.</p></div></article>
-      <article class="insight-card"><span class="insight-num">4</span><div><h3>Operational risk is material</h3><p>Late orders show a +44.8pp low-review risk gap and a 5.87× observed risk ratio versus on-time orders.</p></div></article>
+    <div class="insight-cards">
+      <article><span>1</span><div><h3>Measurement must be trusted first</h3><p>Executive complete-period reporting ends Aug 2018; Sep/Oct are partial tails and should not drive trend claims.</p></div></article>
+      <article><span>2</span><div><h3>High seller concentration</h3><p>Top 20% of positive-GMV sellers contribute <b>82.7%</b> of seller GMV proxy.</p></div></article>
+      <article><span>3</span><div><h3>Activation is the early bottleneck</h3><p>Only <b>15.8%</b> of observable closed sellers activate within 30 days.</p></div></article>
+      <article><span>4</span><div><h3>Operational risk remains material</h3><p>Late orders show a <b>+44.8pp</b> higher low-review rate than on-time orders.</p></div></article>
     </div>
   </div>
 </section>
 
-<section class="section soft" id="dashboard">
+<section class="section dashboard-section" id="dashboard">
   <div class="shell">
-    <div class="dashboard-top">
+    <div class="dashboard-heading">
       <div>
-        <div class="section-kicker">DASHBOARD PREVIEW</div>
-        <h2 id="dashboardTitle">Executive Overview</h2>
-        <p id="dashboardDesc">A high-level view of marketplace scale, seller concentration and management risk signals.</p>
+        <div class="section-label">DASHBOARD PREVIEW</div>
+        <h2 id="dashTitle">Executive Overview</h2>
+        <p id="dashSubtitle">A high-level view of marketplace performance, seller concentration and key metrics.</p>
       </div>
-      <div class="dashboard-nav">
-        <span class="dashboard-counter" id="dashboardCounter">1 / 7</span>
-        <button class="round-btn" id="prevPage" aria-label="Previous dashboard page">‹</button>
-        <button class="round-btn primary" id="nextPage" aria-label="Next dashboard page">›</button>
+      <div class="pager">
+        <strong><span id="pageCurrent">1</span> / 7</strong>
+        <button id="prevPage" aria-label="Previous dashboard page">‹</button>
+        <button id="nextPage" class="primary" aria-label="Next dashboard page">›</button>
       </div>
     </div>
 
-    <div class="dashboard-frame">
-      <div class="dashboard-canvas-wrap"><div class="dashboard-loading" id="dashboardLoading">Rendering Power BI page…</div><canvas class="dashboard-image" id="dashboardCanvas" aria-label="Power BI dashboard page preview"></canvas></div>
-    </div>
-
-    <div class="dashboard-actions">
-      <div class="dashboard-note">The preview uses the exported Power BI pages directly. The analytical narrative on this website follows the canonical GitHub release where presentation text and analytical outputs differ.</div>
-      <div class="page-jumps">
-        <button data-page-jump="1">Overview</button><button data-page-jump="2">Acquisition</button><button data-page-jump="3">Activation</button><button data-page-jump="4">Commercial</button><button data-page-jump="5">CX</button><button data-page-jump="6">Root Cause</button><button data-page-jump="7">Decisions</button>
+    <div class="dashboard-stage">
+      <div class="pdf-canvas-wrap">
+        <canvas id="dashboardCanvas" aria-label="Power BI dashboard page"></canvas>
+        <div class="pdf-loading" id="pdfLoading">Rendering Power BI page…</div>
       </div>
-      <a class="btn btn-outline" id="pdfPageLink" href="./assets/final-market-dashboard.pdf#page=1" target="_blank" rel="noopener">Open in PDF ↗</a>
+    </div>
+
+    <div class="dashboard-tabs" id="dashboardTabs">
+      <button class="active" data-page="1">Overview</button>
+      <button data-page="2">Acquisition</button>
+      <button data-page="3">Activation &amp; Retention</button>
+      <button data-page="4">Commercial</button>
+      <button data-page="5">Customer Experience</button>
+      <button data-page="6">Root Cause</button>
+      <button data-page="7">Decision Center</button>
     </div>
   </div>
 </section>
 
-<section class="section recommendation-band">
+<section class="recommendations">
   <div class="shell">
-    <div class="rec-head">
-      <div><div class="section-kicker">FROM INSIGHTS TO ACTION</div><h2>Key Business Recommendations</h2></div>
-      <a class="btn btn-outline" href="#decisions">View Decision Agenda →</a>
+    <div class="recommendations-head">
+      <div><div class="section-label">FROM INSIGHTS TO ACTION</div><h2>Key Business Recommendations</h2><p>Turning analytical evidence into practical next steps, with KPIs and guardrails.</p></div>
+      <a class="outline-link" href="#decision-agenda">View Full Decision Agenda →</a>
     </div>
-    <div class="rec-grid">
-      <article class="rec"><span class="rec-icon">◉</span><div><h3>Govern acquisition quality</h3><p>Use volume, conversion, downstream seller value, activation and retention together instead of ranking channels from one funnel rate.</p></div></article>
-      <article class="rec"><span class="rec-icon">◈</span><div><h3>Improve seller activation</h3><p>Instrument 7/30/60-day onboarding checkpoints and test interventions against retention and downstream value.</p></div></article>
-      <article class="rec"><span class="rec-icon">▤</span><div><h3>Reduce operational risk</h3><p>Prioritize delivery investigations by order volume × delay severity × review penalty.</p></div></article>
-      <article class="rec"><span class="rec-icon">◎</span><div><h3>Monitor concentration</h3><p>Track top seller shares and investigate high-value categories where seller breadth is fragile.</p></div></article>
+    <div class="recommendation-grid">
+      <article><span>◉</span><div><h3>Govern acquisition quality</h3><p>Use MQL volume, conversion, matched-seller value, activation and M3 retention together.</p></div></article>
+      <article><span>⬡</span><div><h3>Improve seller activation</h3><p>Instrument 7/30/60-day onboarding checkpoints and test interventions against retention/value.</p></div></article>
+      <article><span>▣</span><div><h3>Reduce operational risk</h3><p>Prioritize delivery investigation using order volume × delay severity × review penalty.</p></div></article>
+      <article><span>◎</span><div><h3>Monitor seller concentration</h3><p>Track top seller shares with category breadth rather than applying an arbitrary diversification rule.</p></div></article>
     </div>
   </div>
 </section>
 
-<section class="section" id="analysis">
+<section class="section analysis-section" id="analysis">
   <div class="shell">
-    <div class="detail-intro">
-      <div class="section-kicker">DEEP-DIVE ANALYSIS</div>
-      <h2>The dashboard is the evidence layer. The sections below explain the analytical logic.</h2>
-      <p>Each deep dive keeps the same management discipline: define the decision question, use the correct denominator and grain, quantify magnitude, state uncertainty, and avoid causal claims the data cannot support.</p>
-    </div>
+    <div class="analysis-title"><div class="section-label">DETAILED ANALYSIS</div><h2>What the dashboard means — and why</h2><p>The sections below preserve the analytical release logic behind the seven Power BI pages.</p></div>
 
-    <div class="detail-grid">
-      <article class="detail-card">
-        <div class="section-kicker">DATA TRUST</div>
-        <div class="big-stat">4.54%</div>
-        <h3>GMV overstatement avoided by grain-safe modeling</h3>
-        <p>Payments and order items are both one-to-many by order_id. A naïve join produces roughly R$14.21M versus the grain-safe R$13.59M GMV proxy — about R$617.5K of artificial value.</p>
-        <div class="mini-row"><div class="mini"><b>0</b><span>duplicate order keys</span></div><div class="mini"><b>0</b><span>duplicate seller keys</span></div><div class="mini"><b>v3</b><span>activation definition</span></div><div class="mini"><b>PASS</b><span>release gate</span></div></div>
-      </article>
-      <figure class="chart"><img src="https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/00_measurement_trust/trust_02_grain_safe_vs_naive_gmv.png" alt="Grain-safe versus naive GMV"><figcaption>Measurement risk is large enough to materially change executive reporting.</figcaption></figure>
-    </div>
+    <article class="analysis-block" id="data-trust">
+      <div class="analysis-number">01</div>
+      <div class="analysis-copy">
+        <div class="analysis-kicker">DATA TRUST</div>
+        <h3>Trusted decisions start with grain-safe measurement.</h3>
+        <p>Payments and order items are both one-to-many by <code>order_id</code>. Joining them naïvely overstates GMV by <b>4.54%</b>, or roughly <b>R$617.5K</b>. The analytical model calculates GMV at item grain before payment joins and gates incomplete periods before executive reporting.</p>
+        <div class="evidence-row"><div><strong>R$13.5916M</strong><span>Grain-safe GMV</span></div><div><strong>R$14.2091M</strong><span>Naïve joined GMV</span></div><div><strong>2018-08-31</strong><span>Last complete month</span></div><div><strong>PASS</strong><span>Release gate</span></div></div>
+      </div>
+      <figure><img loading="lazy" src="https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/00_measurement_trust/trust_02_grain_safe_vs_naive_gmv.png" alt="Grain-safe versus naive GMV"><figcaption>Measurement risk before business interpretation.</figcaption></figure>
+    </article>
+
+    <article class="analysis-block reverse" id="acquisition">
+      <div class="analysis-number">02</div>
+      <div class="analysis-copy">
+        <div class="analysis-kicker">SELLER ACQUISITION</div>
+        <h3>Channel conversion differs, but a “winner” cannot be chosen from conversion alone.</h3>
+        <p>Across <b>8,000 MQLs</b>, acquisition origin is associated with observed conversion (<b>Cramér’s V = 0.131</b>). Paid Search converts at <b>12.3%</b>, Organic Search at <b>11.8%</b>, and Social at <b>5.6%</b>. M3 retention evidence is too imprecise to rank origins reliably.</p>
+        <div class="callout"><b>Management read</b><span>Govern channels on volume → conversion → downstream seller value → activation → retention guardrail.</span></div>
+      </div>
+      <figure><img loading="lazy" src="https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/02_acquisition/acq_04_conversion_vs_downstream_value.png" alt="Conversion versus downstream value"><figcaption>Conversion efficiency and downstream value are distinct dimensions.</figcaption></figure>
+    </article>
+
+    <article class="analysis-block" id="activation">
+      <div class="analysis-number">03</div>
+      <div class="analysis-copy">
+        <div class="analysis-kicker">ACTIVATION &amp; RETENTION</div>
+        <h3>Seller time-to-value is slow after conversion.</h3>
+        <p>Canonical v3 uses observable denominators: <b>15.8%</b> activate within 30 days, <b>30.8%</b> within 60 days, and <b>42.1%</b> within 90 days. Among observed activators, median days-to-first-sale is <b>44.3</b>.</p>
+        <div class="evidence-row three"><div><strong>15.8%</strong><span>30D activation</span></div><div><strong>30.8%</strong><span>60D activation</span></div><div><strong>42.1%</strong><span>90D activation</span></div></div>
+        <div class="callout"><b>Boundary</b><span>44.3 days is the median among observed activators, not a survival median and not a cumulative activation rate.</span></div>
+      </div>
+      <figure><img loading="lazy" src="https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/03_activation/act_05_30_60_90_activation_ci.png" alt="Activation windows"><figcaption>Fixed-window activation with observable denominators and confidence intervals.</figcaption></figure>
+    </article>
+
+    <article class="analysis-block reverse dark-block" id="concentration">
+      <div class="analysis-number">04</div>
+      <div class="analysis-copy">
+        <div class="analysis-kicker">COMMERCIAL RESILIENCE</div>
+        <h3>Marketplace value is highly concentrated in a small seller cohort.</h3>
+        <p>Seller GMV has a <b>Gini coefficient of 0.792</b>. The top <b>1% / 5% / 10% / 20%</b> account for roughly <b>26.1% / 53.3% / 67.6% / 82.7%</b> of seller GMV proxy.</p>
+        <div class="callout"><b>Management read</b><span>Concentration is a risk signal, not automatic evidence that the marketplace should diversify at any cost.</span></div>
+      </div>
+      <figure><img loading="lazy" src="https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/05_seller_value_concentration/con_02_pareto_cumulative_curve.png" alt="Seller concentration pareto curve"><figcaption>Seller dependence becomes visible at top percentile cuts.</figcaption></figure>
+    </article>
+
+    <article class="analysis-block" id="cx">
+      <div class="analysis-number">05</div>
+      <div class="analysis-copy">
+        <div class="analysis-kicker">CUSTOMER EXPERIENCE &amp; OPERATIONS</div>
+        <h3>Late delivery is the strongest operational diagnostic signal.</h3>
+        <p>Late orders average <b>2.57</b> review points versus <b>4.29</b> for on-time orders. The low-review rate is <b>54.0%</b> versus <b>9.2%</b> — a <b>+44.8pp</b> gap and <b>5.87×</b> observed risk ratio.</p>
+        <div class="callout"><b>Statistical boundary</b><span>The association remains material after observed controls, but it is not presented as causal.</span></div>
+      </div>
+      <figure><img loading="lazy" src="https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/07_customer_experience/cx_04_delay_severity_vs_review.png" alt="Delay severity versus review"><figcaption>Review outcomes weaken as delay severity increases.</figcaption></figure>
+    </article>
   </div>
 </section>
 
-<section class="section soft">
+<section class="section decision-section" id="decision-agenda">
   <div class="shell">
-    <div class="detail-intro"><div class="section-kicker">MARKETPLACE HEALTH</div><h2>Breadth and productivity do not move together.</h2><p>The final complete period adds sellers and orders, while value per transaction weakens. Marketplace growth therefore has to be decomposed rather than summarized with a single topline label.</p></div>
-    <div class="detail-grid">
-      <figure class="chart"><img src="https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/01_marketplace_health/health_01_gmv_orders_active_sellers.png" alt="Marketplace health trends"><figcaption>GMV, orders and active-seller breadth should be read together.</figcaption></figure>
-      <figure class="chart"><img src="https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/01_marketplace_health/health_04_growth_decomposition.png" alt="Growth decomposition"><figcaption>Growth drivers can switch between breadth and seller productivity.</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="shell">
-    <div class="detail-intro"><div class="section-kicker">SELLER ACQUISITION</div><h2>Observed conversion differs by origin, but conversion alone does not identify the best channel.</h2><p>Across 8,000 Marketing Qualified Leads (MQLs), origin is associated with conversion. Paid Search converts at 12.3%, Organic Search at 11.8%, and Social at 5.6%. Cramér’s V = 0.131 indicates a detectable but modest relationship.</p></div>
-    <div class="detail-grid">
-      <article class="detail-card">
-        <h3>Channel governance rule</h3>
-        <p>Use a scorecard that links MQL volume → conversion → matched-seller value → activation → M3 retention guardrail. The “unknown” origin remains context only and should not be presented as a channel winner.</p>
-        <div class="mini-row"><div class="mini"><b>8,000</b><span>MQLs</span></div><div class="mini"><b>12.3%</b><span>Paid Search</span></div><div class="mini"><b>11.8%</b><span>Organic Search</span></div><div class="mini"><b>5.6%</b><span>Social</span></div></div>
-      </article>
-      <figure class="chart"><img src="https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/02_acquisition/acq_04_conversion_vs_downstream_value.png" alt="Conversion versus downstream seller value"><figcaption>Conversion and downstream seller value are separate governance dimensions.</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section class="section soft">
-  <div class="shell">
-    <div class="detail-intro"><div class="section-kicker">ACTIVATION &amp; RETENTION</div><h2>Seller time-to-value is slow after conversion.</h2><p>Canonical v3 uses observable-window denominators. Censored sellers remain visible instead of being mislabeled as activation failures.</p></div>
-    <div class="detail-grid">
-      <article class="detail-card">
-        <h3>Canonical activation windows</h3>
-        <div class="mini-row"><div class="mini"><b>15.8%</b><span>30D · 130/825</span></div><div class="mini"><b>30.8%</b><span>60D · 247/803</span></div><div class="mini"><b>42.1%</b><span>90D · 324/769</span></div><div class="mini"><b>44.3d</b><span>observed activator median</span></div></div>
-        <p style="margin-top:16px">The 44.3-day figure is the median among observed activators, not a survival-estimated median. Retention by acquisition origin remains too imprecise to support a winner and is therefore used as a guardrail.</p>
-      </article>
-      <figure class="chart"><img src="https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/03_activation/act_05_30_60_90_activation_ci.png" alt="Activation windows"><figcaption>30/60/90-day activation rates with eligibility-aware confidence intervals.</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="shell">
-    <div class="detail-intro"><div class="section-kicker">COMMERCIAL RESILIENCE</div><h2>Marketplace value is highly concentrated.</h2><p>Seller count alone overstates diversification. The top 20% of positive-GMV sellers generate 82.7% of seller GMV proxy and the Gini coefficient is 0.792.</p></div>
-    <div class="detail-grid">
-      <figure class="chart"><img src="https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/05_seller_value_concentration/con_01_lorenz_curve.png" alt="Lorenz curve"><figcaption>Lorenz curve: seller-value inequality is material.</figcaption></figure>
-      <figure class="chart"><img src="https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/05_seller_value_concentration/con_02_pareto_cumulative_curve.png" alt="Pareto cumulative curve"><figcaption>Pareto view: top seller cohorts carry most marketplace value.</figcaption></figure>
-    </div>
-    <div class="limit-box"><b>Decision boundary</b><p>Concentration is a monitoring signal, not automatic proof that generic seller diversification will improve outcomes. Category economics, seller breadth and service quality must be considered together.</p></div>
-  </div>
-</section>
-
-<section class="section soft">
-  <div class="shell">
-    <div class="detail-intro"><div class="section-kicker">CUSTOMER EXPERIENCE &amp; OPERATIONS</div><h2>Late delivery is strongly associated with weaker review outcomes.</h2><p>Among reviewed delivered orders, late orders average 2.57 review points versus 4.29 for on-time orders. Their low-review rate is 54.0% versus 9.2%.</p></div>
-    <div class="detail-grid">
-      <article class="detail-card">
-        <div class="big-stat">+44.8pp</div>
-        <h3>Observed low-review risk gap</h3>
-        <p>The observed risk ratio is 5.87×. In an adjusted Generalized Linear Model (GLM), each additional delay day has an odds ratio of about 1.080 for a low review after controlling for category, customer state, order value, freight ratio and purchase month.</p>
-        <div class="limit-box"><b>Interpretation</b><p>Association does not prove causality. Category, route, carrier, seller mix, review selection and other unobserved factors can still matter.</p></div>
-      </article>
-      <figure class="chart"><img src="https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/07_customer_experience/cx_04_delay_severity_vs_review.png" alt="Delay severity versus review"><figcaption>More severe delay buckets are associated with progressively weaker review outcomes.</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="decisions">
-  <div class="shell">
-    <div class="detail-intro"><div class="section-kicker">ROOT CAUSE → DECISION</div><h2>Six diagnostic cases feed five governed decisions.</h2><p>The project separates supported, rejected and inconclusive hypotheses, then converts evidence into KPI ownership, guardrails, cadence and stop conditions.</p></div>
+    <div class="analysis-title"><div class="section-label">DECISION AGENDA</div><h2>Evidence becomes useful when it changes the operating cadence.</h2><p>Five governed decisions connect analysis to ownership, review frequency, KPIs, guardrails, and stop conditions.</p></div>
     <div class="decision-table-wrap">
-      <table class="decision-table">
+      <table>
         <thead><tr><th>Priority</th><th>Decision</th><th>Action</th><th>Primary KPI</th><th>Guardrail</th><th>Owner / cadence</th></tr></thead>
         <tbody>
-          <tr><td><span class="p1">P1</span></td><td><b>D01 · Measurement contract</b></td><td>Exclude or visibly flag incomplete periods before executive trend reporting.</td><td>Period completeness</td><td>No valid complete period suppressed</td><td>Data / BI · Daily</td></tr>
-          <tr><td><span class="p1">P1</span></td><td><b>D02 · Acquisition scorecard</b></td><td>Use volume, conversion, seller value, activation and M3 retention together.</td><td>Conversion + downstream GMV / seller</td><td>M3 retention</td><td>Seller Acquisition · Weekly</td></tr>
-          <tr><td><span class="p1">P1</span></td><td><b>D03 · Onboarding checkpoints</b></td><td>Instrument 7/30/60-day seller onboarding and test interventions.</td><td>30/60D activation + time to first sale</td><td>M3 retention + downstream GMV</td><td>Seller Operations · Weekly</td></tr>
-          <tr><td><span class="p2">P2</span></td><td><b>D04 · Concentration monitoring</b></td><td>Monitor top shares and high-value categories with weak seller breadth.</td><td>Top 1/5/10/20% GMV share</td><td>Active sellers / category</td><td>Commercial Analytics · Monthly</td></tr>
-          <tr><td><span class="p1">P1</span></td><td><b>D05 · Delivery investigation</b></td><td>Prioritize by order volume × delay severity × review penalty, then test changes.</td><td>Late-delivery rate</td><td>Review / low-review rate</td><td>Customer Experience · Daily / weekly</td></tr>
+          <tr><td><span class="priority p1">P1</span></td><td><b>D01</b><br>Measurement contract</td><td>Exclude or visibly flag incomplete periods before trend reporting.</td><td>Period completeness</td><td>No valid complete period suppressed</td><td>Data / BI<br><small>Daily</small></td></tr>
+          <tr><td><span class="priority p1">P1</span></td><td><b>D02</b><br>Acquisition scorecard</td><td>Govern on volume, conversion, seller value, activation and M3 retention.</td><td>Conversion + downstream GMV</td><td>M3 retention</td><td>Seller Acquisition<br><small>Weekly</small></td></tr>
+          <tr><td><span class="priority p1">P1</span></td><td><b>D03</b><br>Onboarding checkpoints</td><td>Instrument 7/30/60D milestones and test interventions.</td><td>30/60D activation</td><td>Retention + downstream GMV</td><td>Seller Operations<br><small>Weekly</small></td></tr>
+          <tr><td><span class="priority p2">P2</span></td><td><b>D04</b><br>Concentration monitoring</td><td>Monitor top seller shares and fragile category breadth.</td><td>Top 1/5/10/20% share</td><td>Active sellers / category</td><td>Commercial Analytics<br><small>Monthly</small></td></tr>
+          <tr><td><span class="priority p1">P1</span></td><td><b>D05</b><br>Delivery investigation</td><td>Prioritize by volume × delay severity × review penalty.</td><td>Late-delivery rate</td><td>Review / low-review rate</td><td>Customer Experience<br><small>Daily / weekly</small></td></tr>
         </tbody>
       </table>
     </div>
   </div>
 </section>
 
-<section class="section soft" id="methodology">
+<section class="section methodology-section" id="methodology">
   <div class="shell">
-    <div class="detail-intro"><div class="section-kicker">METHODOLOGY &amp; GOVERNANCE</div><h2>The analytical contract behind the report.</h2><p>The project is designed so that measurement rules are established before management claims are made.</p></div>
-    <div class="detail-grid three">
-      <article class="detail-card"><h3>Grain-safe model</h3><p>GMV stays at item grain before one-to-many joins. Delivery and review analysis stays at order grain.</p></article>
-      <article class="detail-card"><h3>Decision-eligible periods</h3><p>Incomplete edge periods are excluded or explicitly flagged before trend interpretation.</p></article>
-      <article class="detail-card"><h3>Eligibility-aware activation</h3><p>Fixed-window activation rates only use sellers observable for the complete 30/60/90-day window.</p></article>
-      <article class="detail-card"><h3>Retention observability</h3><p>M3 retention excludes cohorts too young to observe and avoids ranking origins when confidence intervals overlap materially.</p></article>
-      <article class="detail-card"><h3>Statistical rigor</h3><p>Confidence intervals, bootstrap evidence, False Discovery Rate (FDR) adjustment and an adjusted GLM support the descriptive layer.</p></article>
-      <article class="detail-card"><h3>Claim governance</h3><p>Historical observational evidence is kept separate from causal conclusions and current-market claims.</p></article>
+    <div class="analysis-title"><div class="section-label">METHODOLOGY</div><h2>Built for reproducible decision support, not visual storytelling alone.</h2></div>
+    <div class="method-grid">
+      <article><span>01</span><h3>Grain-safe model</h3><p>Order-item GMV is protected from one-to-many payment fan-out.</p></article>
+      <article><span>02</span><h3>Reporting boundary</h3><p>Incomplete periods are gated before executive trend interpretation.</p></article>
+      <article><span>03</span><h3>Eligibility-aware activation</h3><p>Fixed-window rates only use sellers observable for the full window.</p></article>
+      <article><span>04</span><h3>Retention observability</h3><p>Too-young cohorts are excluded from M3 retention denominators.</p></article>
+      <article><span>05</span><h3>Statistical rigor</h3><p>Effect size, confidence intervals, FDR, bootstrap and adjusted GLM support the diagnostics.</p></article>
+      <article><span>06</span><h3>Claim governance</h3><p>Descriptive, associative and causal statements are explicitly separated.</p></article>
     </div>
-    <div class="limit-box"><b>Interpretation boundary</b><p>This is a historical anonymized Olist case study. GMV is a proxy rather than platform revenue or profit. Marketing cost is unavailable, so Customer Acquisition Cost (CAC) and Return on Ad Spend (ROAS) are not estimated. Current production decisions would require refreshed data and controlled follow-up tests.</p></div>
   </div>
 </section>
 
-<section class="footer-cta" id="download">
-  <div class="shell footer-cta-inner">
-    <div><h2>Review the full 7-page Power BI report.</h2><p>The website provides the management narrative; the PDF and PBIP files preserve the complete dashboard deliverable.</p></div>
-    <div class="footer-actions">
-      <a class="btn btn-blue" href="./assets/final-market-dashboard.pdf" target="_blank" rel="noopener">Download Full Report</a>
-      <a class="btn btn-ghost" href="https://github.com/susayold/marketplace-growth-seller-intelligence/tree/feat/marketlens-web-7page-final/deliverables/powerbi" target="_blank" rel="noopener">View Power BI Source ↗</a>
+<section class="section lessons-section" id="lessons">
+  <div class="shell lesson-grid">
+    <div><div class="section-label">LESSONS &amp; LIMITATIONS</div><h2>Good analytics includes the boundary of what the data cannot prove.</h2></div>
+    <div class="lesson-copy">
+      <p>This is a historical anonymized Olist case study, not a current Brazil marketplace forecast. GMV is a proxy rather than platform revenue or profit. Marketing cost is unavailable, so CAC and ROAS are not estimated. Channel, onboarding and delivery results are observational and should not be interpreted as causal effects.</p>
+      <p><b>Practical lesson:</b> a polished dashboard is only decision-ready when metric grain, observation windows, uncertainty, and ownership rules are explicit.</p>
     </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="shell closing-grid">
+    <div><div class="section-label light">MARKETLENS</div><h2>Better data. Stronger marketplace decisions.</h2><p>Explore the complete Power BI report or inspect the analytical project in GitHub.</p></div>
+    <div><a class="btn btn-white" href="./assets/final-market-dashboard.pdf" target="_blank" rel="noopener">Open Power BI PDF</a><a class="btn btn-ghost" href="https://github.com/susayold/marketplace-growth-seller-intelligence" target="_blank" rel="noopener">View GitHub ↗</a></div>
   </div>
 </section>
 </main>
 
-<footer class="site-footer"><div class="shell"><span>MarketLens · Marketplace Growth &amp; Seller Intelligence</span><span>Historical Olist case study · Canonical analytical release governs website claims</span></div></footer>
-<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>\n<script src="./app.js"></script>
+<footer><div class="shell"><span>MarketLens — Marketplace Growth &amp; Seller Intelligence</span><span>Historical Olist case study · Analytical claims governed by repository release</span></div></footer>
+
+<button id="backTop" class="back-top" aria-label="Back to top">↑</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="./app.js"></script>
 </body>
 </html>
