@@ -23,66 +23,42 @@
     7: ['Decision Center','Prioritized actions with KPIs, guardrails, owners and review cadence.']
   };
 
-  const pdfUrl = './assets/final-market-dashboard.pdf';
-  let pdfDoc = null;
   let currentPage = 1;
-  let renderToken = 0;
+  const imageFor = page => './assets/dashboard/page-' + page + '.png';
 
-  if (window.pdfjsLib) {
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  function preload(page) {
+    const img = new Image();
+    img.src = imageFor(page);
   }
 
-  async function renderPdfPage(canvas, pageNum, maxCssWidth) {
-    if (!pdfDoc || !canvas) return;
-    const token = ++renderToken;
-    const page = await pdfDoc.getPage(pageNum);
-    const base = page.getViewport({ scale: 1 });
-    const cssWidth = maxCssWidth || base.width;
-    const cssScale = cssWidth / base.width;
-    // Render substantially above CSS resolution so dashboard typography stays crisp
-    // on desktop and high-DPI displays.
-    const density = Math.min(Math.max(window.devicePixelRatio || 1, 2.5), 3);
-    const viewport = page.getViewport({ scale: cssScale * density });
-
-    canvas.width = Math.floor(viewport.width);
-    canvas.height = Math.floor(viewport.height);
-    canvas.style.width = Math.floor(cssWidth) + 'px';
-    canvas.style.height = Math.floor(base.height * cssScale) + 'px';
-
-    const ctx = canvas.getContext('2d', { alpha: false });
-    if (token !== renderToken && canvas.id === 'dashboardCanvas') return;
-    await page.render({ canvasContext: ctx, viewport }).promise;
-  }
-
-  async function renderHero() {
-    const canvas = document.getElementById('heroPdfCanvas');
-    if (!canvas || !pdfDoc) return;
-    const width = Math.max(320, Math.min(760, canvas.parentElement.clientWidth));
-    const page = await pdfDoc.getPage(1);
-    const base = page.getViewport({ scale: 1 });
-    const cssScale = width / base.width;
-    const density = Math.min(Math.max(window.devicePixelRatio || 1, 2.25), 3);
-    const viewport = page.getViewport({ scale: cssScale * density });
-    canvas.width = Math.floor(viewport.width);
-    canvas.height = Math.floor(viewport.height);
-    canvas.style.width = width + 'px';
-    canvas.style.height = Math.floor(base.height * cssScale) + 'px';
-    const ctx = canvas.getContext('2d', { alpha: false });
-    await page.render({ canvasContext: ctx, viewport }).promise;
-  }
-
-  async function showPage(pageNum) {
-    if (!pdfDoc) return;
+  function showPage(pageNum) {
     currentPage = Math.max(1, Math.min(7, pageNum));
+    const image = document.getElementById('dashboardImage');
     const loading = document.getElementById('pdfLoading');
-    const canvas = document.getElementById('dashboardCanvas');
-    if (loading) loading.classList.add('show');
-
-    const wrap = canvas?.parentElement;
-    const targetWidth = wrap ? Math.max(320, wrap.clientWidth - 28) : 1120;
-    await renderPdfPage(canvas, currentPage, targetWidth);
-
     const meta = pageMeta[currentPage];
+
+    if (loading) {
+      loading.innerHTML = 'Loading ultra-high-resolution Power BI page…';
+      loading.classList.add('show');
+    }
+
+    if (image) {
+      image.classList.add('is-loading');
+      image.onload = () => {
+        image.classList.remove('is-loading');
+        if (loading) loading.classList.remove('show');
+      };
+      image.onerror = () => {
+        image.classList.remove('is-loading');
+        if (loading) {
+          loading.innerHTML = 'Preview unavailable. <a href="./assets/final-market-dashboard.pdf" target="_blank" rel="noopener">Open the full PDF →</a>';
+          loading.classList.add('show');
+        }
+      };
+      image.src = imageFor(currentPage);
+      image.alt = 'Power BI dashboard page ' + currentPage + ' — ' + meta[0];
+    }
+
     const title = document.getElementById('dashTitle');
     const subtitle = document.getElementById('dashSubtitle');
     const counter = document.getElementById('pageCurrent');
@@ -94,40 +70,23 @@
       btn.classList.toggle('active', Number(btn.dataset.page) === currentPage);
     });
 
-    if (loading) loading.classList.remove('show');
-  }
-
-  async function initPdf() {
-    const loading = document.getElementById('pdfLoading');
-    try {
-      if (!window.pdfjsLib) throw new Error('PDF.js unavailable');
-      if (loading) loading.classList.add('show');
-      pdfDoc = await pdfjsLib.getDocument(pdfUrl).promise;
-      await Promise.all([renderHero(), showPage(1)]);
-    } catch (err) {
-      console.error(err);
-      if (loading) {
-        loading.classList.add('show');
-        loading.innerHTML = 'Preview could not render in this browser. <a href="./assets/final-market-dashboard.pdf" target="_blank" rel="noopener">Open the full PDF →</a>';
-      }
-      const hero = document.querySelector('.laptop-screen');
-      if (hero) hero.innerHTML = '<div class="hero-fallback">Power BI<br><strong>7-page Executive Report</strong></div>';
-    }
+    preload(currentPage === 7 ? 1 : currentPage + 1);
+    preload(currentPage === 1 ? 7 : currentPage - 1);
   }
 
   document.getElementById('prevPage')?.addEventListener('click', () => showPage(currentPage === 1 ? 7 : currentPage - 1));
   document.getElementById('nextPage')?.addEventListener('click', () => showPage(currentPage === 7 ? 1 : currentPage + 1));
   document.querySelectorAll('#dashboardTabs button').forEach(btn => btn.addEventListener('click', () => showPage(Number(btn.dataset.page))));
 
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      if (!pdfDoc) return;
-      renderHero();
-      showPage(currentPage);
-    }, 220);
-  });
+  const heroImg = document.getElementById('heroDashboardImage');
+  if (heroImg) {
+    heroImg.onerror = () => {
+      const screen = heroImg.closest('.laptop-screen');
+      if (screen) screen.innerHTML = '<div class="hero-fallback">Power BI<br><strong>7-page Executive Report</strong></div>';
+    };
+  }
 
-  initPdf();
+  preload(1);
+  preload(2);
+  showPage(1);
 })();
