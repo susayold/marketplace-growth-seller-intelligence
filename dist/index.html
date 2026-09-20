@@ -46,7 +46,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-message">More trusted measurement.<br>Better seller decisions.<small>— MarketLens</small></div>
-      <div class="hero-screen" aria-label="Power BI executive overview preview"></div>
+      <div class="hero-screen-wrap"><canvas class="hero-screen" id="heroCanvas" aria-label="Power BI executive overview preview"></canvas></div>
     </div>
   </div>
 </section>
@@ -97,7 +97,7 @@
     </div>
 
     <div class="dashboard-frame">
-      <div class="dashboard-image" id="dashboardImage" role="img" aria-label="Power BI dashboard page preview"></div>
+      <div class="dashboard-canvas-wrap"><div class="dashboard-loading" id="dashboardLoading">Rendering Power BI page…</div><canvas class="dashboard-image" id="dashboardCanvas" aria-label="Power BI dashboard page preview"></canvas></div>
     </div>
 
     <div class="dashboard-actions">
@@ -256,6 +256,6 @@
 
 <footer class="site-footer"><div class="shell"><span>MarketLens · Marketplace Growth &amp; Seller Intelligence</span><span>Historical Olist case study · Canonical analytical release governs website claims</span></div></footer>
 <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
-<script src="./app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>\n<script src="./app.js"></script>
 </body>
 </html>
