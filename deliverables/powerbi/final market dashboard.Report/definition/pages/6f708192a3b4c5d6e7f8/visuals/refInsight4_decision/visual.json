@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "refInsight4_decision",
   "position": {
-    "x": 1562,
-    "y": 969,
+    "x": 2500,
+    "y": 1020,
     "z": 48000,
     "height": 32,
     "width": 32,

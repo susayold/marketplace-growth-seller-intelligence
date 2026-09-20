@@ -5,7 +5,7 @@
     "x": 1610,
     "y": 777,
     "z": 33000,
-    "height": 56,
+    "height": 86,
     "width": 248,
     "tabOrder": 33000
   },
@@ -22,7 +22,7 @@
                     "value": "Strategic leads value",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "14px",
+                      "fontSize": "18px",
                       "color": "#0F766E"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Highest GMV and AOV, with 39.8% of segment mix.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "11px",
+                      "fontSize": "13px",
                       "color": "#475569"
                     }
                   }

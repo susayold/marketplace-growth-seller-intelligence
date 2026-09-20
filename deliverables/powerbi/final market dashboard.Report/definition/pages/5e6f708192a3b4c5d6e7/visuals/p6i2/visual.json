@@ -3,9 +3,9 @@
   "name": "p6i2",
   "position": {
     "x": 1610,
-    "y": 838,
+    "y": 874,
     "z": 33000,
-    "height": 56,
+    "height": 86,
     "width": 248,
     "tabOrder": 33000
   },
@@ -22,7 +22,7 @@
                     "value": "Concentration is material",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "14px",
+                      "fontSize": "18px",
                       "color": "#1D4ED8"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Seller Concentration ranks as the leading commercial risk.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "11px",
+                      "fontSize": "13px",
                       "color": "#475569"
                     }
                   }

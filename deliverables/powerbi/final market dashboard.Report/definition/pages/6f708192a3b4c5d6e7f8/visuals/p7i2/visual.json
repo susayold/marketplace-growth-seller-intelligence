@@ -3,9 +3,9 @@
   "name": "p7i2",
   "position": {
     "x": 1610,
-    "y": 838,
+    "y": 874,
     "z": 37000,
-    "height": 56,
+    "height": 86,
     "width": 248,
     "tabOrder": 37000
   },
@@ -22,7 +22,7 @@
                     "value": "Reduce concentration dependence",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "14px",
+                      "fontSize": "18px",
                       "color": "#1D4ED8"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "P1 commercial action with a 90D horizon.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "11px",
+                      "fontSize": "13px",
                       "color": "#475569"
                     }
                   }

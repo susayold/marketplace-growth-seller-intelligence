@@ -3,9 +3,9 @@
   "name": "p4i2",
   "position": {
     "x": 1610,
-    "y": 838,
+    "y": 874,
     "z": 34000,
-    "height": 56,
+    "height": 86,
     "width": 248,
     "tabOrder": 34000
   },
@@ -22,7 +22,7 @@
                     "value": "Growth is the expansion lane",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "14px",
+                      "fontSize": "18px",
                       "color": "#1D4ED8"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Growth segment combines 8.1% growth with healthy AOV.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "11px",
+                      "fontSize": "13px",
                       "color": "#475569"
                     }
                   }

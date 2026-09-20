@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "p6i4",
   "position": {
-    "x": 1610,
-    "y": 960,
+    "x": 2500,
+    "y": 1020,
     "z": 35000,
     "height": 56,
     "width": 248,
