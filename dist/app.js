@@ -1,116 +1,131 @@
 (() => {
   const menuBtn = document.getElementById('menuBtn');
-  const nav = document.getElementById('mainNav');
-  if (menuBtn && nav) {
-    menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
-    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+  const mainNav = document.getElementById('mainNav');
+  if (menuBtn && mainNav) {
+    menuBtn.addEventListener('click', () => mainNav.classList.toggle('open'));
+    mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mainNav.classList.remove('open')));
   }
 
-  const pages = [
-    {title:'Executive Overview', desc:'A high-level view of marketplace scale, seller concentration and management risk signals.'},
-    {title:'Seller Acquisition', desc:'Channel volume, conversion quality and downstream seller value.'},
-    {title:'Seller Activation & Retention', desc:'Time-to-first-sale, observable activation windows and retention guardrails.'},
-    {title:'Commercial Performance', desc:'Seller value distribution, concentration and commercial resilience.'},
-    {title:'Customer Experience & Operations', desc:'Delivery reliability, review outcomes and operational risk.'},
-    {title:'Root Cause & Diagnostic', desc:'Evidence-led hypotheses across measurement, growth and operational drivers.'},
-    {title:'Decision Center', desc:'Prioritized actions with KPIs, guardrails, owners and review cadence.'}
-  ];
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', () => {
+    if (!backTop) return;
+    backTop.classList.toggle('show', window.scrollY > 650);
+  });
+  if (backTop) backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  let current = 0;
-  let pdfDoc = null;
-  let renderToken = 0;
+  const pageMeta = {
+    1: ['Executive Overview','A high-level view of marketplace performance, seller concentration and key metrics.'],
+    2: ['Seller Acquisition','Lead volume, observed conversion, channel mix and downstream seller value.'],
+    3: ['Seller Activation & Retention','Time-to-first-sale, observable activation windows and retention guardrails.'],
+    4: ['Commercial Performance','Seller value distribution, concentration and commercial resilience.'],
+    5: ['Customer Experience & Operations','Delivery performance and its association with customer review outcomes.'],
+    6: ['Root Cause & Diagnostic','Structured evidence review across six cases and twenty hypotheses.'],
+    7: ['Decision Center','Prioritized actions with KPIs, guardrails, owners and review cadence.']
+  };
+
   const pdfUrl = './assets/final-market-dashboard.pdf';
-  const dashboardCanvas = document.getElementById('dashboardCanvas');
-  const heroCanvas = document.getElementById('heroCanvas');
-  const loading = document.getElementById('dashboardLoading');
-  const title = document.getElementById('dashboardTitle');
-  const desc = document.getElementById('dashboardDesc');
-  const counter = document.getElementById('dashboardCounter');
-  const pdfPageLink = document.getElementById('pdfPageLink');
+  let pdfDoc = null;
+  let currentPage = 1;
+  let renderToken = 0;
 
   if (window.pdfjsLib) {
-    window.pdfjsLib.GlobalWorkerOptions.workerSrc =
-      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
   }
 
-  async function renderPdfPage(pageNumber, canvas, quality = 1.45) {
+  async function renderPdfPage(canvas, pageNum, maxCssWidth) {
     if (!pdfDoc || !canvas) return;
-    const myToken = ++renderToken;
-    const page = await pdfDoc.getPage(pageNumber);
+    const token = ++renderToken;
+    const page = await pdfDoc.getPage(pageNum);
     const base = page.getViewport({ scale: 1 });
-    const wrap = canvas.parentElement;
-    const cssWidth = Math.max(320, wrap.clientWidth);
+    const cssWidth = Math.min(maxCssWidth || base.width, base.width);
+    const cssScale = cssWidth / base.width;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const scale = (cssWidth * dpr * quality) / base.width;
-    const viewport = page.getViewport({ scale });
+    const viewport = page.getViewport({ scale: cssScale * dpr });
 
     canvas.width = Math.floor(viewport.width);
     canvas.height = Math.floor(viewport.height);
-    canvas.style.width = cssWidth + 'px';
-    canvas.style.height = Math.round(cssWidth * base.height / base.width) + 'px';
+    canvas.style.width = Math.floor(base.width * cssScale) + 'px';
+    canvas.style.height = Math.floor(base.height * cssScale) + 'px';
 
     const ctx = canvas.getContext('2d', { alpha: false });
-    ctx.save();
-    ctx.fillStyle = '#fff';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.restore();
-
+    if (token !== renderToken && canvas.id === 'dashboardCanvas') return;
     await page.render({ canvasContext: ctx, viewport }).promise;
-    if (myToken && loading && canvas === dashboardCanvas) loading.hidden = true;
   }
 
-  async function loadPdf() {
-    if (!window.pdfjsLib) {
-      if (loading) loading.textContent = 'Preview unavailable — open the PDF report.';
-      return;
-    }
+  async function renderHero() {
+    const canvas = document.getElementById('heroPdfCanvas');
+    if (!canvas || !pdfDoc) return;
+    const width = Math.max(320, Math.min(760, canvas.parentElement.clientWidth));
+    const page = await pdfDoc.getPage(1);
+    const base = page.getViewport({ scale: 1 });
+    const cssScale = width / base.width;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const viewport = page.getViewport({ scale: cssScale * dpr });
+    canvas.width = Math.floor(viewport.width);
+    canvas.height = Math.floor(viewport.height);
+    canvas.style.width = width + 'px';
+    canvas.style.height = Math.floor(base.height * cssScale) + 'px';
+    const ctx = canvas.getContext('2d', { alpha: false });
+    await page.render({ canvasContext: ctx, viewport }).promise;
+  }
+
+  async function showPage(pageNum) {
+    if (!pdfDoc) return;
+    currentPage = Math.max(1, Math.min(7, pageNum));
+    const loading = document.getElementById('pdfLoading');
+    const canvas = document.getElementById('dashboardCanvas');
+    if (loading) loading.classList.add('show');
+
+    const wrap = canvas?.parentElement;
+    const targetWidth = wrap ? Math.max(320, wrap.clientWidth - 28) : 1120;
+    await renderPdfPage(canvas, currentPage, targetWidth);
+
+    const meta = pageMeta[currentPage];
+    const title = document.getElementById('dashTitle');
+    const subtitle = document.getElementById('dashSubtitle');
+    const counter = document.getElementById('pageCurrent');
+    if (title) title.textContent = meta[0];
+    if (subtitle) subtitle.textContent = meta[1];
+    if (counter) counter.textContent = currentPage;
+
+    document.querySelectorAll('#dashboardTabs button').forEach(btn => {
+      btn.classList.toggle('active', Number(btn.dataset.page) === currentPage);
+    });
+
+    if (loading) loading.classList.remove('show');
+  }
+
+  async function initPdf() {
+    const loading = document.getElementById('pdfLoading');
     try {
-      pdfDoc = await window.pdfjsLib.getDocument(pdfUrl).promise;
-      await Promise.all([
-        renderPdfPage(1, dashboardCanvas, 1.35),
-        renderPdfPage(1, heroCanvas, .8)
-      ]);
+      if (!window.pdfjsLib) throw new Error('PDF.js unavailable');
+      if (loading) loading.classList.add('show');
+      pdfDoc = await pdfjsLib.getDocument(pdfUrl).promise;
+      await Promise.all([renderHero(), showPage(1)]);
     } catch (err) {
       console.error(err);
-      if (loading) loading.innerHTML = '<a href="' + pdfUrl + '" target="_blank" rel="noopener">Open the Power BI PDF ↗</a>';
+      if (loading) {
+        loading.classList.add('show');
+        loading.innerHTML = 'Preview could not render in this browser. <a href="./assets/final-market-dashboard.pdf" target="_blank" rel="noopener">Open the full PDF →</a>';
+      }
+      const hero = document.querySelector('.laptop-screen');
+      if (hero) hero.innerHTML = '<div class="hero-fallback">Power BI<br><strong>7-page Executive Report</strong></div>';
     }
   }
 
-  async function renderPage() {
-    if (title) title.textContent = pages[current].title;
-    if (desc) desc.textContent = pages[current].desc;
-    if (counter) counter.textContent = (current + 1) + ' / ' + pages.length;
-    if (pdfPageLink) pdfPageLink.href = pdfUrl + '#page=' + (current + 1);
-    if (loading) loading.hidden = false;
-    if (pdfDoc) await renderPdfPage(current + 1, dashboardCanvas, 1.35);
-  }
-
-  document.getElementById('prevPage')?.addEventListener('click', async () => {
-    current = (current - 1 + pages.length) % pages.length;
-    await renderPage();
-  });
-  document.getElementById('nextPage')?.addEventListener('click', async () => {
-    current = (current + 1) % pages.length;
-    await renderPage();
-  });
-  document.querySelectorAll('[data-page-jump]').forEach(btn => btn.addEventListener('click', async () => {
-    current = Math.max(0, Math.min(pages.length - 1, Number(btn.dataset.pageJump) - 1));
-    await renderPage();
-  }));
+  document.getElementById('prevPage')?.addEventListener('click', () => showPage(currentPage === 1 ? 7 : currentPage - 1));
+  document.getElementById('nextPage')?.addEventListener('click', () => showPage(currentPage === 7 ? 1 : currentPage + 1));
+  document.querySelectorAll('#dashboardTabs button').forEach(btn => btn.addEventListener('click', () => showPage(Number(btn.dataset.page))));
 
   let resizeTimer;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
       if (!pdfDoc) return;
-      renderPdfPage(current + 1, dashboardCanvas, 1.2);
-      renderPdfPage(1, heroCanvas, .75);
+      renderHero();
+      showPage(currentPage);
     }, 220);
   });
 
-  const back = document.getElementById('backTop');
-  window.addEventListener('scroll', () => back?.classList.toggle('show', window.scrollY > 700));
-  back?.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
-
-  loadPdf();
+  initPdf();
 })();
