@@ -23,11 +23,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Render Power BI PDF pages at ultra-high resolution
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+          mkdir -p dist/assets/dashboard
+          rm -f dist/assets/dashboard/page-*.png
+          pdftocairo -png -r 220 dist/assets/final-market-dashboard.pdf dist/assets/dashboard/page
+          identify dist/assets/dashboard/page-1.png || true
+          ls -lh dist/assets/dashboard/
+
       - uses: actions/configure-pages@v5
         with:
           enablement: true
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+
       - id: deployment
         uses: actions/deploy-pages@v4
