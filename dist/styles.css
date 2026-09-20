@@ -22,3 +22,87 @@ footer{background:#041121;color:#8696a9;font-size:9px;padding:17px 0}footer .she
 code{font-family:Consolas,monospace;background:#eef3f8;padding:2px 4px;border-radius:4px;color:#183d68}
 @media(max-width:1050px){.main-nav,.report-btn{display:none}.menu-btn{display:block}.main-nav.open{display:flex;position:absolute;left:20px;right:20px;top:66px;background:#fff;border:1px solid var(--line);padding:15px;flex-direction:column;align-items:flex-start;border-radius:10px;box-shadow:var(--shadow)}.hero-grid{grid-template-columns:1fr}.hero{min-height:650px}.hero-visual{min-height:250px}.laptop{right:5%;width:560px}.hero-message{right:2%;top:0}.kpi-strip{grid-template-columns:repeat(3,1fr)}.kpi-item:nth-child(3){border-right:0}.kpi-item:nth-child(-n+3){border-bottom:1px solid #e5ebf3}.insight-intro,.lesson-grid{grid-template-columns:1fr;gap:18px}.insight-cards,.recommendation-grid{grid-template-columns:repeat(2,1fr)}.analysis-block,.analysis-block.reverse{grid-template-columns:45px 1fr}.analysis-block figure,.analysis-block.reverse figure{grid-column:2}.analysis-block .analysis-copy,.analysis-block.reverse .analysis-copy{grid-column:2}.analysis-block.reverse figure{grid-row:auto}.analysis-block.reverse .analysis-copy{grid-row:auto}.method-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.shell{width:min(100% - 24px,1220px)}.site-header{height:62px}.header-inner{gap:12px}.brand-copy small{display:none}.hero{min-height:700px}.hero-grid{display:block}.hero-copy{padding-top:44px}.hero h1{font-size:35px}.hero-value-row{grid-template-columns:1fr;gap:9px}.hero-visual{min-height:285px}.hero-message{font-size:14px;top:15px}.laptop{width:92%;right:2%;bottom:12px}.kpi-strip{grid-template-columns:1fr 1fr}.kpi-item{border-right:1px solid #e5ebf3;border-bottom:1px solid #e5ebf3}.kpi-item:nth-child(2n){border-right:0}.kpi-item:last-child{grid-column:1/-1;border-bottom:0}.kpi-item strong{font-size:18px}.insight-cards,.recommendation-grid,.method-grid{grid-template-columns:1fr}.dashboard-heading,.recommendations-head,.closing-grid{align-items:flex-start;flex-direction:column}.section{padding:44px 0}.insight-intro h2,.dashboard-heading h2,.recommendations h2,.analysis-title h2,.lessons-section h2,.closing h2{font-size:25px}.pager{align-self:flex-end}.pdf-canvas-wrap{min-height:220px}.analysis-block,.analysis-block.reverse{grid-template-columns:35px 1fr;padding:30px 0}.analysis-copy h3{font-size:21px}.evidence-row,.evidence-row.three{grid-template-columns:1fr 1fr}.dark-block{margin-left:-12px;margin-right:-12px;padding-left:12px;padding-right:12px}.lesson-grid{gap:12px}footer .shell{flex-direction:column;gap:5px}.callout{flex-direction:column;gap:3px}.scope-note{text-align:left}}
+
+
+/* === Readability & scale pass: desktop executive presentation === */
+@media (min-width: 901px){
+  .shell{width:min(1400px,calc(100% - 54px))}
+  .site-header{height:78px}
+  .brand-cube{width:40px;height:40px}
+  .brand-copy b{font-size:19px}
+  .brand-copy small{font-size:11px}
+  .main-nav a{font-size:13px}
+  .report-btn{font-size:13px;padding:12px 20px}
+
+  .hero{min-height:510px}
+  .hero-grid{min-height:510px;grid-template-columns:1.02fr .98fr}
+  .hero-copy{padding:56px 0 40px}
+  .eyebrow{font-size:12px}
+  .hero h1{font-size:54px;line-height:1.1;max-width:760px}
+  .hero-copy>p{font-size:18px;max-width:690px;line-height:1.65}
+  .btn{min-height:48px;padding:0 22px;font-size:14px}
+  .hero-value-row{max-width:760px;margin-top:38px}
+  .hero-value-row b{font-size:13px}
+  .hero-value-row small{font-size:11px}
+  .mini-icon{width:31px;height:31px;font-size:14px}
+  .hero-message{font-size:22px;right:14px;top:42px}
+  .laptop{width:610px;right:-8px;bottom:18px}
+
+  .kpi-band{padding:32px 0 20px}
+  .kpi-item{padding:24px 22px;gap:17px}
+  .kpi-icon{width:40px;height:40px;font-size:20px}
+  .kpi-item strong{font-size:27px}
+  .kpi-item b{font-size:13px;margin-top:8px}
+  .kpi-item small{font-size:10.5px;line-height:1.35}
+  .scope-note{font-size:10.5px;margin-top:10px}
+
+  .section{padding:72px 0}
+  .section-label,.analysis-kicker{font-size:11px}
+  .insight-intro{grid-template-columns:1.45fr .75fr;gap:75px}
+  .insight-intro h2,.dashboard-heading h2,.recommendations h2,.analysis-title h2,.lessons-section h2,.closing h2{font-size:36px}
+  .insight-intro p{font-size:14px;line-height:1.65}
+  .insight-cards{gap:16px;margin-top:28px}
+  .insight-cards article{padding:21px 19px;gap:15px}
+  .insight-cards article>span{width:40px;height:40px;font-size:20px}
+  .insight-cards h3{font-size:14px;line-height:1.35}
+  .insight-cards p{font-size:12px;line-height:1.55}
+
+  .dashboard-section .shell{width:min(1500px,calc(100% - 38px))}
+  .dashboard-heading p{font-size:13px}
+  .pager strong{font-size:18px}
+  .pager button{width:42px;height:42px;font-size:27px}
+  .dashboard-stage{margin-top:22px}
+  .pdf-canvas-wrap{min-height:720px;border-radius:8px}
+  .dashboard-tabs{margin-top:16px;gap:9px}
+  .dashboard-tabs button{font-size:11.5px;padding:8px 14px}
+
+  .recommendations{padding:34px 0 52px}
+  .recommendations-head p{font-size:13px}
+  .outline-link{font-size:11.5px;padding:11px 15px}
+  .recommendation-grid{gap:24px;margin-top:27px}
+  .recommendation-grid article>span{width:40px;height:40px}
+  .recommendation-grid h3{font-size:13.5px}
+  .recommendation-grid p{font-size:11.5px;line-height:1.55}
+
+  .analysis-title{max-width:900px;margin-bottom:34px}
+  .analysis-title p{font-size:14px}
+  .analysis-block{grid-template-columns:62px .92fr 1.08fr;gap:32px;padding:52px 0}
+  .analysis-block.reverse{grid-template-columns:62px 1.08fr .92fr}
+  .analysis-number{font-size:30px}
+  .analysis-copy h3{font-size:30px}
+  .analysis-copy p{font-size:14px;line-height:1.7}
+  .analysis-block figcaption{font-size:10.5px}
+  .evidence-row strong{font-size:17px}
+  .evidence-row span{font-size:10px}
+  .callout b,.callout span{font-size:11.5px}
+  .decision-table-wrap th{font-size:10px}
+  .decision-table-wrap td{font-size:12px;line-height:1.5}
+  .method-grid h3{font-size:16px}
+  .method-grid p{font-size:11.5px;line-height:1.55}
+  .lesson-copy p{font-size:14px;line-height:1.7}
+  .closing p{font-size:13px}
+  footer{font-size:10.5px}
+}
+
+/* Keep dashboard canvas native-sized in CSS; bitmap itself is rendered at 2.5-3x density. */
+#dashboardCanvas,#heroPdfCanvas{image-rendering:auto}
