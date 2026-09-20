@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "p2i1",
   "position": {
-    "x": 1660,
-    "y": 355,
+    "x": 1652,
+    "y": 356,
     "z": 35000,
-    "height": 96,
-    "width": 195,
+    "height": 88,
+    "width": 203,
     "tabOrder": 35000
   },
   "visual": {
@@ -32,10 +32,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "\n24.7% conversion with the fastest close time.",
+                    "value": "24.7% conversion with the fastest close time.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
+                      "fontSize": "16px",
                       "color": "#475569"
                     }
                   }

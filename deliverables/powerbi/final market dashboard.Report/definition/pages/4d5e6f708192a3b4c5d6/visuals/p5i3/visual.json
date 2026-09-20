@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "p5i3",
   "position": {
-    "x": 1610,
-    "y": 971,
+    "x": 1588,
+    "y": 950,
     "z": 34000,
-    "height": 86,
-    "width": 248,
+    "height": 69,
+    "width": 276,
     "tabOrder": 34000
   },
   "visual": {
@@ -22,7 +22,7 @@
                     "value": "Cancel rate also rises",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "18px",
+                      "fontSize": "20px",
                       "color": "#BE123C"
                     }
                   }
@@ -32,10 +32,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "Higher cancellation is observed alongside poorer delivery outcomes.",
+                    "value": "Higher cancellation coincides with poorer delivery outcomes.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "16px",
                       "color": "#475569"
                     }
                   }

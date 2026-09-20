@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "p2i3",
   "position": {
-    "x": 1660,
-    "y": 575,
+    "x": 1652,
+    "y": 576,
     "z": 37000,
-    "height": 96,
-    "width": 195,
+    "height": 88,
+    "width": 203,
     "tabOrder": 37000
   },
   "visual": {
@@ -32,10 +32,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "\nLowest conversion and longest close cycle.",
+                    "value": "Lowest conversion and longest close cycle.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
+                      "fontSize": "16px",
                       "color": "#475569"
                     }
                   }

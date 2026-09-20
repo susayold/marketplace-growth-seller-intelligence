@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "p7i3",
   "position": {
-    "x": 1610,
-    "y": 971,
+    "x": 1588,
+    "y": 950,
     "z": 38000,
-    "height": 86,
-    "width": 248,
+    "height": 69,
+    "width": 276,
     "tabOrder": 38000
   },
   "visual": {
@@ -22,7 +22,7 @@
                     "value": "Improve seller activation",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "18px",
+                      "fontSize": "20px",
                       "color": "#0F766E"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Ready P1 activation lever for the next 60D.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "16px",
                       "color": "#475569"
                     }
                   }

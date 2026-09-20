@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "p3i1",
   "position": {
-    "x": 1610,
-    "y": 777,
+    "x": 1588,
+    "y": 780,
     "z": 33000,
-    "height": 86,
-    "width": 248,
+    "height": 69,
+    "width": 276,
     "tabOrder": 33000
   },
   "visual": {
@@ -22,7 +22,7 @@
                     "value": "Aug is strongest",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "18px",
+                      "fontSize": "20px",
                       "color": "#0F766E"
                     }
                   }
@@ -32,10 +32,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "Highest 90D activation and retention in the cohort set.",
+                    "value": "Highest 90D activation and retention across cohorts.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "16px",
                       "color": "#475569"
                     }
                   }

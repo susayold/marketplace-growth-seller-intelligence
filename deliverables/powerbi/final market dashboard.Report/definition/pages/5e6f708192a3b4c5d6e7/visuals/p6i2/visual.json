@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "p6i2",
   "position": {
-    "x": 1610,
-    "y": 874,
+    "x": 1588,
+    "y": 865,
     "z": 33000,
-    "height": 86,
-    "width": 248,
+    "height": 69,
+    "width": 276,
     "tabOrder": 33000
   },
   "visual": {
@@ -19,10 +19,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "Concentration is material",
+                    "value": "Concentration risk",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "18px",
+                      "fontSize": "20px",
                       "color": "#1D4ED8"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Seller Concentration ranks as the leading commercial risk.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "16px",
                       "color": "#475569"
                     }
                   }

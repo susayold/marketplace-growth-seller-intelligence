@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "p7i2",
   "position": {
-    "x": 1610,
-    "y": 874,
+    "x": 1588,
+    "y": 865,
     "z": 37000,
-    "height": 86,
-    "width": 248,
+    "height": 69,
+    "width": 276,
     "tabOrder": 37000
   },
   "visual": {
@@ -19,10 +19,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "Reduce concentration dependence",
+                    "value": "Seller concentration",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "18px",
+                      "fontSize": "20px",
                       "color": "#1D4ED8"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "P1 commercial action with a 90D horizon.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "16px",
                       "color": "#475569"
                     }
                   }

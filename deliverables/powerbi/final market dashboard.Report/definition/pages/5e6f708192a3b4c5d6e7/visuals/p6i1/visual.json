@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "p6i1",
   "position": {
-    "x": 1610,
-    "y": 777,
+    "x": 1588,
+    "y": 780,
     "z": 32000,
-    "height": 86,
-    "width": 248,
+    "height": 69,
+    "width": 276,
     "tabOrder": 32000
   },
   "visual": {
@@ -22,7 +22,7 @@
                     "value": "Late Delivery is P1",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "18px",
+                      "fontSize": "20px",
                       "color": "#BE123C"
                     }
                   }
@@ -32,10 +32,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "Highest severity and frequency create the top investigation priority.",
+                    "value": "Highest severity and frequency make this a priority.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "16px",
                       "color": "#475569"
                     }
                   }

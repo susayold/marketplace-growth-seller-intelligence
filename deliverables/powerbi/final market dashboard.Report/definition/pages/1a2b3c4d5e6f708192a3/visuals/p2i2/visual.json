@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "p2i2",
   "position": {
-    "x": 1660,
-    "y": 465,
+    "x": 1652,
+    "y": 466,
     "z": 36000,
-    "height": 96,
-    "width": 195,
+    "height": 88,
+    "width": 203,
     "tabOrder": 36000
   },
   "visual": {
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Organic drives volume",
+                    "value": "Organic lead volume",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "20px",
@@ -32,10 +32,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "\nLargest lead pool, but conversion trails Partner.",
+                    "value": "Largest lead pool, but conversion trails Partner.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "15px",
+                      "fontSize": "16px",
                       "color": "#475569"
                     }
                   }

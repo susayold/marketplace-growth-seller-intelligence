@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "refInsight1_commercial",
   "position": {
-    "x": 1562,
-    "y": 786,
+    "x": 1556,
+    "y": 784,
     "z": 42000,
-    "height": 32,
-    "width": 32,
+    "height": 24,
+    "width": 24,
     "tabOrder": 42000
   },
   "visual": {

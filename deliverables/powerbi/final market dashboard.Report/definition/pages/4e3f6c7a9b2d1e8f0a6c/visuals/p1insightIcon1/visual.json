@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "p1insightIcon1",
   "position": {
-    "x": 1606,
-    "y": 369,
+    "x": 1602,
+    "y": 360,
     "z": 69000,
-    "height": 28,
-    "width": 28,
+    "height": 24,
+    "width": 24,
     "tabOrder": 69000
   },
   "visual": {
