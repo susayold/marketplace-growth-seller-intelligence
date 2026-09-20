@@ -3,9 +3,9 @@
   "name": "p6i3",
   "position": {
     "x": 1610,
-    "y": 575,
+    "y": 899,
     "z": 34000,
-    "height": 90,
+    "height": 56,
     "width": 248,
     "tabOrder": 34000
   },
@@ -22,7 +22,7 @@
                     "value": "Activation delay matters",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "18px",
+                      "fontSize": "14px",
                       "color": "#BE123C"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Seller Ops owns a meaningful growth bottleneck.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "11px",
                       "color": "#475569"
                     }
                   }

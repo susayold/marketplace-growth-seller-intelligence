@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "p3i4",
   "position": {
-    "x": 2500,
-    "y": 685,
+    "x": 1610,
+    "y": 960,
     "z": 36000,
-    "height": 90,
+    "height": 56,
     "width": 248,
     "tabOrder": 36000
   },
@@ -22,7 +22,7 @@
                     "value": "Retention stays distinct",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "18px",
+                      "fontSize": "14px",
                       "color": "#1D4ED8"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Post-activation engagement tracks a separate outcome.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "11px",
                       "color": "#475569"
                     }
                   }

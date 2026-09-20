@@ -3,9 +3,9 @@
   "name": "p5i1",
   "position": {
     "x": 1610,
-    "y": 355,
+    "y": 777,
     "z": 32000,
-    "height": 90,
+    "height": 56,
     "width": 248,
     "tabOrder": 32000
   },
@@ -22,7 +22,7 @@
                     "value": "Late coincides with lower reviews",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "18px",
+                      "fontSize": "14px",
                       "color": "#BE123C"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "The Late segment is observed alongside the lowest score.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "11px",
                       "color": "#475569"
                     }
                   }

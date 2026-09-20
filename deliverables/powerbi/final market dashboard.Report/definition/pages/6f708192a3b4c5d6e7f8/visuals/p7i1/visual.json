@@ -3,9 +3,9 @@
   "name": "p7i1",
   "position": {
     "x": 1610,
-    "y": 355,
+    "y": 777,
     "z": 36000,
-    "height": 90,
+    "height": 56,
     "width": 248,
     "tabOrder": 36000
   },
@@ -22,7 +22,7 @@
                     "value": "Fix delivery monitoring",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "18px",
+                      "fontSize": "14px",
                       "color": "#0F766E"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Ready P1 action with immediate operational ownership.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "11px",
                       "color": "#475569"
                     }
                   }

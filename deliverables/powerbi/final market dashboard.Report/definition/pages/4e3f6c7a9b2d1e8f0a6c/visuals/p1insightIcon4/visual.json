@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "p1insightIcon4",
   "position": {
-    "x": 1606,
-    "y": 609,
+    "x": 2500,
+    "y": 685,
     "z": 72000,
     "height": 28,
     "width": 28,

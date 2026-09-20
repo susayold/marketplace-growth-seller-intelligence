@@ -3,9 +3,9 @@
   "name": "p7i3",
   "position": {
     "x": 1610,
-    "y": 575,
+    "y": 899,
     "z": 38000,
-    "height": 90,
+    "height": 56,
     "width": 248,
     "tabOrder": 38000
   },
@@ -22,7 +22,7 @@
                     "value": "Improve seller activation",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "18px",
+                      "fontSize": "14px",
                       "color": "#0F766E"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Ready P1 activation lever for the next 60D.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "11px",
                       "color": "#475569"
                     }
                   }

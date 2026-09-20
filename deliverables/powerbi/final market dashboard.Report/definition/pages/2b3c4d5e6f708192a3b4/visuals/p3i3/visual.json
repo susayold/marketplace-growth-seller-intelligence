@@ -3,9 +3,9 @@
   "name": "p3i3",
   "position": {
     "x": 1610,
-    "y": 575,
+    "y": 899,
     "z": 35000,
-    "height": 90,
+    "height": 56,
     "width": 248,
     "tabOrder": 35000
   },
@@ -22,7 +22,7 @@
                     "value": "30D is the bottleneck",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "18px",
+                      "fontSize": "14px",
                       "color": "#BE123C"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Early activation remains the clearest leverage point.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "11px",
                       "color": "#475569"
                     }
                   }
