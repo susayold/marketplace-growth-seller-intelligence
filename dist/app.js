@@ -37,14 +37,16 @@
     const token = ++renderToken;
     const page = await pdfDoc.getPage(pageNum);
     const base = page.getViewport({ scale: 1 });
-    const cssWidth = Math.min(maxCssWidth || base.width, base.width);
+    const cssWidth = maxCssWidth || base.width;
     const cssScale = cssWidth / base.width;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const viewport = page.getViewport({ scale: cssScale * dpr });
+    // Render substantially above CSS resolution so dashboard typography stays crisp
+    // on desktop and high-DPI displays.
+    const density = Math.min(Math.max(window.devicePixelRatio || 1, 2.5), 3);
+    const viewport = page.getViewport({ scale: cssScale * density });
 
     canvas.width = Math.floor(viewport.width);
     canvas.height = Math.floor(viewport.height);
-    canvas.style.width = Math.floor(base.width * cssScale) + 'px';
+    canvas.style.width = Math.floor(cssWidth) + 'px';
     canvas.style.height = Math.floor(base.height * cssScale) + 'px';
 
     const ctx = canvas.getContext('2d', { alpha: false });
@@ -59,8 +61,8 @@
     const page = await pdfDoc.getPage(1);
     const base = page.getViewport({ scale: 1 });
     const cssScale = width / base.width;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const viewport = page.getViewport({ scale: cssScale * dpr });
+    const density = Math.min(Math.max(window.devicePixelRatio || 1, 2.25), 3);
+    const viewport = page.getViewport({ scale: cssScale * density });
     canvas.width = Math.floor(viewport.width);
     canvas.height = Math.floor(viewport.height);
     canvas.style.width = width + 'px';
