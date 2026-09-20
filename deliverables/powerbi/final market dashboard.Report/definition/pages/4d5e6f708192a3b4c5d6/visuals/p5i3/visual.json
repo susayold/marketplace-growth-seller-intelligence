@@ -3,9 +3,9 @@
   "name": "p5i3",
   "position": {
     "x": 1610,
-    "y": 899,
+    "y": 575,
     "z": 34000,
-    "height": 56,
+    "height": 90,
     "width": 248,
     "tabOrder": 34000
   },
@@ -22,7 +22,7 @@
                     "value": "Cancel rate also rises",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "14px",
+                      "fontSize": "18px",
                       "color": "#BE123C"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Higher cancellation is observed alongside poorer delivery outcomes.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "11px",
+                      "fontSize": "13px",
                       "color": "#475569"
                     }
                   }

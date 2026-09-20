@@ -3,9 +3,9 @@
   "name": "p2i3",
   "position": {
     "x": 1660,
-    "y": 515,
+    "y": 575,
     "z": 37000,
-    "height": 64,
+    "height": 90,
     "width": 195,
     "tabOrder": 37000
   },
@@ -22,7 +22,7 @@
                     "value": "Social needs a fix",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "14px",
+                      "fontSize": "18px",
                       "color": "#BE123C"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "\nLowest conversion and longest close cycle.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "11px",
+                      "fontSize": "13px",
                       "color": "#475569"
                     }
                   }

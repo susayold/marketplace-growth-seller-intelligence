@@ -3,9 +3,9 @@
   "name": "p3i2",
   "position": {
     "x": 1610,
-    "y": 838,
+    "y": 465,
     "z": 34000,
-    "height": 56,
+    "height": 90,
     "width": 248,
     "tabOrder": 34000
   },
@@ -22,7 +22,7 @@
                     "value": "Jan is the watch cohort",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "14px",
+                      "fontSize": "18px",
                       "color": "#BE123C"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Lower activation and weaker R1 retention need review.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "11px",
+                      "fontSize": "13px",
                       "color": "#475569"
                     }
                   }

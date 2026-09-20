@@ -107,6 +107,33 @@ code{font-family:Consolas,monospace;background:#eef3f8;padding:2px 4px;border-ra
 /* Keep dashboard canvas native-sized in CSS; bitmap itself is rendered at 2.5-3x density. */
 #dashboardCanvas,#heroPdfCanvas{image-rendering:auto}
 
+/* Reading-first type scale: keep the published case study comfortable at
+   normal browser zoom, rather than relying on tiny report-style labels. */
+@media (min-width:701px){
+  .main-nav a,.report-btn{font-size:14px}
+  .scope-note,.dashboard-heading p,.recommendations-head p{font-size:13px;line-height:1.55}
+  .insight-cards{grid-template-columns:repeat(3,1fr)}
+  .insight-cards article{padding:24px 21px}
+  .insight-cards h3{font-size:17px;line-height:1.3}
+  .insight-cards p{font-size:14px;line-height:1.58}
+  .recommendation-grid h3{font-size:15px;line-height:1.35}
+  .recommendation-grid p{font-size:13px;line-height:1.6}
+  .analysis-title p,.analysis-copy p,.lesson-copy p{font-size:16px;line-height:1.72}
+  .analysis-block figcaption{font-size:12px;line-height:1.5}
+  .evidence-row span{font-size:12px;line-height:1.4}
+  .callout b,.callout span{font-size:13px;line-height:1.55}
+  .decision-table-wrap th{font-size:11px}
+  .decision-table-wrap td{font-size:13px;line-height:1.55}
+  .method-grid p,.closing p{font-size:13px;line-height:1.6}
+  footer{font-size:11px}
+}
+
+@media (max-width:700px){
+  .insight-intro p,.insight-cards p,.recommendation-grid p,.analysis-title p,.analysis-copy p,.lesson-copy p{font-size:16px;line-height:1.65}
+  .insight-cards h3,.recommendation-grid h3{font-size:17px;line-height:1.35}
+  .method-grid p,.callout span{font-size:15px;line-height:1.6}
+}
+
 
 /* === Ultra-sharp Power BI image rendering === */
 .laptop-screen img{

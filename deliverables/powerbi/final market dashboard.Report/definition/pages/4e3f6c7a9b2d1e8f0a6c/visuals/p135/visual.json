@@ -3,9 +3,9 @@
   "name": "p135",
   "position": {
     "x": 1638,
-    "y": 516,
+    "y": 575,
     "z": 62000,
-    "height": 64,
+    "height": 90,
     "width": 226,
     "tabOrder": 62000
   },
@@ -22,7 +22,7 @@
                     "value": "Operational Risk",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "14px",
+                      "fontSize": "18px",
                       "color": "#B42318"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Late delivery remains at 8.1%.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "11px",
+                      "fontSize": "13px",
                       "color": "#344054"
                     }
                   }

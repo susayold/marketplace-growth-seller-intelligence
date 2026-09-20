@@ -3,9 +3,9 @@
   "name": "p2i2s",
   "position": {
     "x": 1610,
-    "y": 430,
+    "y": 460,
     "z": 32000,
-    "height": 70,
+    "height": 100,
     "width": 255,
     "tabOrder": 32000
   },
