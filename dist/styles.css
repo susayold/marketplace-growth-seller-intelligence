@@ -106,3 +106,29 @@ code{font-family:Consolas,monospace;background:#eef3f8;padding:2px 4px;border-ra
 
 /* Keep dashboard canvas native-sized in CSS; bitmap itself is rendered at 2.5-3x density. */
 #dashboardCanvas,#heroPdfCanvas{image-rendering:auto}
+
+
+/* === Ultra-sharp Power BI image rendering === */
+.laptop-screen img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  image-rendering:auto;
+}
+.pdf-canvas-wrap{
+  background:#fff;
+}
+.pdf-canvas-wrap #dashboardImage{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:contain;
+  image-rendering:auto;
+  transition:opacity .18s ease;
+}
+.pdf-canvas-wrap #dashboardImage.is-loading{opacity:.35}
+@media (min-width:901px){
+  .dashboard-section .shell{width:min(1540px,calc(100% - 28px))}
+  .pdf-canvas-wrap{min-height:0}
+}
