@@ -159,3 +159,99 @@ code{font-family:Consolas,monospace;background:#eef3f8;padding:2px 4px;border-ra
   .dashboard-section .shell{width:min(1540px,calc(100% - 28px))}
   .pdf-canvas-wrap{min-height:0}
 }
+
+
+/* === Latest Power BI export: high-resolution presentation polish === */
+.dashboard-image-link{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  border-radius:12px;
+}
+.dashboard-image-link:focus-visible{
+  outline:3px solid rgba(15,108,242,.28);
+  outline-offset:4px;
+}
+.pdf-canvas-wrap{
+  position:relative;
+  border:1px solid #cbd8e7;
+  border-radius:12px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 22px 55px rgba(17,42,77,.11);
+}
+.pdf-canvas-wrap #dashboardImage{
+  width:100%;
+  height:auto;
+  display:block;
+  background:#fff;
+  image-rendering:auto;
+  transform:translateZ(0);
+}
+.zoom-hint{
+  position:absolute;
+  right:16px;
+  bottom:16px;
+  padding:9px 12px;
+  border-radius:999px;
+  background:rgba(7,27,51,.88);
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.01em;
+  box-shadow:0 8px 22px rgba(7,27,51,.22);
+  opacity:0;
+  transform:translateY(5px);
+  transition:.18s ease;
+  pointer-events:none;
+}
+.dashboard-image-link:hover .zoom-hint,
+.dashboard-image-link:focus-visible .zoom-hint{
+  opacity:1;
+  transform:translateY(0);
+}
+.dashboard-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  margin-top:14px;
+  flex-wrap:wrap;
+}
+.dashboard-action{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:40px;
+  padding:0 14px;
+  border:1px solid #cbd8e7;
+  border-radius:8px;
+  background:#fff;
+  color:#173657;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:800;
+  box-shadow:0 5px 14px rgba(17,42,77,.05);
+}
+.dashboard-action:hover{
+  border-color:#8fb2dc;
+  color:#0f6cf2;
+}
+.dashboard-action.primary{
+  background:#0f6cf2;
+  border-color:#0f6cf2;
+  color:#fff;
+}
+.dashboard-action.primary:hover{
+  background:#0b5fd6;
+  color:#fff;
+}
+@media (min-width:901px){
+  .dashboard-section .shell{width:min(1580px,calc(100% - 24px))}
+  .dashboard-heading{margin-bottom:2px}
+  .pdf-canvas-wrap{border-radius:14px}
+}
+@media (max-width:700px){
+  .zoom-hint{display:none}
+  .dashboard-actions{justify-content:stretch}
+  .dashboard-action{flex:1 1 auto}
+}
