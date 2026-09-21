@@ -24,13 +24,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Render Power BI PDF pages at ultra-high resolution
+      - name: Render Power BI PDF pages with Ghostscript
         run: |
           sudo apt-get update
-          sudo apt-get install -y poppler-utils
+          sudo apt-get install -y ghostscript
           mkdir -p dist/assets/dashboard
           rm -f dist/assets/dashboard/page-*.png
-          pdftocairo -png -r 300 -antialias best dist/assets/final-market-dashboard.pdf dist/assets/dashboard/page
+          gs -dSAFER -dBATCH -dNOPAUSE \
+            -sDEVICE=png16m \
+            -r300 \
+            -dTextAlphaBits=4 \
+            -dGraphicsAlphaBits=4 \
+            -dUseCropBox \
+            -sOutputFile=dist/assets/dashboard/page-%d.png \
+            dist/assets/final-market-dashboard.pdf
           python3 - <<'PY'
           import struct
           from pathlib import Path
