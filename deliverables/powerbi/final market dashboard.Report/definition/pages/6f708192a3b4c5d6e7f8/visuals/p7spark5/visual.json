@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoDecision.TimeHorizon",
               "nativeQueryRef": "TimeHorizon",
-              "active": true
+              "active": true,
+              "displayName": "Target Horizon"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoDecision.ExpectedImpact",
               "nativeQueryRef": "ExpectedImpact",
-              "active": true
+              "active": true,
+              "displayName": "Expected Impact"
             }
           ]
         }

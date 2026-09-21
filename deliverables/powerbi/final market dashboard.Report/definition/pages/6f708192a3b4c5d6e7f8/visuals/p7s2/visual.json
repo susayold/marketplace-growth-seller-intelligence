@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoDecision.Pillar",
               "nativeQueryRef": "Pillar",
-              "active": true
+              "active": true,
+              "displayName": "Strategic Pillar"
             }
           ]
         }
@@ -135,7 +136,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },

@@ -28,7 +28,8 @@
               },
               "queryRef": "DimMonth.MonthLabel",
               "nativeQueryRef": "MonthLabel",
-              "active": true
+              "active": true,
+              "displayName": "Month"
             }
           ]
         },
@@ -47,7 +48,8 @@
               },
               "queryRef": "Snapshot.Trend GMV Proxy (R$M)",
               "nativeQueryRef": "GMV (R$M)",
-              "active": true
+              "active": true,
+              "displayName": "GMV (R$M)"
             }
           ]
         },
@@ -66,7 +68,8 @@
               },
               "queryRef": "Snapshot.Trend Orders (K)",
               "nativeQueryRef": "Orders (K)",
-              "active": true
+              "active": true,
+              "displayName": "Orders (K)"
             }
           ]
         }
@@ -582,7 +585,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },

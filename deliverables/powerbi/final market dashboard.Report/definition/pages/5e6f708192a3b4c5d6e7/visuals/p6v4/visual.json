@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoRootCause.Owner",
               "nativeQueryRef": "Owner",
-              "active": true
+              "active": true,
+              "displayName": "Accountable Owner"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoRootCause.PriorityScore",
               "nativeQueryRef": "PriorityScore",
-              "active": true
+              "active": true,
+              "displayName": "Priority Score"
             }
           ]
         }
@@ -357,7 +359,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -424,6 +426,19 @@
         }
       ],
       "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
         {
           "properties": {
             "show": {

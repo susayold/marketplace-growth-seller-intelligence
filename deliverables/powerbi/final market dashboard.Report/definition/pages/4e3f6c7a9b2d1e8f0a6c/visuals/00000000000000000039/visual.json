@@ -28,7 +28,8 @@
               },
               "queryRef": "StateTop5.seller_state",
               "nativeQueryRef": "State",
-              "active": true
+              "active": true,
+              "displayName": "Seller State"
             },
             {
               "field": {
@@ -43,7 +44,8 @@
               },
               "queryRef": "StateTop5.active_sellers",
               "nativeQueryRef": "Active Sellers",
-              "active": true
+              "active": true,
+              "displayName": "Active Sellers"
             },
             {
               "field": {
@@ -58,7 +60,8 @@
               },
               "queryRef": "StateTop5.State GMV (R$M)",
               "nativeQueryRef": "GMV (R$M)",
-              "active": true
+              "active": true,
+              "displayName": "GMV (R$M)"
             },
             {
               "field": {
@@ -73,7 +76,8 @@
               },
               "queryRef": "StateTop5.gmv_share",
               "nativeQueryRef": "GMV Share",
-              "active": true
+              "active": true,
+              "displayName": "GMV Share"
             }
           ]
         }
@@ -677,6 +681,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

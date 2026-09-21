@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoAcquisition.Channel",
               "nativeQueryRef": "Channel",
-              "active": true
+              "active": true,
+              "displayName": "Acquisition Channel"
             },
             {
               "field": {
@@ -43,7 +44,8 @@
               },
               "queryRef": "DemoAcquisition.conversion_rate",
               "nativeQueryRef": "Conversion %",
-              "active": true
+              "active": true,
+              "displayName": "Conversion Rate"
             },
             {
               "field": {
@@ -58,7 +60,8 @@
               },
               "queryRef": "DemoAcquisition.gmv_per_matched_seller",
               "nativeQueryRef": "Total GMV per Matched Seller",
-              "active": true
+              "active": true,
+              "displayName": "GMV per Matched Seller (R$)"
             }
           ]
         }
@@ -416,6 +419,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

@@ -28,7 +28,8 @@
               },
               "queryRef": "Lorenz.Cumulative % of Sellers",
               "nativeQueryRef": "Cumulative % of Sellers",
-              "active": true
+              "active": true,
+              "displayName": "Cumulative Seller Share"
             }
           ]
         },
@@ -47,7 +48,8 @@
               },
               "queryRef": "Lorenz.Seller GMV Proxy",
               "nativeQueryRef": "Seller GMV Share",
-              "active": true
+              "active": true,
+              "displayName": "Cumulative GMV Share"
             },
             {
               "field": {
@@ -62,7 +64,8 @@
               },
               "queryRef": "Lorenz.Line of Equality",
               "nativeQueryRef": "Line of Equality",
-              "active": true
+              "active": true,
+              "displayName": "Equality Reference"
             }
           ]
         }
@@ -546,7 +549,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },

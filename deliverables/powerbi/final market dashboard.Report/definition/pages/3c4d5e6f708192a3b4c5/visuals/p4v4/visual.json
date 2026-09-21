@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoCommercial.Segment",
               "nativeQueryRef": "Segment",
-              "active": true
+              "active": true,
+              "displayName": "Seller Segment"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoCommercial.Sellers",
               "nativeQueryRef": "Sellers",
-              "active": true
+              "active": true,
+              "displayName": "Active Sellers"
             }
           ]
         },
@@ -76,7 +78,8 @@
               },
               "queryRef": "DemoCommercial.GMV_M",
               "nativeQueryRef": "GMV_M",
-              "active": true
+              "active": true,
+              "displayName": "GMV (R$M)"
             }
           ]
         }
@@ -435,7 +438,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -502,6 +505,19 @@
         }
       ],
       "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
         {
           "properties": {
             "show": {

@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoActivation.Cohort",
               "nativeQueryRef": "Cohort",
-              "active": true
+              "active": true,
+              "displayName": "Seller Cohort"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoActivation.Activation60Rate",
               "nativeQueryRef": "Activation60Rate",
-              "active": true
+              "active": true,
+              "displayName": "60-Day Activation Rate"
             }
           ]
         }

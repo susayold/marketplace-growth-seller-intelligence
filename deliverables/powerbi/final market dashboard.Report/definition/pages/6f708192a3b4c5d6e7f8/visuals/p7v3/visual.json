@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoDecision.Pillar",
               "nativeQueryRef": "Pillar",
-              "active": true
+              "active": true,
+              "displayName": "Strategic Pillar"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoDecision.ExpectedImpact",
               "nativeQueryRef": "ExpectedImpact",
-              "active": true
+              "active": true,
+              "displayName": "Expected Impact"
             }
           ]
         }
@@ -617,7 +619,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -684,6 +686,19 @@
         }
       ],
       "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
         {
           "properties": {
             "show": {

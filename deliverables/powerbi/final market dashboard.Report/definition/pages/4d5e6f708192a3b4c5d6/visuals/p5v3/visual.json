@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoCustomerOps.Segment",
               "nativeQueryRef": "Segment",
-              "active": true
+              "active": true,
+              "displayName": "Seller Segment"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoCustomerOps.Orders",
               "nativeQueryRef": "Orders",
-              "active": true
+              "active": true,
+              "displayName": "Orders"
             }
           ]
         },
@@ -76,7 +78,8 @@
               },
               "queryRef": "DemoCustomerOps.MedianDeliveryDays",
               "nativeQueryRef": "MedianDeliveryDays",
-              "active": true
+              "active": true,
+              "displayName": "Median Delivery Days"
             }
           ]
         },
@@ -100,7 +103,8 @@
               },
               "queryRef": "DemoCustomerOps.AvgReview",
               "nativeQueryRef": "AvgReview",
-              "active": true
+              "active": true,
+              "displayName": "Average Review Score"
             }
           ]
         }
@@ -551,7 +555,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -618,6 +622,19 @@
         }
       ],
       "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
         {
           "properties": {
             "show": {

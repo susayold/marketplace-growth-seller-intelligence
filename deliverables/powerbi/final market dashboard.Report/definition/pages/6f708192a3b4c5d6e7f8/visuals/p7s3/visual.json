@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoDecision.Owner",
               "nativeQueryRef": "Owner",
-              "active": true
+              "active": true,
+              "displayName": "Accountable Owner"
             }
           ]
         }
@@ -135,7 +136,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },

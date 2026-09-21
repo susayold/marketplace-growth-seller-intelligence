@@ -28,7 +28,8 @@
               },
               "queryRef": "DimMonth.MonthLabel",
               "nativeQueryRef": "MonthLabel",
-              "active": true
+              "active": true,
+              "displayName": "Month"
             }
           ]
         },

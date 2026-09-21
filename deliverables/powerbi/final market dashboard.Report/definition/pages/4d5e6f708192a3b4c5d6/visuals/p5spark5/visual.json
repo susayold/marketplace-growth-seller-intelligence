@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoCustomerOps.Segment",
               "nativeQueryRef": "Segment",
-              "active": true
+              "active": true,
+              "displayName": "Seller Segment"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoCustomerOps.MedianDeliveryDays",
               "nativeQueryRef": "MedianDeliveryDays",
-              "active": true
+              "active": true,
+              "displayName": "Median Delivery Days"
             }
           ]
         }

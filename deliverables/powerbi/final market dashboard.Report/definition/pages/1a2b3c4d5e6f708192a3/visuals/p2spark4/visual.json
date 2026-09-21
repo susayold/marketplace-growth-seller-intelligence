@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoAcquisition.Channel",
               "nativeQueryRef": "Channel",
-              "active": true
+              "active": true,
+              "displayName": "Acquisition Channel"
             }
           ]
         },

@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoAcquisition.Channel",
               "nativeQueryRef": "Channel",
-              "active": true
+              "active": true,
+              "displayName": "Acquisition Channel"
             }
           ]
         },
@@ -47,7 +48,8 @@
               },
               "queryRef": "DemoAcquisition.Total Matched Sellers",
               "nativeQueryRef": "Total Matched Sellers",
-              "active": true
+              "active": true,
+              "displayName": "Matched Sellers"
             }
           ]
         }

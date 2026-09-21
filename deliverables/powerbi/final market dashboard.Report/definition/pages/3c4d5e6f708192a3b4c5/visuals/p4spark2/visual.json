@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoCommercial.Segment",
               "nativeQueryRef": "Segment",
-              "active": true
+              "active": true,
+              "displayName": "Seller Segment"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoCommercial.Orders_K",
               "nativeQueryRef": "Orders_K",
-              "active": true
+              "active": true,
+              "displayName": "Orders (K)"
             }
           ]
         }

@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoRootCause.Driver",
               "nativeQueryRef": "Driver",
-              "active": true
+              "active": true,
+              "displayName": "Issue Driver"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoRootCause.PriorityScore",
               "nativeQueryRef": "PriorityScore",
-              "active": true
+              "active": true,
+              "displayName": "Priority Score"
             }
           ]
         }
@@ -669,7 +671,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -736,6 +738,19 @@
         }
       ],
       "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
         {
           "properties": {
             "show": {

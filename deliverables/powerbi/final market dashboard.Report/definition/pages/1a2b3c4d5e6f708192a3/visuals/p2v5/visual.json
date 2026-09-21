@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoAcquisition.Channel",
               "nativeQueryRef": "Channel",
-              "active": true
+              "active": true,
+              "displayName": "Acquisition Channel"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoAcquisition.downstream_gmv_proxy",
               "nativeQueryRef": "Downstream GMV Proxy",
-              "active": true
+              "active": true,
+              "displayName": "Downstream GMV (R$)"
             }
           ]
         }
@@ -357,7 +359,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -424,6 +426,19 @@
         }
       ],
       "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
         {
           "properties": {
             "show": {

@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoAcquisition.Channel",
               "nativeQueryRef": "Channel",
-              "active": true
+              "active": true,
+              "displayName": "Acquisition Channel"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoAcquisition.mqls",
               "nativeQueryRef": "MQLs",
-              "active": true
+              "active": true,
+              "displayName": "Marketing-Qualified Leads"
             }
           ]
         },
@@ -76,7 +78,8 @@
               },
               "queryRef": "DemoAcquisition.gmv_per_matched_seller",
               "nativeQueryRef": "Total GMV per Matched Seller",
-              "active": true
+              "active": true,
+              "displayName": "GMV per Matched Seller (R$)"
             }
           ]
         },
@@ -100,7 +103,8 @@
               },
               "queryRef": "DemoAcquisition.conversion_rate",
               "nativeQueryRef": "Conversion %",
-              "active": true
+              "active": true,
+              "displayName": "Conversion Rate"
             }
           ]
         }
@@ -715,7 +719,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -782,6 +786,19 @@
         }
       ],
       "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
         {
           "properties": {
             "show": {

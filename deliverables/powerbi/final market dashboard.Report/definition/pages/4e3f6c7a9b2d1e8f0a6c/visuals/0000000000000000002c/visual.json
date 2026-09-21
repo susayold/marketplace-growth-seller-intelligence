@@ -28,7 +28,8 @@
               },
               "queryRef": "CategoryTop5.CategoryLabel",
               "nativeQueryRef": "CategoryLabel",
-              "active": true
+              "active": true,
+              "displayName": "Category"
             }
           ]
         },
@@ -47,7 +48,8 @@
               },
               "queryRef": "CategoryTop5.Category GMV (R$M)",
               "nativeQueryRef": "Category GMV (R$M)",
-              "active": true
+              "active": true,
+              "displayName": "GMV (R$M)"
             }
           ]
         }
@@ -713,7 +715,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },

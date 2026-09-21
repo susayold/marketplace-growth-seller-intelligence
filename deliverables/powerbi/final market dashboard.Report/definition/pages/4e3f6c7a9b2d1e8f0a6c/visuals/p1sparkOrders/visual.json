@@ -28,7 +28,8 @@
               },
               "queryRef": "DimMonth.MonthLabel",
               "nativeQueryRef": "MonthLabel",
-              "active": true
+              "active": true,
+              "displayName": "Month"
             }
           ]
         },
@@ -47,7 +48,8 @@
               },
               "queryRef": "Snapshot.Orders (K)",
               "nativeQueryRef": "Orders (K)",
-              "active": true
+              "active": true,
+              "displayName": "Orders (K)"
             }
           ]
         }

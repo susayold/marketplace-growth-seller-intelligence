@@ -28,7 +28,8 @@
               },
               "queryRef": "DimMonth.MonthLabel",
               "nativeQueryRef": "MonthLabel",
-              "active": true
+              "active": true,
+              "displayName": "Month"
             }
           ]
         },
@@ -47,7 +48,8 @@
               },
               "queryRef": "Snapshot.Active Sellers",
               "nativeQueryRef": "Active Sellers",
-              "active": true
+              "active": true,
+              "displayName": "Active Sellers"
             }
           ]
         }

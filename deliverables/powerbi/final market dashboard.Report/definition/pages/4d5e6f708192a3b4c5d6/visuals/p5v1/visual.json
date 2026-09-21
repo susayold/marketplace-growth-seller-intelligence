@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoCustomerOps.Segment",
               "nativeQueryRef": "Segment",
-              "active": true
+              "active": true,
+              "displayName": "Seller Segment"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoCustomerOps.AvgReview",
               "nativeQueryRef": "AvgReview",
-              "active": true
+              "active": true,
+              "displayName": "Average Review Score"
             }
           ]
         }
@@ -513,7 +515,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -580,6 +582,19 @@
         }
       ],
       "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
         {
           "properties": {
             "show": {

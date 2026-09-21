@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoCustomerOps.Segment",
               "nativeQueryRef": "Segment",
-              "active": true
+              "active": true,
+              "displayName": "Seller Segment"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoCustomerOps.Orders",
               "nativeQueryRef": "Orders",
-              "active": true
+              "active": true,
+              "displayName": "Orders"
             },
             {
               "field": {
@@ -72,7 +74,8 @@
               },
               "queryRef": "DemoCustomerOps.LateRate",
               "nativeQueryRef": "LateRate",
-              "active": true
+              "active": true,
+              "displayName": "Late Delivery Rate"
             },
             {
               "field": {
@@ -92,7 +95,8 @@
               },
               "queryRef": "DemoCustomerOps.AvgReview",
               "nativeQueryRef": "AvgReview",
-              "active": true
+              "active": true,
+              "displayName": "Average Review Score"
             },
             {
               "field": {
@@ -112,7 +116,8 @@
               },
               "queryRef": "DemoCustomerOps.LowReviewRate",
               "nativeQueryRef": "LowReviewRate",
-              "active": true
+              "active": true,
+              "displayName": "Low Review Rate"
             }
           ]
         }
@@ -826,6 +831,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoDecision.Status",
               "nativeQueryRef": "Status",
-              "active": true
+              "active": true,
+              "displayName": "Action Status"
             }
           ]
         }
@@ -135,7 +136,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },

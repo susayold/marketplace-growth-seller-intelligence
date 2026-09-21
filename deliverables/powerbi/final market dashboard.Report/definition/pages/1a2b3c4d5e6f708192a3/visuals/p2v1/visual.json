@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoAcquisition.Channel",
               "nativeQueryRef": "Channel",
-              "active": true
+              "active": true,
+              "displayName": "Acquisition Channel"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoAcquisition.mqls",
               "nativeQueryRef": "MQLs",
-              "active": true
+              "active": true,
+              "displayName": "Marketing-Qualified Leads"
             },
             {
               "field": {
@@ -72,7 +74,8 @@
               },
               "queryRef": "DemoAcquisition.converted_sellers",
               "nativeQueryRef": "Total Converted Sellers",
-              "active": true
+              "active": true,
+              "displayName": "Converted Sellers"
             },
             {
               "field": {
@@ -92,7 +95,8 @@
               },
               "queryRef": "DemoAcquisition.matched_sellers",
               "nativeQueryRef": "Total Matched Sellers",
-              "active": true
+              "active": true,
+              "displayName": "Matched Sellers"
             }
           ]
         }
@@ -458,7 +462,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -525,6 +529,19 @@
         }
       ],
       "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
         {
           "properties": {
             "show": {

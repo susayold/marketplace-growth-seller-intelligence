@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoCommercial.Segment",
               "nativeQueryRef": "Segment",
-              "active": true
+              "active": true,
+              "displayName": "Seller Segment"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoCommercial.ShareGMV",
               "nativeQueryRef": "ShareGMV",
-              "active": true
+              "active": true,
+              "displayName": "GMV Share"
             }
           ]
         }
@@ -565,7 +567,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -632,6 +634,19 @@
         }
       ],
       "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
         {
           "properties": {
             "show": {

@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoCommercial.Segment",
               "nativeQueryRef": "Segment",
-              "active": true
+              "active": true,
+              "displayName": "Seller Segment"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoCommercial.Sellers",
               "nativeQueryRef": "Sellers",
-              "active": true
+              "active": true,
+              "displayName": "Active Sellers"
             },
             {
               "field": {
@@ -72,7 +74,8 @@
               },
               "queryRef": "DemoCommercial.GMV_M",
               "nativeQueryRef": "GMV_M",
-              "active": true
+              "active": true,
+              "displayName": "GMV (R$M)"
             },
             {
               "field": {
@@ -92,7 +95,8 @@
               },
               "queryRef": "DemoCommercial.Orders_K",
               "nativeQueryRef": "Orders_K",
-              "active": true
+              "active": true,
+              "displayName": "Orders (K)"
             },
             {
               "field": {
@@ -112,7 +116,8 @@
               },
               "queryRef": "DemoCommercial.AOV",
               "nativeQueryRef": "AOV",
-              "active": true
+              "active": true,
+              "displayName": "Average Order Value (R$)"
             },
             {
               "field": {
@@ -132,7 +137,8 @@
               },
               "queryRef": "DemoCommercial.GrowthRate",
               "nativeQueryRef": "GrowthRate",
-              "active": true
+              "active": true,
+              "displayName": "Growth Rate"
             }
           ]
         }
@@ -922,6 +928,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

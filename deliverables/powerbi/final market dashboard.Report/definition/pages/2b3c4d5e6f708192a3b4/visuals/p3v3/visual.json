@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoRetention.Cohort",
               "nativeQueryRef": "Cohort",
-              "active": true
+              "active": true,
+              "displayName": "Seller Cohort"
             }
           ]
         },
@@ -826,6 +827,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

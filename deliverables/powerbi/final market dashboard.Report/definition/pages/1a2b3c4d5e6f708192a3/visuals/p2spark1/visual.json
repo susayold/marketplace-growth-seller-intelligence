@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoAcquisition.Channel",
               "nativeQueryRef": "Channel",
-              "active": true
+              "active": true,
+              "displayName": "Acquisition Channel"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoAcquisition.mqls",
               "nativeQueryRef": "MQLs",
-              "active": true
+              "active": true,
+              "displayName": "Marketing-Qualified Leads"
             }
           ]
         }

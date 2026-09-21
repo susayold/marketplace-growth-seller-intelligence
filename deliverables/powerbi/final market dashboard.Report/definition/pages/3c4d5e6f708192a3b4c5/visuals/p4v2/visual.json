@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoCommercial.Segment",
               "nativeQueryRef": "Segment",
-              "active": true
+              "active": true,
+              "displayName": "Seller Segment"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoCommercial.GMV_M",
               "nativeQueryRef": "GMV_M",
-              "active": true
+              "active": true,
+              "displayName": "GMV (R$M)"
             }
           ]
         },
@@ -76,7 +78,8 @@
               },
               "queryRef": "DemoCommercial.GrowthRate",
               "nativeQueryRef": "GrowthRate",
-              "active": true
+              "active": true,
+              "displayName": "Growth Rate"
             }
           ]
         },
@@ -100,7 +103,8 @@
               },
               "queryRef": "DemoCommercial.AOV",
               "nativeQueryRef": "AOV",
-              "active": true
+              "active": true,
+              "displayName": "Average Order Value (R$)"
             }
           ]
         }
@@ -597,7 +601,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -664,6 +668,19 @@
         }
       ],
       "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
         {
           "properties": {
             "show": {

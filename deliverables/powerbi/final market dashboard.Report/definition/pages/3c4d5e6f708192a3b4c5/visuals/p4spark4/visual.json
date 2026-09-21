@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoCommercial.Segment",
               "nativeQueryRef": "Segment",
-              "active": true
+              "active": true,
+              "displayName": "Seller Segment"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoCommercial.ShareGMV",
               "nativeQueryRef": "ShareGMV",
-              "active": true
+              "active": true,
+              "displayName": "GMV Share"
             }
           ]
         }

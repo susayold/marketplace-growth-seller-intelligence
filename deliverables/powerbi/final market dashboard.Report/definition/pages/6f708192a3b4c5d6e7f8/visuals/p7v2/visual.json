@@ -43,7 +43,8 @@
               },
               "queryRef": "DemoDecision.Action",
               "nativeQueryRef": "Action",
-              "active": true
+              "active": true,
+              "displayName": "Recommended Action"
             },
             {
               "field": {
@@ -58,7 +59,8 @@
               },
               "queryRef": "DemoDecision.Pillar",
               "nativeQueryRef": "Pillar",
-              "active": true
+              "active": true,
+              "displayName": "Strategic Pillar"
             },
             {
               "field": {
@@ -73,7 +75,8 @@
               },
               "queryRef": "DemoDecision.ExpectedImpact",
               "nativeQueryRef": "ExpectedImpact",
-              "active": true
+              "active": true,
+              "displayName": "Expected Impact"
             }
           ]
         }
@@ -489,6 +492,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

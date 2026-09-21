@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoAcquisition.Channel",
               "nativeQueryRef": "Channel",
-              "active": true
+              "active": true,
+              "displayName": "Acquisition Channel"
             }
           ]
         },
@@ -47,7 +48,8 @@
               },
               "queryRef": "DemoAcquisition.Total GMV per Matched Seller",
               "nativeQueryRef": "Total GMV per Matched Seller",
-              "active": true
+              "active": true,
+              "displayName": "GMV per Matched Seller (R$)"
             }
           ]
         }

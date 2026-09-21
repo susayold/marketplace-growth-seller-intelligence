@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoRootCause.Driver",
               "nativeQueryRef": "Driver",
-              "active": true
+              "active": true,
+              "displayName": "Issue Driver"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoRootCause.PriorityScore",
               "nativeQueryRef": "PriorityScore",
-              "active": true
+              "active": true,
+              "displayName": "Priority Score"
             }
           ]
         },
@@ -76,7 +78,8 @@
               },
               "queryRef": "DemoRootCause.Frequency",
               "nativeQueryRef": "Frequency",
-              "active": true
+              "active": true,
+              "displayName": "Frequency"
             }
           ]
         },
@@ -100,7 +103,8 @@
               },
               "queryRef": "DemoRootCause.Severity",
               "nativeQueryRef": "Severity",
-              "active": true
+              "active": true,
+              "displayName": "Severity"
             }
           ]
         }
@@ -701,7 +705,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -768,6 +772,19 @@
         }
       ],
       "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
         {
           "properties": {
             "show": {

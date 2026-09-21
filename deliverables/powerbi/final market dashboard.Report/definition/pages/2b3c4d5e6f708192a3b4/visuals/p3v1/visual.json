@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoActivation.Cohort",
               "nativeQueryRef": "Cohort",
-              "active": true
+              "active": true,
+              "displayName": "Seller Cohort"
             }
           ]
         },
@@ -52,7 +53,8 @@
               },
               "queryRef": "DemoActivation.Activation30Rate",
               "nativeQueryRef": "Activation30Rate",
-              "active": true
+              "active": true,
+              "displayName": "30-Day Activation Rate"
             },
             {
               "field": {
@@ -72,7 +74,8 @@
               },
               "queryRef": "DemoActivation.Activation60Rate",
               "nativeQueryRef": "Activation60Rate",
-              "active": true
+              "active": true,
+              "displayName": "60-Day Activation Rate"
             },
             {
               "field": {
@@ -92,7 +95,8 @@
               },
               "queryRef": "DemoActivation.Activation90Rate",
               "nativeQueryRef": "Activation90Rate",
-              "active": true
+              "active": true,
+              "displayName": "90-Day Activation Rate"
             }
           ]
         }
@@ -557,7 +561,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -624,6 +628,19 @@
         }
       ],
       "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
         {
           "properties": {
             "show": {

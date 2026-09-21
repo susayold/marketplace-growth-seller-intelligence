@@ -28,7 +28,8 @@
               },
               "queryRef": "StateTop5.seller_state",
               "nativeQueryRef": "seller_state",
-              "active": true
+              "active": true,
+              "displayName": "Seller State"
             }
           ]
         },
@@ -47,7 +48,8 @@
               },
               "queryRef": "StateTop5.State GMV (R$M)",
               "nativeQueryRef": "State GMV (R$M)",
-              "active": true
+              "active": true,
+              "displayName": "GMV (R$M)"
             }
           ]
         }
@@ -713,7 +715,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },

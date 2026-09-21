@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoAcquisition.Total Converted Sellers",
               "nativeQueryRef": "Total Converted Sellers",
-              "active": true
+              "active": true,
+              "displayName": "Converted Sellers"
             }
           ]
         }
@@ -221,7 +222,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },

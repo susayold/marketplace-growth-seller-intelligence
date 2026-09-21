@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "MQL Volume by Origin",
+                    "value": "Lead Volume by Channel",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "16px",

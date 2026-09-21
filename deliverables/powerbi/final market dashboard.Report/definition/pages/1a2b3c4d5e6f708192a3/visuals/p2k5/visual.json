@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoAcquisition.Total GMV per Matched Seller",
               "nativeQueryRef": "Total GMV per Matched Seller",
-              "active": true
+              "active": true,
+              "displayName": "GMV per Matched Seller (R$)"
             }
           ]
         }
@@ -221,7 +222,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },

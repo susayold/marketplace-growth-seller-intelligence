@@ -28,7 +28,8 @@
               },
               "queryRef": "DemoAcquisition.Total Matched Sellers",
               "nativeQueryRef": "Total Matched Sellers",
-              "active": true
+              "active": true,
+              "displayName": "Matched Sellers"
             }
           ]
         }
@@ -221,7 +222,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
