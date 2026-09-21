@@ -5,7 +5,7 @@
     "x": 270,
     "y": 333,
     "z": 37000,
-    "height": 18,
+    "height": 22,
     "width": 400,
     "tabOrder": 37000
   },
@@ -22,7 +22,7 @@
                     "value": "Executive-complete periods only",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "13px",
+                      "fontSize": "15px",
                       "color": "#64748B"
                     }
                   }

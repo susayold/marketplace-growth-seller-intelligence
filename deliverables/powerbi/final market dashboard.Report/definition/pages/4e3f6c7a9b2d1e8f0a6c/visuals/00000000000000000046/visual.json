@@ -3,9 +3,9 @@
   "name": "00000000000000000046",
   "position": {
     "x": 245,
-    "y": 1042,
+    "y": 1040,
     "z": 83000,
-    "height": 18,
+    "height": 22,
     "width": 500,
     "tabOrder": 83000
   },
@@ -22,7 +22,7 @@
                     "value": "Marketplace Growth & Seller Intelligence",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "11px",
+                      "fontSize": "13px",
                       "color": "#6B7A90"
                     }
                   }

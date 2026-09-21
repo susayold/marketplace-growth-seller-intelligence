@@ -5,7 +5,7 @@
     "x": 270,
     "y": 312,
     "z": 28000,
-    "height": 24,
+    "height": 26,
     "width": 400,
     "tabOrder": 28000
   },
@@ -22,7 +22,7 @@
                     "value": "GMV Proxy & Orders Trend",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "16px",
+                      "fontSize": "18px",
                       "color": "#0F172A"
                     }
                   }

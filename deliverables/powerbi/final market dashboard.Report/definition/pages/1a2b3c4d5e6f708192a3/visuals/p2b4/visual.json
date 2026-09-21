@@ -5,7 +5,7 @@
     "x": 1555,
     "y": 736,
     "z": 21000,
-    "height": 24,
+    "height": 26,
     "width": 280,
     "tabOrder": 21000
   },
@@ -22,7 +22,7 @@
                     "value": "Channel Scorecard",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "16px",
+                      "fontSize": "18px",
                       "color": "#0F172A"
                     }
                   }

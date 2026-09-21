@@ -5,7 +5,7 @@
     "x": 1045,
     "y": 312,
     "z": 29000,
-    "height": 24,
+    "height": 26,
     "width": 420,
     "tabOrder": 29000
   },
@@ -22,7 +22,7 @@
                     "value": "Seller Concentration (Lorenz Curve)",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "16px",
+                      "fontSize": "18px",
                       "color": "#0F172A"
                     }
                   }

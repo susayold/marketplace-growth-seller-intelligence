@@ -5,7 +5,7 @@
     "x": 245,
     "y": 86,
     "z": 16000,
-    "height": 22,
+    "height": 24,
     "width": 820,
     "tabOrder": 16000
   },
@@ -22,7 +22,7 @@
                     "value": "Where qualified sellers come from and which channels convert efficiently",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "13px",
+                      "fontSize": "16px",
                       "color": "#64748B"
                     }
                   }

@@ -5,7 +5,7 @@
     "x": 270,
     "y": 312,
     "z": 20000,
-    "height": 24,
+    "height": 26,
     "width": 500,
     "tabOrder": 20000
   },
@@ -22,7 +22,7 @@
                     "value": "Segment GMV Contribution",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "16px",
+                      "fontSize": "18px",
                       "color": "#0F172A"
                     }
                   }

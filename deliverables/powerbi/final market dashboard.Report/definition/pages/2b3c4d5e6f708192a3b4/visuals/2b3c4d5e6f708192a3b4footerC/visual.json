@@ -3,9 +3,9 @@
   "name": "2b3c4d5e6f708192a3b4footerC",
   "position": {
     "x": 790,
-    "y": 1042,
+    "y": 1040,
     "z": 57000,
-    "height": 18,
+    "height": 22,
     "width": 550,
     "tabOrder": 57000
   },
@@ -22,7 +22,7 @@
                     "value": "PROTOTYPE • MOCK DATA",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "11px",
+                      "fontSize": "13px",
                       "color": "#6B7A90"
                     }
                   }

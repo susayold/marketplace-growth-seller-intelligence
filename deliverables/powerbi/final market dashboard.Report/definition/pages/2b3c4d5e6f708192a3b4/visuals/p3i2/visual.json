@@ -5,7 +5,7 @@
     "x": 1588,
     "y": 865,
     "z": 34000,
-    "height": 69,
+    "height": 73,
     "width": 276,
     "tabOrder": 34000
   },
@@ -22,7 +22,7 @@
                     "value": "January cohort",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "20px",
+                      "fontSize": "22px",
                       "color": "#BE123C"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Lower activation and weaker R1 retention need review.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "16px",
+                      "fontSize": "17px",
                       "color": "#475569"
                     }
                   }

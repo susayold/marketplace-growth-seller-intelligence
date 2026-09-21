@@ -3,9 +3,9 @@
   "name": "6f708192a3b4c5d6e7f8title",
   "position": {
     "x": 245,
-    "y": 39,
+    "y": 34,
     "z": 12000,
-    "height": 44,
+    "height": 48,
     "width": 820,
     "tabOrder": 12000
   },
@@ -22,7 +22,7 @@
                     "value": "Decision Center",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "28px",
+                      "fontSize": "34px",
                       "color": "#0F172A"
                     }
                   }

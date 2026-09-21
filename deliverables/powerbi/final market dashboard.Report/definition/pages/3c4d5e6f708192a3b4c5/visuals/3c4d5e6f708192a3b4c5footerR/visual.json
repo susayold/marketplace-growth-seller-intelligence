@@ -3,9 +3,9 @@
   "name": "3c4d5e6f708192a3b4c5footerR",
   "position": {
     "x": 1600,
-    "y": 1042,
+    "y": 1040,
     "z": 58000,
-    "height": 18,
+    "height": 22,
     "width": 250,
     "tabOrder": 58000
   },
@@ -22,7 +22,7 @@
                     "value": "Page 4 of 7",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "11px",
+                      "fontSize": "13px",
                       "color": "#6B7A90"
                     }
                   }

@@ -5,7 +5,7 @@
     "x": 990,
     "y": 736,
     "z": 18000,
-    "height": 24,
+    "height": 26,
     "width": 260,
     "tabOrder": 18000
   },
@@ -22,7 +22,7 @@
                     "value": "90D Rate Trend",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "16px",
+                      "fontSize": "18px",
                       "color": "#0F172A"
                     }
                   }

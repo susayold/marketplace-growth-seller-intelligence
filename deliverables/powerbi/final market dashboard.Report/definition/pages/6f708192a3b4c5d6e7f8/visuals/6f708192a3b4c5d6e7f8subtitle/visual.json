@@ -5,7 +5,7 @@
     "x": 245,
     "y": 86,
     "z": 18000,
-    "height": 22,
+    "height": 24,
     "width": 820,
     "tabOrder": 18000
   },
@@ -22,7 +22,7 @@
                     "value": "Translate marketplace signals into prioritized actions, owners and time horizons",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "13px",
+                      "fontSize": "16px",
                       "color": "#64748B"
                     }
                   }

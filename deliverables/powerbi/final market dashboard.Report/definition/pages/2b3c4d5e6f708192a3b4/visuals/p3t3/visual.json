@@ -5,7 +5,7 @@
     "x": 1610,
     "y": 312,
     "z": 22000,
-    "height": 24,
+    "height": 26,
     "width": 240,
     "tabOrder": 22000
   },
@@ -22,7 +22,7 @@
                     "value": "Retention Matrix",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "16px",
+                      "fontSize": "18px",
                       "color": "#0F172A"
                     }
                   }

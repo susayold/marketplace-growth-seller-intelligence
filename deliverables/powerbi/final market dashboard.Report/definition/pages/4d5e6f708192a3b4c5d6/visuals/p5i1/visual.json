@@ -5,7 +5,7 @@
     "x": 1588,
     "y": 780,
     "z": 32000,
-    "height": 69,
+    "height": 73,
     "width": 276,
     "tabOrder": 32000
   },
@@ -22,7 +22,7 @@
                     "value": "Late delivery & reviews",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "20px",
+                      "fontSize": "22px",
                       "color": "#BE123C"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "The Late segment coincides with the lowest score.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "16px",
+                      "fontSize": "17px",
                       "color": "#475569"
                     }
                   }

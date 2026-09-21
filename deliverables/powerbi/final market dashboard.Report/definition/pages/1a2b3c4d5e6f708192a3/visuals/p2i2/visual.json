@@ -22,7 +22,7 @@
                     "value": "Organic lead volume",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "20px",
+                      "fontSize": "22px",
                       "color": "#1D4ED8"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "Largest lead pool, but conversion trails Partner.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "16px",
+                      "fontSize": "17px",
                       "color": "#475569"
                     }
                   }

@@ -22,7 +22,7 @@
                     "value": "Partner converts best",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "20px",
+                      "fontSize": "22px",
                       "color": "#0F766E"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "24.7% conversion with the fastest close time.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "16px",
+                      "fontSize": "17px",
                       "color": "#475569"
                     }
                   }

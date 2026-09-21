@@ -22,7 +22,7 @@
                     "value": "Marketplace scale",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "20px",
+                      "fontSize": "22px",
                       "color": "#1557A6"
                     }
                   }
@@ -35,7 +35,7 @@
                     "value": "GMV and orders remain strong in the latest complete period.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "16px",
+                      "fontSize": "17px",
                       "color": "#344054"
                     }
                   }

@@ -5,7 +5,7 @@
     "x": 1555,
     "y": 1011,
     "z": 49000,
-    "height": 18,
+    "height": 22,
     "width": 300,
     "tabOrder": 49000
   },
@@ -22,7 +22,7 @@
                     "value": "Source: StateTop5 table",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "13px",
+                      "fontSize": "15px",
                       "color": "#6B7A90"
                     }
                   }

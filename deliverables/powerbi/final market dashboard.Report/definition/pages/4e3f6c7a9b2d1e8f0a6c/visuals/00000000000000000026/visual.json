@@ -5,7 +5,7 @@
     "x": 270,
     "y": 736,
     "z": 31000,
-    "height": 24,
+    "height": 26,
     "width": 260,
     "tabOrder": 31000
   },
@@ -22,7 +22,7 @@
                     "value": "Top 5 Categories by GMV",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "16px",
+                      "fontSize": "18px",
                       "color": "#0F172A"
                     }
                   }
