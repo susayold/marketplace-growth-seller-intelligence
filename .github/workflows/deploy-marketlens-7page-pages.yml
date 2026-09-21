@@ -30,8 +30,16 @@ jobs:
           sudo apt-get install -y poppler-utils
           mkdir -p dist/assets/dashboard
           rm -f dist/assets/dashboard/page-*.png
-          pdftocairo -png -r 220 dist/assets/final-market-dashboard.pdf dist/assets/dashboard/page
-          identify dist/assets/dashboard/page-1.png || true
+          pdftocairo -png -r 300 -antialias best dist/assets/final-market-dashboard.pdf dist/assets/dashboard/page
+          python3 - <<'PY'
+          import struct
+          from pathlib import Path
+          for p in sorted(Path("dist/assets/dashboard").glob("page-*.png")):
+              with p.open("rb") as f:
+                  header = f.read(24)
+              w, h = struct.unpack(">II", header[16:24])
+              print(f"{p.name}: {w}x{h} px, {p.stat().st_size/1024/1024:.2f} MB")
+          PY
           ls -lh dist/assets/dashboard/
 
       - uses: actions/configure-pages@v5
