@@ -24,7 +24,7 @@
   };
 
   let currentPage = 1;
-  const imageFor = page => './assets/dashboard/page-' + page + '.png';
+  const imageFor = page => './assets/dashboard/page-' + page + '.png?v=gs300-1';
 
   function preload(page) {
     const img = new Image();
