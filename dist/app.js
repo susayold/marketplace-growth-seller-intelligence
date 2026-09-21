@@ -8,21 +8,11 @@
 
   const backTop = document.getElementById('backTop');
   window.addEventListener('scroll', () => {
-    if (!backTop) return;
-    backTop.classList.toggle('show', window.scrollY > 650);
+    if (backTop) backTop.classList.toggle('show', window.scrollY > 650);
   });
-  if (backTop) backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  backTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  const pageMeta = {
-    1: ['Executive Overview','A high-level view of marketplace performance, seller concentration and key metrics.'],
-    2: ['Seller Acquisition','Lead volume, observed conversion, channel mix and downstream seller value.'],
-    3: ['Seller Activation & Retention','Time-to-first-sale, observable activation windows and retention guardrails.'],
-    4: ['Commercial Performance','Seller value distribution, concentration and commercial resilience.'],
-    5: ['Customer Experience & Operations','Delivery performance and its association with customer review outcomes.'],
-    6: ['Root Cause & Diagnostic','Structured evidence review across six cases and twenty hypotheses.'],
-    7: ['Decision Center','Prioritized actions with KPIs, guardrails, owners and review cadence.']
-  };
-
+  const pageData = {"1":{"title":"Executive Overview","subtitle":"Marketplace scale, current-period movement, seller concentration and data-quality guardrails.","html":"<div class=\"page-story-head\"><div><span class=\"story-kicker\">EXECUTIVE OVERVIEW</span><h2>Scale is substantial, but the management question is growth quality.</h2></div><p>The overview combines marketplace scale with the three risks that matter most for management: seller concentration, slow activation, and delivery-related customer-experience risk.</p></div>\n<div class=\"story-metrics five\">\n  <div><strong>R$13.59M</strong><span>GMV proxy</span></div><div><strong>98,666</strong><span>Orders</span></div><div><strong>3,095</strong><span>Sellers</span></div><div><strong>82.7%</strong><span>Top-20% seller share</span></div><div><strong>8.1%</strong><span>Late delivery rate</span></div>\n</div>\n<div class=\"story-grid two\">\n  <section class=\"story-card\"><span class=\"card-label\">LATEST COMPLETE MONTH</span><h3>Broader participation, weaker value depth</h3>\n    <div class=\"story-table-wrap\"><table class=\"story-table\"><thead><tr><th>Metric</th><th>Jul 2018</th><th>Aug 2018</th><th>Change</th></tr></thead><tbody>\n      <tr><td>GMV Proxy</td><td>R$895.5K</td><td>R$854.7K</td><td class=\"neg\">−4.6%</td></tr>\n      <tr><td>Orders</td><td>6,292</td><td>6,512</td><td class=\"pos\">+3.5%</td></tr>\n      <tr><td>Active Sellers</td><td>1,261</td><td>1,278</td><td class=\"pos\">+1.3%</td></tr>\n      <tr><td>AOV</td><td>R$142.32</td><td>R$131.25</td><td class=\"neg\">−7.8%</td></tr>\n      <tr><td>GMV / Seller</td><td>R$710.16</td><td>R$668.77</td><td class=\"neg\">−5.8%</td></tr>\n    </tbody></table></div>\n    <p class=\"card-foot\">Interpretation: breadth increased, while value per transaction and per active seller softened.</p>\n  </section>\n  <section class=\"story-card visual-card\"><span class=\"card-label\">DATA TRUST</span><h3>Naïve joins would overstate GMV by 4.54%</h3><img loading=\"lazy\" src=\"https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/00_measurement_trust/trust_02_grain_safe_vs_naive_gmv.png\" alt=\"Grain safe versus naive GMV\"><p class=\"card-foot\">R$13.5916M grain-safe vs R$14.2091M naïve joined GMV — a ~R$617.5K arithmetic gap.</p></section>\n</div>\n<div class=\"management-box\"><div><span>MANAGEMENT READ</span><h3>Do not call the marketplace simply “growing.”</h3></div><p>Use the overview to separate <b>scale</b> from <b>quality of growth</b>. Orders and seller breadth can rise while AOV, seller productivity, activation speed, or customer experience weaken.</p></div>\n<div class=\"boundary-note\"><b>Reporting boundary:</b> raw observations extend beyond August 2018, but executive-complete reporting ends <b>31 Aug 2018</b>. September and October are partial tails and are not used for performance conclusions.</div>"},"2":{"title":"Seller Acquisition","subtitle":"Lead volume, observed conversion, channel mix and downstream seller value.","html":"<div class=\"page-story-head\"><div><span class=\"story-kicker\">SELLER ACQUISITION</span><h2>Origin affects observed conversion, but conversion alone does not identify the best acquisition motion.</h2></div><p>The acquisition page should answer two separate questions: where leads convert, and whether those converted sellers create downstream value. The project intentionally avoids collapsing both into one “best channel” claim.</p></div>\n<div class=\"story-metrics four\"><div><strong>8,000</strong><span>MQLs</span></div><div><strong>842</strong><span>Converted / matched</span></div><div><strong>10.5%</strong><span>Global conversion</span></div><div><strong>0.131</strong><span>Cramér’s V</span></div></div>\n<div class=\"story-grid two\">\n  <section class=\"story-card\"><span class=\"card-label\">CHANNEL EVIDENCE</span><h3>Observed conversion by origin</h3>\n    <div class=\"story-table-wrap\"><table class=\"story-table\"><thead><tr><th>Origin</th><th>MQLs</th><th>Converted</th><th>Conversion</th><th>GMV / matched seller</th></tr></thead><tbody>\n      <tr><td>Organic Search</td><td>2,296</td><td>271</td><td>11.8%</td><td>R$763.92</td></tr>\n      <tr><td>Paid Search</td><td>1,586</td><td>195</td><td>12.3%</td><td>R$796.29</td></tr>\n      <tr><td>Social</td><td>1,350</td><td>75</td><td>5.6%</td><td>R$579.71</td></tr>\n      <tr><td>Direct Traffic</td><td>499</td><td>56</td><td>11.2%</td><td>R$391.14</td></tr>\n      <tr><td>Referral</td><td>284</td><td>24</td><td>8.5%</td><td>R$745.30</td></tr>\n      <tr><td>Email</td><td>493</td><td>15</td><td>3.0%</td><td>R$565.67</td></tr>\n      <tr class=\"muted-row\"><td>Unknown</td><td>1,159</td><td>193</td><td>16.7%</td><td>R$1,113.91</td></tr>\n    </tbody></table></div>\n    <p class=\"card-foot\"><b>Unknown</b> is retained for denominator/context integrity, but is not treated as an actionable acquisition channel.</p>\n  </section>\n  <section class=\"story-card visual-card\"><span class=\"card-label\">CONVERSION × VALUE</span><h3>Efficiency and value are different dimensions</h3><img loading=\"lazy\" src=\"https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/02_acquisition/acq_04_conversion_vs_downstream_value.png\" alt=\"Acquisition conversion versus downstream value\"><p class=\"card-foot\">Global association: χ² = 137.69, df = 9, p ≈ 3.1×10⁻²⁵. Effect size is detectable but modest.</p></section>\n</div>\n<div class=\"management-box\"><div><span>DECISION D02</span><h3>Use a multi-stage acquisition scorecard.</h3></div><p><b>MQL volume → conversion → matched-seller value → activation → M3 retention guardrail.</b> Paid Search and Organic Search have similar observed conversion after multiple-testing adjustment; retention evidence is not precise enough to crown a durable winner.</p></div>\n<div class=\"boundary-note\"><b>Do not claim:</b> “Unknown is the best channel,” “Partner converts best,” or that conversion differences prove causal channel effectiveness.</div>"},"3":{"title":"Seller Activation & Retention","subtitle":"Time-to-first-sale, observable activation windows and retention guardrails.","html":"<div class=\"page-story-head\"><div><span class=\"story-kicker\">ACTIVATION &amp; RETENTION</span><h2>Activation is the clearest early-stage seller bottleneck.</h2></div><p>This page treats activation as an observation-window problem. Sellers are only included in a 30/60/90-day rate when the dataset contains enough follow-up time to observe that window.</p></div>\n<div class=\"story-flow\"><div><strong>842</strong><span>Closed sellers</span></div><i>→</i><div><strong>840</strong><span>Eligible</span></div><i>→</i><div><strong>380</strong><span>Observed activated</span></div><i>+</i><div><strong>460</strong><span>Right-censored</span></div></div>\n<div class=\"story-metrics four\"><div><strong>15.8%</strong><span>30D · 130/825</span></div><div><strong>30.8%</strong><span>60D · 247/803</span></div><div><strong>42.1%</strong><span>90D · 324/769</span></div><div><strong>44.3d</strong><span>Observed activator median</span></div></div>\n<div class=\"story-grid two\">\n  <section class=\"story-card visual-card\"><span class=\"card-label\">FIXED-WINDOW ACTIVATION</span><h3>Observable denominators prevent false failures</h3><img loading=\"lazy\" src=\"https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/03_activation/act_05_30_60_90_activation_ci.png\" alt=\"Activation rates with confidence intervals\"><p class=\"card-foot\">Canonical v3 rates: 7D 1.8%, 30D 15.8%, 60D 30.8%, 90D 42.1%.</p></section>\n  <section class=\"story-card visual-card\"><span class=\"card-label\">RETENTION GUARDRAIL</span><h3>Faster activation is associated with stronger observed M3 retention</h3><img loading=\"lazy\" src=\"https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/04_retention/ret_05_retention_by_activation_speed.png\" alt=\"Retention by activation speed\"><p class=\"card-foot\">Observed M3 retention declines from 62.7% for 8–30d activators to 22.7% for &gt;90d activators. This is associative, not causal.</p></section>\n</div>\n<div class=\"management-box\"><div><span>DECISION D03</span><h3>Instrument 7/30/60-day onboarding checkpoints.</h3></div><p>Test onboarding interventions against <b>30/60-day activation</b>, while protecting <b>M3 retention</b> and downstream seller value as guardrails. Do not improve time-to-first-sale at the expense of seller quality.</p></div>\n<div class=\"boundary-note\"><b>Important:</b> 44.3 days is the median among observed activators only. It is not a survival-estimated median and not equivalent to “44.3% activated.”</div>"},"4":{"title":"Commercial Performance","subtitle":"Seller value distribution, concentration, category/geography context and commercial resilience.","html":"<div class=\"page-story-head\"><div><span class=\"story-kicker\">COMMERCIAL PERFORMANCE</span><h2>Marketplace value is broad in participation but highly concentrated economically.</h2></div><p>The commercial page is not just a leaderboard. Its purpose is to quantify dependence on top sellers and identify where category or geography breadth may be fragile.</p></div>\n<div class=\"story-metrics five\"><div><strong>0.792</strong><span>Seller Gini</span></div><div><strong>26.1%</strong><span>Top 1% share</span></div><div><strong>53.3%</strong><span>Top 5% share</span></div><div><strong>67.6%</strong><span>Top 10% share</span></div><div><strong>82.7%</strong><span>Top 20% share</span></div></div>\n<div class=\"story-grid two\">\n  <section class=\"story-card visual-card\"><span class=\"card-label\">INEQUALITY</span><h3>Lorenz curve shows strong seller-value inequality</h3><img loading=\"lazy\" src=\"https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/05_seller_value_concentration/con_01_lorenz_curve.png\" alt=\"Seller GMV Lorenz curve\"><p class=\"card-foot\">Gini = 0.792 among positive-GMV sellers.</p></section>\n  <section class=\"story-card visual-card\"><span class=\"card-label\">DEPENDENCY</span><h3>Pareto view makes top-seller dependence operational</h3><img loading=\"lazy\" src=\"https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/05_seller_value_concentration/con_02_pareto_cumulative_curve.png\" alt=\"Seller GMV Pareto curve\"><p class=\"card-foot\">Top-percentile shares should be monitored over time rather than reduced to one static concentration label.</p></section>\n</div>\n<div class=\"management-box\"><div><span>DECISION D04</span><h3>Monitor concentration with category breadth and service quality.</h3></div><p>High concentration is a <b>risk signal</b>, not automatic proof that diversification is value-creating. Investigate high-value categories where seller breadth is weak, and check whether the dominant sellers also carry service-quality risk.</p></div>\n<div class=\"boundary-note\"><b>Do not claim:</b> that seller concentration itself is harmful or that a universal “safe” Gini / top-share threshold exists for this marketplace.</div>"},"5":{"title":"Customer Experience & Operations","subtitle":"Delivery performance and its association with review outcomes.","html":"<div class=\"page-story-head\"><div><span class=\"story-kicker\">CUSTOMER EXPERIENCE &amp; OPERATIONS</span><h2>Late delivery is the strongest operational diagnostic signal in the project.</h2></div><p>The customer-experience page links delivery timing to review outcomes at order grain. The effect is large descriptively and remains directionally strong after observed controls.</p></div>\n<div class=\"cx-compare\">\n  <div class=\"cx-side good\"><span>ON TIME</span><strong>88,168</strong><small>reviewed delivered orders</small><div><b>4.29</b><em>Avg review</em></div><div><b>9.2%</b><em>Low-review rate</em></div></div>\n  <div class=\"cx-gap\"><span>OBSERVED GAP</span><strong>+44.8pp</strong><small>low-review risk</small><b>5.87× risk ratio</b></div>\n  <div class=\"cx-side bad\"><span>LATE</span><strong>7,662</strong><small>reviewed delivered orders</small><div><b>2.57</b><em>Avg review</em></div><div><b>54.0%</b><em>Low-review rate</em></div></div>\n</div>\n<div class=\"story-grid two\">\n  <section class=\"story-card visual-card\"><span class=\"card-label\">RISK MAGNITUDE</span><h3>Low-review risk differs sharply by lateness</h3><img loading=\"lazy\" src=\"https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/07_customer_experience/cx_03_low_review_rate_ci.png\" alt=\"Low review rate by lateness\"><p class=\"card-foot\">Average review difference = −1.73 points; low-review gap = +44.8 percentage points.</p></section>\n  <section class=\"story-card visual-card\"><span class=\"card-label\">SEVERITY</span><h3>Review outcomes weaken as delay becomes more severe</h3><img loading=\"lazy\" src=\"https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/07_customer_experience/cx_04_delay_severity_vs_review.png\" alt=\"Delay severity versus review\"><p class=\"card-foot\">Adjusted diagnostic model: OR ≈ 1.080 per additional delay day after observed controls.</p></section>\n</div>\n<div class=\"management-box\"><div><span>DECISION D05</span><h3>Prioritize delivery investigation by volume × severity × review penalty.</h3></div><p>Use the dashboard to decide where to investigate first, then test operational changes. Route, carrier, state, category, order value, and selection effects may still confound the relationship.</p></div>\n<div class=\"boundary-note\"><b>Association ≠ causation.</b> The project does not claim that late delivery alone causes a bad review or that a multi-seller order can be attributed to one seller without an attribution model.</div>"},"6":{"title":"Root Cause & Diagnostic","subtitle":"Six structured cases and twenty hypotheses, separated by evidence status.","html":"<div class=\"page-story-head\"><div><span class=\"story-kicker\">ROOT CAUSE &amp; DIAGNOSTIC</span><h2>Root-cause analysis is managed as hypotheses, not storytelling.</h2></div><p>The project records evidence for, evidence against, alternatives, status, and the next decision for each case. This avoids treating every correlation as a “root cause.”</p></div>\n<div class=\"story-metrics three\"><div><strong>6</strong><span>Root-cause cases</span></div><div><strong>20</strong><span>Hypotheses assessed</span></div><div><strong>3 states</strong><span>Supported / rejected / inconclusive</span></div></div>\n<div class=\"root-case-grid\">\n  <article><span class=\"case-status supported\">Confirmed</span><b>RC1 · Reporting boundary</b><h3>Partial edge periods can mimic a commercial collapse.</h3><p>Decision: gate trend reporting on period completeness.</p></article>\n  <article><span class=\"case-status associative\">Association</span><b>RC2 · Acquisition quality</b><h3>Origin is associated with conversion; volume-only optimization is rejected.</h3><p>Retention is too imprecise to establish a durable channel winner.</p></article>\n  <article><span class=\"case-status supported\">Supported signal</span><b>RC3 · Activation bottleneck</b><h3>Time-to-first-sale is slow.</h3><p>Decision: instrument the onboarding journey and test interventions.</p></article>\n  <article><span class=\"case-status associative\">Risk signal</span><b>RC4 · Seller concentration</b><h3>Value depends heavily on a small seller cohort.</h3><p>Decision: monitor concentration with category breadth.</p></article>\n  <article><span class=\"case-status associative\">Association</span><b>RC5 · Delivery & reviews</b><h3>Lateness is linked with weaker review outcomes.</h3><p>Decision: investigate severity and operational pathways before causal claims.</p></article>\n  <article><span class=\"case-status inconclusive\">Diagnostic path</span><b>RC6 · Category underperformance</b><h3>A decline can come from orders, AOV, seller breadth, or productivity.</h3><p>Decision: decompose first, then escalate the supported mechanism.</p></article>\n</div>\n<div class=\"management-box\"><div><span>HOW TO USE PAGE 6</span><h3>Escalate only the mechanism that survives the diagnostic chain.</h3></div><p>A management issue moves forward when the evidence supports both <b>materiality</b> and <b>actionability</b>. Unsupported explanations stay visible so the team knows what was tested and rejected.</p></div>\n<div class=\"boundary-note\"><b>Root cause does not mean causality by default.</b> Several cases remain associative or diagnostic because the historical observational dataset cannot isolate all mechanisms.</div>"},"7":{"title":"Decision Center","subtitle":"Prioritized actions with KPIs, guardrails, owners, cadence and stop conditions.","html":"<div class=\"page-story-head\"><div><span class=\"story-kicker\">DECISION CENTER</span><h2>The analytical story ends with an operating agenda, not another chart.</h2></div><p>Each decision card connects a supported signal to an owner, a primary KPI, a guardrail, and a review cadence. Priority is based on evidence and actionability rather than a fabricated composite score.</p></div>\n<div class=\"story-metrics four\"><div><strong>5</strong><span>Governed decisions</span></div><div><strong>4</strong><span>P1 actions</span></div><div><strong>1</strong><span>P2 monitoring action</span></div><div><strong>PASS</strong><span>Release gate</span></div></div>\n<div class=\"story-table-wrap decision-detail\"><table class=\"story-table\"><thead><tr><th>Priority</th><th>Decision</th><th>Action</th><th>Primary KPI</th><th>Guardrail</th><th>Owner / cadence</th></tr></thead><tbody>\n  <tr><td><span class=\"priority p1\">P1</span></td><td><b>D01</b> Measurement contract</td><td>Exclude or flag incomplete periods before trend reporting.</td><td>Period completeness</td><td>No valid period suppressed</td><td>Data / BI · Daily</td></tr>\n  <tr><td><span class=\"priority p1\">P1</span></td><td><b>D02</b> Acquisition scorecard</td><td>Use volume, conversion, seller value, activation and M3 retention.</td><td>Conversion + downstream value</td><td>M3 retention</td><td>Seller Acquisition · Weekly</td></tr>\n  <tr><td><span class=\"priority p1\">P1</span></td><td><b>D03</b> Onboarding checkpoints</td><td>Instrument 7/30/60D milestones and test interventions.</td><td>30/60D activation</td><td>Retention + downstream value</td><td>Seller Operations · Weekly</td></tr>\n  <tr><td><span class=\"priority p2\">P2</span></td><td><b>D04</b> Concentration monitoring</td><td>Track top shares and fragile category breadth.</td><td>Top 1/5/10/20% share</td><td>Active sellers / category</td><td>Commercial Analytics · Monthly</td></tr>\n  <tr><td><span class=\"priority p1\">P1</span></td><td><b>D05</b> Delivery investigation</td><td>Prioritize volume × delay severity × review penalty.</td><td>Late-delivery rate</td><td>Review / low-review rate</td><td>CX / Ops · Daily + weekly</td></tr>\n</tbody></table></div>\n<div class=\"story-grid two\">\n  <section class=\"story-card visual-card\"><span class=\"card-label\">PRIORITIZATION</span><h3>Evidence strength versus actionability</h3><img loading=\"lazy\" src=\"https://raw.githubusercontent.com/susayold/marketplace-growth-seller-intelligence/main/reports/charts/10_decision_layer/dec_01_evidence_vs_actionability.png\" alt=\"Decision evidence versus actionability\"><p class=\"card-foot\">The chart supports sequencing; it does not create a fake “overall score.”</p></section>\n  <section class=\"story-card\"><span class=\"card-label\">RELEASE PRINCIPLES</span><h3>What keeps the decision layer credible</h3><ul class=\"story-list\"><li>Use complete periods for trend decisions.</li><li>Respect activation and retention observability.</li><li>Separate descriptive, associative, and causal claims.</li><li>Keep GMV labeled as a proxy, not revenue or profit.</li><li>Use guardrails and stop conditions before scaling an intervention.</li></ul></section>\n</div>\n<div class=\"management-box\"><div><span>FINAL MANAGEMENT READ</span><h3>Measurement → diagnosis → action → monitoring.</h3></div><p>The project’s value is the chain from a trustworthy metric contract to an explicit operating decision. The dashboard is the interface; the governed analytical release is the source of truth.</p></div>"}};
   let currentPage = 1;
   const imageFor = page => './assets/dashboard/page-' + page + '.png?v=7acad6c';
 
@@ -31,23 +21,43 @@
     img.src = imageFor(page);
   }
 
-  function showPage(pageNum) {
+  function updateAnalysis(page) {
+    const data = pageData[page];
+    const content = document.getElementById('reportPageContent');
+    const number = document.getElementById('analysisPageNumber');
+    const prevLabel = document.getElementById('analysisPrevLabel');
+    const nextLabel = document.getElementById('analysisNextLabel');
+    if (content) {
+      content.classList.add('switching');
+      window.setTimeout(() => {
+        content.innerHTML = data.html;
+        content.classList.remove('switching');
+      }, 90);
+    }
+    if (number) number.textContent = String(page).padStart(2,'0');
+    const prev = page === 1 ? 7 : page - 1;
+    const next = page === 7 ? 1 : page + 1;
+    if (prevLabel) prevLabel.textContent = pageData[prev].title;
+    if (nextLabel) nextLabel.textContent = pageData[next].title;
+  }
+
+  function showPage(pageNum, scrollToDashboard = false) {
     currentPage = Math.max(1, Math.min(7, pageNum));
+    const data = pageData[currentPage];
     const image = document.getElementById('dashboardImage');
     const loading = document.getElementById('pdfLoading');
     const fullResLink = document.getElementById('dashboardFullRes');
     const fullResButton = document.getElementById('dashboardFullResButton');
-    const meta = pageMeta[currentPage];
     const pageImage = imageFor(currentPage);
 
     if (fullResLink) {
       fullResLink.href = pageImage;
-      fullResLink.setAttribute('aria-label', 'Open dashboard page ' + currentPage + ' in full resolution');
+      fullResLink.setAttribute('aria-label','Open dashboard page ' + currentPage + ' in full resolution');
     }
     if (fullResButton) fullResButton.href = pageImage;
 
     if (loading) {
-      loading.innerHTML = 'Loading ultra-high-resolution Power BI page…';
+      loading.textContent = 'Loading high-resolution Power BI page…';
       loading.classList.add('show');
     }
 
@@ -55,36 +65,48 @@
       image.classList.add('is-loading');
       image.onload = () => {
         image.classList.remove('is-loading');
-        if (loading) loading.classList.remove('show');
+        loading?.classList.remove('show');
       };
       image.onerror = () => {
         image.classList.remove('is-loading');
         if (loading) {
-          loading.innerHTML = 'Preview unavailable. <a href="./assets/final-market-dashboard.pdf" target="_blank" rel="noopener">Open the full PDF →</a>';
+          loading.innerHTML = 'Preview unavailable. <a href="./assets/final-market-dashboard.pdf?v=7acad6c" target="_blank" rel="noopener">Open the PDF →</a>';
           loading.classList.add('show');
         }
       };
       image.src = pageImage;
-      image.alt = 'Power BI dashboard page ' + currentPage + ' — ' + meta[0];
+      image.alt = 'Power BI dashboard page ' + currentPage + ' — ' + data.title;
     }
 
     const title = document.getElementById('dashTitle');
     const subtitle = document.getElementById('dashSubtitle');
     const counter = document.getElementById('pageCurrent');
-    if (title) title.textContent = meta[0];
-    if (subtitle) subtitle.textContent = meta[1];
+    if (title) title.textContent = data.title;
+    if (subtitle) subtitle.textContent = data.subtitle;
     if (counter) counter.textContent = currentPage;
 
     document.querySelectorAll('#dashboardTabs button').forEach(btn => {
       btn.classList.toggle('active', Number(btn.dataset.page) === currentPage);
     });
 
+    updateAnalysis(currentPage);
     preload(currentPage === 7 ? 1 : currentPage + 1);
     preload(currentPage === 1 ? 7 : currentPage - 1);
+
+    const url = new URL(window.location.href);
+    url.searchParams.set('page', currentPage);
+    url.hash = 'dashboard';
+    history.replaceState(null,'',url.pathname + url.search + url.hash);
+
+    if (scrollToDashboard) {
+      document.getElementById('dashboard')?.scrollIntoView({ behavior:'smooth', block:'start' });
+    }
   }
 
   document.getElementById('prevPage')?.addEventListener('click', () => showPage(currentPage === 1 ? 7 : currentPage - 1));
   document.getElementById('nextPage')?.addEventListener('click', () => showPage(currentPage === 7 ? 1 : currentPage + 1));
+  document.getElementById('analysisPrev')?.addEventListener('click', () => showPage(currentPage === 1 ? 7 : currentPage - 1, true));
+  document.getElementById('analysisNext')?.addEventListener('click', () => showPage(currentPage === 7 ? 1 : currentPage + 1, true));
   document.querySelectorAll('#dashboardTabs button').forEach(btn => btn.addEventListener('click', () => showPage(Number(btn.dataset.page))));
 
   const heroImg = document.getElementById('heroDashboardImage');
@@ -95,7 +117,9 @@
     };
   }
 
-  preload(1);
-  preload(2);
-  showPage(1);
+  const requested = Number(new URL(window.location.href).searchParams.get('page'));
+  currentPage = requested >= 1 && requested <= 7 ? requested : 1;
+  preload(currentPage);
+  preload(currentPage === 7 ? 1 : currentPage + 1);
+  showPage(currentPage);
 })();
