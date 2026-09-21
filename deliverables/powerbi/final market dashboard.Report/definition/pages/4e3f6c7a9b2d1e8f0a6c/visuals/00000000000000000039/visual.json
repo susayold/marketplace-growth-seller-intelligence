@@ -433,6 +433,17 @@
             ],
             "metadata": "StateTop5.gmv_share"
           }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "17D"
+                }
+              }
+            }
+          }
         }
       ],
       "grid": [

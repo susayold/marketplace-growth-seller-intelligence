@@ -1,0 +1,788 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "dimmonth.monthlabel": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimMonth",
+			          "ConceptualProperty": "MonthLabel"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Month": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "snapshot.trend_gmv_proxy_rm": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Snapshot",
+			          "ConceptualProperty": "Trend GMV Proxy (R$M)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "GMV (R$M)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "snapshot.trend_orders_k": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Snapshot",
+			          "ConceptualProperty": "Trend Orders (K)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Orders (K)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "snapshot.orders_k": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Snapshot",
+			          "ConceptualProperty": "Orders (K)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Orders (K)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "snapshot.active_sellers": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Snapshot",
+			          "ConceptualProperty": "Active Sellers"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Active Sellers": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "lorenz.cumulative__of_sellers": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Lorenz",
+			          "ConceptualProperty": "Cumulative % of Sellers"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cumulative Seller Share": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "lorenz.seller_gmv_proxy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Lorenz",
+			          "ConceptualProperty": "Seller GMV Proxy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cumulative GMV Share": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "lorenz.line_of_equality": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Lorenz",
+			          "ConceptualProperty": "Line of Equality"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Equality Reference": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "categorytop5.categorylabel": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CategoryTop5",
+			          "ConceptualProperty": "CategoryLabel"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Category": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "categorytop5.category_gmv_rm": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CategoryTop5",
+			          "ConceptualProperty": "Category GMV (R$M)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "GMV (R$M)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "statetop5.seller_state": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "StateTop5",
+			          "ConceptualProperty": "seller_state"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Seller State": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "statetop5.state_gmv_rm": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "StateTop5",
+			          "ConceptualProperty": "State GMV (R$M)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "GMV (R$M)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "statetop5.active_sellers": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "StateTop5",
+			          "ConceptualProperty": "active_sellers"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Active Sellers": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "statetop5.gmv_share": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "StateTop5",
+			          "ConceptualProperty": "gmv_share"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "GMV Share": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demoacquisition.total_converted_sellers": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoAcquisition",
+			          "ConceptualProperty": "Total Converted Sellers"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Converted Sellers": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demoacquisition.total_matched_sellers": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoAcquisition",
+			          "ConceptualProperty": "Total Matched Sellers"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Matched Sellers": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demoacquisition.total_gmv_per_matched_seller": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoAcquisition",
+			          "ConceptualProperty": "Total GMV per Matched Seller"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "GMV per Matched Seller (R$)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demoacquisition.channel": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoAcquisition",
+			          "ConceptualProperty": "Channel"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Acquisition Channel": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demoacquisition.conversion_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoAcquisition",
+			          "ConceptualProperty": "conversion_rate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Conversion Rate": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demoacquisition.gmv_per_matched_seller": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoAcquisition",
+			          "ConceptualProperty": "gmv_per_matched_seller"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "GMV per Matched Seller (R$)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demoactivation.cohort": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoActivation",
+			          "ConceptualProperty": "Cohort"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Seller Cohort": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demoretention.cohort": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoRetention",
+			          "ConceptualProperty": "Cohort"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Seller Cohort": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "democommercial.segment": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoCommercial",
+			          "ConceptualProperty": "Segment"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Seller Segment": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "democustomerops.segment": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoCustomerOps",
+			          "ConceptualProperty": "Segment"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Seller Segment": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demorootcause.driver": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoRootCause",
+			          "ConceptualProperty": "Driver"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Issue Driver": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demorootcause.metric": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoRootCause",
+			          "ConceptualProperty": "Metric"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Metric": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demorootcause.impact": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoRootCause",
+			          "ConceptualProperty": "Impact"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Impact": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demorootcause.severity": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoRootCause",
+			          "ConceptualProperty": "Severity"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Severity": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demorootcause.frequency": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoRootCause",
+			          "ConceptualProperty": "Frequency"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Frequency": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demorootcause.priorityscore": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoRootCause",
+			          "ConceptualProperty": "PriorityScore"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Priority Score": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demorootcause.owner": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoRootCause",
+			          "ConceptualProperty": "Owner"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Accountable Owner": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demodecision.pillar": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoDecision",
+			          "ConceptualProperty": "Pillar"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Strategic Pillar": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demodecision.owner": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoDecision",
+			          "ConceptualProperty": "Owner"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Accountable Owner": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demodecision.status": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoDecision",
+			          "ConceptualProperty": "Status"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Action Status": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demodecision.timehorizon": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoDecision",
+			          "ConceptualProperty": "TimeHorizon"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Target Horizon": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demodecision.action": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoDecision",
+			          "ConceptualProperty": "Action"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Recommended Action": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "demodecision.expectedimpact": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DemoDecision",
+			          "ConceptualProperty": "ExpectedImpact"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Expected Impact": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

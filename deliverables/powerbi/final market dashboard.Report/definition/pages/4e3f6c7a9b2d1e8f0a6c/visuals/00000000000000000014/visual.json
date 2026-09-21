@@ -274,23 +274,5 @@
         }
       ]
     }
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "b2b0fc012ad28a02b983",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "DimState"
-              }
-            },
-            "Property": "Seller State"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

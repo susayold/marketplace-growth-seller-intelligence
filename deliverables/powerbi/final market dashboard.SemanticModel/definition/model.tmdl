@@ -36,3 +36,5 @@ ref table DemoCustomerOps
 ref table DemoRootCause
 ref table DemoDecision
 
+ref cultureInfo en-US
+

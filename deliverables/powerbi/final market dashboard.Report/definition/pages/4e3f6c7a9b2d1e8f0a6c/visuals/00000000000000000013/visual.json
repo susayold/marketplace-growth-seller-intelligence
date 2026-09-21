@@ -274,23 +274,5 @@
         }
       ]
     }
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "9aeadefa90ee67e3a3e8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "DimCategory"
-              }
-            },
-            "Property": "Category"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

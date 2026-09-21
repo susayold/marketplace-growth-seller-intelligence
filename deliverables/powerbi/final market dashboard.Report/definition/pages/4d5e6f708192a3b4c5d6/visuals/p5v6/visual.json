@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "p5v6",
   "position": {
-    "x": 1010,
-    "y": 785,
+    "x": 965.3717026378896,
+    "y": 784.26858513189438,
     "z": 26000,
-    "height": 205,
-    "width": 460,
+    "height": 205.65947242206232,
+    "width": 549.44844124700239,
     "tabOrder": 26000
   },
   "visual": {
@@ -155,20 +155,6 @@
                   "Value": "'BottomOnly'"
                 }
               }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "12D"
-                }
-              }
-            },
-            "wordWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
             }
           },
           "selector": {
@@ -205,13 +191,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'BottomOnly'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "12D"
                 }
               }
             }
@@ -265,13 +244,6 @@
                       "Value": "'#F8FAFC'"
                     }
                   }
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "12D"
                 }
               }
             }
@@ -700,17 +672,23 @@
                   "Value": "'TopOnly'"
                 }
               }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "12D"
-                }
-              }
             }
           },
           "selector": {
             "id": "default"
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
           }
         }
       ]
@@ -845,5 +823,99 @@
         }
       ]
     }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "94408da5664b4d4d6dd8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DemoCustomerOps"
+              }
+            },
+            "Property": "Segment"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3129a24935b1e241014c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DemoCustomerOps"
+                  }
+                },
+                "Property": "Orders"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9536b32d46013092c450",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DemoCustomerOps"
+                  }
+                },
+                "Property": "LateRate"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "02afaa93950812a5a570",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DemoCustomerOps"
+                  }
+                },
+                "Property": "AvgReview"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ce4dfb7be679e2e700dc",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DemoCustomerOps"
+                  }
+                },
+                "Property": "LowReviewRate"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

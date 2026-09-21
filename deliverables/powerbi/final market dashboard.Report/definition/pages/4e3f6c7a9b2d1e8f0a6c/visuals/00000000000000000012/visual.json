@@ -274,23 +274,5 @@
         }
       ]
     }
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f6b2dfdf4d6cc0d87550",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "DimMonth"
-              }
-            },
-            "Property": "Date"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
