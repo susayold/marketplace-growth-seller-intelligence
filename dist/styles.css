@@ -847,3 +847,45 @@ code{font-family:Consolas,monospace;background:#eef3f8;padding:2px 4px;border-ra
 @media(max-width:700px){
   .quadrant-grid,.status-bands{grid-template-columns:1fr}
 }
+
+
+.analysis-live-banner{
+  width:min(1580px,calc(100% - 24px));
+  margin:0 auto 26px;
+  padding:16px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  border:1px solid #bcd2ec;
+  border-radius:12px;
+  background:linear-gradient(135deg,#edf6ff,#f9fcff);
+  box-shadow:0 8px 22px rgba(16,40,75,.05);
+}
+.analysis-live-banner span,
+.analysis-live-banner strong{display:block}
+.analysis-live-banner span{
+  color:#0f6cf2;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.13em;
+}
+.analysis-live-banner strong{
+  margin-top:4px;
+  color:#153556;
+  font-size:14px;
+}
+.analysis-live-banner p{
+  margin:0;
+  max-width:560px;
+  color:#64768a;
+  font-size:11px;
+  line-height:1.55;
+}
+@media(max-width:700px){
+  .analysis-live-banner{
+    width:min(100% - 24px,1580px);
+    align-items:flex-start;
+    flex-direction:column;
+  }
+}
