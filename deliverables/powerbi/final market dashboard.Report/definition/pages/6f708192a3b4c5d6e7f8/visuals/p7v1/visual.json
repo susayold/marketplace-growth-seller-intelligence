@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DecisionRegister"
+                      "Entity": "DecisionMatrix"
                     }
                   },
                   "Property": "Action"
                 }
               },
-              "queryRef": "DecisionRegister.Action",
+              "queryRef": "DecisionMatrix.Action",
               "nativeQueryRef": "Action",
               "active": true,
               "displayName": "Recommended Action"
@@ -40,13 +40,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DecisionRegister"
+                      "Entity": "DecisionMatrix"
                     }
                   },
                   "Property": "Pillar"
                 }
               },
-              "queryRef": "DecisionRegister.Pillar",
+              "queryRef": "DecisionMatrix.Pillar",
               "nativeQueryRef": "Pillar",
               "active": true,
               "displayName": "Strategic Pillar"
@@ -62,7 +62,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "DecisionRegister"
+                          "Entity": "DecisionMatrix"
                         }
                       },
                       "Property": "ExpectedImpact"
@@ -71,10 +71,10 @@
                   "Function": 0
                 }
               },
-              "queryRef": "DecisionRegister.ExpectedImpact",
+              "queryRef": "DecisionMatrix.ExpectedImpact",
               "nativeQueryRef": "ExpectedImpact",
               "active": true,
-              "displayName": "Evidence Strength"
+              "displayName": "Expected Impact"
             }
           ]
         },
@@ -87,7 +87,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "DecisionRegister"
+                          "Entity": "DecisionMatrix"
                         }
                       },
                       "Property": "Effort"
@@ -96,10 +96,10 @@
                   "Function": 0
                 }
               },
-              "queryRef": "DecisionRegister.Effort",
+              "queryRef": "DecisionMatrix.Effort",
               "nativeQueryRef": "Effort",
               "active": true,
-              "displayName": "Actionability"
+              "displayName": "Effort Level"
             }
           ]
         },
@@ -112,7 +112,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "DecisionRegister"
+                          "Entity": "DecisionMatrix"
                         }
                       },
                       "Property": "ExpectedImpact"
@@ -121,10 +121,10 @@
                   "Function": 0
                 }
               },
-              "queryRef": "DecisionRegister.ExpectedImpact",
+              "queryRef": "DecisionMatrix.ExpectedImpact",
               "nativeQueryRef": "ExpectedImpact",
               "active": true,
-              "displayName": "Evidence Strength"
+              "displayName": "Expected Impact"
             }
           ]
         }
@@ -176,21 +176,14 @@
             "end": {
               "expr": {
                 "Literal": {
-                  "Value": "4D"
+                  "Value": "6D"
                 }
               }
             },
             "showAxisTitle": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "titleText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Actionability'"
+                  "Value": "false"
                 }
               }
             },
@@ -246,21 +239,14 @@
             "end": {
               "expr": {
                 "Literal": {
-                  "Value": "4D"
+                  "Value": "7D"
                 }
               }
             },
             "showAxisTitle": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "titleText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Evidence Strength'"
+                  "Value": "false"
                 }
               }
             },
@@ -422,7 +408,7 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "DecisionRegister"
+                            "Entity": "DecisionMatrix"
                           }
                         },
                         "Property": "Pillar"
@@ -430,7 +416,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Data / BI'"
+                        "Value": "'Acquisition'"
                       }
                     }
                   }
@@ -446,7 +432,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                    "Value": "'#0D9488'"
+                      "Value": "'#0D9488'"
                     }
                   }
                 }
@@ -457,7 +443,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                    "Value": "'#0D9488'"
+                      "Value": "'#0D9488'"
                     }
                   }
                 }
@@ -474,7 +460,7 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "DecisionRegister"
+                            "Entity": "DecisionMatrix"
                           }
                         },
                         "Property": "Pillar"
@@ -482,7 +468,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Seller Acquisition'"
+                        "Value": "'Activation'"
                       }
                     }
                   }
@@ -498,7 +484,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#7C3AED'"
+                      "Value": "'#60A5FA'"
                     }
                   }
                 }
@@ -509,7 +495,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#7C3AED'"
+                      "Value": "'#60A5FA'"
                     }
                   }
                 }
@@ -526,7 +512,7 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "DecisionRegister"
+                            "Entity": "DecisionMatrix"
                           }
                         },
                         "Property": "Pillar"
@@ -534,7 +520,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Seller Operations'"
+                        "Value": "'Commercial'"
                       }
                     }
                   }
@@ -550,7 +536,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                    "Value": "'#E11D48'"
+                      "Value": "'#2563EB'"
                     }
                   }
                 }
@@ -561,7 +547,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                    "Value": "'#E11D48'"
+                      "Value": "'#2563EB'"
                     }
                   }
                 }
@@ -578,7 +564,7 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "DecisionRegister"
+                            "Entity": "DecisionMatrix"
                           }
                         },
                         "Property": "Pillar"
@@ -602,7 +588,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                    "Value": "'#F59E0B'"
+                      "Value": "'#1D4ED8'"
                     }
                   }
                 }
@@ -613,7 +599,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                    "Value": "'#F59E0B'"
+                      "Value": "'#1D4ED8'"
                     }
                   }
                 }
@@ -630,7 +616,7 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Entity": "DecisionRegister"
+                            "Entity": "DecisionMatrix"
                           }
                         },
                         "Property": "Pillar"
@@ -638,7 +624,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Commercial Analytics'"
+                        "Value": "'Marketplace'"
                       }
                     }
                   }

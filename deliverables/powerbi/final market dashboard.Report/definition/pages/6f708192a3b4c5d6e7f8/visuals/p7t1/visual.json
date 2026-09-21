@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Evidence Strength vs Actionability Matrix",
+                    "value": "Impact vs Effort Matrix",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "18px",

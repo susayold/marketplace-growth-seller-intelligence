@@ -61,7 +61,7 @@
   },
   {
     "path": "deliverables/final-market-dashboard.pdf",
-    "bytes": 1891870
+    "bytes": 1889197
   },
   {
     "path": "deliverables/powerbi/final market dashboard.pbip",
@@ -1821,7 +1821,7 @@
   },
   {
     "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7t1/visual.json",
-    "bytes": 2509
+    "bytes": 2491
   },
   {
     "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7t2/visual.json",
@@ -1833,7 +1833,7 @@
   },
   {
     "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7v1/visual.json",
-    "bytes": 19870
+    "bytes": 18802
   },
   {
     "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7v2/visual.json",
@@ -2165,7 +2165,7 @@
   },
   {
     "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/model.tmdl",
-    "bytes": 1154
+    "bytes": 1194
   },
   {
     "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/relationships.tmdl",
@@ -2198,6 +2198,10 @@
   {
     "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/CustomerExperience.tmdl",
     "bytes": 5715
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/DecisionMatrix.tmdl",
+    "bytes": 2017
   },
   {
     "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/DecisionRegister.tmdl",
@@ -2669,7 +2673,7 @@
   },
   {
     "path": "dist/assets/dashboard/page-7.png",
-    "bytes": 606105
+    "bytes": 605853
   },
   {
     "path": "dist/assets/dashboard-sprite.webp",
@@ -2677,7 +2681,7 @@
   },
   {
     "path": "dist/assets/final-market-dashboard.pdf",
-    "bytes": 1891870
+    "bytes": 1889197
   },
   {
     "path": "dist/assets/hero-bg.svg",
@@ -2901,7 +2905,7 @@
   },
   {
     "path": "release_manifest.json",
-    "bytes": 137256
+    "bytes": 137794
   },
   {
     "path": "reports/chart_registry.csv",
