@@ -889,3 +889,11 @@ code{font-family:Consolas,monospace;background:#eef3f8;padding:2px 4px;border-ra
     flex-direction:column;
   }
 }
+
+
+.build-stamp{
+  margin-top:6px;
+  color:#7a899b;
+  font-size:9px;
+  line-height:1.4;
+}
