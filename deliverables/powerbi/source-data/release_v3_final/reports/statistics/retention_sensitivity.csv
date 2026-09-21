@@ -1,0 +1,4 @@
+specification,eligible_n,retained_m3,retention_rate,ci_low,ci_high,notes
+all_eligible,281,127,0.45195729537366547,0.3948049690114559,0.5104054588813588,descriptive sensitivity; origin contrasts are associative
+major_origins_including_unknown,265,119,0.4490566037735849,0.39032293649056504,0.509246125072935,descriptive sensitivity; origin contrasts are associative
+major_actionable_excluding_unknown,205,88,0.4292682926829268,0.3634261954317612,0.497712487645057,descriptive sensitivity; origin contrasts are associative

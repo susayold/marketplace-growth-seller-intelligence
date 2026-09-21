@@ -1,0 +1,81 @@
+table CategoryTop5
+	lineageTag: c92f1df4-a347-5b51-80ab-7f4b33bdd798
+
+	measure 'Category GMV (R$M)' = SUM ( CategoryTop5[gmv_proxy] )
+		formatString: R$ #,0.00
+		lineageTag: 17a9c929-4c8b-5e19-a7da-8e9a6d23d1ad
+
+	column purchase_month
+		dataType: string
+		lineageTag: 13cc7228-8391-5fff-84d3-1b3516a3f825
+		summarizeBy: none
+		sourceColumn: purchase_month
+
+	column product_category_name_english
+		dataType: string
+		lineageTag: f13e6558-8884-5de2-a75c-aec78907b710
+		summarizeBy: none
+		sourceColumn: product_category_name_english
+
+	column CategoryLabel
+		dataType: string
+		lineageTag: f13e6558-8884-5de2-a75c-aec78907b711
+		summarizeBy: none
+		sourceColumn: CategoryLabel
+
+	column gmv_proxy
+		dataType: double
+		formatString: R$ #,0.00
+		lineageTag: 1e22b597-4cd4-5ac4-9a19-e0bb9a921389
+		summarizeBy: sum
+		sourceColumn: gmv_proxy
+
+	column orders
+		dataType: int64
+		formatString: #,0
+		lineageTag: b9559665-cdd0-51df-b327-156256eedadc
+		summarizeBy: sum
+		sourceColumn: orders
+
+	column active_sellers
+		dataType: int64
+		formatString: #,0
+		lineageTag: 59729904-56e7-5125-b870-16430f267700
+		summarizeBy: sum
+		sourceColumn: active_sellers
+
+	column avg_review_score
+		dataType: double
+		formatString: 0.0
+		lineageTag: 186068a2-afe4-585d-8516-b90091c3e553
+		summarizeBy: sum
+		sourceColumn: avg_review_score
+
+	column gmv_share_month
+		dataType: double
+		formatString: 0.0%
+		lineageTag: fe969f39-17bb-5f74-9c94-49d22ecc2961
+		summarizeBy: sum
+		sourceColumn: gmv_share_month
+
+	partition CategoryTop5 = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\mart_category_performance.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"purchase_month", type text}, {"product_category_name_english", type text}, {"gmv_proxy", type number}, {"orders", Int64.Type}, {"active_sellers", Int64.Type}, {"avg_review_score", type number}, {"gmv_share_month", type number}}, "en-US"),
+				    CSource = Csv.Document(File.Contents(DataRoot & "\\reports\\qa\\period_completeness.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    CPromoted = Table.PromoteHeaders(CSource, [PromoteAllScalars=true]),
+				    CTyped = Table.TransformColumnTypes(CPromoted, {{"month", type text}, {"is_executive_complete", type logical}}, "en-US"),
+				    Complete = Table.SelectRows(CTyped, each [is_executive_complete] = true),
+				    LatestMonth = List.Max(Complete[month]),
+				    Latest = Table.SelectRows(Typed, each [purchase_month] = LatestMonth),
+				    Sorted = Table.Sort(Latest, {{"gmv_proxy", Order.Descending}}),
+				    Top = Table.FirstN(Sorted, 5),
+				    AddLabel = Table.AddColumn(Top, "CategoryLabel", each if [product_category_name_english] = "health_beauty" then "Health & Beauty" else if [product_category_name_english] = "bed_bath_table" then "Bed Bath & Table" else if [product_category_name_english] = "sports_leisure" then "Sports & Leisure" else if [product_category_name_english] = "watches_gifts" then "Watches & Gifts" else if [product_category_name_english] = "computers_accessories" then "Computers & Accessories" else Text.Proper(Text.Replace([product_category_name_english], "_", " ")), type text)
+				in
+				    AddLabel
+
+	annotation PBI_ResultType = Table
+

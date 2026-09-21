@@ -18,9 +18,9 @@ Audit scope: every plan phase that can be completed before Power BI.
 | Reproducibility and QA | Makefile, CI workflow, six notebooks, controlled-fixture tests, pipeline log, release manifest, and rebuild_verification.json | Verified |
 | Remote-only artifact storage | raw archives and all data/chart/report artifacts in Drive; code and reviewable artifacts in GitHub | Verified |
 | Clean PostgreSQL rebuild | 10 raw tables, 1,559,693 rows loaded, 0 warnings/errors; PK, orphan, date, GMV and retention-origin checks recorded in reports/qa/rebuild_verification.json | Passed |
-| Power BI | PBIX, six pages and SQL-to-Power BI reconciliation | Deliberately deferred to final stage |
+| Power BI | Editable PBIP, seven pages, PDF and SQL-to-Power BI reconciliation | Verified; PASS |
 
-The PostgreSQL command is credential-driven through PGHOST, PGPORT, PGDATABASE, PGUSER and PGPASSWORD. No credential is stored in the repository. Power BI is the only plan area intentionally left for the final stage.
+The PostgreSQL command is credential-driven through PGHOST, PGPORT, PGDATABASE, PGUSER and PGPASSWORD. No credential is stored in the repository. The final Power BI release is checked separately in `deliverables/RELEASE_QA.md`.
 
 
 

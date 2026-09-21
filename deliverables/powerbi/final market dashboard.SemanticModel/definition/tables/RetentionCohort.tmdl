@@ -1,0 +1,41 @@
+table RetentionCohort
+	lineageTag: a46b919e-3c5c-4ca4-ac76-04678d81f581
+
+	column Cohort
+		dataType: string
+		lineageTag: a77414e4-47e4-49a0-ac4f-b9387421f91e
+		summarizeBy: none
+		sourceColumn: Cohort
+
+	column R0
+		dataType: double
+		formatString: 0%
+		lineageTag: f588dc9e-d760-4a97-9295-bb6fbefce641
+		summarizeBy: average
+		sourceColumn: R0
+
+	column R1
+		dataType: double
+		formatString: 0%
+		lineageTag: 68d5a42b-7006-48f8-9eb7-b5f75116c045
+		summarizeBy: average
+		sourceColumn: R1
+
+	column R2
+		dataType: double
+		formatString: 0%
+		lineageTag: 0f7d7738-52b4-4611-8800-86ca69af01cb
+		summarizeBy: average
+		sourceColumn: R2
+
+	column R3
+		dataType: double
+		formatString: 0%
+		lineageTag: 0f60d80d-400f-4633-83c5-6cd1bbd86cc4
+		summarizeBy: average
+		sourceColumn: R3
+
+	partition RetentionCohort = m
+		mode: import
+		source =
+				let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_retention_cohort.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Cohort", type text}, {"R0", type number}, {"R1", type number}, {"R2", type number}, {"R3", type number}}, "en-US") in Typed

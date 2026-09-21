@@ -1,0 +1,39 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBI_QueryOrder = ["Snapshot","Pillars","Monthly","Category","CategoryTop5","Geo","StateTop5","SellerLifetime","ConcentrationStats","Insights","Highlights","DimMonth","DimCategory","DimState","Lorenz","AcquisitionChannel","ActivationCohort","RetentionCohort","CommercialSegment","CustomerExperience","RootCauseRegister","DecisionRegister"]
+
+ref table Snapshot
+ref table Pillars
+ref table Monthly
+ref table Category
+ref table CategoryTop5
+ref table Geo
+ref table StateTop5
+ref table SellerLifetime
+ref table ConcentrationStats
+ref table Insights
+ref table Highlights
+ref table DimMonth
+ref table DimCategory
+ref table DimState
+ref table Lorenz
+ref table AcquisitionChannel
+ref table ActivationCohort
+ref table RetentionCohort
+ref table CommercialSegment
+ref table CustomerExperience
+ref table RootCauseRegister
+ref table DecisionRegister
+
+ref cultureInfo en-US
+

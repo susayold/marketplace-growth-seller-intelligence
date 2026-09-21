@@ -1,31 +1,39 @@
 [
   {
     "path": ".env.example",
-    "bytes": 123
-  },
-  {
-    "path": ".github/workflows/ci.yml",
-    "bytes": 342
+    "bytes": 131
   },
   {
     "path": ".gitignore",
-    "bytes": 143
+    "bytes": 276
+  },
+  {
+    "path": "LICENSE",
+    "bytes": 1081
+  },
+  {
+    "path": "Makefile",
+    "bytes": 462
+  },
+  {
+    "path": "README.md",
+    "bytes": 3239
+  },
+  {
+    "path": "release_manifest.json",
+    "bytes": 136205
+  },
+  {
+    "path": "requirements.txt",
+    "bytes": 102
+  },
+  {
+    "path": ".openai/hosting.json",
+    "bytes": 112
   },
   {
     "path": "assets/architecture.png",
     "bytes": 75988
-  },
-  {
-    "path": "assets/dashboard/executive_marketplace_health.png",
-    "bytes": 138275
-  },
-  {
-    "path": "assets/dashboard/retention_heatmap.png",
-    "bytes": 150058
-  },
-  {
-    "path": "assets/dashboard/seller_funnel.png",
-    "bytes": 50931
   },
   {
     "path": "assets/data_model.png",
@@ -37,7 +45,11 @@
   },
   {
     "path": "config/metric_thresholds.yaml",
-    "bytes": 147
+    "bytes": 152
+  },
+  {
+    "path": "config/qa_thresholds.yaml",
+    "bytes": 475
   },
   {
     "path": "config/settings.yaml",
@@ -48,8 +60,32 @@
     "bytes": 282
   },
   {
+    "path": "deliverables/final-market-dashboard.pdf",
+    "bytes": 1882910
+  },
+  {
+    "path": "deliverables/RELEASE_QA.md",
+    "bytes": 2669
+  },
+  {
+    "path": "dist/app.js",
+    "bytes": 50404
+  },
+  {
+    "path": "dist/favicon.svg",
+    "bytes": 301
+  },
+  {
+    "path": "dist/index.html",
+    "bytes": 16430
+  },
+  {
+    "path": "dist/styles.css",
+    "bytes": 38691
+  },
+  {
     "path": "docs/00_execution_status.md",
-    "bytes": 1773
+    "bytes": 1711
   },
   {
     "path": "docs/01_business_context.md",
@@ -69,23 +105,23 @@
   },
   {
     "path": "docs/05_metric_dictionary.md",
-    "bytes": 1087
+    "bytes": 2314
   },
   {
     "path": "docs/06_data_quality_report.md",
-    "bytes": 1320
+    "bytes": 2102
   },
   {
     "path": "docs/07_methodology.md",
-    "bytes": 753
+    "bytes": 1161
   },
   {
     "path": "docs/08_analysis_log.md",
-    "bytes": 2904
+    "bytes": 2917
   },
   {
     "path": "docs/09_root_cause_cases.md",
-    "bytes": 3866
+    "bytes": 3940
   },
   {
     "path": "docs/10_executive_decisions.md",
@@ -97,39 +133,63 @@
   },
   {
     "path": "docs/12_interview_guide.md",
-    "bytes": 2696
+    "bytes": 2759
   },
   {
     "path": "docs/13_cv_bullets.md",
-    "bytes": 804
+    "bytes": 790
   },
   {
     "path": "docs/14_plan_completion_matrix.md",
-    "bytes": 2110
+    "bytes": 2039
   },
   {
     "path": "docs/15_sql_powerbi_reconciliation_protocol.md",
-    "bytes": 763
+    "bytes": 839
   },
   {
     "path": "docs/16_release_notes.md",
-    "bytes": 1210
+    "bytes": 1355
   },
   {
     "path": "docs/17_non_powerbi_gate_audit.md",
-    "bytes": 2434
+    "bytes": 2439
   },
   {
     "path": "docs/18_plan_artifact_audit.md",
-    "bytes": 2182
+    "bytes": 2097
   },
   {
-    "path": "LICENSE",
-    "bytes": 1059
+    "path": "docs/18_statistical_rigor_upgrade.md",
+    "bytes": 3428
   },
   {
-    "path": "Makefile",
-    "bytes": 440
+    "path": "docs/19_root_cause_playbook.md",
+    "bytes": 2848
+  },
+  {
+    "path": "docs/20_business_decision_layer.md",
+    "bytes": 2121
+  },
+  {
+    "path": "docs/21_chart_catalog.md",
+    "bytes": 1492
+  },
+  {
+    "path": "docs/22_claims_and_evidence_register.md",
+    "bytes": 1721
+  },
+  {
+    "path": "docs/23_analysis_showcase_release.md",
+    "bytes": 1191
+  },
+  {
+    "path": "docs/23_analytical_release_freeze.md",
+    "bytes": 6382
+  },
+  {
+    "path": "docs/metric_changelog.md",
+    "bytes": 1200
   },
   {
     "path": "notebooks/01_data_profiling.ipynb",
@@ -156,8 +216,48 @@
     "bytes": 96783
   },
   {
+    "path": "notebooks/07_acquisition_quality.ipynb",
+    "bytes": 570
+  },
+  {
+    "path": "notebooks/07_acquisition_statistical_deep_dive.ipynb",
+    "bytes": 714
+  },
+  {
+    "path": "notebooks/08_activation_retention.ipynb",
+    "bytes": 671
+  },
+  {
+    "path": "notebooks/08_activation_retention_deep_dive.ipynb",
+    "bytes": 702
+  },
+  {
+    "path": "notebooks/09_concentration.ipynb",
+    "bytes": 551
+  },
+  {
+    "path": "notebooks/09_concentration_deep_dive.ipynb",
+    "bytes": 707
+  },
+  {
+    "path": "notebooks/10_customer_experience.ipynb",
+    "bytes": 567
+  },
+  {
+    "path": "notebooks/10_customer_experience_deep_dive.ipynb",
+    "bytes": 700
+  },
+  {
+    "path": "notebooks/11_decision_register.ipynb",
+    "bytes": 526
+  },
+  {
+    "path": "notebooks/11_root_cause_decision_review.ipynb",
+    "bytes": 699
+  },
+  {
     "path": "powerbi/implementation_pack.md",
-    "bytes": 7827
+    "bytes": 7625
   },
   {
     "path": "powerbi/measures.dax",
@@ -165,15 +265,483 @@
   },
   {
     "path": "powerbi/README.md",
-    "bytes": 1246
+    "bytes": 1440
   },
   {
-    "path": "README.md",
-    "bytes": 3698
+    "path": "reports/chart_registry.csv",
+    "bytes": 27403
   },
   {
-    "path": "release_manifest.json",
-    "bytes": 10583
+    "path": "reports/claims_and_evidence_register.csv",
+    "bytes": 1694
+  },
+  {
+    "path": "reports/decision_priority.csv",
+    "bytes": 1665
+  },
+  {
+    "path": "reports/decision_register.csv",
+    "bytes": 4178
+  },
+  {
+    "path": "reports/executive_summary.pdf",
+    "bytes": 355215
+  },
+  {
+    "path": "reports/headline_metrics.json",
+    "bytes": 1071
+  },
+  {
+    "path": "reports/root_cause_case_summary.csv",
+    "bytes": 1471
+  },
+  {
+    "path": "reports/root_cause_evidence.csv",
+    "bytes": 9445
+  },
+  {
+    "path": "reports/root_cause_hypothesis_matrix.csv",
+    "bytes": 4523
+  },
+  {
+    "path": "reports/root_cause_selection.json",
+    "bytes": 238
+  },
+  {
+    "path": "scripts/build-data.cjs",
+    "bytes": 6416
+  },
+  {
+    "path": "scripts/build-pdf-from-pbi-snapshots.py",
+    "bytes": 1327
+  },
+  {
+    "path": "scripts/build-powerbi-canonical-inputs.ps1",
+    "bytes": 12469
+  },
+  {
+    "path": "scripts/test-powerbi-source-contract.ps1",
+    "bytes": 3631
+  },
+  {
+    "path": "scripts/validate-final-release.py",
+    "bytes": 4117
+  },
+  {
+    "path": "src/additional_analysis.py",
+    "bytes": 11242
+  },
+  {
+    "path": "src/build_consistency_charts.py",
+    "bytes": 10044
+  },
+  {
+    "path": "src/build_consistency_repair.py",
+    "bytes": 49671
+  },
+  {
+    "path": "src/build_database.py",
+    "bytes": 5226
+  },
+  {
+    "path": "src/build_decision_register.py",
+    "bytes": 7548
+  },
+  {
+    "path": "src/build_deep_dive_charts.py",
+    "bytes": 70440
+  },
+  {
+    "path": "src/build_marts.py",
+    "bytes": 495
+  },
+  {
+    "path": "src/build_missing_marts.py",
+    "bytes": 5352
+  },
+  {
+    "path": "src/build_project.py",
+    "bytes": 43523
+  },
+  {
+    "path": "src/build_root_cause_evidence.py",
+    "bytes": 14216
+  },
+  {
+    "path": "src/build_showcase_qa.py",
+    "bytes": 4975
+  },
+  {
+    "path": "src/build_statistical_evidence.py",
+    "bytes": 45440
+  },
+  {
+    "path": "src/export_marts.py",
+    "bytes": 841
+  },
+  {
+    "path": "src/generate_assets.py",
+    "bytes": 2240
+  },
+  {
+    "path": "src/ingest.py",
+    "bytes": 1519
+  },
+  {
+    "path": "src/profile.py",
+    "bytes": 1370
+  },
+  {
+    "path": "src/reconcile.py",
+    "bytes": 1170
+  },
+  {
+    "path": "src/validate.py",
+    "bytes": 1057
+  },
+  {
+    "path": "src/__init__.py",
+    "bytes": 59
+  },
+  {
+    "path": "tests/test_business_rules.py",
+    "bytes": 1449
+  },
+  {
+    "path": "tests/test_consistency_repair.py",
+    "bytes": 3874
+  },
+  {
+    "path": "tests/test_dates.py",
+    "bytes": 661
+  },
+  {
+    "path": "tests/test_keys.py",
+    "bytes": 445
+  },
+  {
+    "path": "tests/test_metrics.py",
+    "bytes": 1113
+  },
+  {
+    "path": "tests/test_raw_schema.py",
+    "bytes": 522
+  },
+  {
+    "path": "tests/test_reconciliation.py",
+    "bytes": 354
+  },
+  {
+    "path": "website/app.js",
+    "bytes": 15011
+  },
+  {
+    "path": "website/index.html",
+    "bytes": 24706
+  },
+  {
+    "path": "website/README.md",
+    "bytes": 1378
+  },
+  {
+    "path": "website/styles.css",
+    "bytes": 23498
+  },
+  {
+    "path": "src/utils/dates.py",
+    "bytes": 346
+  },
+  {
+    "path": "src/utils/db.py",
+    "bytes": 2248
+  },
+  {
+    "path": "src/utils/io.py",
+    "bytes": 653
+  },
+  {
+    "path": "src/utils/logging.py",
+    "bytes": 600
+  },
+  {
+    "path": "src/utils/__init__.py",
+    "bytes": 38
+  },
+  {
+    "path": "sql/00_admin/00_schemas.sql",
+    "bytes": 258
+  },
+  {
+    "path": "sql/01_raw/raw_tables.sql",
+    "bytes": 2312
+  },
+  {
+    "path": "sql/01_raw/README.md",
+    "bytes": 177
+  },
+  {
+    "path": "sql/02_staging/README.md",
+    "bytes": 133
+  },
+  {
+    "path": "sql/02_staging/stg_core.sql",
+    "bytes": 744
+  },
+  {
+    "path": "sql/03_dimensions/dim_channel.sql",
+    "bytes": 136
+  },
+  {
+    "path": "sql/03_dimensions/dim_customer.sql",
+    "bytes": 162
+  },
+  {
+    "path": "sql/03_dimensions/dim_date.sql",
+    "bytes": 565
+  },
+  {
+    "path": "sql/03_dimensions/dim_product.sql",
+    "bytes": 205
+  },
+  {
+    "path": "sql/03_dimensions/dim_seller.sql",
+    "bytes": 132
+  },
+  {
+    "path": "sql/03_dimensions/README.md",
+    "bytes": 115
+  },
+  {
+    "path": "sql/04_facts/fct_order.sql",
+    "bytes": 425
+  },
+  {
+    "path": "sql/04_facts/fct_order_item.sql",
+    "bytes": 211
+  },
+  {
+    "path": "sql/04_facts/fct_payment.sql",
+    "bytes": 91
+  },
+  {
+    "path": "sql/04_facts/fct_seller_funnel.sql",
+    "bytes": 261
+  },
+  {
+    "path": "sql/04_facts/README.md",
+    "bytes": 169
+  },
+  {
+    "path": "sql/05_marts/mart_acquisition_channel.sql",
+    "bytes": 323
+  },
+  {
+    "path": "sql/05_marts/mart_marketplace_daily.sql",
+    "bytes": 2073
+  },
+  {
+    "path": "sql/05_marts/mart_marketplace_monthly.sql",
+    "bytes": 762
+  },
+  {
+    "path": "sql/05_marts/mart_order_experience.sql",
+    "bytes": 465
+  },
+  {
+    "path": "sql/05_marts/mart_seller_cohort.sql",
+    "bytes": 672
+  },
+  {
+    "path": "sql/05_marts/mart_seller_lifetime.sql",
+    "bytes": 576
+  },
+  {
+    "path": "sql/05_marts/mart_seller_monthly.sql",
+    "bytes": 1479
+  },
+  {
+    "path": "sql/05_marts/README.md",
+    "bytes": 591
+  },
+  {
+    "path": "sql/06_quality/q01_fanout_audit.sql",
+    "bytes": 308
+  },
+  {
+    "path": "sql/06_quality/q02_primary_key_audit.sql",
+    "bytes": 406
+  },
+  {
+    "path": "sql/06_quality/q03_foreign_key_audit.sql",
+    "bytes": 318
+  },
+  {
+    "path": "sql/06_quality/q04_date_sequence_audit.sql",
+    "bytes": 240
+  },
+  {
+    "path": "sql/06_quality/q07_gmv_reconciliation.sql",
+    "bytes": 552
+  },
+  {
+    "path": "sql/07_analysis/a01_monthly_marketplace_kpis.sql",
+    "bytes": 485
+  },
+  {
+    "path": "sql/07_analysis/a02_growth_decomposition.sql",
+    "bytes": 956
+  },
+  {
+    "path": "sql/07_analysis/a05_seller_concentration.sql",
+    "bytes": 1217
+  },
+  {
+    "path": "sql/07_analysis/b02_conversion_by_origin.sql",
+    "bytes": 299
+  },
+  {
+    "path": "sql/07_analysis/b06_activation.sql",
+    "bytes": 714
+  },
+  {
+    "path": "sql/07_analysis/b07_channel_downstream_value.sql",
+    "bytes": 297
+  },
+  {
+    "path": "sql/07_analysis/d02_monthly_retention.sql",
+    "bytes": 517
+  },
+  {
+    "path": "sql/07_analysis/d03_retention_by_origin.sql",
+    "bytes": 1697
+  },
+  {
+    "path": "sql/07_analysis/f05_review_vs_delay.sql",
+    "bytes": 145
+  },
+  {
+    "path": "sql/08_exports/README.md",
+    "bytes": 196
+  },
+  {
+    "path": "sql/08_root_cause/01_metric_tree.sql",
+    "bytes": 518
+  },
+  {
+    "path": "sql/08_root_cause/02_acquisition_quality_case.sql",
+    "bytes": 226
+  },
+  {
+    "path": "sql/08_root_cause/03_activation_bottleneck_case.sql",
+    "bytes": 198
+  },
+  {
+    "path": "sql/08_root_cause/04_concentration_risk_case.sql",
+    "bytes": 276
+  },
+  {
+    "path": "sql/08_root_cause/05_late_delivery_review_case.sql",
+    "bytes": 196
+  },
+  {
+    "path": "sql/08_root_cause/06_category_underperformance_case.sql",
+    "bytes": 271
+  },
+  {
+    "path": "sql/07_analysis/07_statistical_support/01_acquisition_conversion_global.sql",
+    "bytes": 387
+  },
+  {
+    "path": "sql/07_analysis/07_statistical_support/02_acquisition_conversion_by_origin.sql",
+    "bytes": 552
+  },
+  {
+    "path": "sql/07_analysis/07_statistical_support/03_acquisition_conversion_pairwise_fdr.sql",
+    "bytes": 755
+  },
+  {
+    "path": "sql/07_analysis/07_statistical_support/04_activation_time_to_event.sql",
+    "bytes": 498
+  },
+  {
+    "path": "sql/07_analysis/07_statistical_support/05_retention_m3_eligibility.sql",
+    "bytes": 767
+  },
+  {
+    "path": "sql/07_analysis/07_statistical_support/06_retention_glm.sql",
+    "bytes": 461
+  },
+  {
+    "path": "sql/07_analysis/07_statistical_support/07_concentration_bootstrap.sql",
+    "bytes": 317
+  },
+  {
+    "path": "sql/07_analysis/07_statistical_support/08_late_review_effect.sql",
+    "bytes": 442
+  },
+  {
+    "path": "sql/07_analysis/07_statistical_support/09_late_review_adjusted_model.sql",
+    "bytes": 553
+  },
+  {
+    "path": "sql/07_analysis/07_statistical_support/s01_conversion_pairwise_base.sql",
+    "bytes": 466
+  },
+  {
+    "path": "sql/07_analysis/07_statistical_support/s02_activation_survival_base.sql",
+    "bytes": 390
+  },
+  {
+    "path": "sql/07_analysis/07_statistical_support/s03_retention_model_base.sql",
+    "bytes": 295
+  },
+  {
+    "path": "sql/07_analysis/07_statistical_support/s04_concentration_monthly.sql",
+    "bytes": 178
+  },
+  {
+    "path": "sql/07_analysis/07_statistical_support/s05_category_concentration.sql",
+    "bytes": 197
+  },
+  {
+    "path": "sql/07_analysis/07_statistical_support/s06_delay_severity.sql",
+    "bytes": 480
+  },
+  {
+    "path": "sql/07_analysis/07_statistical_support/s07_review_penalty_category.sql",
+    "bytes": 250
+  },
+  {
+    "path": "sql/07_analysis/07_statistical_support/s08_review_penalty_state.sql",
+    "bytes": 262
+  },
+  {
+    "path": "sql/07_analysis/07_statistical_support/s09_partial_period_audit.sql",
+    "bytes": 402
+  },
+  {
+    "path": "sql/07_analysis/08_root_cause/rc01_period_completeness.sql",
+    "bytes": 175
+  },
+  {
+    "path": "sql/07_analysis/08_root_cause/rc02_acquisition_quality.sql",
+    "bytes": 164
+  },
+  {
+    "path": "sql/07_analysis/08_root_cause/rc03_activation_bottleneck.sql",
+    "bytes": 129
+  },
+  {
+    "path": "sql/07_analysis/08_root_cause/rc04_seller_concentration.sql",
+    "bytes": 170
+  },
+  {
+    "path": "sql/07_analysis/08_root_cause/rc05_delivery_reviews.sql",
+    "bytes": 100
+  },
+  {
+    "path": "sql/07_analysis/08_root_cause/rc06_category_underperformance.sql",
+    "bytes": 167
   },
   {
     "path": "reports/charts/01_marketplace_health.png",
@@ -196,16 +764,24 @@
     "bytes": 30551
   },
   {
-    "path": "reports/executive_summary.pdf",
-    "bytes": 355215
+    "path": "reports/qa/activation_definition_reconciliation.csv",
+    "bytes": 1232
   },
   {
     "path": "reports/qa/additional_analysis_manifest.json",
     "bytes": 144
   },
   {
+    "path": "reports/qa/analysis_showcase_verification.json",
+    "bytes": 982
+  },
+  {
     "path": "reports/qa/automated_test_report.json",
-    "bytes": 2182
+    "bytes": 2231
+  },
+  {
+    "path": "reports/qa/canonical_final_metrics.json",
+    "bytes": 1238
   },
   {
     "path": "reports/qa/data_profile_summary.csv",
@@ -216,16 +792,24 @@
     "bytes": 182
   },
   {
+    "path": "reports/qa/headline_claim_reconciliation.csv",
+    "bytes": 1026
+  },
+  {
     "path": "reports/qa/missing_marts_build.json",
     "bytes": 1178
   },
   {
+    "path": "reports/qa/period_completeness.csv",
+    "bytes": 2389
+  },
+  {
     "path": "reports/qa/pipeline_run.log",
-    "bytes": 759
+    "bytes": 768
   },
   {
     "path": "reports/qa/powerbi_reconciliation.csv",
-    "bytes": 491
+    "bytes": 834
   },
   {
     "path": "reports/qa/raw_inventory.csv",
@@ -244,16 +828,168 @@
     "bytes": 180
   },
   {
-    "path": "reports/qa/statistical_validation_detail.csv",
-    "bytes": 2953
+    "path": "reports/qa/reporting_boundary_register.csv",
+    "bytes": 2014
   },
   {
     "path": "reports/qa/statistical_validation.csv",
     "bytes": 2953
   },
   {
+    "path": "reports/qa/statistical_validation_detail.csv",
+    "bytes": 2953
+  },
+  {
+    "path": "reports/qa/website_metric_audit.csv",
+    "bytes": 810
+  },
+  {
+    "path": "reports/statistics/acquisition_conversion_by_origin.csv",
+    "bytes": 1239
+  },
+  {
+    "path": "reports/statistics/acquisition_conversion_global.csv",
+    "bytes": 266
+  },
+  {
+    "path": "reports/statistics/acquisition_conversion_pairwise.csv",
+    "bytes": 8909
+  },
+  {
+    "path": "reports/statistics/acquisition_conversion_sensitivity.csv",
+    "bytes": 385
+  },
+  {
+    "path": "reports/statistics/activation_by_origin_ci.csv",
+    "bytes": 3317
+  },
+  {
+    "path": "reports/statistics/activation_fixed_window.csv",
+    "bytes": 616
+  },
+  {
+    "path": "reports/statistics/activation_summary_extended.csv",
+    "bytes": 970
+  },
+  {
+    "path": "reports/statistics/activation_survival.csv",
+    "bytes": 49173
+  },
+  {
+    "path": "reports/statistics/activation_timing_detail.csv",
+    "bytes": 185836
+  },
+  {
+    "path": "reports/statistics/business_magnitude.csv",
+    "bytes": 709
+  },
+  {
+    "path": "reports/statistics/concentration_bootstrap.csv",
+    "bytes": 130
+  },
+  {
+    "path": "reports/statistics/concentration_category.csv",
+    "bytes": 4606
+  },
+  {
+    "path": "reports/statistics/concentration_geography.csv",
+    "bytes": 1667
+  },
+  {
+    "path": "reports/statistics/concentration_lorenz.csv",
+    "bytes": 260767
+  },
+  {
+    "path": "reports/statistics/concentration_monthly.csv",
+    "bytes": 2022
+  },
+  {
+    "path": "reports/statistics/concentration_statistics.csv",
+    "bytes": 393
+  },
+  {
+    "path": "reports/statistics/late_review_adjusted_model.csv",
+    "bytes": 21252
+  },
+  {
+    "path": "reports/statistics/late_review_by_category.csv",
+    "bytes": 7503
+  },
+  {
+    "path": "reports/statistics/late_review_by_severity.csv",
+    "bytes": 1302
+  },
+  {
+    "path": "reports/statistics/late_review_by_state.csv",
+    "bytes": 3282
+  },
+  {
+    "path": "reports/statistics/late_review_effect.csv",
+    "bytes": 609
+  },
+  {
+    "path": "reports/statistics/model_diagnostics.csv",
+    "bytes": 30474
+  },
+  {
+    "path": "reports/statistics/multiple_testing_register.csv",
+    "bytes": 4437
+  },
+  {
+    "path": "reports/statistics/retention_by_activation_speed.csv",
+    "bytes": 472
+  },
+  {
+    "path": "reports/statistics/retention_cohort_outcome_cells.csv",
+    "bytes": 5648
+  },
+  {
+    "path": "reports/statistics/retention_glm.csv",
+    "bytes": 935
+  },
+  {
+    "path": "reports/statistics/retention_m3_ci.csv",
+    "bytes": 777
+  },
+  {
+    "path": "reports/statistics/retention_model_comparison.csv",
+    "bytes": 4590
+  },
+  {
+    "path": "reports/statistics/retention_model_diagnostics.csv",
+    "bytes": 999
+  },
+  {
+    "path": "reports/statistics/retention_observability.csv",
+    "bytes": 602
+  },
+  {
+    "path": "reports/statistics/retention_r0_descriptive.csv",
+    "bytes": 1453
+  },
+  {
+    "path": "reports/statistics/retention_sensitivity.csv",
+    "bytes": 525
+  },
+  {
+    "path": "reports/statistics/robustness_register.csv",
+    "bytes": 1117
+  },
+  {
+    "path": "reports/statistics/seller_deciles.csv",
+    "bytes": 433
+  },
+  {
+    "path": "reports/statistics/statistical_build_manifest.json",
+    "bytes": 961
+  },
+  {
     "path": "reports/tables/activation_summary.csv",
-    "bytes": 311
+    "bytes": 970
+  },
+  {
+    "path": "reports/tables/category_analysis_extended.csv",
+    "bytes": 131896
   },
   {
     "path": "reports/tables/customer_repeat_summary.csv",
@@ -261,11 +997,23 @@
   },
   {
     "path": "reports/tables/delivery_performance.csv",
-    "bytes": 209
+    "bytes": 212
+  },
+  {
+    "path": "reports/tables/geography_analysis_extended.csv",
+    "bytes": 1758
   },
   {
     "path": "reports/tables/growth_decomposition.csv",
     "bytes": 3277
+  },
+  {
+    "path": "reports/tables/growth_decomposition_extended.csv",
+    "bytes": 2288
+  },
+  {
+    "path": "reports/tables/marketplace_health_extended.csv",
+    "bytes": 1865
   },
   {
     "path": "reports/tables/mart_acquisition_channel.csv",
@@ -301,11 +1049,11 @@
   },
   {
     "path": "reports/tables/mart_seller_monthly.csv",
-    "bytes": 480116
+    "bytes": 1334142
   },
   {
     "path": "reports/tables/pareto_seller_curve.csv",
-    "bytes": 298042
+    "bytes": 301138
   },
   {
     "path": "reports/tables/retention_by_origin.csv",
@@ -314,6 +1062,10 @@
   {
     "path": "reports/tables/seller_activation.csv",
     "bytes": 132958
+  },
+  {
+    "path": "reports/tables/seller_activation_timing.csv",
+    "bytes": 185836
   },
   {
     "path": "reports/tables/seller_concentration.csv",
@@ -325,258 +1077,2898 @@
   },
   {
     "path": "reports/tables/time_to_first_sale.csv",
-    "bytes": 289
+    "bytes": 296
   },
   {
-    "path": "requirements.txt",
-    "bytes": 102
+    "path": "reports/charts/00_measurement_trust/trust_01_raw_to_fact_reconciliation.png",
+    "bytes": 29080
   },
   {
-    "path": "sql/00_admin/00_schemas.sql",
-    "bytes": 250
+    "path": "reports/charts/00_measurement_trust/trust_02_grain_safe_vs_naive_gmv.png",
+    "bytes": 33885
   },
   {
-    "path": "sql/01_raw/raw_tables.sql",
-    "bytes": 2283
+    "path": "reports/charts/00_measurement_trust/trust_03_order_eligibility_funnel.png",
+    "bytes": 37922
   },
   {
-    "path": "sql/01_raw/README.md",
-    "bytes": 173
+    "path": "reports/charts/00_measurement_trust/trust_04_seller_linkage_funnel.png",
+    "bytes": 37517
   },
   {
-    "path": "sql/02_staging/README.md",
-    "bytes": 129
+    "path": "reports/charts/00_measurement_trust/trust_05_retention_observability.png",
+    "bytes": 73417
   },
   {
-    "path": "sql/02_staging/stg_core.sql",
-    "bytes": 739
+    "path": "reports/charts/01_marketplace_health/health_01_gmv_orders_active_sellers.png",
+    "bytes": 41218
   },
   {
-    "path": "sql/03_dimensions/dim_channel.sql",
-    "bytes": 134
+    "path": "reports/charts/01_marketplace_health/health_02_aov_trend.png",
+    "bytes": 63010
   },
   {
-    "path": "sql/03_dimensions/dim_customer.sql",
-    "bytes": 160
+    "path": "reports/charts/01_marketplace_health/health_03_seller_productivity_trend.png",
+    "bytes": 66824
   },
   {
-    "path": "sql/03_dimensions/dim_date.sql",
-    "bytes": 561
+    "path": "reports/charts/01_marketplace_health/health_04_growth_decomposition.png",
+    "bytes": 50181
   },
   {
-    "path": "sql/03_dimensions/dim_product.sql",
-    "bytes": 203
+    "path": "reports/charts/01_marketplace_health/health_05_orders_vs_aov_matrix.png",
+    "bytes": 41777
   },
   {
-    "path": "sql/03_dimensions/dim_seller.sql",
+    "path": "reports/charts/01_marketplace_health/health_06_active_sellers_vs_productivity_matrix.png",
+    "bytes": 45045
+  },
+  {
+    "path": "reports/charts/02_acquisition/acq_01_mql_volume_by_origin.png",
+    "bytes": 40467
+  },
+  {
+    "path": "reports/charts/02_acquisition/acq_02_conversion_rate_ci.png",
+    "bytes": 46258
+  },
+  {
+    "path": "reports/charts/02_acquisition/acq_03_volume_vs_conversion_bubble.png",
+    "bytes": 46052
+  },
+  {
+    "path": "reports/charts/02_acquisition/acq_04_conversion_vs_downstream_value.png",
+    "bytes": 48707
+  },
+  {
+    "path": "reports/charts/02_acquisition/acq_05_origin_scorecard_heatmap.png",
+    "bytes": 53145
+  },
+  {
+    "path": "reports/charts/02_acquisition/acq_06_pairwise_conversion_forest.png",
+    "bytes": 39784
+  },
+  {
+    "path": "reports/charts/03_activation/act_01_explicit_denominator_funnel.png",
+    "bytes": 39027
+  },
+  {
+    "path": "reports/charts/03_activation/act_02_time_to_first_sale_distribution.png",
+    "bytes": 42099
+  },
+  {
+    "path": "reports/charts/03_activation/act_03_cumulative_activation_curve.png",
+    "bytes": 40968
+  },
+  {
+    "path": "reports/charts/03_activation/act_04_activation_speed_by_origin.png",
+    "bytes": 46127
+  },
+  {
+    "path": "reports/charts/03_activation/act_05_30_60_90_activation_ci.png",
+    "bytes": 51574
+  },
+  {
+    "path": "reports/charts/03_activation/act_06_activation_time_vs_downstream_gmv.png",
+    "bytes": 57004
+  },
+  {
+    "path": "reports/charts/04_retention/ret_01_overall_cohort_heatmap.png",
+    "bytes": 150059
+  },
+  {
+    "path": "reports/charts/04_retention/ret_02_retention_curves_by_origin.png",
+    "bytes": 89895
+  },
+  {
+    "path": "reports/charts/04_retention/ret_03_m3_retention_forest.png",
+    "bytes": 34691
+  },
+  {
+    "path": "reports/charts/04_retention/ret_04_raw_vs_adjusted_or.png",
+    "bytes": 42287
+  },
+  {
+    "path": "reports/charts/04_retention/ret_05_retention_by_activation_speed.png",
+    "bytes": 33441
+  },
+  {
+    "path": "reports/charts/04_retention/ret_06_retention_by_early_value_tier.png",
+    "bytes": 31814
+  },
+  {
+    "path": "reports/charts/05_seller_value_concentration/con_01_lorenz_curve.png",
+    "bytes": 55311
+  },
+  {
+    "path": "reports/charts/05_seller_value_concentration/con_02_pareto_cumulative_curve.png",
+    "bytes": 48441
+  },
+  {
+    "path": "reports/charts/05_seller_value_concentration/con_03_gmv_by_seller_decile.png",
+    "bytes": 30412
+  },
+  {
+    "path": "reports/charts/05_seller_value_concentration/con_04_concentration_through_time.png",
+    "bytes": 78909
+  },
+  {
+    "path": "reports/charts/05_seller_value_concentration/con_05_active_sellers_vs_gmv.png",
+    "bytes": 50775
+  },
+  {
+    "path": "reports/charts/05_seller_value_concentration/con_06_category_concentration_matrix.png",
+    "bytes": 69103
+  },
+  {
+    "path": "reports/charts/06_category_geography/cat_01_category_gmv_contribution.png",
+    "bytes": 42748
+  },
+  {
+    "path": "reports/charts/06_category_geography/cat_02_category_growth_vs_contribution.png",
+    "bytes": 61896
+  },
+  {
+    "path": "reports/charts/06_category_geography/cat_03_category_seller_productivity.png",
+    "bytes": 46784
+  },
+  {
+    "path": "reports/charts/06_category_geography/cat_04_category_review_vs_gmv.png",
+    "bytes": 67187
+  },
+  {
+    "path": "reports/charts/06_category_geography/cat_05_category_review_vs_late_rate.png",
+    "bytes": 50381
+  },
+  {
+    "path": "reports/charts/06_category_geography/cat_06_category_concentration_risk.png",
+    "bytes": 70450
+  },
+  {
+    "path": "reports/charts/06_category_geography/cat_07_category_momentum_heatmap.png",
+    "bytes": 54549
+  },
+  {
+    "path": "reports/charts/06_category_geography/geo_01_seller_state_gmv_share.png",
+    "bytes": 31119
+  },
+  {
+    "path": "reports/charts/06_category_geography/geo_02_gmv_vs_seller_count_by_state.png",
+    "bytes": 36032
+  },
+  {
+    "path": "reports/charts/06_category_geography/geo_03_state_seller_productivity.png",
+    "bytes": 31943
+  },
+  {
+    "path": "reports/charts/06_category_geography/geo_04_state_concentration_pareto.png",
+    "bytes": 42967
+  },
+  {
+    "path": "reports/charts/06_category_geography/geo_05_state_operational_experience.png",
+    "bytes": 63710
+  },
+  {
+    "path": "reports/charts/07_customer_experience/cx_01_review_by_lateness.png",
+    "bytes": 36154
+  },
+  {
+    "path": "reports/charts/07_customer_experience/cx_02_review_score_composition.png",
+    "bytes": 29113
+  },
+  {
+    "path": "reports/charts/07_customer_experience/cx_03_low_review_rate_ci.png",
+    "bytes": 32655
+  },
+  {
+    "path": "reports/charts/07_customer_experience/cx_04_delay_severity_vs_review.png",
+    "bytes": 65288
+  },
+  {
+    "path": "reports/charts/07_customer_experience/cx_05_delay_days_vs_low_review_probability.png",
+    "bytes": 38427
+  },
+  {
+    "path": "reports/charts/07_customer_experience/cx_06_late_rate_by_category.png",
+    "bytes": 63131
+  },
+  {
+    "path": "reports/charts/07_customer_experience/cx_07_review_penalty_by_category.png",
+    "bytes": 72712
+  },
+  {
+    "path": "reports/charts/07_customer_experience/cx_08_late_rate_by_customer_state.png",
+    "bytes": 38977
+  },
+  {
+    "path": "reports/charts/07_customer_experience/cx_09_review_penalty_by_state.png",
+    "bytes": 45800
+  },
+  {
+    "path": "reports/charts/07_customer_experience/cx_10_adjusted_low_review_or.png",
+    "bytes": 35448
+  },
+  {
+    "path": "reports/charts/08_root_cause_cases/README.md",
+    "bytes": 294
+  },
+  {
+    "path": "reports/charts/09_statistical_evidence/README.md",
+    "bytes": 273
+  },
+  {
+    "path": "reports/charts/10_decision_layer/dec_01_evidence_vs_actionability.png",
+    "bytes": 26824
+  },
+  {
+    "path": "reports/charts/10_decision_layer/dec_02_scope_vs_confidence.png",
+    "bytes": 41809
+  },
+  {
+    "path": "reports/charts/10_decision_layer/dec_03_decision_kpi_tree.png",
+    "bytes": 67711
+  },
+  {
+    "path": "reports/charts/10_decision_layer/dec_04_risk_limitation_matrix.png",
+    "bytes": 41317
+  },
+  {
+    "path": "dist/assets/dashboard-sprite.webp",
+    "bytes": 15009
+  },
+  {
+    "path": "dist/assets/final-market-dashboard.pdf",
+    "bytes": 1882910
+  },
+  {
+    "path": "dist/assets/hero-bg.svg",
+    "bytes": 3017
+  },
+  {
+    "path": "dist/assets/hero-photo.webp",
+    "bytes": 15008
+  },
+  {
+    "path": "dist/assets/light-bg.svg",
+    "bytes": 1867
+  },
+  {
+    "path": "dist/assets/dashboard/page-1.png",
+    "bytes": 753901
+  },
+  {
+    "path": "dist/assets/dashboard/page-2.png",
+    "bytes": 598455
+  },
+  {
+    "path": "dist/assets/dashboard/page-3.png",
+    "bytes": 686086
+  },
+  {
+    "path": "dist/assets/dashboard/page-4.png",
+    "bytes": 598155
+  },
+  {
+    "path": "dist/assets/dashboard/page-5.png",
+    "bytes": 569691
+  },
+  {
+    "path": "dist/assets/dashboard/page-6.png",
+    "bytes": 609572
+  },
+  {
+    "path": "dist/assets/dashboard/page-7.png",
+    "bytes": 596824
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.pbip",
+    "bytes": 194
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/.platform",
+    "bytes": 316
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition.pbir",
+    "bytes": 136
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/.platform",
+    "bytes": 323
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition.pbism",
+    "bytes": 71
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/diagramLayout.json",
+    "bytes": 8250
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/claims_and_evidence_register.csv",
+    "bytes": 1694
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/decision_priority.csv",
+    "bytes": 1665
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/decision_register.csv",
+    "bytes": 4178
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/headline_metrics.json",
+    "bytes": 1071
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/root_cause_case_summary.csv",
+    "bytes": 1471
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/root_cause_hypothesis_matrix.csv",
+    "bytes": 4523
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/activation_definition_reconciliation.csv",
+    "bytes": 1232
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/additional_analysis_manifest.json",
+    "bytes": 144
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/analysis_showcase_verification.json",
+    "bytes": 982
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/automated_test_report.json",
+    "bytes": 2231
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/data_profile_summary.csv",
+    "bytes": 5365
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/fanout_audit.csv",
+    "bytes": 182
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/headline_claim_reconciliation.csv",
+    "bytes": 1026
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/missing_marts_build.json",
+    "bytes": 1178
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/period_completeness.csv",
+    "bytes": 2389
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/pipeline_run.log",
+    "bytes": 768
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/powerbi_reconciliation.csv",
+    "bytes": 834
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/raw_inventory.csv",
+    "bytes": 931
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/README.md",
+    "bytes": 154
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/rebuild_verification.json",
+    "bytes": 1330
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/reconciliation_result.json",
+    "bytes": 180
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/reporting_boundary_register.csv",
+    "bytes": 2014
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/statistical_validation.csv",
+    "bytes": 2953
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/statistical_validation_detail.csv",
+    "bytes": 2953
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/qa/website_metric_audit.csv",
+    "bytes": 810
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/acquisition_conversion_by_origin.csv",
+    "bytes": 1239
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/acquisition_conversion_global.csv",
+    "bytes": 266
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/acquisition_conversion_pairwise.csv",
+    "bytes": 8909
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/acquisition_conversion_sensitivity.csv",
+    "bytes": 385
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/activation_by_origin_ci.csv",
+    "bytes": 3317
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/activation_fixed_window.csv",
+    "bytes": 616
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/activation_summary_extended.csv",
+    "bytes": 970
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/activation_survival.csv",
+    "bytes": 49173
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/activation_timing_detail.csv",
+    "bytes": 185836
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/business_magnitude.csv",
+    "bytes": 709
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/concentration_bootstrap.csv",
     "bytes": 130
   },
   {
-    "path": "sql/03_dimensions/README.md",
-    "bytes": 111
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/concentration_category.csv",
+    "bytes": 4606
   },
   {
-    "path": "sql/04_facts/fct_order_item.sql",
-    "bytes": 209
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/concentration_geography.csv",
+    "bytes": 1667
   },
   {
-    "path": "sql/04_facts/fct_order.sql",
-    "bytes": 423
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/concentration_lorenz.csv",
+    "bytes": 260767
   },
   {
-    "path": "sql/04_facts/fct_payment.sql",
-    "bytes": 89
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/concentration_monthly.csv",
+    "bytes": 2022
   },
   {
-    "path": "sql/04_facts/fct_seller_funnel.sql",
-    "bytes": 259
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/concentration_statistics.csv",
+    "bytes": 393
   },
   {
-    "path": "sql/04_facts/README.md",
-    "bytes": 165
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/late_review_adjusted_model.csv",
+    "bytes": 21252
   },
   {
-    "path": "sql/05_marts/mart_acquisition_channel.sql",
-    "bytes": 321
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/late_review_by_category.csv",
+    "bytes": 7503
   },
   {
-    "path": "sql/05_marts/mart_marketplace_daily.sql",
-    "bytes": 2073
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/late_review_by_severity.csv",
+    "bytes": 1302
   },
   {
-    "path": "sql/05_marts/mart_marketplace_monthly.sql",
-    "bytes": 762
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/late_review_by_state.csv",
+    "bytes": 3282
   },
   {
-    "path": "sql/05_marts/mart_order_experience.sql",
-    "bytes": 463
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/late_review_effect.csv",
+    "bytes": 609
   },
   {
-    "path": "sql/05_marts/mart_seller_cohort.sql",
-    "bytes": 669
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/model_diagnostics.csv",
+    "bytes": 30474
   },
   {
-    "path": "sql/05_marts/mart_seller_lifetime.sql",
-    "bytes": 573
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/multiple_testing_register.csv",
+    "bytes": 4437
   },
   {
-    "path": "sql/05_marts/mart_seller_monthly.sql",
-    "bytes": 1479
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/retention_by_activation_speed.csv",
+    "bytes": 472
   },
   {
-    "path": "sql/05_marts/README.md",
-    "bytes": 591
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/retention_cohort_outcome_cells.csv",
+    "bytes": 5648
   },
   {
-    "path": "sql/06_quality/q01_fanout_audit.sql",
-    "bytes": 308
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/retention_glm.csv",
+    "bytes": 935
   },
   {
-    "path": "sql/06_quality/q02_primary_key_audit.sql",
-    "bytes": 403
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/retention_m3_ci.csv",
+    "bytes": 777
   },
   {
-    "path": "sql/06_quality/q03_foreign_key_audit.sql",
-    "bytes": 315
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/retention_model_comparison.csv",
+    "bytes": 4590
   },
   {
-    "path": "sql/06_quality/q04_date_sequence_audit.sql",
-    "bytes": 238
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/retention_model_diagnostics.csv",
+    "bytes": 999
   },
   {
-    "path": "sql/06_quality/q07_gmv_reconciliation.sql",
-    "bytes": 550
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/retention_observability.csv",
+    "bytes": 602
   },
   {
-    "path": "sql/07_analysis/a01_monthly_marketplace_kpis.sql",
-    "bytes": 485
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/retention_r0_descriptive.csv",
+    "bytes": 1453
   },
   {
-    "path": "sql/07_analysis/a02_growth_decomposition.sql",
-    "bytes": 927
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/retention_sensitivity.csv",
+    "bytes": 525
   },
   {
-    "path": "sql/07_analysis/a05_seller_concentration.sql",
-    "bytes": 1180
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/robustness_register.csv",
+    "bytes": 1117
   },
   {
-    "path": "sql/07_analysis/b02_conversion_by_origin.sql",
-    "bytes": 299
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/seller_deciles.csv",
+    "bytes": 433
   },
   {
-    "path": "sql/07_analysis/b06_activation.sql",
-    "bytes": 712
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/statistics/statistical_build_manifest.json",
+    "bytes": 961
   },
   {
-    "path": "sql/07_analysis/b07_channel_downstream_value.sql",
-    "bytes": 295
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/activation_summary.csv",
+    "bytes": 970
   },
   {
-    "path": "sql/07_analysis/d02_monthly_retention.sql",
-    "bytes": 517
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/category_analysis_extended.csv",
+    "bytes": 131896
   },
   {
-    "path": "sql/07_analysis/d03_retention_by_origin.sql",
-    "bytes": 1647
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/customer_repeat_summary.csv",
+    "bytes": 119
   },
   {
-    "path": "sql/07_analysis/f05_review_vs_delay.sql",
-    "bytes": 145
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/delivery_performance.csv",
+    "bytes": 212
   },
   {
-    "path": "sql/08_exports/README.md",
-    "bytes": 192
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/geography_analysis_extended.csv",
+    "bytes": 1758
   },
   {
-    "path": "src/__init__.py",
-    "bytes": 57
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/growth_decomposition.csv",
+    "bytes": 3277
   },
   {
-    "path": "src/additional_analysis.py",
-    "bytes": 11046
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/growth_decomposition_extended.csv",
+    "bytes": 2288
   },
   {
-    "path": "src/build_database.py",
-    "bytes": 5226
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/marketplace_health_extended.csv",
+    "bytes": 1865
   },
   {
-    "path": "src/build_marts.py",
-    "bytes": 478
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/mart_acquisition_channel.csv",
+    "bytes": 868
   },
   {
-    "path": "src/build_missing_marts.py",
-    "bytes": 5352
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/mart_category_performance.csv",
+    "bytes": 94098
   },
   {
-    "path": "src/build_project.py",
-    "bytes": 43101
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/mart_geography_performance.csv",
+    "bytes": 991
   },
   {
-    "path": "src/export_marts.py",
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/mart_marketplace_daily.csv",
+    "bytes": 56527
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/mart_marketplace_monthly.csv",
+    "bytes": 5468
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/mart_order_experience.csv",
+    "bytes": 197
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/mart_seller_cohort.csv",
+    "bytes": 5678
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/mart_seller_lifetime.csv",
+    "bytes": 476627
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/mart_seller_monthly.csv",
+    "bytes": 1334142
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/pareto_seller_curve.csv",
+    "bytes": 301138
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/powerbi_activation_cohort.csv",
+    "bytes": 2512
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/powerbi_commercial_segment.csv",
+    "bytes": 408
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/powerbi_customer_experience.csv",
+    "bytes": 436
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/powerbi_decision_register.csv",
+    "bytes": 1018
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/powerbi_highlights.csv",
+    "bytes": 290
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/powerbi_insights.csv",
+    "bytes": 454
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/powerbi_retention_cohort.csv",
+    "bytes": 1594
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/powerbi_root_cause_register.csv",
+    "bytes": 866
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/retention_by_origin.csv",
+    "bytes": 1920
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/seller_activation.csv",
+    "bytes": 132958
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/seller_activation_timing.csv",
+    "bytes": 185836
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/seller_concentration.csv",
+    "bytes": 168
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/seller_segmentation.csv",
+    "bytes": 341347
+  },
+  {
+    "path": "deliverables/powerbi/source-data/release_v3_final/reports/tables/time_to_first_sale.csv",
+    "bytes": 296
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/database.tmdl",
+    "bytes": 39
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/expressions.tmdl",
+    "bytes": 237
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/model.tmdl",
+    "bytes": 1154
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/relationships.tmdl",
+    "bytes": 544
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/cultures/en-US.tmdl",
+    "bytes": 21771
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/AcquisitionChannel.tmdl",
+    "bytes": 4967
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/ActivationCohort.tmdl",
+    "bytes": 8372
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/Category.tmdl",
+    "bytes": 2583
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/CategoryTop5.tmdl",
+    "bytes": 3479
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/CommercialSegment.tmdl",
+    "bytes": 3965
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/ConcentrationStats.tmdl",
+    "bytes": 1170
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/CustomerExperience.tmdl",
+    "bytes": 5715
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/DecisionRegister.tmdl",
+    "bytes": 3909
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/DimCategory.tmdl",
+    "bytes": 827
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/DimMonth.tmdl",
+    "bytes": 2021
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/DimState.tmdl",
+    "bytes": 670
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/Geo.tmdl",
+    "bytes": 1659
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/Highlights.tmdl",
+    "bytes": 952
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/Insights.tmdl",
+    "bytes": 925
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/Lorenz.tmdl",
+    "bytes": 3046
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/Monthly.tmdl",
+    "bytes": 5799
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/Pillars.tmdl",
+    "bytes": 908
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/RetentionCohort.tmdl",
+    "bytes": 1275
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/RootCauseRegister.tmdl",
+    "bytes": 3859
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/SellerLifetime.tmdl",
+    "bytes": 3271
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/Snapshot.tmdl",
+    "bytes": 12591
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/StateTop5.tmdl",
+    "bytes": 1699
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/report.json",
+    "bytes": 8700
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/version.json",
+    "bytes": 152
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/insight_concentration_2026091417.png",
+    "bytes": 8028
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/insight_momentum_2026091416.png",
+    "bytes": 8579
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/insight_risk_2026091418.png",
+    "bytes": 8429
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/insight_seller_base_2026091419.png",
+    "bytes": 9168
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_acquisition_closed_sellers_20260916.png",
+    "bytes": 4668
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_acquisition_conversion_20260916.png",
+    "bytes": 3905
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_acquisition_leads_20260916.png",
+    "bytes": 4415
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_acquisition_median_days_20260916.png",
+    "bytes": 3981
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_acquisition_qualified_leads_20260916.png",
+    "bytes": 3582
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_activation_30d_20260916.png",
+    "bytes": 3728
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_activation_60d_20260916.png",
+    "bytes": 4113
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_activation_90d_20260916.png",
+    "bytes": 3891
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_activation_closed_sellers_20260916.png",
+    "bytes": 4215
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_activation_median_days_20260916.png",
+    "bytes": 3868
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_aov_2026091413.png",
+    "bytes": 12293
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_commercial_aov_20260916.png",
+    "bytes": 3967
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_commercial_concentration_20260916.png",
+    "bytes": 3819
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_commercial_gmv_20260916.png",
+    "bytes": 3856
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_commercial_orders_20260916.png",
+    "bytes": 3674
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_commercial_top_segment_share_20260916.png",
+    "bytes": 4217
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_customer_avg_review_20260916.png",
+    "bytes": 3685
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_customer_cancel_rate_20260916.png",
+    "bytes": 4124
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_customer_delivery_days_20260916.png",
+    "bytes": 3785
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_customer_late_rate_20260916.png",
+    "bytes": 3856
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_customer_low_review_rate_20260916.png",
+    "bytes": 3609
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_decision_30_60d_actions_20260916.png",
+    "bytes": 4054
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_decision_action_backlog_20260916.png",
+    "bytes": 4064
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_decision_high_impact_20260916.png",
+    "bytes": 4041
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_decision_p1_actions_20260916.png",
+    "bytes": 4129
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_decision_ready_actions_20260916.png",
+    "bytes": 4408
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_gmv_2026091410.png",
+    "bytes": 8005
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_late_delivery_2026091414.png",
+    "bytes": 8670
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_orders_2026091411.png",
+    "bytes": 8378
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_rootcause_commercial_risk_20260916.png",
+    "bytes": 3610
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_rootcause_highest_score_20260916.png",
+    "bytes": 3681
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_rootcause_high_severity_20260916.png",
+    "bytes": 3889
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_rootcause_operational_risk_20260916.png",
+    "bytes": 3820
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_rootcause_p1_drivers_20260916.png",
+    "bytes": 3693
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/kpi_sellers_2026091412.png",
+    "bytes": 11443
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/reference_sidebar_acquisition_20260914.png",
+    "bytes": 284931
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/reference_sidebar_acquisition_20260914_fit_20260916.png",
+    "bytes": 284931
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/reference_sidebar_activation_20260914.png",
+    "bytes": 331569
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/reference_sidebar_activation_20260914_fit_20260916.png",
+    "bytes": 331569
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/reference_sidebar_commercial_20260914.png",
+    "bytes": 322343
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/reference_sidebar_commercial_20260914_fit_20260916.png",
+    "bytes": 322343
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/reference_sidebar_customer_20260914.png",
+    "bytes": 318592
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/reference_sidebar_customer_20260914_fit_20260916.png",
+    "bytes": 318592
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/reference_sidebar_decision_20260914.png",
+    "bytes": 330582
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/reference_sidebar_decision_20260914_fit_20260916.png",
+    "bytes": 330582
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/reference_sidebar_overview_20260914.png",
+    "bytes": 343067
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/reference_sidebar_overview_20260914_fit_20260916.png",
+    "bytes": 343067
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/reference_sidebar_rootcause_20260914.png",
+    "bytes": 336951
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/reference_sidebar_rootcause_20260914_fit_20260916.png",
+    "bytes": 336951
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/seller_distribution_offline_map-20260914.png",
+    "bytes": 102884
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/seller_distribution_offline_map-20260914.svg",
+    "bytes": 1282297
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/RegisteredResources/seller_distribution_offline_map-tight-20260914.svg",
+    "bytes": 1282356
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/SharedResources/Shapemaps/brazil.states.geo.json",
+    "bytes": 7831065
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/SharedResources/Shapemaps/brazil.states.geo.source.txt",
+    "bytes": 399
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/StaticResources/SharedResources/Shapemaps/brazil.states.topo.json",
+    "bytes": 2628598
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/pages.json",
+    "bytes": 398
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/page.json",
+    "bytes": 263
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/page.json",
+    "bytes": 274
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/page.json",
+    "bytes": 267
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/page.json",
+    "bytes": 277
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/page.json",
+    "bytes": 263
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/page.json",
+    "bytes": 268
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/page.json",
+    "bytes": 260
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/6f708192a3b4c5d6e7f8bg/visual.json",
+    "bytes": 4168
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/6f708192a3b4c5d6e7f8footerC/visual.json",
+    "bytes": 2541
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/6f708192a3b4c5d6e7f8footerL/visual.json",
+    "bytes": 2532
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/6f708192a3b4c5d6e7f8footerR/visual.json",
+    "bytes": 2504
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/6f708192a3b4c5d6e7f8panel1020290/visual.json",
+    "bytes": 4188
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/6f708192a3b4c5d6e7f8panel1530714/visual.json",
+    "bytes": 4188
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/6f708192a3b4c5d6e7f8panel1585290/visual.json",
+    "bytes": 4188
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/6f708192a3b4c5d6e7f8panel245290/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/6f708192a3b4c5d6e7f8panel245714/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/6f708192a3b4c5d6e7f8panel605714/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/6f708192a3b4c5d6e7f8panel965714/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/6f708192a3b4c5d6e7f8subtitle/visual.json",
+    "bytes": 2571
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/6f708192a3b4c5d6e7f8title/visual.json",
+    "bytes": 2503
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7b1/visual.json",
+    "bytes": 2483
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7b2/visual.json",
+    "bytes": 2488
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7b3/visual.json",
+    "bytes": 2478
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7b4/visual.json",
+    "bytes": 2494
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7delta1/visual.json",
+    "bytes": 4691
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7delta2/visual.json",
+    "bytes": 4700
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7delta3/visual.json",
+    "bytes": 4706
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7delta4/visual.json",
+    "bytes": 4719
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7delta5/visual.json",
+    "bytes": 4704
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7i1/visual.json",
+    "bytes": 2939
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7i1s/visual.json",
+    "bytes": 4162
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7i2/visual.json",
+    "bytes": 2935
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7i2s/visual.json",
+    "bytes": 4162
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7i3/visual.json",
+    "bytes": 2934
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7i3s/visual.json",
+    "bytes": 4162
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7i4/visual.json",
+    "bytes": 2966
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7i4s/visual.json",
+    "bytes": 4175
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7k1/visual.json",
+    "bytes": 8805
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7k2/visual.json",
+    "bytes": 8817
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7k3/visual.json",
+    "bytes": 8800
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7k4/visual.json",
+    "bytes": 8810
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7k5/visual.json",
+    "bytes": 8800
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7s1/visual.json",
+    "bytes": 6323
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7s2/visual.json",
+    "bytes": 6365
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7s3/visual.json",
+    "bytes": 6364
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7s4/visual.json",
+    "bytes": 6364
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7spark1/visual.json",
+    "bytes": 8228
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7spark2/visual.json",
+    "bytes": 8228
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7spark3/visual.json",
+    "bytes": 8229
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7spark4/visual.json",
+    "bytes": 8229
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7spark5/visual.json",
+    "bytes": 8229
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7t1/visual.json",
+    "bytes": 2491
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7t2/visual.json",
+    "bytes": 2493
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7t3/visual.json",
+    "bytes": 2486
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7v1/visual.json",
+    "bytes": 19600
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7v2/visual.json",
+    "bytes": 12579
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7v3/visual.json",
+    "bytes": 17883
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7v4/visual.json",
+    "bytes": 10824
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7v5/visual.json",
+    "bytes": 10809
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7v6/visual.json",
+    "bytes": 16439
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/referenceSidebar_decision/visual.json",
+    "bytes": 814
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/refInsight1_decision/visual.json",
+    "bytes": 808
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/refInsight2_decision/visual.json",
+    "bytes": 809
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/refInsight3_decision/visual.json",
+    "bytes": 811
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/refInsight4_decision/visual.json",
+    "bytes": 826
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/refKpi1_decision/visual.json",
+    "bytes": 803
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/refKpi2_decision/visual.json",
+    "bytes": 806
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/refKpi3_decision/visual.json",
+    "bytes": 808
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/refKpi4_decision/visual.json",
+    "bytes": 805
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/refKpi5_decision/visual.json",
+    "bytes": 808
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/5e6f708192a3b4c5d6e7bg/visual.json",
+    "bytes": 4168
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/5e6f708192a3b4c5d6e7footerC/visual.json",
+    "bytes": 2541
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/5e6f708192a3b4c5d6e7footerL/visual.json",
+    "bytes": 2532
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/5e6f708192a3b4c5d6e7footerR/visual.json",
+    "bytes": 2504
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/5e6f708192a3b4c5d6e7panel1020290/visual.json",
+    "bytes": 4188
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/5e6f708192a3b4c5d6e7panel1530714/visual.json",
+    "bytes": 4188
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/5e6f708192a3b4c5d6e7panel1585290/visual.json",
+    "bytes": 4188
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/5e6f708192a3b4c5d6e7panel245290/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/5e6f708192a3b4c5d6e7panel245714/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/5e6f708192a3b4c5d6e7panel605714/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/5e6f708192a3b4c5d6e7panel965714/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/5e6f708192a3b4c5d6e7subtitle/visual.json",
+    "bytes": 2563
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/5e6f708192a3b4c5d6e7title/visual.json",
+    "bytes": 2509
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6b1/visual.json",
+    "bytes": 2482
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6b2/visual.json",
+    "bytes": 2489
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6b3/visual.json",
+    "bytes": 2485
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6b4/visual.json",
+    "bytes": 2488
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6delta1/visual.json",
+    "bytes": 4705
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6delta2/visual.json",
+    "bytes": 4711
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6delta3/visual.json",
+    "bytes": 4705
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6delta4/visual.json",
+    "bytes": 4715
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6delta5/visual.json",
+    "bytes": 4715
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6i1/visual.json",
+    "bytes": 2925
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6i1s/visual.json",
+    "bytes": 4162
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6i2/visual.json",
+    "bytes": 2917
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6i2s/visual.json",
+    "bytes": 4162
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6i3/visual.json",
+    "bytes": 2935
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6i3s/visual.json",
+    "bytes": 4162
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6i4/visual.json",
+    "bytes": 2986
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6i4s/visual.json",
+    "bytes": 4175
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6k1/visual.json",
+    "bytes": 8793
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6k2/visual.json",
+    "bytes": 8816
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6k3/visual.json",
+    "bytes": 8807
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6k4/visual.json",
+    "bytes": 8816
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6k5/visual.json",
+    "bytes": 8820
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6spark1/visual.json",
+    "bytes": 8186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6spark2/visual.json",
+    "bytes": 8211
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6spark3/visual.json",
+    "bytes": 8181
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6spark4/visual.json",
+    "bytes": 8169
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6spark5/visual.json",
+    "bytes": 8212
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6t1/visual.json",
+    "bytes": 2483
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6t2/visual.json",
+    "bytes": 2490
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6t3/visual.json",
+    "bytes": 2488
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6v1/visual.json",
+    "bytes": 20444
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6v2/visual.json",
+    "bytes": 19324
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6v3/visual.json",
+    "bytes": 18634
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6v4/visual.json",
+    "bytes": 10809
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6v5/visual.json",
+    "bytes": 10788
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/p6v6/visual.json",
+    "bytes": 23354
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/referenceSidebar_rootcause/visual.json",
+    "bytes": 816
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/refInsight1_rootcause/visual.json",
+    "bytes": 810
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/refInsight2_rootcause/visual.json",
     "bytes": 815
   },
   {
-    "path": "src/generate_assets.py",
-    "bytes": 2199
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/refInsight3_rootcause/visual.json",
+    "bytes": 816
   },
   {
-    "path": "src/ingest.py",
-    "bytes": 1478
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/refInsight4_rootcause/visual.json",
+    "bytes": 814
   },
   {
-    "path": "src/profile.py",
-    "bytes": 1337
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/refKpi1_rootcause/visual.json",
+    "bytes": 805
   },
   {
-    "path": "src/reconcile.py",
-    "bytes": 1144
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/refKpi2_rootcause/visual.json",
+    "bytes": 808
   },
   {
-    "path": "src/utils/__init__.py",
-    "bytes": 36
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/refKpi3_rootcause/visual.json",
+    "bytes": 809
   },
   {
-    "path": "src/utils/dates.py",
-    "bytes": 334
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/refKpi4_rootcause/visual.json",
+    "bytes": 811
   },
   {
-    "path": "src/utils/db.py",
-    "bytes": 2248
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/5e6f708192a3b4c5d6e7/visuals/refKpi5_rootcause/visual.json",
+    "bytes": 812
   },
   {
-    "path": "src/utils/io.py",
-    "bytes": 632
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000001/visual.json",
+    "bytes": 4166
   },
   {
-    "path": "src/utils/logging.py",
-    "bytes": 583
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000000e/visual.json",
+    "bytes": 2523
   },
   {
-    "path": "src/validate.py",
-    "bytes": 1025
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000000f/visual.json",
+    "bytes": 2564
   },
   {
-    "path": "tests/test_business_rules.py",
-    "bytes": 1262
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000012/visual.json",
+    "bytes": 6311
   },
   {
-    "path": "tests/test_dates.py",
-    "bytes": 643
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000013/visual.json",
+    "bytes": 6338
   },
   {
-    "path": "tests/test_keys.py",
-    "bytes": 435
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000014/visual.json",
+    "bytes": 6341
   },
   {
-    "path": "tests/test_metrics.py",
-    "bytes": 1019
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000017/visual.json",
+    "bytes": 8798
   },
   {
-    "path": "tests/test_raw_schema.py",
-    "bytes": 510
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000018/visual.json",
+    "bytes": 8790
   },
   {
-    "path": "tests/test_reconciliation.py",
-    "bytes": 344
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000019/visual.json",
+    "bytes": 8818
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000001a/visual.json",
+    "bytes": 8840
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000001b/visual.json",
+    "bytes": 8835
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000001c/visual.json",
+    "bytes": 4177
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000001d/visual.json",
+    "bytes": 4178
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000001e/visual.json",
+    "bytes": 4178
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000001f/visual.json",
+    "bytes": 4177
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000020/visual.json",
+    "bytes": 4177
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000021/visual.json",
+    "bytes": 4177
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000022/visual.json",
+    "bytes": 4178
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000023/visual.json",
+    "bytes": 2508
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000024/visual.json",
+    "bytes": 2520
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000025/visual.json",
+    "bytes": 2497
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000026/visual.json",
+    "bytes": 2507
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000027/visual.json",
+    "bytes": 2503
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000028/visual.json",
+    "bytes": 2509
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000029/visual.json",
+    "bytes": 2502
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000002a/visual.json",
+    "bytes": 16652
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000002b/visual.json",
+    "bytes": 15781
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000002c/visual.json",
+    "bytes": 20380
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000002d/visual.json",
+    "bytes": 20269
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000002e/visual.json",
+    "bytes": 2526
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000002f/visual.json",
+    "bytes": 8788
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000030/visual.json",
+    "bytes": 4179
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000031/visual.json",
+    "bytes": 6002
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000032/visual.json",
+    "bytes": 4179
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000033/visual.json",
+    "bytes": 5982
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000034/visual.json",
+    "bytes": 4179
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000035/visual.json",
+    "bytes": 5982
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000036/visual.json",
+    "bytes": 4191
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000037/visual.json",
+    "bytes": 5994
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000038/visual.json",
+    "bytes": 4177
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000039/visual.json",
+    "bytes": 19508
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000003a/visual.json",
+    "bytes": 2509
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000003b/visual.json",
+    "bytes": 8778
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000003c/visual.json",
+    "bytes": 8787
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000003d/visual.json",
+    "bytes": 8820
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000003e/visual.json",
+    "bytes": 8820
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/0000000000000000003f/visual.json",
+    "bytes": 8804
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000040/visual.json",
+    "bytes": 8788
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000041/visual.json",
+    "bytes": 4176
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000042/visual.json",
+    "bytes": 4176
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000043/visual.json",
+    "bytes": 4176
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000044/visual.json",
+    "bytes": 4176
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000045/visual.json",
+    "bytes": 4176
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000046/visual.json",
+    "bytes": 2516
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000047/visual.json",
+    "bytes": 2525
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/00000000000000000048/visual.json",
+    "bytes": 2488
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p131/visual.json",
+    "bytes": 2921
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p133/visual.json",
+    "bytes": 2936
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p135/visual.json",
+    "bytes": 2913
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p137/visual.json",
+    "bytes": 2939
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1deltaAOV/visual.json",
+    "bytes": 4654
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1deltaGMV/visual.json",
+    "bytes": 4653
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1deltaLate/visual.json",
+    "bytes": 4685
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1deltaOrders/visual.json",
+    "bytes": 4665
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1deltaSellers/visual.json",
+    "bytes": 4690
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1insightIcon1/visual.json",
+    "bytes": 797
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1insightIcon2/visual.json",
+    "bytes": 802
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1insightIcon3/visual.json",
+    "bytes": 793
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1insightIcon4/visual.json",
+    "bytes": 814
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1kpi1/visual.json",
+    "bytes": 779
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1kpi2/visual.json",
+    "bytes": 782
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1kpi3/visual.json",
+    "bytes": 784
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1kpi4/visual.json",
+    "bytes": 780
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1kpi5/visual.json",
+    "bytes": 790
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1sparkAOV/visual.json",
+    "bytes": 8412
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1sparkGMV/visual.json",
+    "bytes": 8391
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1sparkLate/visual.json",
+    "bytes": 8408
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1sparkOrders/visual.json",
+    "bytes": 8413
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1sparkSellers/visual.json",
+    "bytes": 8439
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/p1trendSubtitle/visual.json",
+    "bytes": 2501
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/referenceSidebar_overview/visual.json",
+    "bytes": 814
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/refKpi1_overview/visual.json",
+    "bytes": 781
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/refKpi2_overview/visual.json",
+    "bytes": 784
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/refKpi3_overview/visual.json",
+    "bytes": 785
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/refKpi4_overview/visual.json",
+    "bytes": 781
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4e3f6c7a9b2d1e8f0a6c/visuals/refKpi5_overview/visual.json",
+    "bytes": 791
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/4d5e6f708192a3b4c5d6bg/visual.json",
+    "bytes": 4168
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/4d5e6f708192a3b4c5d6footerC/visual.json",
+    "bytes": 2541
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/4d5e6f708192a3b4c5d6footerL/visual.json",
+    "bytes": 2532
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/4d5e6f708192a3b4c5d6footerR/visual.json",
+    "bytes": 2504
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/4d5e6f708192a3b4c5d6panel1020290/visual.json",
+    "bytes": 4188
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/4d5e6f708192a3b4c5d6panel1530714/visual.json",
+    "bytes": 4188
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/4d5e6f708192a3b4c5d6panel1585290/visual.json",
+    "bytes": 4188
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/4d5e6f708192a3b4c5d6panel245290/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/4d5e6f708192a3b4c5d6panel245714/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/4d5e6f708192a3b4c5d6panel605714/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/4d5e6f708192a3b4c5d6panel965714/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/4d5e6f708192a3b4c5d6subtitle/visual.json",
+    "bytes": 2555
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/4d5e6f708192a3b4c5d6title/visual.json",
+    "bytes": 2518
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5b1/visual.json",
+    "bytes": 2491
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5b2/visual.json",
+    "bytes": 2483
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5b3/visual.json",
+    "bytes": 2486
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5b4/visual.json",
+    "bytes": 2488
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5delta1/visual.json",
+    "bytes": 4698
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5delta2/visual.json",
+    "bytes": 4689
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5delta3/visual.json",
+    "bytes": 4701
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5delta4/visual.json",
+    "bytes": 4702
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5delta5/visual.json",
+    "bytes": 4702
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5i1/visual.json",
+    "bytes": 2932
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5i1s/visual.json",
+    "bytes": 4162
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5i2/visual.json",
+    "bytes": 2929
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5i2s/visual.json",
+    "bytes": 4162
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5i3/visual.json",
+    "bytes": 2932
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5i3s/visual.json",
+    "bytes": 4162
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5i4/visual.json",
+    "bytes": 2971
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5i4s/visual.json",
+    "bytes": 4175
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5k1/visual.json",
+    "bytes": 8812
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5k2/visual.json",
+    "bytes": 8803
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5k3/visual.json",
+    "bytes": 8811
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5k4/visual.json",
+    "bytes": 8792
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5k5/visual.json",
+    "bytes": 8843
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5spark1/visual.json",
+    "bytes": 8201
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5spark2/visual.json",
+    "bytes": 8208
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5spark3/visual.json",
+    "bytes": 8224
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5spark4/visual.json",
+    "bytes": 8224
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5spark5/visual.json",
+    "bytes": 8279
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5t1/visual.json",
+    "bytes": 2494
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5t2/visual.json",
+    "bytes": 2496
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5t3/visual.json",
+    "bytes": 2491
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5v1/visual.json",
+    "bytes": 15049
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5v2/visual.json",
+    "bytes": 12344
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5v3/visual.json",
+    "bytes": 16361
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5v4/visual.json",
+    "bytes": 15026
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5v5/visual.json",
+    "bytes": 10817
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/p5v6/visual.json",
+    "bytes": 25756
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/referenceSidebar_customer/visual.json",
+    "bytes": 814
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/refInsight1_customer/visual.json",
+    "bytes": 807
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/refInsight2_customer/visual.json",
+    "bytes": 811
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/refInsight3_customer/visual.json",
+    "bytes": 809
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/refInsight4_customer/visual.json",
+    "bytes": 813
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/refKpi1_customer/visual.json",
+    "bytes": 802
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/refKpi2_customer/visual.json",
+    "bytes": 803
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/refKpi3_customer/visual.json",
+    "bytes": 809
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/refKpi4_customer/visual.json",
+    "bytes": 805
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/4d5e6f708192a3b4c5d6/visuals/refKpi5_customer/visual.json",
+    "bytes": 807
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/3c4d5e6f708192a3b4c5bg/visual.json",
+    "bytes": 4168
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/3c4d5e6f708192a3b4c5footerC/visual.json",
+    "bytes": 2541
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/3c4d5e6f708192a3b4c5footerL/visual.json",
+    "bytes": 2532
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/3c4d5e6f708192a3b4c5footerR/visual.json",
+    "bytes": 2504
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/3c4d5e6f708192a3b4c5noteShape/visual.json",
+    "bytes": 4185
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/3c4d5e6f708192a3b4c5panel1020290/visual.json",
+    "bytes": 4188
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/3c4d5e6f708192a3b4c5panel1530714/visual.json",
+    "bytes": 4188
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/3c4d5e6f708192a3b4c5panel1585290/visual.json",
+    "bytes": 4188
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/3c4d5e6f708192a3b4c5panel245290/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/3c4d5e6f708192a3b4c5panel245714/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/3c4d5e6f708192a3b4c5panel605714/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/3c4d5e6f708192a3b4c5panel965714/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/3c4d5e6f708192a3b4c5subtitle/visual.json",
+    "bytes": 2556
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/3c4d5e6f708192a3b4c5title/visual.json",
+    "bytes": 2508
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4b1/visual.json",
+    "bytes": 2482
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4b2/visual.json",
+    "bytes": 2482
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4b3/visual.json",
+    "bytes": 2489
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4b4/visual.json",
+    "bytes": 2488
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4delta1/visual.json",
+    "bytes": 4702
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4delta2/visual.json",
+    "bytes": 4711
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4delta3/visual.json",
+    "bytes": 4702
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4delta4/visual.json",
+    "bytes": 4721
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4delta5/visual.json",
+    "bytes": 4733
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4i1/visual.json",
+    "bytes": 2916
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4i1s/visual.json",
+    "bytes": 4162
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4i2/visual.json",
+    "bytes": 2927
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4i2s/visual.json",
+    "bytes": 4162
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4i3/visual.json",
+    "bytes": 2927
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4i3s/visual.json",
+    "bytes": 4162
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4i4/visual.json",
+    "bytes": 2975
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4i4s/visual.json",
+    "bytes": 4175
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4k1/visual.json",
+    "bytes": 8789
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4k2/visual.json",
+    "bytes": 8801
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4k3/visual.json",
+    "bytes": 8790
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4k4/visual.json",
+    "bytes": 8842
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4k5/visual.json",
+    "bytes": 8842
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4spark1/visual.json",
+    "bytes": 8171
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4spark2/visual.json",
+    "bytes": 8187
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4spark3/visual.json",
+    "bytes": 8177
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4spark4/visual.json",
+    "bytes": 8187
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4spark5/visual.json",
+    "bytes": 8187
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4t1/visual.json",
+    "bytes": 2492
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4t2/visual.json",
+    "bytes": 2482
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4t3/visual.json",
+    "bytes": 2483
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4v1/visual.json",
+    "bytes": 10783
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4v2/visual.json",
+    "bytes": 17563
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4v3/visual.json",
+    "bytes": 16436
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4v4/visual.json",
+    "bytes": 12989
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4v5/visual.json",
+    "bytes": 10792
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/p4v6/visual.json",
+    "bytes": 27174
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/referenceSidebar_commercial/visual.json",
+    "bytes": 818
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/refInsight1_commercial/visual.json",
+    "bytes": 805
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/refInsight2_commercial/visual.json",
+    "bytes": 808
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/refInsight3_commercial/visual.json",
+    "bytes": 815
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/refInsight4_commercial/visual.json",
+    "bytes": 815
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/refKpi1_commercial/visual.json",
+    "bytes": 800
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/refKpi2_commercial/visual.json",
+    "bytes": 803
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/refKpi3_commercial/visual.json",
+    "bytes": 801
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/refKpi4_commercial/visual.json",
+    "bytes": 815
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/3c4d5e6f708192a3b4c5/visuals/refKpi5_commercial/visual.json",
+    "bytes": 811
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/2b3c4d5e6f708192a3b4bg/visual.json",
+    "bytes": 4168
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/2b3c4d5e6f708192a3b4footerC/visual.json",
+    "bytes": 2541
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/2b3c4d5e6f708192a3b4footerL/visual.json",
+    "bytes": 2532
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/2b3c4d5e6f708192a3b4footerR/visual.json",
+    "bytes": 2504
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/2b3c4d5e6f708192a3b4noteShape/visual.json",
+    "bytes": 4185
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/2b3c4d5e6f708192a3b4panel1020290/visual.json",
+    "bytes": 4188
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/2b3c4d5e6f708192a3b4panel1530714/visual.json",
+    "bytes": 4188
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/2b3c4d5e6f708192a3b4panel1585290/visual.json",
+    "bytes": 4188
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/2b3c4d5e6f708192a3b4panel245290/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/2b3c4d5e6f708192a3b4panel245714/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/2b3c4d5e6f708192a3b4panel605714/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/2b3c4d5e6f708192a3b4panel965714/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/2b3c4d5e6f708192a3b4subtitle/visual.json",
+    "bytes": 2560
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/2b3c4d5e6f708192a3b4title/visual.json",
+    "bytes": 2515
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3b1/visual.json",
+    "bytes": 2491
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3b2/visual.json",
+    "bytes": 2482
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3b3/visual.json",
+    "bytes": 2482
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3b4/visual.json",
+    "bytes": 2484
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3delta1/visual.json",
+    "bytes": 4733
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3delta2/visual.json",
+    "bytes": 4700
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3delta3/visual.json",
+    "bytes": 4700
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3delta4/visual.json",
+    "bytes": 4701
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3delta5/visual.json",
+    "bytes": 4725
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3i1/visual.json",
+    "bytes": 2925
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3i1s/visual.json",
+    "bytes": 4162
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3i2/visual.json",
+    "bytes": 2942
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3i2s/visual.json",
+    "bytes": 4162
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3i3/visual.json",
+    "bytes": 2934
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3i3s/visual.json",
+    "bytes": 4162
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3i4/visual.json",
+    "bytes": 2965
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3i4s/visual.json",
+    "bytes": 4175
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3k1/visual.json",
+    "bytes": 8825
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3k2/visual.json",
+    "bytes": 8809
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3k3/visual.json",
+    "bytes": 8809
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3k4/visual.json",
+    "bytes": 8810
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3k5/visual.json",
+    "bytes": 8816
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3spark1/visual.json",
+    "bytes": 8229
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3spark2/visual.json",
+    "bytes": 8229
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3spark3/visual.json",
+    "bytes": 8230
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3spark4/visual.json",
+    "bytes": 8251
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3spark5/visual.json",
+    "bytes": 8230
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3t1/visual.json",
+    "bytes": 2494
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3t2/visual.json",
+    "bytes": 2486
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3t3/visual.json",
+    "bytes": 2485
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3v1/visual.json",
+    "bytes": 16348
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3v2/visual.json",
+    "bytes": 15215
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3v3/visual.json",
+    "bytes": 22748
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3v4/visual.json",
+    "bytes": 10834
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3v5/visual.json",
+    "bytes": 10920
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/p3v6/visual.json",
+    "bytes": 10920
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/referenceSidebar_activation/visual.json",
+    "bytes": 818
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/refInsight1_activation/visual.json",
+    "bytes": 805
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/refInsight2_activation/visual.json",
+    "bytes": 813
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/refInsight3_activation/visual.json",
+    "bytes": 805
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/refInsight4_activation/visual.json",
+    "bytes": 822
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/refKpi1_activation/visual.json",
+    "bytes": 811
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/refKpi2_activation/visual.json",
+    "bytes": 800
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/refKpi3_activation/visual.json",
+    "bytes": 801
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/refKpi4_activation/visual.json",
+    "bytes": 801
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/2b3c4d5e6f708192a3b4/visuals/refKpi5_activation/visual.json",
+    "bytes": 809
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/1a2b3c4d5e6f708192a3bg/visual.json",
+    "bytes": 4168
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/1a2b3c4d5e6f708192a3footerC/visual.json",
+    "bytes": 2541
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/1a2b3c4d5e6f708192a3footerL/visual.json",
+    "bytes": 2532
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/1a2b3c4d5e6f708192a3footerR/visual.json",
+    "bytes": 2504
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/1a2b3c4d5e6f708192a3noteShape/visual.json",
+    "bytes": 4185
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/1a2b3c4d5e6f708192a3panel1020290/visual.json",
+    "bytes": 4188
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/1a2b3c4d5e6f708192a3panel1530714/visual.json",
+    "bytes": 4188
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/1a2b3c4d5e6f708192a3panel1585290/visual.json",
+    "bytes": 4188
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/1a2b3c4d5e6f708192a3panel245290/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/1a2b3c4d5e6f708192a3panel245714/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/1a2b3c4d5e6f708192a3panel605714/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/1a2b3c4d5e6f708192a3panel965714/visual.json",
+    "bytes": 4186
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/1a2b3c4d5e6f708192a3subtitle/visual.json",
+    "bytes": 2563
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/1a2b3c4d5e6f708192a3title/visual.json",
+    "bytes": 2506
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2b1/visual.json",
+    "bytes": 1294
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2b2/visual.json",
+    "bytes": 1300
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2b3/visual.json",
+    "bytes": 1292
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2b4/visual.json",
+    "bytes": 1290
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2delta1/visual.json",
+    "bytes": 4683
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2delta2/visual.json",
+    "bytes": 4701
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2delta3/visual.json",
+    "bytes": 4695
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2delta4/visual.json",
+    "bytes": 4705
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2delta5/visual.json",
+    "bytes": 4717
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2i1/visual.json",
+    "bytes": 2918
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2i1s/visual.json",
+    "bytes": 4163
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2i2/visual.json",
+    "bytes": 2919
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2i2s/visual.json",
+    "bytes": 4163
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2i3/visual.json",
+    "bytes": 2929
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2i3s/visual.json",
+    "bytes": 4163
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2i4/visual.json",
+    "bytes": 2958
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2i4s/visual.json",
+    "bytes": 4175
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2k1/visual.json",
+    "bytes": 8991
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2k2/visual.json",
+    "bytes": 8879
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2k3/visual.json",
+    "bytes": 8869
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2k4/visual.json",
+    "bytes": 8827
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2k5/visual.json",
+    "bytes": 8900
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2s1/visual.json",
+    "bytes": 6376
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2s2/visual.json",
+    "bytes": 6383
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2spark1/visual.json",
+    "bytes": 8193
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2spark2/visual.json",
+    "bytes": 8106
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2spark3/visual.json",
+    "bytes": 8095
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2spark4/visual.json",
+    "bytes": 8056
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2spark5/visual.json",
+    "bytes": 8142
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2t1/visual.json",
+    "bytes": 2486
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2t2/visual.json",
+    "bytes": 1300
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2t3/visual.json",
+    "bytes": 2489
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2v1/visual.json",
+    "bytes": 13813
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2v2/visual.json",
+    "bytes": 20888
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2v3/visual.json",
+    "bytes": 10805
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2v4/visual.json",
+    "bytes": 12403
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2v5/visual.json",
+    "bytes": 10847
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/p2v6/visual.json",
+    "bytes": 10651
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/referenceSidebar_acquisition/visual.json",
+    "bytes": 820
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/refInsight1_acquisition/visual.json",
+    "bytes": 814
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/refInsight2_acquisition/visual.json",
+    "bytes": 809
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/refInsight3_acquisition/visual.json",
+    "bytes": 802
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/refInsight4_acquisition/visual.json",
+    "bytes": 833
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/refKpi1_acquisition/visual.json",
+    "bytes": 804
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/refKpi2_acquisition/visual.json",
+    "bytes": 814
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/refKpi3_acquisition/visual.json",
+    "bytes": 814
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/refKpi4_acquisition/visual.json",
+    "bytes": 810
+  },
+  {
+    "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/1a2b3c4d5e6f708192a3/visuals/refKpi5_acquisition/visual.json",
+    "bytes": 811
+  },
+  {
+    "path": "assets/dashboard/executive_marketplace_health.png",
+    "bytes": 138275
+  },
+  {
+    "path": "assets/dashboard/retention_heatmap.png",
+    "bytes": 150058
+  },
+  {
+    "path": "assets/dashboard/seller_funnel.png",
+    "bytes": 50931
+  },
+  {
+    "path": ".github/workflows/ci.yml",
+    "bytes": 411
+  },
+  {
+    "path": ".github/workflows/deploy-marketlens-7page-pages.yml",
+    "bytes": 1664
   }
 ]

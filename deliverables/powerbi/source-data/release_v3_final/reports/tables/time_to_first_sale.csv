@@ -1,0 +1,7 @@
+bucket,lower_bound_days,upper_bound_days,sellers,share_of_closed_sellers,eligible_valid_activation_sellers
+unmatched_or_invalid,,,515,0.61163895,0
+0-7d,0,7,42,0.04988124,42
+8-30d,8,30,87,0.10332542,87
+31-60d,31,60,105,0.12470309,105
+61-90d,61,90,52,0.06175772,52
+>90d,91,,41,0.04869359,41

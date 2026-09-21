@@ -1,0 +1,94 @@
+table CommercialSegment
+	lineageTag: 69c06a94-e36b-44fb-a4df-61bf01e5b0da
+
+	measure 'Commercial GMV' = SUM ( CommercialSegment[GMV_M] )
+		formatString: 0.00
+		lineageTag: 00c0bdca-3793-4332-9fae-7c930989de6a
+
+	measure 'Commercial Orders' = SUM ( CommercialSegment[Orders_K] )
+		formatString: 0.0
+		lineageTag: 7a59739a-9764-4b00-99e5-5b3084e62a25
+
+	measure 'Commercial AOV' = DIVIDE ( SUMX ( CommercialSegment, CommercialSegment[GMV_M] * 1000000 ), SUMX ( CommercialSegment, CommercialSegment[Orders_K] * 1000 ) )
+		formatString: R$ #,0.0
+		lineageTag: 492b359c-fc11-4013-8072-c8e61f48df67
+
+	measure 'Commercial Top Segment Share' = MAX ( CommercialSegment[ShareGMV] )
+		formatString: 0.0%
+		lineageTag: 9257d64e-9655-4273-b910-0f3c65172eb2
+
+	measure 'Commercial Concentration Signal' = "Top segment contributes " & FORMAT ( [Commercial Top Segment Share], "0.0%" )
+		formatString: General
+		lineageTag: 32dae51f-dec5-4cd9-acb9-0ab5835434b7
+
+	measure 'Commercial GMV Delta Label' = VAR D = [GMV Delta] RETURN IF ( ISBLANK ( D ), BLANK (), IF ( D >= 0, "▲ ", "▼ " ) & FORMAT ( D, "+0.0%;-0.0%;0.0%" ) & " vs prior month" )
+		formatString: General
+		lineageTag: 5f1a0e21-36f0-4d1f-9b08-1d0ad2b4f201
+
+	measure 'Commercial Orders Delta Label' = VAR D = [Orders Delta] RETURN IF ( ISBLANK ( D ), BLANK (), IF ( D >= 0, "▲ ", "▼ " ) & FORMAT ( D, "+0.0%;-0.0%;0.0%" ) & " vs prior month" )
+		formatString: General
+		lineageTag: 6a2b1f32-47f1-4e20-ac19-2e1be3c5f302
+
+	measure 'Commercial AOV Delta Label' = VAR D = [AOV Delta] RETURN IF ( ISBLANK ( D ), BLANK (), IF ( D >= 0, "▲ ", "▼ " ) & FORMAT ( D, "+0.0%;-0.0%;0.0%" ) & " vs prior month" )
+		formatString: General
+		lineageTag: 7b3c2043-58a2-4f31-bd2a-3f2cf4d60303
+
+	measure 'Commercial Top Share Delta Label' = "• " & FORMAT ( [Commercial Top Segment Share], "0.0%" ) & " of total GMV"
+		formatString: General
+		lineageTag: 8c4d3154-69b3-4042-ce3b-4a3da5e71404
+
+	measure 'Commercial Concentration Delta Label' = VAR TopShare = [Commercial Top Segment Share] VAR NextShare = MAXX ( FILTER ( CommercialSegment, CommercialSegment[ShareGMV] < TopShare ), CommercialSegment[ShareGMV] ) RETURN "▲ +" & FORMAT ( ( TopShare - NextShare ) * 100, "0.0" ) & " pp vs next segment"
+		formatString: General
+		lineageTag: 9d5e4265-70c4-4153-df4c-5a4ea6f82505
+
+	column Segment
+		dataType: string
+		lineageTag: d83c8ec9-873a-48dc-a761-f07e0e59b50b
+		summarizeBy: none
+		sourceColumn: Segment
+
+	column Sellers
+		dataType: int64
+		lineageTag: cda9ca8d-290f-4cd4-a4b2-8a062cd34e06
+		summarizeBy: sum
+		sourceColumn: Sellers
+
+	column GMV_M
+		dataType: double
+		formatString: 0.00
+		lineageTag: 2f93908e-3f24-4d32-b76e-ccd711eb92c1
+		summarizeBy: sum
+		sourceColumn: GMV_M
+
+	column Orders_K
+		dataType: double
+		formatString: 0.0
+		lineageTag: dddba2d4-0015-4568-9ea9-32d58d1b0f6e
+		summarizeBy: sum
+		sourceColumn: Orders_K
+
+	column AOV
+		dataType: double
+		formatString: R$ #,0.0
+		lineageTag: 34c8fc0d-d9e5-4145-8eb8-e90d46452edb
+		summarizeBy: sum
+		sourceColumn: AOV
+
+	column GrowthRate
+		dataType: double
+		formatString: 0.0%
+		lineageTag: a4da75b2-8bbf-446a-a83e-3016add857f0
+		summarizeBy: average
+		sourceColumn: GrowthRate
+
+	column ShareGMV
+		dataType: double
+		formatString: 0.0%
+		lineageTag: a5dc075c-2f3e-4738-95e0-0970c4c553c2
+		summarizeBy: average
+		sourceColumn: ShareGMV
+
+	partition CommercialSegment = m
+		mode: import
+		source =
+				let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_commercial_segment.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Segment", type text}, {"Sellers", Int64.Type}, {"GMV_M", type number}, {"Orders_K", type number}, {"AOV", type number}, {"GrowthRate", type number}, {"ShareGMV", type number}}, "en-US") in Typed

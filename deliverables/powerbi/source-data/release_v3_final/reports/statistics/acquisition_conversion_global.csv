@@ -1,0 +1,3 @@
+analysis,n,origins,chi_square,degrees_of_freedom,p_value,cramers_v,null_hypothesis,effect_interpretation
+lead_origin_vs_conversion,8000,10,137.68708250826433,9,3.0961535354297734e-25,0.1311902637909271,conversion is independent of lead origin,modest association
+

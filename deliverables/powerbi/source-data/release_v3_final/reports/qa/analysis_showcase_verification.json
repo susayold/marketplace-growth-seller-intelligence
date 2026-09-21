@@ -1,0 +1,30 @@
+{
+  "status": "PASS_WITH_ASSOCIATIVE_LIMITATIONS",
+  "run_date": "2026-09-12",
+  "stats_csv_count": 34,
+  "required_statistical_outputs_present": true,
+  "charts_png_count": 66,
+  "chart_registry_rows": 61,
+  "chart_registry_files_exist": true,
+  "root_cause_cases": 6,
+  "root_cause_hypotheses": 20,
+  "decision_cards": 5,
+  "required_docs_present": true,
+  "model_diagnostics_models": [
+    "low_review_adjusted_glm",
+    "retention_m3_glm"
+  ],
+  "metric_version": "v3",
+  "activation_metric_version": "v3",
+  "activation_definition_reconciled": true,
+  "retention_separation_resolved": true,
+  "retention_headline_model": "origin_plus_pooled_cohort",
+  "reporting_boundary_reconciled": true,
+  "headline_claims_reconciled": true,
+  "website_metrics_reconciled": true,
+  "power_bi_ready": true,
+  "warnings": [
+    "Observational source: no causal claims.",
+    "Analytical release is frozen and the final Power BI/PDF/web release is verified."
+  ]
+}

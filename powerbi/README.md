@@ -1,21 +1,31 @@
-# Power BI — final stage only
+# Power BI — final release
 
-The Power BI semantic model and six-page layout are specified in the execution plan, metric dictionary and SQL-to-Power BI reconciliation protocol.
+Status: **PASS**. The editable PBIP, seven-page PDF, governed source bundle,
+and SQL-to-Power BI reconciliation are included in this release.
 
-Required pages:
-1. Executive Marketplace Health
-2. Seller Acquisition Funnel
-3. Seller Activation & Retention
-4. Commercial Performance
-5. Customer & Operations
-6. Diagnostic / Seller 360
+## Delivered artifacts
 
-The PBIX, dashboard PDF and reports/qa/powerbi_reconciliation.csv remain intentionally pending because the user requested Power BI last. All upstream marts, charts, notebook evidence, SQL metric definitions, diagrams and QA artifacts are ready for that final stage.
+- `../deliverables/powerbi/final market dashboard.pbip` — editable Power BI
+  Project.
+- `../deliverables/final-market-dashboard.pdf` — verified seven-page export.
+- `../deliverables/powerbi/source-data/release_v3_final/` — governed analytical
+  inputs required for refresh.
+- `../reports/qa/powerbi_reconciliation.csv` — final reconciliation, all rows
+  `PASS`.
 
+The report uses canonical analytical outputs rather than raw payment/order-item
+joins or demo tables. The model has seven pages: Executive Overview, Seller
+Acquisition, Seller Activation & Retention, Commercial Performance, Customer
+Experience & Operations, Root Cause & Diagnostic, and Decision Center.
 
+## Refresh
 
-## Build pack
+Open the PBIP from the repository root. The `DataRoot` Power Query parameter
+already points to the governed source bundle in this checkout. When cloning to
+another machine, change only that parameter to the local
+`deliverables/powerbi/source-data/release_v3_final` path, then refresh.
 
-The remote hand-off pack is now available at [`powerbi/implementation_pack.md`](implementation_pack.md) with the canonical DAX in [`powerbi/measures.dax`](measures.dax). The reconciliation template is at [`reports/qa/powerbi_reconciliation.csv`](../reports/qa/powerbi_reconciliation.csv).
-
-The actual PBIX, PDF export, and measured reconciliation remain pending until Power BI Desktop is available. The template intentionally uses `BLOCKED_DESKTOP_NOT_INSTALLED`; it must be replaced with measured Power BI values and `PASS`/`FAIL` statuses after the six-page report is built and validated.
+Power BI Desktop was opened against the release, the model refresh completed,
+all governed partitions returned `Ready`, and all seven pages were captured and
+visually checked. A fresh local refresh may show incomplete tables once; select
+**Refresh now** and continue.

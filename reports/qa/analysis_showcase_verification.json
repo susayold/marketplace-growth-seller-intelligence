@@ -25,6 +25,6 @@
   "power_bi_ready": true,
   "warnings": [
     "Observational source: no causal claims.",
-    "Pre-Power-BI analytical release is frozen; Power BI can begin."
+    "Analytical release is frozen and the final Power BI/PDF/web release is verified."
   ]
 }

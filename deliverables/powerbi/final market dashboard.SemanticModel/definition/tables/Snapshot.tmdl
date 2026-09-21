@@ -1,0 +1,242 @@
+table Snapshot
+	lineageTag: 2fae2346-f5a7-5e67-8a0e-c8c3e84f6c95
+
+	measure 'Page Number' = "Page 1 of 7"
+		lineageTag: 2ab080cd-70cb-5299-909b-d99e7b3b804b
+
+	measure 'Page Title' = "Marketplace Growth & Seller Intelligence"
+		lineageTag: 700ca6a9-2fb5-5881-a8ab-d4d06ec719fb
+
+	measure 'Page Subtitle' = "Executive Overview | Turning marketplace data into trusted insights for better decisions"
+		lineageTag: a4d71906-4684-516f-ba63-7a5130f54b3e
+
+	measure 'Report Note' = "Historical Olist case study | Executive-complete through Aug 2018"
+		lineageTag: 56f80b0a-f80e-51cf-aab3-8053d9f769bf
+
+	measure 'Data Note' = "GMV is a proxy from order-item price; not platform revenue or profit"
+		lineageTag: ec6e521d-eb1a-505b-98de-e84f594ce33f
+
+	measure 'Nav Overview' = "Overview"
+		lineageTag: c7132870-631b-55cb-b270-842aa5752335
+
+	measure 'Nav Acquisition' = "Acquisition"
+		lineageTag: e77d64a6-dd52-5bf3-a4a5-c83c9e947f20
+
+	measure 'Nav Activation' = "Activation & Retention"
+		lineageTag: 0e7748f5-5656-56db-9634-1e41cf916205
+
+	measure 'Nav Commercial' = "Commercial"
+		lineageTag: ed9295ce-dd4f-5062-b993-0f4671b1f78f
+
+	measure 'Nav Customer' = "Customer Experience"
+		lineageTag: 0aa2057f-85b3-5307-a201-2c2e49ae1519
+
+	measure 'Nav Root Cause' = "Root Cause"
+		lineageTag: a47e7f60-e7ca-5915-b432-86b63e66ee99
+
+	measure 'Nav Decision' = "Decision Center"
+		lineageTag: 367aa15c-97ca-5950-a644-5966aa3fe30c
+
+	measure Footer = "Report build | Sep 12, 2026 | Historical Olist case study | Executive-complete through Aug 2018"
+		lineageTag: 5a583031-af58-550a-9de8-209bf1065191
+
+	measure 'Trend Title' = "GMV Proxy & Orders Trend"
+		lineageTag: 8672faa8-2202-5fb8-b009-7f00ad31d429
+
+	measure 'Concentration Title' = "Seller Concentration"
+		lineageTag: 496db535-af55-5e2b-8c20-8dbca0259e5c
+
+	measure 'Category Title' = "Top 5 Categories"
+		lineageTag: 230cc1a3-99c7-5c05-b551-ff6b3d36754b
+
+	measure 'State Title' = "Top 5 States"
+		lineageTag: 64b615f9-0ef7-56a7-95f1-cf5054cb2947
+
+	measure 'Map Title' = "Seller Map by State"
+		lineageTag: 574beb08-bbae-56e2-934f-4dca5fde8bdb
+
+	measure 'Insights Title' = "Key Insights"
+		lineageTag: 96e42bda-eb44-56c0-b11c-18162499a0fa
+
+	measure 'Highlights Title' = "Highlights"
+		lineageTag: 4c42a313-90c6-5c70-b4fe-29b2fe31989d
+
+	measure 'Lorenz Tab' = "Lorenz Curve"
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0401
+
+	measure 'Top Share Tab' = "Top Share"
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0402
+
+	measure 'Gini Trend Tab' = "Gini Trend"
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0403
+
+	measure 'Reset Filters' = "Reset Filters"
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0404
+
+	measure 'Insight Momentum' = VAR G = [GMV Delta] VAR O = [Orders Delta] RETURN "1  Growth | GMV " & FORMAT ( G, "+0.0%;-0.0%;0.0%" ) & " | Orders " & FORMAT ( O, "+0.0%;-0.0%;0.0%" )
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0501
+
+	measure 'Insight Concentration' = "2  Concentration | Top20 " & FORMAT ( [Top 20% GMV], "0.0%" ) & " | Gini " & FORMAT ( [Seller Gini], "0.000" )
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0502
+
+	measure 'Insight Delivery' = "3  Delivery Risk | Late " & FORMAT ( [Late Delivery Rate], "0.0%" ) & " | " & FORMAT ( [Late Delivery Delta PP] * 100, "+0.0;-0.0;0.0" ) & " pp"
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0503
+
+	measure 'Insight Seller Base' = "4  Seller Base | " & FORMAT ( [Active Sellers], "#,0" ) & " active"
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0504
+
+	measure 'Seller Gini Card' = "Gini  " & FORMAT ( [Seller Gini], "0.000" )
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0505
+
+	measure 'Top 20 Card' = "Top 20%  " & FORMAT ( [Top 20% GMV], "0.0%" )
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0506
+
+	measure 'GMV KPI Label' = "GMV PROXY"
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0510
+
+	measure 'Orders KPI Label' = "ORDERS"
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0511
+
+	measure 'Active Sellers KPI Label' = "ACTIVE SELLERS"
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0512
+
+	measure 'AOV KPI Label' = "AVERAGE ORDER VALUE"
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0513
+
+	measure 'Late Delivery KPI Label' = "LATE DELIVERY RATE"
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0514
+
+	measure 'SP Map Callout' = "SP  " & FORMAT ( MAXX ( FILTER ( Geo, Geo[seller_state] = "SP" ), Geo[active_sellers] ), "#,0" ) & " sellers"
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0515
+
+	measure 'RJ Map Callout' = "RJ  " & FORMAT ( MAXX ( FILTER ( Geo, Geo[seller_state] = "RJ" ), Geo[active_sellers] ), "#,0" ) & " sellers"
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0516
+
+	measure 'Highlight Activation 30D' = "30D activation  15.8%"
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0507
+
+	measure 'Highlight Activation 90D' = "90D activation  42.1%"
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0508
+
+	measure 'Highlight Review Gap' = "Review gap  -1.73 pts"
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0509
+
+	measure 'GMV Proxy' = MAX ( Snapshot[GMV] )
+		formatString: R$ #,0.00
+		lineageTag: 83ace3f0-059f-53b3-8bc6-522f2944a707
+
+	measure Orders = SUM ( Monthly[orders] )
+		formatString: #,0
+		lineageTag: b0030367-6b10-5b22-ace8-ddee0f2bbc45
+
+	measure 'Active Sellers' = DISTINCTCOUNT ( SellerLifetime[seller_id] )
+		formatString: #,0
+		lineageTag: 0713e522-9acf-53f4-a795-7449f97b8632
+
+	measure 'Average Order Value' = DIVIDE ( [GMV Proxy], [Orders] )
+		formatString: R$ #,0.00
+		lineageTag: 78a2d082-77d7-52c2-be44-0f9fb2787682
+
+	measure 'Delivered Orders' = SUM ( Monthly[delivered_orders] )
+		formatString: #,0
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0301
+
+	measure 'Late Orders' = SUM ( Monthly[late_orders] )
+		formatString: #,0
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0302
+
+	measure 'Late Delivery Rate' = DIVIDE ( [Late Orders], [Delivered Orders] )
+		formatString: 0.0%
+		lineageTag: b9a46605-b6d2-52b8-b5c1-02cd4a01fafd
+
+	measure 'GMV Proxy Display' = "R$ " & FORMAT ( DIVIDE ( [GMV Proxy], 1000000 ), "0.00" ) & "M"
+		lineageTag: f903bfae-da14-5765-a232-6175629ae664
+
+	measure 'Orders Display' = FORMAT ( DIVIDE ( [Orders], 1000 ), "0.0" ) & "K"
+		lineageTag: f6e3d2b6-89fd-584b-a0db-a3f38369f0cc
+
+	measure 'Active Sellers Display' = FORMAT ( [Active Sellers], "#,0" )
+		lineageTag: e83e4452-b26e-5662-97cb-1cb3ef8f8c7e
+
+	measure 'Average Order Value Display' = "R$ " & FORMAT ( [Average Order Value], "0.00" )
+		lineageTag: 2be71e55-0715-5fa5-92dd-ac4d2c0aab5a
+
+	measure 'Late Delivery Rate Display' = FORMAT ( [Late Delivery Rate], "0.0%" )
+		lineageTag: bcc086e2-41cb-52d7-b800-4ae0ccaa8294
+
+	measure 'GMV Proxy (R$M)' = DIVIDE ( [GMV Proxy], 1000000 )
+		formatString: 0.00
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0601
+
+	measure 'Orders (K)' = DIVIDE ( [Orders], 1000 )
+		formatString: 0.0
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0602
+
+	measure 'Trend GMV Proxy (R$M)' = IF ( ISBLANK ( SELECTEDVALUE ( DimMonth[MonthStart] ) ), BLANK (), [Legacy Monthly GMV Trend RSM] )
+		formatString: 0.00
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0603
+
+	measure 'Trend Orders (K)' = IF ( ISBLANK ( SELECTEDVALUE ( DimMonth[MonthStart] ) ), BLANK (), [Legacy Monthly Orders Trend K] )
+		formatString: 0.0
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0604
+
+	measure 'Seller Gini' = MAXX ( FILTER ( ConcentrationStats, ConcentrationStats[metric] = "gini" ), ConcentrationStats[value] )
+		formatString: 0.000
+		lineageTag: 8c276ac2-1087-5e81-af49-a222d0b9668d
+
+	measure 'Top 20% GMV' = MAXX ( FILTER ( ConcentrationStats, ConcentrationStats[metric] = "top_20_pct_share" ), ConcentrationStats[value] )
+		formatString: 0.0%
+		lineageTag: 65d5df53-98b1-51e3-ac47-f57dd27fcf6e
+
+	measure 'GMV Delta' = VAR Complete = FILTER ( ALL ( Monthly ), Monthly[is_executive_complete] = TRUE () ) VAR LatestMonth = MAXX ( Complete, Monthly[purchase_month] ) VAR PriorMonth = MAXX ( FILTER ( Complete, Monthly[purchase_month] < LatestMonth ), Monthly[purchase_month] ) VAR LatestValue = MAXX ( FILTER ( Complete, Monthly[purchase_month] = LatestMonth ), Monthly[gmv_proxy] ) VAR PriorValue = MAXX ( FILTER ( Complete, Monthly[purchase_month] = PriorMonth ), Monthly[gmv_proxy] ) RETURN DIVIDE ( LatestValue - PriorValue, PriorValue )
+		formatString: 0.0%;-0.0%;-
+		lineageTag: b4abf16c-b266-5d71-b6a1-40c155f2426f
+
+	measure 'Orders Delta' = VAR Complete = FILTER ( ALL ( Monthly ), Monthly[is_executive_complete] = TRUE () ) VAR LatestMonth = MAXX ( Complete, Monthly[purchase_month] ) VAR PriorMonth = MAXX ( FILTER ( Complete, Monthly[purchase_month] < LatestMonth ), Monthly[purchase_month] ) VAR LatestValue = MAXX ( FILTER ( Complete, Monthly[purchase_month] = LatestMonth ), Monthly[orders] ) VAR PriorValue = MAXX ( FILTER ( Complete, Monthly[purchase_month] = PriorMonth ), Monthly[orders] ) RETURN DIVIDE ( LatestValue - PriorValue, PriorValue )
+		formatString: 0.0%;-0.0%;-
+		lineageTag: b8db8c70-e9eb-579e-af1e-b635477fcfc4
+
+	measure 'Active Sellers Delta' = VAR Complete = FILTER ( ALL ( Monthly ), Monthly[is_executive_complete] = TRUE () ) VAR LatestMonth = MAXX ( Complete, Monthly[purchase_month] ) VAR PriorMonth = MAXX ( FILTER ( Complete, Monthly[purchase_month] < LatestMonth ), Monthly[purchase_month] ) VAR LatestValue = MAXX ( FILTER ( Complete, Monthly[purchase_month] = LatestMonth ), Monthly[active_sellers] ) VAR PriorValue = MAXX ( FILTER ( Complete, Monthly[purchase_month] = PriorMonth ), Monthly[active_sellers] ) RETURN DIVIDE ( LatestValue - PriorValue, PriorValue )
+		formatString: 0.0%;-0.0%;-
+		lineageTag: dc353880-aa34-5b2f-aea2-9241a5e16396
+
+	measure 'AOV Delta' = VAR Complete = FILTER ( ALL ( Monthly ), Monthly[is_executive_complete] = TRUE () ) VAR LatestMonth = MAXX ( Complete, Monthly[purchase_month] ) VAR PriorMonth = MAXX ( FILTER ( Complete, Monthly[purchase_month] < LatestMonth ), Monthly[purchase_month] ) VAR LatestValue = MAXX ( FILTER ( Complete, Monthly[purchase_month] = LatestMonth ), Monthly[aov] ) VAR PriorValue = MAXX ( FILTER ( Complete, Monthly[purchase_month] = PriorMonth ), Monthly[aov] ) RETURN DIVIDE ( LatestValue - PriorValue, PriorValue )
+		formatString: 0.0%;-0.0%;-
+		lineageTag: bf85b507-33d7-5d83-bd55-3b574ac35d22
+
+	measure 'Late Delivery Delta PP' = VAR Complete = FILTER ( ALL ( Monthly ), Monthly[is_executive_complete] = TRUE () ) VAR LatestMonth = MAXX ( Complete, Monthly[purchase_month] ) VAR PriorMonth = MAXX ( FILTER ( Complete, Monthly[purchase_month] < LatestMonth ), Monthly[purchase_month] ) VAR LatestRate = MAXX ( FILTER ( Complete, Monthly[purchase_month] = LatestMonth ), Monthly[late_delivery_rate] ) VAR PriorRate = MAXX ( FILTER ( Complete, Monthly[purchase_month] = PriorMonth ), Monthly[late_delivery_rate] ) RETURN LatestRate - PriorRate
+		formatString: 0.0%;-0.0%;-
+		lineageTag: bfcd24d0-9856-568d-a912-697e9960dea6
+
+	measure 'GMV Delta Label' = VAR D = [GMV Delta] RETURN IF ( ISBLANK ( D ), BLANK (), IF ( D >= 0, "▲ ", "▼ " ) & FORMAT ( D, "+0.0%;-0.0%;0.0%" ) & "  vs. previous period" )
+		lineageTag: 4ca6b7d7-4a9e-42a1-9a93-7c9e4d6d5d01
+
+	measure 'Orders Delta Label' = VAR D = [Orders Delta] RETURN IF ( ISBLANK ( D ), BLANK (), IF ( D >= 0, "▲ ", "▼ " ) & FORMAT ( D, "+0.0%;-0.0%;0.0%" ) & "  vs. previous period" )
+		lineageTag: 9ba4f31e-0db7-4f7a-b0fd-e2ab40b5c102
+
+	measure 'Active Sellers Delta Label' = VAR D = [Active Sellers Delta] RETURN IF ( ISBLANK ( D ), BLANK (), IF ( D >= 0, "▲ ", "▼ " ) & FORMAT ( D, "+0.0%;-0.0%;0.0%" ) & "  vs. previous period" )
+		lineageTag: 70d54a82-7ebc-4c6d-9ae5-8701bc08e503
+
+	measure 'AOV Delta Label' = VAR D = [AOV Delta] RETURN IF ( ISBLANK ( D ), BLANK (), IF ( D >= 0, "▲ ", "▼ " ) & FORMAT ( D, "+0.0%;-0.0%;0.0%" ) & "  vs. previous period" )
+		lineageTag: 97e1cb81-bf4d-4078-bb0c-5da2b59fed04
+
+	measure 'Late Delivery Delta Label' = VAR D = [Late Delivery Delta PP] * 100 RETURN IF ( ISBLANK ( D ), BLANK (), IF ( D <= 0, "▼ ", "▲ " ) & FORMAT ( D, "+0.0;-0.0;0.0" ) & " p.p.  vs. previous period" )
+		lineageTag: 67a69db4-d7f8-449f-b4c1-f5ed01faa705
+
+	column GMV
+		dataType: double
+		lineageTag: 87f278e4-73cd-5878-9a8b-3fc354cff1bb
+		summarizeBy: sum
+		sourceColumn: GMV
+
+	partition Snapshot = m
+		mode: import
+		source =
+				let
+					Source = Json.Document(File.Contents(DataRoot & "\\reports\\headline_metrics.json")),
+					Output = #table(type table [GMV=number], {{Source[gmv_proxy]}})
+				in
+					Output
+
+	annotation PBI_ResultType = Table
+

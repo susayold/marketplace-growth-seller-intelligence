@@ -1,0 +1,27 @@
+table Highlights
+	lineageTag: 864a0d5e-c16f-560a-80aa-603ecf053d76
+
+	column Metric
+		dataType: string
+		lineageTag: d63a8af2-8cd8-597c-ab4b-b3aff8a5c62b
+		summarizeBy: none
+		sourceColumn: Metric
+
+	column Delta
+		dataType: string
+		lineageTag: 3ee3c787-8d1e-562a-83b5-595586809c30
+		summarizeBy: none
+		sourceColumn: Delta
+
+	column Interpretation
+		dataType: string
+		lineageTag: ba4b5f36-f690-524a-9670-05be241408ab
+		summarizeBy: none
+		sourceColumn: Interpretation
+
+	partition Highlights = m
+		mode: import
+		source =
+				let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_highlights.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Metric", type text}, {"Delta", type text}, {"Interpretation", type text}}, "en-US") in Typed
+	annotation PBI_ResultType = Table
+

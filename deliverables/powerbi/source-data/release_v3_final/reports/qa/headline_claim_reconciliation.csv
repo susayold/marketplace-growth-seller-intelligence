@@ -1,0 +1,7 @@
+claim_id,canonical_metric,canonical_value,canonical_denominator,source_file,chart_id,root_cause_case,decision_id,readme_match,website_match,status
+CLM01,executive complete period,2018-08-31,period completeness rule,reports/qa/period_completeness.csv,HEALTH_01,RC1,D01,PASS,PASS,PASS
+CLM02,origin conversion association,Cramér's V 0.131,"8,000 MQLs",reports/statistics/acquisition_conversion_global.csv,ACQ_02,RC2,D02,PASS,PASS,PASS
+CLM03,activation 30d,0.15757575757575756,825,reports/statistics/activation_fixed_window.csv,ACT_05,RC3,D03,PASS,PASS,PASS
+CLM04,top20 seller GMV share,0.8269167790206272,positive-GMV sellers,reports/statistics/concentration_statistics.csv,CON_02,RC4,D04,PASS,PASS,PASS
+CLM05,late-review risk difference,44.78914047743171,reviewed delivered orders,reports/statistics/late_review_effect.csv,CX_03,RC5,D05,PASS,PASS,PASS
+CLM06,category prioritization,material GMV + breadth + CX screen,complete-period categories,reports/tables/category_analysis_extended.csv,CAT_01,RC6,D05,PASS,PASS,PASS

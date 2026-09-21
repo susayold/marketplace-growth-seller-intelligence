@@ -13,5 +13,9 @@ The register is deliberately conservative. It separates what the data shows from
 
 ## Release reconciliation
 
-The machine-readable `reports/qa/headline_claim_reconciliation.csv` maps each headline claim to its canonical value, denominator, source file, chart, root-cause case and decision card. A release is not frozen while any row is `PENDING_WEBSITE_UPDATE` or `FAIL`.
+The machine-readable `reports/qa/headline_claim_reconciliation.csv` maps each
+headline claim to its canonical value, denominator, source file, chart,
+root-cause case and decision card. All six rows in the released register are
+`PASS`; the release is not frozen if a future revision introduces a pending or
+failed row.
 

@@ -1,0 +1,42 @@
+{
+  "release": "MarketLens v1.0 final",
+  "metric_version": "v3",
+  "reporting_boundary": "complete periods through 2018-08-31",
+  "marketplace": {
+    "gmv_proxy": 13591643.70,
+    "orders": 98666,
+    "active_sellers": 3095,
+    "aov": 137.754076378894,
+    "late_delivery_rate": 0.081116938577
+  },
+  "acquisition": {
+    "mqls": 8000,
+    "closed_sellers": 842,
+    "conversion_rate": 0.10525,
+    "cramers_v": 0.131
+  },
+  "activation": {
+    "eligible_sellers": 840,
+    "observed_activated_sellers": 380,
+    "censored_sellers": 460,
+    "activation_30d": 0.15757575757575756,
+    "activation_60d": 0.30759651307596514,
+    "activation_90d": 0.4213263979193758,
+    "median_activation_days": 44.293130787037036
+  },
+  "concentration": {
+    "seller_gini": 0.7915146728964931,
+    "top_1_share": 0.2607378730800602,
+    "top_5_share": 0.5330246289490358,
+    "top_10_share": 0.6756485795754048,
+    "top_20_share": 0.8269167790206272
+  },
+  "customer_experience": {
+    "late_review_mean": 2.5666,
+    "on_time_review_mean": 4.2942,
+    "review_gap": -1.727588305764291,
+    "low_review_risk_difference_pp": 44.78914047743171,
+    "low_review_risk_ratio": 5.872863940787512
+  },
+  "decisions": ["D01", "D02", "D03", "D04", "D05"]
+}

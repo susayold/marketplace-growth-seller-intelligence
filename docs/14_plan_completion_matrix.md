@@ -1,6 +1,6 @@
 # Plan completion matrix
 
-Last verified on 2026-09-12 after the raw row-level mart build.
+Last verified on 2026-09-21 after the final Power BI/PDF/web release.
 
 | Plan area | Evidence | Status |
 |---|---|---|
@@ -14,11 +14,11 @@ Last verified on 2026-09-12 after the raw row-level mart build.
 | Statistical validation | reports/qa/statistical_validation.csv, reports/qa/statistical_validation_detail.csv, notebooks/06_statistical_validation.ipynb | Complete with effect sizes, confidence intervals, Mann-Whitney/bootstrap and M3 channel test; association only, not causality |
 | Root causes/decisions | docs/09_root_cause_cases.md, docs/10_executive_decisions.md | Complete |
 | Reproducibility/logging/testing | src, tests, .github/workflows/ci.yml, reports/qa/pipeline_run.log | Complete |
-| Career packaging | docs/12_interview_guide.md, docs/13_cv_bullets.md | Complete except Power BI bullet finalization |
-| Power BI semantic model/pages/reconciliation | powerbi/README.md | Pending by user instruction; intentionally last |
+| Career packaging | docs/12_interview_guide.md, docs/13_cv_bullets.md | Complete |
+| Power BI semantic model/pages/reconciliation | deliverables/powerbi, reports/qa/powerbi_reconciliation.csv | Complete; PASS |
 
 
 
 ## Current artifact-level exceptions
 
-The two previously missing plan-specified marts (`mart_marketplace_daily`, `mart_seller_monthly`) are now published and GMV-reconciled from raw row-level source. The remaining incomplete gate is Power BI: the PBIX, PDF, measured slicer/drill-through QA, and SQL-vs-Power BI reconciliation require an authenticated authoring runtime. See `docs/18_plan_artifact_audit.md`.
+The two previously missing plan-specified marts (`mart_marketplace_daily`, `mart_seller_monthly`) are published and GMV-reconciled from raw row-level source. The Power BI PBIP, PDF, measured page QA, and SQL-vs-Power BI reconciliation are now delivered and verified. See `deliverables/RELEASE_QA.md`.

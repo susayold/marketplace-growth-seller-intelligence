@@ -1,0 +1,7 @@
+case_id,trigger,hypotheses_tested,statuses,decisions
+RC1,Observed tail decline in 2018-10 versus 2018-07; only 4 orders in the final observed month.,4,Confirmed measurement issue | Inconclusive as a business collapse | Rejected as a headline explanation | Rejected as the primary explanation,gate executive reporting on completeness
+RC2,Actionable origins show different conversion rates and sparse groups have wide uncertainty.,3,Plausible contributor | Rejected by current evidence | Rejected hypothesis,use a multidimensional channel scorecard
+RC3,Canonical v3: observed activator median is 44.3 days; 30-day activation is 15.8% over 825 observable sellers.,3,Inconclusive | Plausible contributor | Supported business signal,instrument 7/30/60-day onboarding checkpoints
+RC4,Top 20% of sellers account for 82.7% of seller GMV proxy.,3,Inconclusive until monitoring is refreshed | Rejected as a generic action | Supported risk signal,monitor top 1/5/10/20% shares
+RC5,Late orders have lower reviews and a higher low-review rate than on-time orders.,3,Plausible contributor | Rejected hypothesis | Supported business mechanism,prioritize operational investigation by volume × severity × penalty
+RC6,Selected high-value category cool_stuff falls 46.5% from 2018-07 to 2018-08 while retaining sufficient historical volume.,4,Inconclusive | Inconclusive until drilldown | Plausible contributor | Supported diagnostic path,build a category-specific diagnostic plan

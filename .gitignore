@@ -1,3 +1,11 @@
+# Power BI Desktop local state and caches
+**/.pbi/
+
+# Local packages and scratch output
+*.tgz
+tmp/
+
+# Python/Power BI local artifacts
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
@@ -9,4 +17,3 @@ data/processed/
 data/marts/
 *.pbix
 reports/qa/pipeline_run.log
-

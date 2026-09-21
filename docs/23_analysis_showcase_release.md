@@ -1,8 +1,10 @@
 # Analysis showcase release
 
-Status: **PASS_WITH_ASSOCIATIVE_LIMITATIONS**
+Status: **FINAL — PASS_WITH_ASSOCIATIVE_LIMITATIONS**
 
-This is the pre-Power-BI analytical release required by the new showcase plan. It freezes the measurement contract, statistical evidence, root-cause cases, decision register, chart registry and remote delivery paths before any semantic-model/dashboard build.
+This analytical release freezes the measurement contract, statistical evidence,
+root-cause cases, decision register, chart registry, and remote delivery paths
+that underpin the final semantic model and dashboard.
 
 ## Acceptance snapshot
 
@@ -14,5 +16,6 @@ This is the pre-Power-BI analytical release required by the new showcase plan. I
 - QA: verification JSON includes counts, required files, chart count, registry status and warnings.
 - Delivery: GitHub and Drive are the authoritative storage locations; working raw data is not retained locally after upload.
 
-Power BI is intentionally the next phase, not part of this pre-build gate.
+The final PBIP, PDF, website, and reconciliation extend this analytical release
+without changing the governed measurement contract.
 

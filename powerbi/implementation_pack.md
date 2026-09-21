@@ -1,8 +1,10 @@
 # Power BI implementation pack — Marketplace Growth & Seller Intelligence
 
-Status: **ready-to-build upstream model; PBIX not yet generated**.
+Status: **final PBIP delivered and validated**.
 
-The SQL pipeline, marts, QA evidence, and the static website preview are complete. This pack is the controlled hand-off for the final Power BI stage. Power BI Desktop is not installed in the current Windows environment, so no fabricated `.pbix`, PDF export, or reconciliation pass is claimed.
+The SQL pipeline, marts, QA evidence, editable PBIP, PDF export, and static
+website are complete. This pack remains as the reproducible source contract and
+metric reference for the final release.
 
 ## 1. Source contract
 
@@ -92,7 +94,11 @@ Before release, export `reports/qa/powerbi_reconciliation.csv` with one row per 
 
 `metric,sql_value,powerbi_value,difference,tolerance,status`
 
-Minimum metrics: GMV Proxy, Orders, Active Sellers, AOV, Conversion Rate, Activation Rate, Late Delivery Rate. `difference = powerbi_value - sql_value`; `status = PASS` when the absolute difference is within tolerance. The current template contains SQL control totals and remains blocked until a real PBIX is opened and evaluated.
+Minimum metrics: GMV Proxy, Orders, Active Sellers, AOV, Conversion Rate,
+Activation Rate, Late Delivery Rate. `difference = powerbi_value - sql_value`;
+`status = PASS` when the absolute difference is within tolerance. The checked-in
+reconciliation contains measured Power BI values and is `PASS` for every
+required metric within tolerance.
 
 Control totals from the verified rebuild:
 
@@ -109,15 +115,19 @@ The concentration export uses `top_seller_share` (for example, 0.1) and `gmv_pro
 ## 7. Acceptance checklist
 
 1. Refresh succeeds without errors or ambiguous relationships.
-2. All six pages render with populated visuals and no unexplained blanks.
+2. All seven pages render with populated visuals and no unexplained blanks.
 3. Cross-filtering and seller drill-through work as specified.
-4. The seven reconciliation metrics pass their tolerances.
+4. The reconciliation metrics pass their tolerances.
 5. PDF export is readable at 100% zoom and has no clipped titles, labels, or legends.
-6. Save the final `.pbix`, PDF export, reconciliation CSV, and a short refresh note to the remote Drive/GitHub locations; remove temporary local copies after upload.
+6. The final PBIP, PDF export, reconciliation CSV, and refresh note are stored
+   in the release branch; local Power BI cache files are excluded.
 
-## 8. Current blocker
+## 8. Release verification
 
-The environment currently has no Power BI Desktop executable and the Windows computer-use bridge is unavailable. The next execution step is therefore to install/open Power BI Desktop (or provide an enabled Power BI-connected session), then implement this pack and replace the blocked reconciliation template with measured values.
+The former Desktop availability blocker is resolved for this release. The PBIP
+was opened and refreshed with Power BI Desktop, all seven pages were captured,
+and the final PDF and website previews were built from the verified Power BI
+canvas snapshots.
 
 
 

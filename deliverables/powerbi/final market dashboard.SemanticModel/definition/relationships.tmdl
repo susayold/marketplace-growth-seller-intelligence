@@ -1,0 +1,20 @@
+relationship rel-dim-category-top5
+	fromColumn: CategoryTop5.product_category_name_english
+	toColumn: DimCategory.product_category
+
+relationship rel-dim-state-top5
+	fromColumn: StateTop5.seller_state
+	toColumn: DimState.'Seller State'
+
+relationship rel-dim-month-monthly
+	fromColumn: Monthly.purchase_month
+	toColumn: DimMonth.Date
+
+relationship rel-dim-month-category
+	fromColumn: Category.purchase_month
+	toColumn: DimMonth.Date
+
+relationship rel-dim-month-category-top5
+	fromColumn: CategoryTop5.purchase_month
+	toColumn: DimMonth.Date
+

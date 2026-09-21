@@ -11,11 +11,12 @@
 - Executive PDF, methodology, metric dictionary, quality report, root-cause cases, executive decisions, limitations, and interview guide generated.
 - Pytest checks pass locally for the generated v1 artifact set.
 
-## Pending runtime gates
+## Final runtime gates
 
 - PostgreSQL deployment/rebuild: PostgreSQL is not installed in the current desktop runtime.
-- Power BI `.pbix`: Power BI Desktop is not available in the current desktop runtime. The semantic-model/page plan is included.
-- Final BI reconciliation: run after the PostgreSQL/Power BI runtime is available.
+- Power BI PBIP: the editable seven-page project is delivered under
+  `deliverables/powerbi/` and refreshes from the governed source bundle.
+- Final BI reconciliation: PASS; see `reports/qa/powerbi_reconciliation.csv`.
 
 ## Storage policy
 
@@ -25,4 +26,4 @@ The local `work/` directory is only a temporary processing area. Raw data, table
 
 ## Current audit update (2026-09-12)
 
-Added and verified `mart_marketplace_daily` (616 rows) and `mart_seller_monthly` (16,441 rows) from raw row-level source; both reproduce the 13,591,643.70 GMV proxy control total. Added the parameterized build script and source provenance QA. Power BI remains last per user instruction and is pending an authenticated authoring session.
+Added and verified `mart_marketplace_daily` (616 rows) and `mart_seller_monthly` (16,441 rows) from raw row-level source; both reproduce the 13,591,643.70 GMV proxy control total. The final PBIP, PDF, website, reconciliation, and seven-page visual QA are now complete.

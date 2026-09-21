@@ -1,0 +1,5 @@
+Offline Shape Map geography asset (bundled TopoJSON)
+
+Source: https://github.com/codeforamerica/click_that_hood/blob/master/public/data/brazil-states.geojson
+Purpose: Brazil state boundaries for the Page 1 Seller Distribution Shape Map. The source GeoJSON was converted to TopoJSON for PBIR Shape Map compatibility.
+Join key: Geo[seller_state] -> GeoJSON feature properties.name (UF code, e.g. SP).

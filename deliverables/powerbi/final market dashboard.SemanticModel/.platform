@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "final market dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b0e8a1c4-4d9f-43c1-8a72-0f8c6e2d7b55"
+  }
+}

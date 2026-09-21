@@ -8,7 +8,10 @@
 6. Validate with chi-square association checks and descriptive distributions.
 7. Generate decision-facing charts with explicit units, denominators, and caveats.
 
-The production target remains PostgreSQL + Power BI. This v1 execution used DuckDB/pandas-compatible transformations because PostgreSQL and Power BI were not available in the current desktop runtime; the repo contains the SQL and semantic-model specifications for the next runtime.
+The production target is PostgreSQL-compatible analytical SQL plus Power BI.
+The published release includes the governed CSV outputs and an editable PBIP;
+Power BI visuals are refreshed from those outputs. Historical and observational
+limitations remain explicit.
 
 ## Reporting Boundary Contract
 

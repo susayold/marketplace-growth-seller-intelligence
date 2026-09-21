@@ -1,0 +1,44 @@
+cohort_month,cohort_period,origin,eligible_n,retained_n,not_retained_n,retention_rate,zero_event_flag,zero_nonevent_flag,sample_size_flag,source_grain
+2018-01,2018Q1,paid_search,1,1,0,1.0,False,True,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-01,2018Q1,referral,1,1,0,1.0,False,True,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-01,2018Q1,unknown,1,0,1,0.0,True,False,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-02,2018Q1,direct_traffic,3,2,1,0.6666666666666666,False,False,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-02,2018Q1,organic_search,8,4,4,0.5,False,False,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-02,2018Q1,paid_search,5,4,1,0.8,False,False,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-02,2018Q1,social,3,2,1,0.6666666666666666,False,False,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-02,2018Q1,unknown,8,8,0,1.0,False,True,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-03,2018Q1,direct_traffic,1,1,0,1.0,False,True,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-03,2018Q1,email,1,0,1,0.0,True,False,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-03,2018Q1,organic_search,8,5,3,0.625,False,False,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-03,2018Q1,paid_search,10,8,2,0.8,False,False,small,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-03,2018Q1,social,1,1,0,1.0,False,True,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-03,2018Q1,unknown,4,3,1,0.75,False,False,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-04,2018Q2,direct_traffic,6,3,3,0.5,False,False,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-04,2018Q2,display,1,1,0,1.0,False,True,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-04,2018Q2,email,1,0,1,0.0,True,False,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-04,2018Q2,organic_search,16,11,5,0.6875,False,False,small,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-04,2018Q2,paid_search,18,12,6,0.6666666666666666,False,False,small,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-04,2018Q2,referral,1,1,0,1.0,False,True,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-04,2018Q2,social,4,2,2,0.5,False,False,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-04,2018Q2,unknown,15,10,5,0.6666666666666666,False,False,small,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-05,2018Q2,direct_traffic,6,3,3,0.5,False,False,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-05,2018Q2,email,2,1,1,0.5,False,False,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-05,2018Q2,organic_search,31,18,13,0.5806451612903226,False,False,usable,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-05,2018Q2,other,2,2,0,1.0,False,True,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-05,2018Q2,paid_search,16,9,7,0.5625,False,False,small,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-05,2018Q2,referral,3,2,1,0.6666666666666666,False,False,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-05,2018Q2,social,4,2,2,0.5,False,False,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-05,2018Q2,unknown,18,10,8,0.5555555555555556,False,False,small,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-06,2018Q2,direct_traffic,6,0,6,0.0,True,False,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-06,2018Q2,email,1,0,1,0.0,True,False,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-06,2018Q2,organic_search,25,0,25,0.0,True,False,small,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-06,2018Q2,paid_search,23,0,23,0.0,True,False,small,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-06,2018Q2,referral,3,0,3,0.0,True,False,insufficient,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-06,2018Q2,social,10,0,10,0.0,True,False,small,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-06,2018Q2,unknown,14,0,14,0.0,True,False,small,seller-level reconstructed from mart_seller_monthly + activation_timing
+2018-01,2018Q1,__ALL__,3,2,1,0.6666666666666666,False,False,insufficient,cohort-only aggregate
+2018-02,2018Q1,__ALL__,27,20,7,0.7407407407407407,False,False,small,cohort-only aggregate
+2018-03,2018Q1,__ALL__,25,18,7,0.72,False,False,small,cohort-only aggregate
+2018-04,2018Q2,__ALL__,62,40,22,0.6451612903225806,False,False,usable,cohort-only aggregate
+2018-05,2018Q2,__ALL__,82,47,35,0.573170731707317,False,False,usable,cohort-only aggregate
+2018-06,2018Q2,__ALL__,82,0,82,0.0,True,False,usable,cohort-only aggregate

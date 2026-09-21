@@ -1,0 +1,169 @@
+table Monthly
+	lineageTag: 82207b5e-36c3-5d0d-9b02-5d39f87c6339
+
+	measure 'Orders Total' = SUM ( Monthly[orders] )
+		formatString: #,0
+		lineageTag: a8538b53-9cdb-5030-8b0a-57ae93f887c8
+
+	measure 'GMV Proxy Total' = SUM ( Monthly[gmv_proxy] )
+		formatString: R$ #,0.00
+		lineageTag: b7e088c7-074f-5995-919b-0745309d6837
+
+	measure 'Legacy Monthly GMV Trend RSM' = DIVIDE ( SUM ( Monthly[gmv_proxy] ), 1000000 )
+		formatString: 0.00
+		lineageTag: 2afe152d-4c90-5297-a8ef-41ce07d9be95
+
+	measure 'Legacy Monthly Orders Trend K' = DIVIDE ( SUM ( Monthly[orders] ), 1000 )
+		formatString: 0.0
+		lineageTag: f0f9dce0-7789-5a58-95e5-9dd2fb28cbe0
+
+	column purchase_month
+		dataType: string
+		lineageTag: 6436c734-e258-50c0-bffc-f7491b38f632
+		summarizeBy: none
+		sourceColumn: purchase_month
+
+	column gmv_proxy
+		dataType: double
+		formatString: R$ #,0.00
+		lineageTag: a7b5ec61-0105-56dc-899c-f69dc7d72490
+		summarizeBy: sum
+		sourceColumn: gmv_proxy
+
+	column customer_paid_value
+		dataType: double
+		formatString: R$ #,0.00
+		lineageTag: eb792b87-4c3c-5b26-b882-29a25c6185d7
+		summarizeBy: sum
+		sourceColumn: customer_paid_value
+
+	column orders
+		dataType: int64
+		formatString: #,0
+		lineageTag: 35e3e7ae-d6b9-55e7-8764-9d0b168e5d9c
+		summarizeBy: sum
+		sourceColumn: orders
+
+	column active_sellers
+		dataType: int64
+		formatString: #,0
+		lineageTag: cbdb033a-e155-5f6b-a63b-9841bff5f6ba
+		summarizeBy: sum
+		sourceColumn: active_sellers
+
+	column active_customers
+		dataType: int64
+		formatString: #,0
+		lineageTag: d90effd0-aa7d-5940-8999-1e229ec72d80
+		summarizeBy: sum
+		sourceColumn: active_customers
+
+	column items
+		dataType: int64
+		formatString: #,0
+		lineageTag: a702835c-c75e-52d0-894b-d5cfe7489965
+		summarizeBy: sum
+		sourceColumn: items
+
+	column delivered_orders
+		dataType: int64
+		formatString: #,0
+		lineageTag: 2c786b70-17cb-5559-949d-8daa9138d681
+		summarizeBy: sum
+		sourceColumn: delivered_orders
+
+	column late_orders
+		dataType: int64
+		formatString: #,0
+		lineageTag: ff9a2979-5096-5941-a570-59f4e37d284e
+		summarizeBy: sum
+		sourceColumn: late_orders
+
+	column avg_review_score
+		dataType: double
+		formatString: 0.0
+		lineageTag: 4d85a93a-e7ae-59da-a920-176eefc448f3
+		summarizeBy: sum
+		sourceColumn: avg_review_score
+
+	column aov
+		dataType: double
+		formatString: R$ #,0.00
+		lineageTag: f6caced1-3932-5c69-84f2-dc071876e918
+		summarizeBy: sum
+		sourceColumn: aov
+
+	column seller_productivity
+		dataType: double
+		formatString: R$ #,0.00
+		lineageTag: 9684ce69-8b75-51c5-b551-6a405bb7491d
+		summarizeBy: sum
+		sourceColumn: seller_productivity
+
+	column late_delivery_rate
+		dataType: double
+		formatString: 0.0%
+		lineageTag: aba4330d-8dbf-522b-af47-b38722e702fb
+		summarizeBy: sum
+		sourceColumn: late_delivery_rate
+
+	column low_review_rate
+		dataType: double
+		formatString: 0.0%
+		lineageTag: ce0e8b58-7c77-537a-bdcd-47ca06844f25
+		summarizeBy: sum
+		sourceColumn: low_review_rate
+
+	column gmv_proxy_mom_pct
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 9d93789c-8571-58f5-9551-504e4085a531
+		summarizeBy: sum
+		sourceColumn: gmv_proxy_mom_pct
+
+	column orders_mom_pct
+		dataType: double
+		formatString: 0.0%
+		lineageTag: be657c3c-dfab-5fbc-a7f8-80d28d760c56
+		summarizeBy: sum
+		sourceColumn: orders_mom_pct
+
+	column aov_mom_pct
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 4ac64cd5-613c-5f96-9951-4131ca4bae4e
+		summarizeBy: sum
+		sourceColumn: aov_mom_pct
+
+	column active_sellers_mom_pct
+		dataType: double
+		formatString: 0.0%
+		lineageTag: f37884f9-8034-571b-9a8a-dcc09e29d461
+		summarizeBy: sum
+		sourceColumn: active_sellers_mom_pct
+
+	column is_executive_complete
+		dataType: boolean
+		lineageTag: b4a4cf1f-f766-5641-9a7a-3d4e9fe6358b
+		summarizeBy: none
+		sourceColumn: is_executive_complete
+
+	partition Monthly = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\mart_marketplace_monthly.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"purchase_month", type text}, {"gmv_proxy", type number}, {"customer_paid_value", type number}, {"orders", Int64.Type}, {"active_sellers", Int64.Type}, {"active_customers", Int64.Type}, {"items", Int64.Type}, {"delivered_orders", Int64.Type}, {"late_orders", Int64.Type}, {"avg_review_score", type number}, {"aov", type number}, {"seller_productivity", type number}, {"late_delivery_rate", type number}, {"low_review_rate", type number}, {"gmv_proxy_mom_pct", type number}, {"orders_mom_pct", type number}, {"aov_mom_pct", type number}, {"active_sellers_mom_pct", type number}}, "en-US"),
+				    CompletenessSource = Csv.Document(File.Contents(DataRoot & "\\reports\\qa\\period_completeness.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    CompletenessPromoted = Table.PromoteHeaders(CompletenessSource, [PromoteAllScalars=true]),
+				    CompletenessTyped = Table.TransformColumnTypes(CompletenessPromoted, {{"month", type text}, {"is_executive_complete", type logical}}, "en-US"),
+				    CompletenessKeep = Table.SelectColumns(CompletenessTyped, {"month", "is_executive_complete"}),
+				    CompletenessRename = Table.RenameColumns(CompletenessKeep, {{"month", "purchase_month"}}),
+				    Joined = Table.NestedJoin(Typed, {"purchase_month"}, CompletenessRename, {"purchase_month"}, "Completeness", JoinKind.LeftOuter),
+				    Expanded = Table.ExpandTableColumn(Joined, "Completeness", {"is_executive_complete"}, {"is_executive_complete"})
+				in
+				    Expanded
+
+	annotation PBI_ResultType = Table
+

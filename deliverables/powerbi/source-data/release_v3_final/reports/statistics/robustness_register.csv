@@ -1,0 +1,7 @@
+analysis,baseline_spec,alternative_spec,baseline_effect,alternative_effect,direction_stable,magnitude_stable,conclusion_stable,notes
+lead conversion,all origins,major actionable origins >=500 MQL,0.1311902637909271,0.09291946888669235,yes,directional,yes,unknown retained for context but excluded from actionable ranking
+retention,all eligible sellers,major origins / exclude unknown,0.45195729537366547,0.4292682926829268,descriptive,not a channel ranking,yes,current evidence remains inconclusive for origin-specific M3 intervention
+late-review,binary late vs on-time,delay-severity buckets,-1.7275883057642907,-2.6118794020331944,yes,directional,yes,"severity analysis supports a dose-response diagnostic, not causality"
+marketplace trend,include observed edge months,complete interior months only,0.0,854686.33,no,no,no,edge tail is partial; executive trend charts must flag or exclude it
+seller concentration,all sellers with positive GMV,seller-month active threshold,0.8269167790206272,,yes,pending threshold definition,yes,concentration risk remains material even before monthly-threshold sensitivity
+

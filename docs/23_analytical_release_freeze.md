@@ -3,7 +3,9 @@
 **Commit:** `19e6e6496c104be83b62aa1855e13b31d7084eb4` analytical release artifacts  
 **Date:** 2026-09-12  
 **Verification Status:** `PASS_WITH_ASSOCIATIVE_LIMITATIONS` (`power_bi_ready=true`)  
-**Scope:** Final pre-Power-BI consistency repair for the Marketplace Growth & Seller Intelligence showcase.  
+**Scope:** Final analytical consistency repair underpinning the Marketplace
+Growth & Seller Intelligence showcase. The Power BI/PDF/web release is now
+delivered on top of this frozen contract.
 **Metric version:** `v3` for activation; pooled-quarter R2 for the retention headline.
 
 ## Freeze decision

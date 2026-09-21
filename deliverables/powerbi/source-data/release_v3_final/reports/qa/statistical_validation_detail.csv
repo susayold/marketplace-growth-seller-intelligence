@@ -1,0 +1,18 @@
+test,method,statistic,p_value,sample_size,effect_size,metric,ci_low,ci_high,interpretation,n_on_time,n_late,mean_on_time,mean_late,median_on_time,median_late
+lead_origin_vs_conversion,chi_square,137.68708250826433,3.0961535354297734e-25,8000,0.1311902637909271,conversion_rate,,,association detected; Cramers V reported; not causal,,,,,,
+conversion_ci:direct_traffic,wilson_95pct,,,499,0.11222444889779559,conversion_rate,0.08743978043099307,0.14293394231727677,descriptive interval,,,,,,
+conversion_ci:display,wilson_95pct,,,118,0.05084745762711865,conversion_rate,0.023509631366969028,0.10650735114476316,descriptive interval,,,,,,
+conversion_ci:email,wilson_95pct,,,493,0.030425963488843813,conversion_rate,0.018523723985031416,0.04958947031445481,descriptive interval,,,,,,
+conversion_ci:organic_search,wilson_95pct,,,2296,0.11803135888501742,conversion_rate,0.10546759655315235,0.13187113683092583,descriptive interval,,,,,,
+conversion_ci:other,wilson_95pct,,,150,0.02666666666666667,conversion_rate,0.010417940822967993,0.06655389051214453,descriptive interval,,,,,,
+conversion_ci:other_publicities,wilson_95pct,,,65,0.046153846153846156,conversion_rate,0.015819840413512573,0.1271384726333883,descriptive interval,,,,,,
+conversion_ci:paid_search,wilson_95pct,,,1586,0.12295081967213115,conversion_rate,0.10769449118606486,0.14002924040716971,descriptive interval,,,,,,
+conversion_ci:referral,wilson_95pct,,,284,0.08450704225352113,conversion_rate,0.05744460092887881,0.12265961002492914,descriptive interval,,,,,,
+conversion_ci:social,wilson_95pct,,,1350,0.05555555555555555,conversion_rate,0.04455006636127891,0.0690832234293163,descriptive interval,,,,,,
+conversion_ci:unknown,wilson_95pct,,,1159,0.16652286453839515,conversion_rate,0.14618348041015417,0.18906553901856082,descriptive interval,,,,,,
+late_delivery_vs_review_score,mann_whitney_plus_bootstrap_mean_difference,152431522.5,0.0,96361,-1.727243311273042,mean_review_score_late_minus_ontime,-1.7852149999999998,-1.6737899999999994,late orders have different review scores; association only,88661.0,7700.0,4.293736817766549,2.5664935064935066,5.0,2.0
+retention_m3_by_origin,chi_square,1.868440204951173,0.6001560041034777,281,0.08154295431490541,m3_retention_rate,,,channel differences are associative; only eligible M3 observations,,,,,,
+retention_m3_ci:organic_search,wilson_95pct,,,88,0.4318181818181818,m3_retention_rate,0.33332677056322896,0.5360132839819837,eligible M3 descriptive interval,,,,,,
+retention_m3_ci:other_sparse,wilson_95pct,,,60,0.4,m3_retention_rate,0.2856949053488255,0.5263394650795924,eligible M3 descriptive interval,,,,,,
+retention_m3_ci:paid_search,wilson_95pct,,,73,0.4657534246575342,m3_retention_rate,0.35592041663948065,0.5790105428095419,eligible M3 descriptive interval,,,,,,
+retention_m3_ci:unknown,wilson_95pct,,,60,0.5166666666666667,m3_retention_rate,0.39307810032592494,0.6382495046026722,eligible M3 descriptive interval,,,,,,

@@ -1,37 +1,59 @@
-# Marketplace Growth & Seller Intelligence
+# MarketLens — Marketplace Growth & Seller Intelligence
 
-Decision-support analysis of marketplace growth, seller activation, retention, concentration and customer experience.
+[View the live report](https://susayold.github.io/marketplace-growth-seller-intelligence/) · [Download the final PDF](deliverables/final-market-dashboard.pdf) · [Open the Power BI project](deliverables/powerbi/final%20market%20dashboard.pbip)
 
-## Current release
+This portfolio case study evaluates marketplace health across seller acquisition,
+activation, retention, commercial concentration, customer experience, root-cause
+diagnosis, and a governed action agenda.
 
-The pre-Power-BI showcase is frozen against the analytical consistency release-freeze plan. It has 61 registered charts (66 rendered PNGs including five retained legacy summaries), the original statistical pack plus v3 activation/retention QA artifacts, 6 root-cause cases, 20 hypotheses and 5 decision cards. `reports/qa/analysis_showcase_verification.json` reports every repair gate as `true`; observational limitations remain explicit.
+## Portfolio navigation
 
-Start with:
+- **Business problem:** determine whether marketplace growth is broad, valuable,
+  and operationally healthy—not merely whether orders increased.
+- **Data model:** grain-safe marketplace, seller, acquisition, activation,
+  retention, commercial, customer-experience, root-cause, and decision outputs.
+- **Core findings:** orders and sellers grew into the final complete month while
+  GMV, AOV, and seller productivity softened; seller value is concentrated and
+  late delivery is strongly associated with low reviews.
+- **Technical stack:** SQL-compatible marts, Python statistical validation,
+  Power BI PBIP/TMDL, DAX, and a static GitHub Pages release.
+- **QA and reconciliation:** see `deliverables/RELEASE_QA.md`,
+  `reports/qa/powerbi_reconciliation.csv`, and
+  `reports/qa/canonical_final_metrics.json`.
+- **Limitations:** GMV is a proxy; the analysis is historical and observational;
+  incomplete periods and unobservable cohorts are excluded or flagged.
+- **Reproduction:** follow the refresh steps below; change only `DataRoot` when
+  cloning to another machine, then refresh the PBIP model.
 
-- `docs/18_statistical_rigor_upgrade.md` — measurement, uncertainty and model rules
-- `docs/19_root_cause_playbook.md` — six evidence-backed investigation cases
-- `docs/20_business_decision_layer.md` — KPI/guardrail decision cards
-- `docs/21_chart_catalog.md` — chart map and Power BI candidates
-- `docs/22_claims_and_evidence_register.md` — allowed wording and boundaries
-- `docs/metric_changelog.md` — activation v1 → v2 → canonical v3 changes
-- `reports/headline_metrics.json` — single source for headline numbers
-- `reports/qa/activation_definition_reconciliation.csv` — 327 vs 380 reconciliation
-- `reports/qa/reporting_boundary_register.csv` — raw/analytical/executive boundaries
-- `reports/qa/headline_claim_reconciliation.csv` — claim-to-source audit
-- `reports/qa/analysis_showcase_verification.json` — acceptance checks
-- `docs/23_analytical_release_freeze.md` — freeze decision and Power BI handoff contract
+## Final release contents
 
-## Rebuild
+- `deliverables/powerbi/` — editable PBIP source.
+- `deliverables/final-market-dashboard.pdf` — exported seven-page report.
+- `deliverables/powerbi/source-data/release_v3_final/reports/` — small governed
+  analytical outputs required to refresh the model.
+- `scripts/build-powerbi-canonical-inputs.ps1` — reproducibly builds the
+  display-shaped Power BI tables from the analytical release.
+- `scripts/build-pdf-from-pbi-snapshots.py` — packages the verified Power BI
+  canvas snapshots into the seven-page PDF and synchronized web previews.
 
-Set `OLIST_RAW_DIR` to a temporary source directory and `OLIST_PROJECT_DIR` to the project path, then run `make analysis-showcase` or execute the five Python scripts in `src/`. Raw data is an input only and is not committed to the repository.
+## Metric governance
 
-## Core findings
+The executive monthly source is `mart_marketplace_monthly.csv`. Its latest
+complete-month comparison is Jul → Aug 2018: GMV proxy **-4.6%**, orders
+**+2.9%**, active sellers **+1.3%**, AOV **-7.2%**, and late delivery
+**+5.9 percentage points**. The website, Power BI model and release QA are
+expected to use this source only.
 
-- Acquisition conversion differs by origin; pairwise comparisons are FDR-adjusted and downstream activation/retention remain guardrails.
-- Activation v3 uses exact seller-level first-sale timestamps, eligibility-aware fixed windows and right censoring; 30-day activation is 15.8% over 825 observable sellers and observed activator median is 44.3 days.
-- The repaired M3 retention headline model uses origin plus pooled eligible cohort quarter with HC3 robust errors; origin effects remain imprecise and are a guardrail, not a channel-ranking KPI.
-- Seller value is concentrated: Gini is approximately 0.792 and the top 20% account for approximately 82.7% of positive-GMV seller value.
-- Late delivery is associated with a 44.8 percentage-point higher low-review rate in reviewed delivered orders; an adjusted model retains the association after observed controls.
+Customer-experience review effects use `statistics/late_review_effect.csv`;
+the decision agenda uses `decision_register.csv`. These are intentionally
+separate, governed release outputs rather than demo inputs.
 
-Power BI is deliberately the next phase after this analytical release gate.
+## Refreshing Power BI
 
+1. Open `deliverables/powerbi/final market dashboard.pbip` in Power BI Desktop.
+2. In Power Query, change the single `DataRoot` parameter only if the repository
+   is located somewhere other than the value saved in the project.
+3. Refresh the model, check the seven pages, then export the PDF.
+
+The raw Olist files are intentionally not committed. The project ships the
+small analytical release tables needed by the Power BI model.

@@ -18,11 +18,15 @@ This audit separates explicit user instructions from the attached execution blue
 - reports/tables/mart_marketplace_daily.csv: 616 daily rows and GMV proxy 13,591,643.70.
 - reports/tables/mart_seller_monthly.csv: 16,441 seller-month rows and GMV proxy 13,591,643.70.
 
-## Still pending / not fabricated
+## Final release artifacts
 
-- powerbi/marketplace_growth_seller_intelligence.pbix: requires an authenticated Power BI Desktop/Web authoring runtime.
-- Power BI PDF export, measured slicer/drill-through QA, and PASS values in reports/qa/powerbi_reconciliation.csv remain pending for the same reason.
+- `deliverables/powerbi/final market dashboard.pbip` is the editable Power BI
+  project used for the final release.
+- `deliverables/final-market-dashboard.pdf` contains seven verified pages, and
+  `reports/qa/powerbi_reconciliation.csv` contains measured PASS values.
 
 ## Current decision
 
-Do not tag the project as fully complete yet. The non-Power-BI evidence is publishable and the remaining gaps are explicit runtime/artifact gaps, not hidden assumptions. When an authenticated Power BI authoring session is available, build the six pages, run reconciliation, and update this audit.
+The Power BI runtime gate is complete. Freeze the analytical, PBIP, PDF, and
+website artifacts at the final release tag; keep observational limitations and
+the historical reporting boundary explicit.

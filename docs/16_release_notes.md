@@ -8,7 +8,8 @@
 - Added expanded automated tests, CI workflow, release log and portfolio assets.
 - Preserved remote-only storage: raw data, tables and charts live in Drive; GitHub stores code, documentation and reviewable small artifacts.
 
-Power BI remains intentionally last.
+Power BI was intentionally held until the analytical release was stable; the
+final PBIP, PDF, and reconciliation are now included in v1.0.
 
 
 ## v1.2 additional analytical coverage
@@ -20,4 +21,4 @@ Power BI remains intentionally last.
 
 ## Release update — 2026-09-12
 
-Added and verified the daily marketplace and seller-month marts from row-level source, added a parameterized build script and provenance QA, updated the Power BI pack to consume the new grains, and refreshed the plan audit. Power BI remains the final pending runtime gate.
+Added and verified the daily marketplace and seller-month marts from row-level source, added a parameterized build script and provenance QA, updated the Power BI pack to consume the new grains, and refreshed the plan audit. The final seven-page PBIP/PDF/web release was validated on 2026-09-21.

@@ -1,0 +1,27 @@
+table DimCategory
+	lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0211
+
+	column product_category
+		dataType: string
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0212
+		summarizeBy: none
+		sourceColumn: product_category
+
+	column Category
+		dataType: string
+		lineageTag: 8d49c4a8-9a25-4f6f-9d4e-1e5c7f8a0213
+		summarizeBy: none
+		sourceColumn: CategoryLabel
+
+	partition DimCategory = m
+		mode: import
+		source =
+				let
+					Source = Table.Distinct(Table.SelectColumns(Category, {"product_category_name_english"})),
+					Renamed = Table.RenameColumns(Source, {{"product_category_name_english", "product_category"}}),
+					AddLabel = Table.AddColumn(Renamed, "CategoryLabel", each Text.Proper(Text.Replace([product_category], "_", " ")), type text)
+				in
+					AddLabel
+
+	annotation PBI_ResultType = Table
+

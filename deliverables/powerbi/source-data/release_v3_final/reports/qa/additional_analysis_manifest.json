@@ -1,0 +1,7 @@
+{
+  "retention_rows": 63,
+  "segmentation_rows": 3095,
+  "statistical_rows": 17,
+  "m3_origins": 9,
+  "observed_end_month": "2018-09-01"
+}

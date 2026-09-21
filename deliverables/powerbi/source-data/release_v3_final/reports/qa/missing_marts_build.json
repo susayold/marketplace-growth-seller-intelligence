@@ -1,0 +1,15 @@
+{
+  "run_date": "2026-09-12",
+  "source": {
+    "orders": "https://raw.githubusercontent.com/olist/work-at-olist-data/master/datasets/olist_orders_dataset.csv",
+    "order_items": "https://raw.githubusercontent.com/olist/work-at-olist-data/master/datasets/olist_order_items_dataset.csv",
+    "customers": "https://raw.githubusercontent.com/olist/work-at-olist-data/master/datasets/olist_customers_dataset.csv",
+    "reviews": "https://raw.githubusercontent.com/olist/work-at-olist-data/master/datasets/olist_order_reviews_dataset.csv",
+    "products": "https://raw.githubusercontent.com/olist/work-at-olist-data/master/datasets/olist_products_dataset.csv"
+  },
+  "source_row_counts": {"orders": 99441, "order_items": 112650, "customers": 99441, "reviews": 99224, "products": 32951},
+  "outputs": {"mart_marketplace_daily_rows": 616, "mart_seller_monthly_rows": 16441, "daily_gmv_proxy": 13591643.7, "seller_monthly_gmv_proxy": 13591643.7},
+  "checks": {"source_counts_match_governed_inventory": true, "daily_gmv_matches_control_total": true, "seller_monthly_gmv_matches_control_total": true, "review_attribution": "single-seller orders only for seller-month review proxy"}
+}
+
+

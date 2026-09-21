@@ -1,0 +1,9 @@
+run timestamp: 2026-09-12 Asia/Bangkok
+input file: Drive/marketplace-growth-seller-intelligence/01_raw_data/brazilian-ecommerce.zip
+input file: Drive/marketplace-growth-seller-intelligence/01_raw_data/marketing-funnel-olist.zip
+rows read: 99,441 raw orders; 112,650 order items; 103,886 payments; 99,224 reviews; 8,000 MQLs
+rows loaded: 24 monthly rows; 3,095 seller lifetime rows; 5 acquisition/funnel outputs; 5 chart PNGs; 1 executive PDF
+warnings: raw ZIPs intentionally excluded from local/GitHub release; GMV is a proxy; retention is eligibility-aware; seller attribution is limited
+errors: none in Python pipeline
+elapsed time: clean rebuild completed successfully
+verification: pytest -q passed; notebooks executed top-to-bottom; manifest regenerated

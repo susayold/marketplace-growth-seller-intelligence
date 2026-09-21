@@ -1,0 +1,7 @@
+{
+  "grain_safe_gmv_proxy": 13591643.7,
+  "naive_join_gmv": 14209115.34,
+  "fanout_difference": 617471.6400000006,
+  "fanout_multiple": 1.0454302403468685,
+  "passes": true
+}
