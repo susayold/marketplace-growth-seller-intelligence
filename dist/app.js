@@ -35,7 +35,16 @@
     currentPage = Math.max(1, Math.min(7, pageNum));
     const image = document.getElementById('dashboardImage');
     const loading = document.getElementById('pdfLoading');
+    const fullResLink = document.getElementById('dashboardFullRes');
+    const fullResButton = document.getElementById('dashboardFullResButton');
     const meta = pageMeta[currentPage];
+    const pageImage = imageFor(currentPage);
+
+    if (fullResLink) {
+      fullResLink.href = pageImage;
+      fullResLink.setAttribute('aria-label', 'Open dashboard page ' + currentPage + ' in full resolution');
+    }
+    if (fullResButton) fullResButton.href = pageImage;
 
     if (loading) {
       loading.innerHTML = 'Loading ultra-high-resolution Power BI page…';
@@ -55,7 +64,7 @@
           loading.classList.add('show');
         }
       };
-      image.src = imageFor(currentPage);
+      image.src = pageImage;
       image.alt = 'Power BI dashboard page ' + currentPage + ' — ' + meta[0];
     }
 
