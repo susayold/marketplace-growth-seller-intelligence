@@ -13,7 +13,7 @@ table DecisionRegister
 		formatString: #,0
 		lineageTag: 90a3c1f1-0c49-4a52-9f99-1a322090da68
 
-	measure 'Decision High Impact' = COUNTROWS ( FILTER ( DecisionRegister, DecisionRegister[ExpectedImpact] >= 4 ) )
+	measure 'Decision High Impact' = COUNTROWS ( FILTER ( DecisionRegister, DecisionRegister[ExpectedImpact] >= 3 ) )
 		formatString: #,0
 		lineageTag: 58be5882-6bd3-4d19-9a71-e93d976894f7
 
@@ -33,7 +33,7 @@ table DecisionRegister
 		formatString: General
 		lineageTag: 7b3c2043-58a2-4f31-bd2a-3f2cf4d60803
 
-	measure 'Decision High Impact Delta Label' = VAR Total = COUNTROWS ( DecisionRegister ) RETURN "▲ " & FORMAT ( DIVIDE ( [Decision High Impact], Total ), "0.0%" ) & " high-impact share"
+	measure 'Decision High Impact Delta Label' = VAR Total = COUNTROWS ( DecisionRegister ) RETURN "▲ " & FORMAT ( DIVIDE ( [Decision High Impact], Total ), "0.0%" ) & " high-evidence share"
 		formatString: General
 		lineageTag: 8c4d3154-69b3-4042-ce3b-4a3da5e71904
 

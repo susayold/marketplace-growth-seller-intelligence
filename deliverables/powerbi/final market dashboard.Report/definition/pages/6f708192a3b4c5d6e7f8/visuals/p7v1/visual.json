@@ -74,7 +74,7 @@
               "queryRef": "DecisionRegister.ExpectedImpact",
               "nativeQueryRef": "ExpectedImpact",
               "active": true,
-              "displayName": "Expected Impact"
+              "displayName": "Evidence Strength"
             }
           ]
         },
@@ -99,7 +99,7 @@
               "queryRef": "DecisionRegister.Effort",
               "nativeQueryRef": "Effort",
               "active": true,
-              "displayName": "Effort Level"
+              "displayName": "Actionability"
             }
           ]
         },
@@ -124,7 +124,7 @@
               "queryRef": "DecisionRegister.ExpectedImpact",
               "nativeQueryRef": "ExpectedImpact",
               "active": true,
-              "displayName": "Expected Impact"
+              "displayName": "Evidence Strength"
             }
           ]
         }
@@ -176,14 +176,21 @@
             "end": {
               "expr": {
                 "Literal": {
-                  "Value": "6D"
+                  "Value": "4D"
                 }
               }
             },
             "showAxisTitle": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Actionability'"
                 }
               }
             },
@@ -239,14 +246,21 @@
             "end": {
               "expr": {
                 "Literal": {
-                  "Value": "7D"
+                  "Value": "4D"
                 }
               }
             },
             "showAxisTitle": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Evidence Strength'"
                 }
               }
             },
@@ -416,7 +430,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Acquisition'"
+                        "Value": "'Data / BI'"
                       }
                     }
                   }
@@ -432,7 +446,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#0D9488'"
+                    "Value": "'#0D9488'"
                     }
                   }
                 }
@@ -443,7 +457,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#0D9488'"
+                    "Value": "'#0D9488'"
                     }
                   }
                 }
@@ -468,7 +482,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Activation'"
+                        "Value": "'Seller Acquisition'"
                       }
                     }
                   }
@@ -484,7 +498,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#60A5FA'"
+                      "Value": "'#7C3AED'"
                     }
                   }
                 }
@@ -495,7 +509,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#60A5FA'"
+                      "Value": "'#7C3AED'"
                     }
                   }
                 }
@@ -520,7 +534,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Commercial'"
+                        "Value": "'Seller Operations'"
                       }
                     }
                   }
@@ -536,7 +550,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#2563EB'"
+                    "Value": "'#E11D48'"
                     }
                   }
                 }
@@ -547,7 +561,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#2563EB'"
+                    "Value": "'#E11D48'"
                     }
                   }
                 }
@@ -588,7 +602,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1D4ED8'"
+                    "Value": "'#F59E0B'"
                     }
                   }
                 }
@@ -599,7 +613,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1D4ED8'"
+                    "Value": "'#F59E0B'"
                     }
                   }
                 }
@@ -624,7 +638,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Marketplace'"
+                        "Value": "'Commercial Analytics'"
                       }
                     }
                   }

@@ -3,9 +3,10 @@ from pathlib import Path
 from PIL import Image
 
 
-ROOT = Path(r"D:\data\Codex\marketlens-7page-web\tmp\powerbi-final-validation-scale2")
-OUTPUT = Path(r"D:\data\Codex\marketlens-7page-web\deliverables\final-market-dashboard.pdf")
-DASHBOARD = Path(r"D:\data\Codex\marketlens-7page-web\dist\assets\dashboard")
+PROJECT = Path(__file__).resolve().parents[1]
+ROOT = PROJECT / "tmp" / "powerbi-unified-final-scale2"
+OUTPUT = PROJECT / "deliverables" / "final-market-dashboard.pdf"
+DASHBOARD = PROJECT / "dist" / "assets" / "dashboard"
 PAGES = [
     "Executive Overview.png",
     "Seller Acquisition.png",

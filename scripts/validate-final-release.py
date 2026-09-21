@@ -70,6 +70,16 @@ def main() -> None:
     if RECON.read_bytes() != SOURCE_RECON.read_bytes():
         raise AssertionError("root and PBIP source-bundle reconciliation files differ")
 
+    decision_path = SOURCE / "reports" / "tables" / "powerbi_decision_register.csv"
+    with decision_path.open(newline="", encoding="utf-8-sig") as handle:
+        decision_rows = list(csv.DictReader(handle))
+    if len(decision_rows) != 5:
+        raise AssertionError(f"expected five governed decisions, found {len(decision_rows)}")
+    if any(int(row["Effort"]) <= 0 for row in decision_rows):
+        raise AssertionError("decision matrix actionability values must be positive")
+    if {int(row["ExpectedImpact"]) for row in decision_rows} - {2, 3}:
+        raise AssertionError("decision matrix evidence-strength values are outside the governed scale")
+
     scan_paths = [REPORT / "definition", MODEL / "definition", SOURCE, ROOT / "dist"]
     forbidden = re.compile(
         r"bi_fact_marketplace_item|Demo[A-Z]|Partner converts best|"

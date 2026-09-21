@@ -134,15 +134,17 @@ $customerRows = foreach ($effect in $effects) {
 }
 $customerRows | Export-Csv (Join-Path $tableOut 'powerbi_customer_experience.csv') -NoTypeInformation -Encoding utf8
 
-# The five governed decisions are read from the release register.  The table
-# exposes the legacy display columns without a sixth, non-canonical action.
+# The five governed decisions are read from the release register.  The matrix
+# is evidence strength × actionability (the governed decision-priority axes).
+# ExpectedImpact and Effort are retained as PBIP-compatible storage columns;
+# the report exposes them as Evidence Strength and Actionability.
 $decisionRows = Read-Csv 'decision_register.csv' | ForEach-Object {
     [pscustomobject]@{
         Action = $_.recommended_action
         Pillar = $_.owner_role
         Priority = $_.priority_band
-        ExpectedImpact = [int]$_.actionability
-        Effort = 0
+        ExpectedImpact = [int]$_.evidence_strength
+        Effort = [int]$_.actionability
         Owner = $_.owner_role
         TimeHorizon = $_.review_frequency
         Status = 'Ready'
