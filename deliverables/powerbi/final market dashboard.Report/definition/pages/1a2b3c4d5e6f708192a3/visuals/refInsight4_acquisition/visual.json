@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "refInsight4_acquisition",
   "position": {
-    "x": 2500,
-    "y": 685,
+    "x": 0,
+    "y": 0,
     "z": 47000,
-    "height": 28,
-    "width": 28,
+    "height": 1,
+    "width": 1,
     "tabOrder": 47000
   },
   "visual": {
@@ -29,5 +29,6 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  }
+  },
+  "isHidden": true
 }
