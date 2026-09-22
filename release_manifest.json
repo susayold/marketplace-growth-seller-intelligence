@@ -61,7 +61,7 @@
   },
   {
     "path": "deliverables/final-market-dashboard.pdf",
-    "bytes": 1888039
+    "bytes": 1887065
   },
   {
     "path": "deliverables/powerbi/final market dashboard.pbip",
@@ -1833,7 +1833,7 @@
   },
   {
     "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7v1/visual.json",
-    "bytes": 18800
+    "bytes": 18824
   },
   {
     "path": "deliverables/powerbi/final market dashboard.Report/definition/pages/6f708192a3b4c5d6e7f8/visuals/p7v2/visual.json",
@@ -2201,7 +2201,7 @@
   },
   {
     "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/DecisionMatrix.tmdl",
-    "bytes": 2017
+    "bytes": 1679
   },
   {
     "path": "deliverables/powerbi/final market dashboard.SemanticModel/definition/tables/DecisionRegister.tmdl",
@@ -2657,7 +2657,7 @@
   },
   {
     "path": "dist/assets/dashboard/Decision Center.png",
-    "bytes": 656287
+    "bytes": 651144
   },
   {
     "path": "dist/assets/dashboard/Executive Overview.png",
@@ -2689,7 +2689,7 @@
   },
   {
     "path": "dist/assets/dashboard/page-7.png",
-    "bytes": 606970
+    "bytes": 602638
   },
   {
     "path": "dist/assets/dashboard/Root Cause & Diagnostic.png",
@@ -2709,7 +2709,7 @@
   },
   {
     "path": "dist/assets/final-market-dashboard.pdf",
-    "bytes": 1888039
+    "bytes": 1887065
   },
   {
     "path": "dist/assets/hero-bg.svg",
@@ -2933,7 +2933,7 @@
   },
   {
     "path": "release_manifest.json",
-    "bytes": 137112
+    "bytes": 137794
   },
   {
     "path": "reports/chart_registry.csv",
