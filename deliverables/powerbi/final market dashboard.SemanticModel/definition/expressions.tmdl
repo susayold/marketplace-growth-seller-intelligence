@@ -1,2 +1,5 @@
 expression DataRoot = "D:\\data\\Codex\\marketlens-unified\\deliverables\\powerbi\\source-data\\release_v3_final" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 0a65b6a4-b2f1-4e50-a8de-33a98c6b68c0
+
+	annotation PBI_ResultType = Text
+

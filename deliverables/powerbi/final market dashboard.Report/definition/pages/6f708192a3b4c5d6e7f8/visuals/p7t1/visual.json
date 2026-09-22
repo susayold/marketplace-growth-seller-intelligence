@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Impact vs Effort Matrix",
+                    "value": "Impact vs Effort | display offsets separate overlapping decisions",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "18px",

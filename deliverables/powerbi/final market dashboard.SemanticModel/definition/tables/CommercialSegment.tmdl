@@ -90,5 +90,5 @@ table CommercialSegment
 
 	partition CommercialSegment = m
 		mode: import
-		source =
-				let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_commercial_segment.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Segment", type text}, {"Sellers", Int64.Type}, {"GMV_M", type number}, {"Orders_K", type number}, {"AOV", type number}, {"GrowthRate", type number}, {"ShareGMV", type number}}, "en-US") in Typed
+		source = let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_commercial_segment.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Segment", type text}, {"Sellers", Int64.Type}, {"GMV_M", type number}, {"Orders_K", type number}, {"AOV", type number}, {"GrowthRate", type number}, {"ShareGMV", type number}}, "en-US") in Typed
+

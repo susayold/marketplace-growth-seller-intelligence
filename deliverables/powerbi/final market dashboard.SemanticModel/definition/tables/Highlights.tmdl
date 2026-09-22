@@ -21,7 +21,7 @@ table Highlights
 
 	partition Highlights = m
 		mode: import
-		source =
-				let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_highlights.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Metric", type text}, {"Delta", type text}, {"Interpretation", type text}}, "en-US") in Typed
+		source = let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_highlights.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Metric", type text}, {"Delta", type text}, {"Interpretation", type text}}, "en-US") in Typed
+
 	annotation PBI_ResultType = Table
 

@@ -152,6 +152,31 @@ $decisionRows = Read-Csv 'decision_register.csv' | ForEach-Object {
 }
 $decisionRows | Export-Csv (Join-Path $tableOut 'powerbi_decision_register.csv') -NoTypeInformation -Encoding utf8
 
+# The matrix uses a display-only coordinate adapter so overlapping decisions
+# remain visible without changing the canonical decision register.
+$plotOffsets = @{
+    'Commercial Analytics' = @(-1, 0)
+    'Seller Acquisition' = @(0, 0)
+    'Seller Operations' = @(1, 0)
+    'Data / BI' = @(-1, 0)
+    'Customer Experience' = @(0, 0)
+}
+$decisionPlotRows = foreach ($row in $decisionRows) {
+    $offset = $plotOffsets[[string]$row.Pillar]
+    if ($null -eq $offset) { $offset = @(0, 0) }
+    [pscustomobject]@{
+        Action = $row.Action
+        Pillar = $row.Pillar
+        Priority = $row.Priority
+        ExpectedImpact = [int64]$row.ExpectedImpact + [int64]$offset[1]
+        Effort = [int64]$row.Effort + [int64]$offset[0]
+        Owner = $row.Owner
+        TimeHorizon = $row.TimeHorizon
+        Status = $row.Status
+    }
+}
+$decisionPlotRows | Export-Csv (Join-Path $tableOut 'powerbi_decision_matrix_plot.csv') -NoTypeInformation -Encoding utf8
+
 # Retention cohorts are a direct pivot of the canonical cohort mart.
 $retention = Read-Csv 'tables/mart_seller_cohort.csv'
 $retentionRows = foreach ($group in ($retention | Group-Object cohort_month | Sort-Object Name)) {

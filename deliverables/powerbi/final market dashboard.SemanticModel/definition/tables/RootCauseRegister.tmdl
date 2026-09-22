@@ -86,5 +86,5 @@ table RootCauseRegister
 
 	partition RootCauseRegister = m
 		mode: import
-		source =
-				let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_root_cause_register.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Driver", type text}, {"Metric", type text}, {"Impact", type number}, {"Severity", Int64.Type}, {"Frequency", Int64.Type}, {"PriorityScore", Int64.Type}, {"Owner", type text}}, "en-US") in Typed
+		source = let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_root_cause_register.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Driver", type text}, {"Metric", type text}, {"Impact", type number}, {"Severity", Int64.Type}, {"Frequency", Int64.Type}, {"PriorityScore", Int64.Type}, {"Owner", type text}}, "en-US") in Typed
+

@@ -220,7 +220,7 @@ table Snapshot
 	measure 'AOV Delta Label' = VAR D = [AOV Delta] RETURN IF ( ISBLANK ( D ), BLANK (), IF ( D >= 0, "▲ ", "▼ " ) & FORMAT ( D, "+0.0%;-0.0%;0.0%" ) & "  vs. previous period" )
 		lineageTag: 97e1cb81-bf4d-4078-bb0c-5da2b59fed04
 
-	measure 'Late Delivery Delta Label' = VAR D = [Late Delivery Delta PP] * 100 RETURN IF ( ISBLANK ( D ), BLANK (), IF ( D <= 0, "▼ ", "▲ " ) & FORMAT ( D, "+0.0;-0.0;0.0" ) & " p.p.  vs. previous period" )
+	measure 'Late Delivery Delta Label' = VAR Complete = FILTER ( ALL ( Monthly ), Monthly[is_executive_complete] = TRUE () ) VAR LatestMonth = MAXX ( Complete, Monthly[purchase_month] ) VAR PriorMonth = MAXX ( FILTER ( Complete, Monthly[purchase_month] < LatestMonth ), Monthly[purchase_month] ) VAR D = [Late Delivery Delta PP] * 100 VAR LatestDate = DATE ( VALUE ( LEFT ( LatestMonth, 4 ) ), VALUE ( RIGHT ( LatestMonth, 2 ) ), 1 ) VAR PriorDate = DATE ( VALUE ( LEFT ( PriorMonth, 4 ) ), VALUE ( RIGHT ( PriorMonth, 2 ) ), 1 ) RETURN IF ( ISBLANK ( D ), BLANK (), IF ( D <= 0, "▼ ", "▲ " ) & FORMAT ( D, "+0.0;-0.0;0.0" ) & " p.p.  vs. " & FORMAT ( PriorDate, "MMM yyyy" ) & " → " & FORMAT ( LatestDate, "MMM yyyy" ) )
 		lineageTag: 67a69db4-d7f8-449f-b4c1-f5ed01faa705
 
 	column GMV

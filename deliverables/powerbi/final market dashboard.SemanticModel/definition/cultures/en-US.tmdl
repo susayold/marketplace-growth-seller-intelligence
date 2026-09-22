@@ -781,6 +781,48 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "decisionmatrix.action": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DecisionMatrix",
+			          "ConceptualProperty": "Action"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Recommended Action": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "decisionmatrix.pillar": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DecisionMatrix",
+			          "ConceptualProperty": "Pillar"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Strategic Pillar": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  }
 			}

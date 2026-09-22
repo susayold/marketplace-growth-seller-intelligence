@@ -17,7 +17,7 @@ table DecisionRegister
 		formatString: #,0
 		lineageTag: 58be5882-6bd3-4d19-9a71-e93d976894f7
 
-	measure 'Decision 30-60D' = COUNTROWS ( FILTER ( DecisionRegister, DecisionRegister[TimeHorizon] = "30D" || DecisionRegister[TimeHorizon] = "60D" ) )
+	measure 'Decision 30-60D' = COUNTROWS ( FILTER ( DecisionRegister, CONTAINSSTRING ( DecisionRegister[TimeHorizon], "30D" ) || CONTAINSSTRING ( DecisionRegister[TimeHorizon], "60D" ) || CONTAINSSTRING ( DecisionRegister[Action], "30" ) || CONTAINSSTRING ( DecisionRegister[Action], "60" ) ) )
 		formatString: #,0
 		lineageTag: 9e56f147-ee3b-4492-90b0-029d2499c3df
 
@@ -91,5 +91,5 @@ table DecisionRegister
 
 	partition DecisionRegister = m
 		mode: import
-		source =
-				let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_decision_register.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Action", type text}, {"Pillar", type text}, {"Priority", type text}, {"ExpectedImpact", Int64.Type}, {"Effort", Int64.Type}, {"Owner", type text}, {"TimeHorizon", type text}, {"Status", type text}}, "en-US") in Typed
+		source = let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_decision_register.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Action", type text}, {"Pillar", type text}, {"Priority", type text}, {"ExpectedImpact", Int64.Type}, {"Effort", Int64.Type}, {"Owner", type text}, {"TimeHorizon", type text}, {"Status", type text}}, "en-US") in Typed
+

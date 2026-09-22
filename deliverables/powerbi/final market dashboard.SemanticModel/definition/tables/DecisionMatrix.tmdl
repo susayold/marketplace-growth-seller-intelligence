@@ -51,4 +51,5 @@ table DecisionMatrix
 
 	partition DecisionMatrix = m
 		mode: import
-		source = let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_decision_register.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Action", type text}, {"Pillar", type text}, {"Priority", type text}, {"ExpectedImpact", Int64.Type}, {"Effort", Int64.Type}, {"Owner", type text}, {"TimeHorizon", type text}, {"Status", type text}}, "en-US") in Typed
+		source = let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_decision_matrix_plot.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Action", type text}, {"Pillar", type text}, {"Priority", type text}, {"ExpectedImpact", Int64.Type}, {"Effort", Int64.Type}, {"Owner", type text}, {"TimeHorizon", type text}, {"Status", type text}}, "en-US") in Typed
+

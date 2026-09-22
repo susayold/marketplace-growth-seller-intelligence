@@ -22,7 +22,7 @@
                     "value": "Acquisition Insights",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                    "fontSize": "16px",
+                      "fontSize": "16px",
                       "color": "#0F172A"
                     }
                   }

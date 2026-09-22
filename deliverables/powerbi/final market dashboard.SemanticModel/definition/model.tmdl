@@ -10,7 +10,7 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["Snapshot","Pillars","Monthly","Category","CategoryTop5","Geo","StateTop5","SellerLifetime","ConcentrationStats","Insights","Highlights","DimMonth","DimCategory","DimState","Lorenz","AcquisitionChannel","ActivationCohort","RetentionCohort","CommercialSegment","CustomerExperience","RootCauseRegister","DecisionRegister","DecisionMatrix"]
+annotation PBI_QueryOrder = ["Snapshot","Pillars","Monthly","Category","CategoryTop5","Geo","StateTop5","SellerLifetime","ConcentrationStats","Insights","Highlights","DimMonth","DimCategory","DimState","Lorenz","AcquisitionChannel","ActivationCohort","RetentionCohort","CommercialSegment","CustomerExperience","RootCauseRegister","DecisionRegister","DecisionMatrix","DataRoot"]
 
 ref table Snapshot
 ref table Pillars

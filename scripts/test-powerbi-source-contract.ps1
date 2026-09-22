@@ -25,6 +25,7 @@ $requiredFiles = @(
     'reports\tables\powerbi_commercial_segment.csv',
     'reports\tables\powerbi_customer_experience.csv',
     'reports\tables\powerbi_decision_register.csv',
+    'reports\tables\powerbi_decision_matrix_plot.csv',
     'reports\tables\powerbi_highlights.csv',
     'reports\tables\powerbi_insights.csv',
     'reports\tables\powerbi_retention_cohort.csv',
@@ -42,6 +43,7 @@ $csvTableContracts = @{
     CommercialSegment = 'powerbi_commercial_segment.csv'
     CustomerExperience = 'powerbi_customer_experience.csv'
     DecisionRegister = 'powerbi_decision_register.csv'
+    DecisionMatrix = 'powerbi_decision_matrix_plot.csv'
     Highlights = 'powerbi_highlights.csv'
     Insights = 'powerbi_insights.csv'
     RetentionCohort = 'powerbi_retention_cohort.csv'
