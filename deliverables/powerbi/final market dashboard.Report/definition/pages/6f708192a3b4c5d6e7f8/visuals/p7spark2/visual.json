@@ -29,7 +29,7 @@
               "queryRef": "DecisionRegister.TimeHorizon",
               "nativeQueryRef": "TimeHorizon",
               "active": true,
-              "displayName": "Target Horizon"
+              "displayName": "Review cadence"
             }
           ]
         },

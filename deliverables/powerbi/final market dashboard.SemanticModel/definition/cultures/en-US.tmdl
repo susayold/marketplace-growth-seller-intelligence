@@ -729,7 +729,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "Target Horizon": {
+          "Review Cadence": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

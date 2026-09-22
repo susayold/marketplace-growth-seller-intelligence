@@ -135,7 +135,7 @@ def main() -> None:
         r"Best 90D activation|Strategic leads value|Strategic and Growth|"
         r"P1 commercial action with a 90D horizon|Highest severity and frequency|"
         r"Lowest conversion and longest cycle|Referral is efficient|Slightly Late|"
-        r"time horizons|"
+        r"time horizons|Target Horizon|"
         r"Driver Impact Ranking|Priority Score|PROTOTYPE.*MOCK|CancelRate|"
         r"MedianDeliveryDays|BLOCKED_DESKTOP_NOT_INSTALLED",
         re.IGNORECASE,
