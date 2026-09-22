@@ -3,9 +3,9 @@
   "name": "p2b2",
   "position": {
     "x": 630,
-    "y": 736,
+    "y": 726,
     "z": 19000,
-    "height": 26,
+    "height": 38,
     "width": 260,
     "tabOrder": 19000
   },
@@ -22,7 +22,7 @@
                     "value": "Converted vs Matched Sellers",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "18px",
+                    "fontSize": "16px",
                       "color": "#0F172A"
                     }
                   }

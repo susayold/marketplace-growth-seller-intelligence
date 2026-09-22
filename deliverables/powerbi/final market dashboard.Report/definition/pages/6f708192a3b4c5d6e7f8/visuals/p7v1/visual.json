@@ -484,7 +484,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#60A5FA'"
+                      "Value": "'#F59E0B'"
                     }
                   }
                 }
@@ -495,7 +495,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#60A5FA'"
+                      "Value": "'#F59E0B'"
                     }
                   }
                 }
@@ -536,7 +536,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#2563EB'"
+                      "Value": "'#E11D48'"
                     }
                   }
                 }
@@ -547,7 +547,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#2563EB'"
+                      "Value": "'#E11D48'"
                     }
                   }
                 }
@@ -588,7 +588,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1D4ED8'"
+                      "Value": "'#7C3AED'"
                     }
                   }
                 }
@@ -599,7 +599,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1D4ED8'"
+                      "Value": "'#7C3AED'"
                     }
                   }
                 }
@@ -624,7 +624,7 @@
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Marketplace'"
+                        "Value": "'Data / BI'"
                       }
                     }
                   }

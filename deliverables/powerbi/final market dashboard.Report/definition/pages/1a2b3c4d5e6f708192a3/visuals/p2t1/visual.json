@@ -3,9 +3,9 @@
   "name": "p2t1",
   "position": {
     "x": 270,
-    "y": 312,
+    "y": 302,
     "z": 22000,
-    "height": 26,
+    "height": 38,
     "width": 500,
     "tabOrder": 22000
   },
@@ -22,7 +22,7 @@
                     "value": "Acquisition Funnel",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "18px",
+                    "fontSize": "16px",
                       "color": "#0F172A"
                     }
                   }

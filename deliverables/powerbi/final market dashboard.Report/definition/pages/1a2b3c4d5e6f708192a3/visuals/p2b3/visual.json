@@ -3,9 +3,9 @@
   "name": "p2b3",
   "position": {
     "x": 990,
-    "y": 736,
+    "y": 726,
     "z": 20000,
-    "height": 26,
+    "height": 38,
     "width": 260,
     "tabOrder": 20000
   },
@@ -22,7 +22,7 @@
                     "value": "Downstream GMV Proxy",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "18px",
+                    "fontSize": "16px",
                       "color": "#0F172A"
                     }
                   }

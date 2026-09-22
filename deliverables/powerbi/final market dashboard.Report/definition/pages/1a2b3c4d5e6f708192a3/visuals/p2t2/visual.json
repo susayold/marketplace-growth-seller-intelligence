@@ -3,9 +3,9 @@
   "name": "p2t2",
   "position": {
     "x": 1045,
-    "y": 312,
+    "y": 302,
     "z": 23000,
-    "height": 26,
+    "height": 38,
     "width": 500,
     "tabOrder": 23000
   },
@@ -22,7 +22,7 @@
                     "value": "Channel Value vs Conversion",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "18px",
+                    "fontSize": "16px",
                       "color": "#0F172A"
                     }
                   }
