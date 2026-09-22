@@ -47,7 +47,7 @@ table Geo
 				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    Typed = Table.TransformColumnTypes(Promoted, {{"seller_state", type text}, {"gmv_proxy", type number}, {"orders", Int64.Type}, {"active_sellers", Int64.Type}, {"gmv_share", type number}}, "en-US"),
 				    Sorted = Table.Sort(Typed, {{"gmv_proxy", Order.Descending}}),
-				    Top = Typed
+				    Top = Sorted
 				in
 				    Top
 

@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Referral is efficient",
+                    "value": "Referral is a smaller source",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "18px",
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "\nStrong balance of volume, speed and close rate.",
+                    "value": "\nObserved conversion is 8.5% on a relatively small lead base.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "13px",

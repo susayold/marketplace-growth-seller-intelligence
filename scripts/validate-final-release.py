@@ -6,6 +6,7 @@ import csv
 import json
 import math
 import re
+import uuid
 from pathlib import Path
 
 
@@ -61,6 +62,16 @@ def main() -> None:
     expression = (MODEL / "definition" / "expressions.tmdl").read_text(encoding="utf-8")
     if "expression DataRoot" not in expression:
         raise AssertionError("DataRoot parameter is missing")
+
+    for path in MODEL.joinpath("definition").rglob("*.tmdl"):
+        text = path.read_text(encoding="utf-8")
+        for tag in re.findall(r"lineageTag:\s*([^\s]+)", text):
+            try:
+                uuid.UUID(tag)
+            except ValueError as exc:
+                raise AssertionError(
+                    f"invalid lineageTag {tag} in {path.relative_to(ROOT)}"
+                ) from exc
 
     with RECON.open(newline="", encoding="utf-8") as handle:
         rows = list(csv.DictReader(handle))
@@ -119,6 +130,8 @@ def main() -> None:
         r"bi_fact_marketplace_item|Demo[A-Z]|Partner converts best|Aug is strongest|"
         r"Best 90D activation|Strategic leads value|Strategic and Growth|"
         r"P1 commercial action with a 90D horizon|Highest severity and frequency|"
+        r"Lowest conversion and longest cycle|Referral is efficient|Slightly Late|"
+        r"time horizons|"
         r"Driver Impact Ranking|Priority Score|PROTOTYPE.*MOCK|CancelRate|"
         r"MedianDeliveryDays|BLOCKED_DESKTOP_NOT_INSTALLED",
         re.IGNORECASE,

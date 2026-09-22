@@ -97,7 +97,7 @@ table RootCauseRegister
 
 	column Owner
 		dataType: string
-		lineageTag: 95f60adc-45bd-daea-38d7-dbd14gf2e151
+		lineageTag: 4c1d7e9a-8f30-4b2e-a6d5-3e1c9b7f4a62
 		summarizeBy: none
 		sourceColumn: Owner
 
