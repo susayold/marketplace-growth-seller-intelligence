@@ -65,6 +65,10 @@ def main() -> None:
 
     for path in MODEL.joinpath("definition").rglob("*.tmdl"):
         text = path.read_text(encoding="utf-8")
+        if re.search(r"PBI_ResultType\s*=\s*Exception", text):
+            raise AssertionError(
+                f"Power Query exception metadata remains in {path.relative_to(ROOT)}"
+            )
         for tag in re.findall(r"lineageTag:\s*([^\s]+)", text):
             try:
                 uuid.UUID(tag)

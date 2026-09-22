@@ -44,10 +44,17 @@ $csvTableContracts = @{
     CustomerExperience = 'powerbi_customer_experience.csv'
     DecisionRegister = 'powerbi_decision_register.csv'
     DecisionMatrix = 'powerbi_decision_matrix_plot.csv'
+    Geo = 'mart_geography_performance.csv'
     Highlights = 'powerbi_highlights.csv'
     Insights = 'powerbi_insights.csv'
     RetentionCohort = 'powerbi_retention_cohort.csv'
     RootCauseRegister = 'powerbi_root_cause_register.csv'
+}
+
+$exceptionTables = Get-ChildItem -LiteralPath $tableRoot -Filter '*.tmdl' |
+    Where-Object { (Get-Content -LiteralPath $_.FullName -Raw) -match 'PBI_ResultType\s*=\s*Exception' }
+if ($exceptionTables) {
+    throw ('Power Query result metadata still marks an exception: ' + ($exceptionTables.Name -join ', '))
 }
 
 foreach ($tableName in $csvTableContracts.Keys) {
