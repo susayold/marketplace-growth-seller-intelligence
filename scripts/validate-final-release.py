@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import json
+import math
 import re
 from pathlib import Path
 
@@ -15,6 +16,9 @@ MODEL = PB / "final market dashboard.SemanticModel"
 SOURCE = PB / "source-data" / "release_v3_final"
 RECON = ROOT / "reports" / "qa" / "powerbi_reconciliation.csv"
 SOURCE_RECON = SOURCE / "reports" / "qa" / "powerbi_reconciliation.csv"
+ACTIVATION_SOURCE = SOURCE / "reports" / "tables" / "powerbi_activation_cohort.csv"
+ROOT_CAUSE_SOURCE = SOURCE / "reports" / "tables" / "powerbi_root_cause_register.csv"
+DECISION_SOURCE = SOURCE / "reports" / "tables" / "powerbi_decision_register.csv"
 
 
 def require(path: Path) -> None:
@@ -80,10 +84,43 @@ def main() -> None:
     if {int(row["ExpectedImpact"]) for row in decision_rows} - {2, 3}:
         raise AssertionError("decision matrix evidence-strength values are outside the governed scale")
 
+    with ACTIVATION_SOURCE.open(newline="", encoding="utf-8-sig") as handle:
+        activation_rows = list(csv.DictReader(handle))
+    expected_windows = {30: (825, 130), 60: (803, 247), 90: (769, 324)}
+    for horizon, (expected_observable, expected_activated) in expected_windows.items():
+        observable = sum(int(row[f"Observable{horizon}D"] or 0) for row in activation_rows)
+        activated = sum(int(row[f"Activated{horizon}D"] or 0) for row in activation_rows)
+        if (observable, activated) != (expected_observable, expected_activated):
+            raise AssertionError(
+                f"activation {horizon}D denominator mismatch: {observable}/{activated}"
+            )
+        for row in activation_rows:
+            denominator = int(row[f"Observable{horizon}D"] or 0)
+            numerator = int(row[f"Activated{horizon}D"] or 0)
+            rate = row[f"Activation{horizon}Rate"].strip()
+            if denominator == 0 and rate:
+                raise AssertionError(f"immature {horizon}D cohort is not blank: {row['Cohort']}")
+            if denominator > 0 and not math.isclose(float(rate), numerator / denominator, rel_tol=1e-9):
+                raise AssertionError(f"activation {horizon}D rate mismatch: {row['Cohort']}")
+
+    with ROOT_CAUSE_SOURCE.open(newline="", encoding="utf-8-sig") as handle:
+        root_headers = set(next(csv.reader(handle)))
+    if root_headers & {"Impact", "Severity", "Frequency", "PriorityScore"}:
+        raise AssertionError("root-cause source still exposes synthetic scoring fields")
+
+    with DECISION_SOURCE.open(newline="", encoding="utf-8-sig") as handle:
+        release_decisions = list(csv.DictReader(handle))
+    d04 = next((row for row in release_decisions if "top 1/5/10/20%" in row["Action"]), None)
+    if not d04 or d04["Priority"] != "P2" or d04["TimeHorizon"] != "monthly":
+        raise AssertionError("D04 priority/cadence does not match the canonical register")
+
     scan_paths = [REPORT / "definition", MODEL / "definition", SOURCE, ROOT / "dist"]
     forbidden = re.compile(
-        r"bi_fact_marketplace_item|Demo[A-Z]|Partner converts best|"
-        r"PROTOTYPE.*MOCK|CancelRate|MedianDeliveryDays|BLOCKED_DESKTOP_NOT_INSTALLED",
+        r"bi_fact_marketplace_item|Demo[A-Z]|Partner converts best|Aug is strongest|"
+        r"Best 90D activation|Strategic leads value|Strategic and Growth|"
+        r"P1 commercial action with a 90D horizon|Highest severity and frequency|"
+        r"Driver Impact Ranking|Priority Score|PROTOTYPE.*MOCK|CancelRate|"
+        r"MedianDeliveryDays|BLOCKED_DESKTOP_NOT_INSTALLED",
         re.IGNORECASE,
     )
     for base in scan_paths:

@@ -23,11 +23,11 @@
                       "Entity": "DecisionRegister"
                     }
                   },
-                  "Property": "Decision 30-60D Delta Label"
+                  "Property": "Decision P2 Delta Label"
                 }
               },
-              "queryRef": "DecisionRegister.Decision 30-60D Delta Label",
-              "nativeQueryRef": "Decision 30-60D Delta Label",
+              "queryRef": "DecisionRegister.Decision P2 Delta Label",
+              "nativeQueryRef": "Decision P2 Delta Label",
               "active": true
             }
           ]

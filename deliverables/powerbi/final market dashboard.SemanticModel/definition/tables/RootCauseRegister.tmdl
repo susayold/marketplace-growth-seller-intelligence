@@ -1,90 +1,106 @@
 table RootCauseRegister
 	lineageTag: 8b558f6b-9456-4c77-ad2d-e8c3fe41d02e
 
-	measure 'Root P1 Drivers' = COUNTROWS ( FILTER ( RootCauseRegister, RootCauseRegister[PriorityScore] >= 20 ) )
+	measure 'Root Cases' = COUNTROWS ( RootCauseRegister )
 		formatString: #,0
-		lineageTag: cc86556a-6097-4ae0-8836-e397bcf2c6e0
+		lineageTag: 1a2b3c4d-5e6f-7081-92a3-b4c5d6e7f801
 
-	measure 'Root Highest Priority' = MAX ( RootCauseRegister[PriorityScore] )
+	measure 'Root Hypotheses Tested' = SUM ( RootCauseRegister[HypothesesTested] )
 		formatString: #,0
-		lineageTag: 9ec1ddd2-1745-4078-953c-5b62e291b299
+		lineageTag: 2b3c4d5e-6f70-8192-a3b4-c5d6e7f80192
 
-	measure 'Root High Severity' = COUNTROWS ( FILTER ( RootCauseRegister, RootCauseRegister[Severity] >= 4 ) )
+	measure 'Root Supported Signals' = SUM ( RootCauseRegister[SupportedHypotheses] )
 		formatString: #,0
-		lineageTag: a6959914-a005-4f3a-802a-1ea5f0b58f8a
+		lineageTag: 3c4d5e6f-7081-92a3-b4c5-d6e7f80192a3
 
-	measure 'Root Commercial Risk' = COUNTROWS ( FILTER ( RootCauseRegister, RootCauseRegister[Owner] = "Commercial" ) )
+	measure 'Root Actionable Cases' = COUNTROWS ( FILTER ( RootCauseRegister, RootCauseRegister[Actionability] <> "Diagnostic drilldown" ) )
 		formatString: #,0
-		lineageTag: d2ab40b8-6f6c-481a-af5c-bb975d90c013
+		lineageTag: 4d5e6f70-8192-a3b4-c5d6-e7f80192a3b4
 
-	measure 'Root Operational Risk' = COUNTROWS ( FILTER ( RootCauseRegister, RootCauseRegister[Owner] = "Operations" || RootCauseRegister[Owner] = "Seller Ops" || RootCauseRegister[Owner] = "Marketplace" ) )
+	measure 'Root Inconclusive Paths' = SUM ( RootCauseRegister[InconclusiveHypotheses] )
 		formatString: #,0
-		lineageTag: e8630587-f4b6-4f81-8ed6-5dc3b746f3be
+		lineageTag: 5e6f7081-92a3-b4c5-d6e7-f80192a3b4c5
 
-	measure 'Root GMV Impact Delta Label' = VAR Total = COUNTROWS ( RootCauseRegister ) RETURN "▲ " & FORMAT ( DIVIDE ( [Root P1 Drivers], Total ), "0.0%" ) & " high-priority share"
+	measure 'Root Cases Delta Label' = "• " & FORMAT ( [Root Cases], "0" ) & " governed cases"
 		formatString: General
-		lineageTag: 5f1a0e21-36f0-4d1f-9b08-1d0ad2b4f501
+		lineageTag: 6f708192-a3b4-c5d6-e7f8-0192a3b4c5d6
 
-	measure 'Root Order Impact Delta Label' = "▲ +" & FORMAT ( [Root Highest Priority] - 20, "0" ) & " vs P1 threshold"
+	measure 'Root Hypotheses Delta Label' = "• " & FORMAT ( [Root Hypotheses Tested], "0" ) & " hypotheses assessed"
 		formatString: General
-		lineageTag: 6a2b1f32-47f1-4e20-ac19-2e1be3c5f602
+		lineageTag: 708192a3-b4c5-d6e7-f801-92a3b4c5d6e7
 
-	measure 'Root Top Driver Delta Label' = VAR Total = COUNTROWS ( RootCauseRegister ) RETURN "▲ " & FORMAT ( DIVIDE ( [Root High Severity], Total ), "0.0%" ) & " high-severity share"
+	measure 'Root Supported Delta Label' = "• " & FORMAT ( [Root Supported Signals], "0" ) & " supported signals"
 		formatString: General
-		lineageTag: 7b3c2043-58a2-4f31-bd2a-3f2cf4d60703
+		lineageTag: 8192a3b4-c5d6-e7f8-0192-a3b4c5d6e7f8
 
-	measure 'Root Second Driver Delta Label' = VAR Total = COUNTROWS ( RootCauseRegister ) RETURN "▲ " & FORMAT ( DIVIDE ( [Root Commercial Risk], Total ), "0.0%" ) & " commercial share"
+	measure 'Root Actionable Delta Label' = "• " & FORMAT ( [Root Actionable Cases], "0" ) & " cases have an action path"
 		formatString: General
-		lineageTag: 8c4d3154-69b3-4042-ce3b-4a3da5e71804
+		lineageTag: 92a3b4c5-d6e7-f801-92a3-b4c5d6e7f801
 
-	measure 'Root Risk Register Delta Label' = VAR Total = COUNTROWS ( RootCauseRegister ) RETURN "▲ " & FORMAT ( DIVIDE ( [Root Operational Risk], Total ), "0.0%" ) & " operational share"
+	measure 'Root Inconclusive Delta Label' = "• " & FORMAT ( [Root Inconclusive Paths], "0" ) & " paths remain inconclusive"
 		formatString: General
-		lineageTag: 9d5e4265-70c4-4153-df4c-5a4ea6f82905
+		lineageTag: a3b4c5d6-e7f8-0192-a3b4-c5d6e7f80192
 
-	column Driver
+	column Case
 		dataType: string
 		lineageTag: 0f6d0743-bc23-41b1-a94f-4248c769c588
 		summarizeBy: none
+		sourceColumn: Case
+
+	column Driver
+		dataType: string
+		lineageTag: 1f7e1854-cd34-52c2-b05f-5359d87a69d9
+		summarizeBy: none
 		sourceColumn: Driver
 
-	column Metric
+	column EvidenceStatus
 		dataType: string
-		lineageTag: 828809ee-74bd-40dd-a473-4756b5622834
+		lineageTag: 2f8f2965-de45-63d3-c160-646ae98b7aea
 		summarizeBy: none
-		sourceColumn: Metric
+		sourceColumn: EvidenceStatus
 
-	column Impact
-		dataType: double
-		formatString: 0.000
-		lineageTag: d22d9f2b-48c3-4fda-bb93-33603cdaa7b3
-		summarizeBy: sum
-		sourceColumn: Impact
-
-	column Severity
+	column HypothesesTested
 		dataType: int64
-		lineageTag: c5397a47-4ef7-4631-b51f-59b38d9702cb
+		lineageTag: 3f904a76-ef56-74e4-d271-757bfa9c8bfb
 		summarizeBy: sum
-		sourceColumn: Severity
+		sourceColumn: HypothesesTested
 
-	column Frequency
+	column SupportedHypotheses
 		dataType: int64
-		lineageTag: 3d337664-c1ea-44d2-aa03-6346ba953b0e
+		lineageTag: 40a15b87-f067-85f5-e382-868cfbad9c0c
 		summarizeBy: sum
-		sourceColumn: Frequency
+		sourceColumn: SupportedHypotheses
 
-	column PriorityScore
+	column PlausibleHypotheses
 		dataType: int64
-		lineageTag: 9423a915-e87f-4a62-816c-e2158160f980
+		lineageTag: 51b26c98-0178-96a6-f493-979d0cbead1d
 		summarizeBy: sum
-		sourceColumn: PriorityScore
+		sourceColumn: PlausibleHypotheses
+
+	column RejectedHypotheses
+		dataType: int64
+		lineageTag: 62c37da9-1289-a7b7-05a4-a8ae1dcfbe2e
+		summarizeBy: sum
+		sourceColumn: RejectedHypotheses
+
+	column InconclusiveHypotheses
+		dataType: int64
+		lineageTag: 73d48eba-239a-b8c8-16b5-b9bf2ed0cf3f
+		summarizeBy: sum
+		sourceColumn: InconclusiveHypotheses
+
+	column Actionability
+		dataType: string
+		lineageTag: 84e59fcb-34ac-c9d9-27c6-cac03fe1d040
+		summarizeBy: none
+		sourceColumn: Actionability
 
 	column Owner
 		dataType: string
-		lineageTag: 67ce9a1e-b193-430d-831d-f51c900dfcd8
+		lineageTag: 95f60adc-45bd-daea-38d7-dbd14gf2e151
 		summarizeBy: none
 		sourceColumn: Owner
 
 	partition RootCauseRegister = m
 		mode: import
-		source = let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_root_cause_register.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Driver", type text}, {"Metric", type text}, {"Impact", type number}, {"Severity", Int64.Type}, {"Frequency", Int64.Type}, {"PriorityScore", Int64.Type}, {"Owner", type text}}, "en-US") in Typed
-
+		source = let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_root_cause_register.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Case", type text}, {"Driver", type text}, {"EvidenceStatus", type text}, {"HypothesesTested", Int64.Type}, {"SupportedHypotheses", Int64.Type}, {"PlausibleHypotheses", Int64.Type}, {"RejectedHypotheses", Int64.Type}, {"InconclusiveHypotheses", Int64.Type}, {"Actionability", type text}, {"Owner", type text}}, "en-US") in Typed

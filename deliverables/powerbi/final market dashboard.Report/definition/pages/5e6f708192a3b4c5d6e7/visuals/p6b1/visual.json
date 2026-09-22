@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Owner Workload",
+                    "value": "Hypotheses by Owner",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "18px",

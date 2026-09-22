@@ -45,16 +45,16 @@
                           "Entity": "RootCauseRegister"
                         }
                       },
-                      "Property": "Frequency"
+                      "Property": "HypothesesTested"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "RootCauseRegister.Frequency",
-              "nativeQueryRef": "Frequency",
+              "queryRef": "RootCauseRegister.HypothesesTested",
+              "nativeQueryRef": "HypothesesTested",
               "active": true,
-              "displayName": "Frequency"
+              "displayName": "Hypotheses tested"
             }
           ]
         }
@@ -213,7 +213,7 @@
             }
           },
           "selector": {
-            "metadata": "RootCauseRegister.Frequency"
+            "metadata": "RootCauseRegister.HypothesesTested"
           }
         }
       ],
@@ -244,7 +244,7 @@
             }
           },
           "selector": {
-            "metadata": "RootCauseRegister.Frequency"
+            "metadata": "RootCauseRegister.HypothesesTested"
           }
         }
       ]

@@ -45,16 +45,16 @@
                           "Entity": "RootCauseRegister"
                         }
                       },
-                      "Property": "PriorityScore"
+                      "Property": "SupportedHypotheses"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "RootCauseRegister.PriorityScore",
-              "nativeQueryRef": "PriorityScore",
+              "queryRef": "RootCauseRegister.SupportedHypotheses",
+              "nativeQueryRef": "SupportedHypotheses",
               "active": true,
-              "displayName": "Priority Score"
+              "displayName": "Supported hypotheses"
             }
           ]
         },
@@ -70,16 +70,16 @@
                           "Entity": "RootCauseRegister"
                         }
                       },
-                      "Property": "Frequency"
+                      "Property": "HypothesesTested"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "RootCauseRegister.Frequency",
-              "nativeQueryRef": "Frequency",
+              "queryRef": "RootCauseRegister.HypothesesTested",
+              "nativeQueryRef": "HypothesesTested",
               "active": true,
-              "displayName": "Frequency"
+              "displayName": "Hypotheses tested"
             }
           ]
         },
@@ -95,16 +95,16 @@
                           "Entity": "RootCauseRegister"
                         }
                       },
-                      "Property": "Severity"
+                      "Property": "InconclusiveHypotheses"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "RootCauseRegister.Severity",
-              "nativeQueryRef": "Severity",
+              "queryRef": "RootCauseRegister.InconclusiveHypotheses",
+              "nativeQueryRef": "InconclusiveHypotheses",
               "active": true,
-              "displayName": "Severity"
+              "displayName": "Inconclusive paths"
             }
           ]
         }

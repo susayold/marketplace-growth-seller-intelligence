@@ -23,11 +23,11 @@
                       "Entity": "RootCauseRegister"
                     }
                   },
-                  "Property": "Root Risk Register Delta Label"
+                  "Property": "Root Inconclusive Delta Label"
                 }
               },
-              "queryRef": "RootCauseRegister.Root Risk Register Delta Label",
-              "nativeQueryRef": "Root Risk Register Delta Label",
+              "queryRef": "RootCauseRegister.Root Inconclusive Delta Label",
+              "nativeQueryRef": "Root Inconclusive Delta Label",
               "active": true
             }
           ]

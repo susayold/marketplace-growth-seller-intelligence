@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CommercialSegment"
+                      "Entity": "Snapshot"
                     }
                   },
-                  "Property": "Commercial AOV"
+                  "Property": "Average Order Value"
                 }
               },
-              "queryRef": "CommercialSegment.Commercial AOV",
-              "nativeQueryRef": "Commercial AOV",
+              "queryRef": "Snapshot.Average Order Value",
+              "nativeQueryRef": "Average Order Value",
               "active": true
             }
           ]

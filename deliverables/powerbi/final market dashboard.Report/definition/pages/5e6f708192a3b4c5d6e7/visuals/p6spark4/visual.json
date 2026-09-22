@@ -45,16 +45,16 @@
                           "Entity": "RootCauseRegister"
                         }
                       },
-                      "Property": "Impact"
+                      "Property": "InconclusiveHypotheses"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "RootCauseRegister.Impact",
-              "nativeQueryRef": "Impact",
+              "queryRef": "RootCauseRegister.InconclusiveHypotheses",
+              "nativeQueryRef": "InconclusiveHypotheses",
               "active": true,
-              "displayName": "Impact"
+              "displayName": "Inconclusive paths"
             }
           ]
         }
@@ -213,7 +213,7 @@
             }
           },
           "selector": {
-            "metadata": "RootCauseRegister.Impact"
+            "metadata": "RootCauseRegister.InconclusiveHypotheses"
           }
         }
       ],
@@ -244,7 +244,7 @@
             }
           },
           "selector": {
-            "metadata": "RootCauseRegister.Impact"
+            "metadata": "RootCauseRegister.InconclusiveHypotheses"
           }
         }
       ]

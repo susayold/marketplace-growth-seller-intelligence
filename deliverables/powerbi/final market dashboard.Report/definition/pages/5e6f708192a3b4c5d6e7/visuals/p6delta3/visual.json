@@ -23,11 +23,11 @@
                       "Entity": "RootCauseRegister"
                     }
                   },
-                  "Property": "Root Top Driver Delta Label"
+                  "Property": "Root Supported Delta Label"
                 }
               },
-              "queryRef": "RootCauseRegister.Root Top Driver Delta Label",
-              "nativeQueryRef": "Root Top Driver Delta Label",
+              "queryRef": "RootCauseRegister.Root Supported Delta Label",
+              "nativeQueryRef": "Root Supported Delta Label",
               "active": true
             }
           ]

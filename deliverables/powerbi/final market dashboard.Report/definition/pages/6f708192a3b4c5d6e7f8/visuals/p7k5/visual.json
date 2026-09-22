@@ -23,11 +23,11 @@
                       "Entity": "DecisionRegister"
                     }
                   },
-                  "Property": "Decision 30-60D"
+                  "Property": "Decision P2 Actions"
                 }
               },
-              "queryRef": "DecisionRegister.Decision 30-60D",
-              "nativeQueryRef": "Decision 30-60D",
+              "queryRef": "DecisionRegister.Decision P2 Actions",
+              "nativeQueryRef": "Decision P2 Actions",
               "active": true
             }
           ]
@@ -48,7 +48,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'30–60D actions'"
+                  "Value": "'P2 actions'"
                 }
               }
             },

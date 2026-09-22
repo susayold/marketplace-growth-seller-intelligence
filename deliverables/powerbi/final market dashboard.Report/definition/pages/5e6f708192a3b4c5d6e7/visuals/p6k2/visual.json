@@ -23,11 +23,11 @@
                       "Entity": "RootCauseRegister"
                     }
                   },
-                  "Property": "Root Highest Priority"
+                  "Property": "Root Hypotheses Tested"
                 }
               },
-              "queryRef": "RootCauseRegister.Root Highest Priority",
-              "nativeQueryRef": "Root Highest Priority",
+              "queryRef": "RootCauseRegister.Root Hypotheses Tested",
+              "nativeQueryRef": "Root Hypotheses Tested",
               "active": true
             }
           ]
@@ -48,7 +48,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Highest score'"
+                  "Value": "'Hypotheses tested'"
                 }
               }
             },

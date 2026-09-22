@@ -23,11 +23,11 @@
                       "Entity": "RootCauseRegister"
                     }
                   },
-                  "Property": "Root Operational Risk"
+                  "Property": "Root Inconclusive Paths"
                 }
               },
-              "queryRef": "RootCauseRegister.Root Operational Risk",
-              "nativeQueryRef": "Root Operational Risk",
+              "queryRef": "RootCauseRegister.Root Inconclusive Paths",
+              "nativeQueryRef": "Root Inconclusive Paths",
               "active": true
             }
           ]
@@ -48,7 +48,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Operational risk'"
+                  "Value": "'Inconclusive paths'"
                 }
               }
             },

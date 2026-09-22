@@ -23,11 +23,11 @@
                       "Entity": "RootCauseRegister"
                     }
                   },
-                  "Property": "Root Commercial Risk"
+                  "Property": "Root Actionable Cases"
                 }
               },
-              "queryRef": "RootCauseRegister.Root Commercial Risk",
-              "nativeQueryRef": "Root Commercial Risk",
+              "queryRef": "RootCauseRegister.Root Actionable Cases",
+              "nativeQueryRef": "Root Actionable Cases",
               "active": true
             }
           ]
@@ -48,7 +48,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Commercial risk'"
+                  "Value": "'Actionable cases'"
                 }
               }
             },

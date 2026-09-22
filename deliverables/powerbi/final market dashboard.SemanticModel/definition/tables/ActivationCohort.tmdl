@@ -25,15 +25,15 @@ table ActivationCohort
 		formatString: General
 		lineageTag: 5f1a0e21-36f0-4d1f-9b08-1d0ad2b4f101
 
-	measure 'Activation 30D Delta Label' = VAR Cohorts = FILTER ( ALL ( ActivationCohort ), NOT ISBLANK ( ActivationCohort[Activation30Rate] ) ) VAR LatestCohort = MAXX ( Cohorts, ActivationCohort[Cohort] ) VAR PriorCohort = MAXX ( FILTER ( Cohorts, ActivationCohort[Cohort] < LatestCohort ), ActivationCohort[Cohort] ) VAR LatestValue = MAXX ( FILTER ( Cohorts, ActivationCohort[Cohort] = LatestCohort ), ActivationCohort[Activation30Rate] ) VAR PriorValue = MAXX ( FILTER ( Cohorts, ActivationCohort[Cohort] = PriorCohort ), ActivationCohort[Activation30Rate] ) VAR Delta = ( LatestValue - PriorValue ) * 100 RETURN IF ( ISBLANK ( Delta ), BLANK (), IF ( Delta >= 0, "▲ ", "▼ " ) & FORMAT ( Delta, "+0.0;-0.0;0.0" ) & " pp vs prior cohort" )
+	measure 'Activation 30D Delta Label' = VAR Cohorts = FILTER ( ALL ( ActivationCohort ), ActivationCohort[Observable30D] > 0 && NOT ISBLANK ( ActivationCohort[Activation30Rate] ) ) VAR LatestCohort = MAXX ( Cohorts, ActivationCohort[Cohort] ) VAR PriorCohort = MAXX ( FILTER ( Cohorts, ActivationCohort[Cohort] < LatestCohort ), ActivationCohort[Cohort] ) VAR LatestValue = MAXX ( FILTER ( Cohorts, ActivationCohort[Cohort] = LatestCohort ), ActivationCohort[Activation30Rate] ) VAR PriorValue = MAXX ( FILTER ( Cohorts, ActivationCohort[Cohort] = PriorCohort ), ActivationCohort[Activation30Rate] ) VAR Delta = ( LatestValue - PriorValue ) * 100 RETURN IF ( ISBLANK ( Delta ), BLANK (), IF ( Delta >= 0, "▲ ", "▼ " ) & FORMAT ( Delta, "+0.0;-0.0;0.0" ) & " pp vs prior mature cohort" )
 		formatString: General
 		lineageTag: 6a2b1f32-47f1-4e20-ac19-2e1be3c5f212
 
-	measure 'Activation 60D Delta Label' = VAR Cohorts = FILTER ( ALL ( ActivationCohort ), NOT ISBLANK ( ActivationCohort[Activation60Rate] ) ) VAR LatestCohort = MAXX ( Cohorts, ActivationCohort[Cohort] ) VAR PriorCohort = MAXX ( FILTER ( Cohorts, ActivationCohort[Cohort] < LatestCohort ), ActivationCohort[Cohort] ) VAR LatestValue = MAXX ( FILTER ( Cohorts, ActivationCohort[Cohort] = LatestCohort ), ActivationCohort[Activation60Rate] ) VAR PriorValue = MAXX ( FILTER ( Cohorts, ActivationCohort[Cohort] = PriorCohort ), ActivationCohort[Activation60Rate] ) VAR Delta = ( LatestValue - PriorValue ) * 100 RETURN IF ( ISBLANK ( Delta ), BLANK (), IF ( Delta >= 0, "▲ ", "▼ " ) & FORMAT ( Delta, "+0.0;-0.0;0.0" ) & " pp vs prior cohort" )
+	measure 'Activation 60D Delta Label' = VAR Cohorts = FILTER ( ALL ( ActivationCohort ), ActivationCohort[Observable60D] > 0 && NOT ISBLANK ( ActivationCohort[Activation60Rate] ) ) VAR LatestCohort = MAXX ( Cohorts, ActivationCohort[Cohort] ) VAR PriorCohort = MAXX ( FILTER ( Cohorts, ActivationCohort[Cohort] < LatestCohort ), ActivationCohort[Cohort] ) VAR LatestValue = MAXX ( FILTER ( Cohorts, ActivationCohort[Cohort] = LatestCohort ), ActivationCohort[Activation60Rate] ) VAR PriorValue = MAXX ( FILTER ( Cohorts, ActivationCohort[Cohort] = PriorCohort ), ActivationCohort[Activation60Rate] ) VAR Delta = ( LatestValue - PriorValue ) * 100 RETURN IF ( ISBLANK ( Delta ), BLANK (), IF ( Delta >= 0, "▲ ", "▼ " ) & FORMAT ( Delta, "+0.0;-0.0;0.0" ) & " pp vs prior mature cohort" )
 		formatString: General
 		lineageTag: 7b3c2043-58a2-4f31-bd2a-3f2cf4d60323
 
-	measure 'Activation 90D Delta Label' = VAR Cohorts = FILTER ( ALL ( ActivationCohort ), NOT ISBLANK ( ActivationCohort[Activation90Rate] ) ) VAR LatestCohort = MAXX ( Cohorts, ActivationCohort[Cohort] ) VAR PriorCohort = MAXX ( FILTER ( Cohorts, ActivationCohort[Cohort] < LatestCohort ), ActivationCohort[Cohort] ) VAR LatestValue = MAXX ( FILTER ( Cohorts, ActivationCohort[Cohort] = LatestCohort ), ActivationCohort[Activation90Rate] ) VAR PriorValue = MAXX ( FILTER ( Cohorts, ActivationCohort[Cohort] = PriorCohort ), ActivationCohort[Activation90Rate] ) VAR Delta = ( LatestValue - PriorValue ) * 100 RETURN IF ( ISBLANK ( Delta ), BLANK (), IF ( Delta >= 0, "▲ ", "▼ " ) & FORMAT ( Delta, "+0.0;-0.0;0.0" ) & " pp vs prior cohort" )
+	measure 'Activation 90D Delta Label' = VAR Cohorts = FILTER ( ALL ( ActivationCohort ), ActivationCohort[Observable90D] > 0 && NOT ISBLANK ( ActivationCohort[Activation90Rate] ) ) VAR LatestCohort = MAXX ( Cohorts, ActivationCohort[Cohort] ) VAR PriorCohort = MAXX ( FILTER ( Cohorts, ActivationCohort[Cohort] < LatestCohort ), ActivationCohort[Cohort] ) VAR LatestValue = MAXX ( FILTER ( Cohorts, ActivationCohort[Cohort] = LatestCohort ), ActivationCohort[Activation90Rate] ) VAR PriorValue = MAXX ( FILTER ( Cohorts, ActivationCohort[Cohort] = PriorCohort ), ActivationCohort[Activation90Rate] ) VAR Delta = ( LatestValue - PriorValue ) * 100 RETURN IF ( ISBLANK ( Delta ), BLANK (), IF ( Delta >= 0, "▲ ", "▼ " ) & FORMAT ( Delta, "+0.0;-0.0;0.0" ) & " pp vs prior mature cohort" )
 		formatString: General
 		lineageTag: 8c4d3154-69b3-4042-ce3b-4a3da5e71434
 
@@ -52,6 +52,24 @@ table ActivationCohort
 		lineageTag: 626dd8d7-ce0e-4992-86eb-aafb3d3e258f
 		summarizeBy: sum
 		sourceColumn: SellersClosed
+
+	column Observable30D
+		dataType: int64
+		lineageTag: 5e8a7d6c-1b2f-4a3e-9c5d-7f0a1b2c3d40
+		summarizeBy: sum
+		sourceColumn: Observable30D
+
+	column Observable60D
+		dataType: int64
+		lineageTag: 6f9b8e7d-2c3a-5b4f-ad6e-8a1b2c3d4e51
+		summarizeBy: sum
+		sourceColumn: Observable60D
+
+	column Observable90D
+		dataType: int64
+		lineageTag: 7a0c9f8e-3d4b-6c5a-be7f-9b2c3d4e5f62
+		summarizeBy: sum
+		sourceColumn: Observable90D
 
 	column Activated30D
 		dataType: int64
@@ -135,5 +153,5 @@ table ActivationCohort
 
 	partition ActivationCohort = m
 		mode: import
-		source = let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_activation_cohort.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Cohort", type text}, {"SellersClosed", Int64.Type}, {"Activated30D", Int64.Type}, {"Activated60D", Int64.Type}, {"Activated90D", Int64.Type}, {"Activation30Rate", type number}, {"Activation60Rate", type number}, {"Activation90Rate", type number}, {"MedianDaysToActivate", type number}, {"ClosedSellersSummary", Int64.Type}, {"Activation30RateSummary", type number}, {"Activation60RateSummary", type number}, {"Activation90RateSummary", type number}, {"MedianActivationDaysSummary", type number}}, "en-US") in Typed
+		source = let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_activation_cohort.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Cohort", type text}, {"SellersClosed", Int64.Type}, {"Observable30D", Int64.Type}, {"Observable60D", Int64.Type}, {"Observable90D", Int64.Type}, {"Activated30D", Int64.Type}, {"Activated60D", Int64.Type}, {"Activated90D", Int64.Type}, {"Activation30Rate", type number}, {"Activation60Rate", type number}, {"Activation90Rate", type number}, {"MedianDaysToActivate", type number}, {"ClosedSellersSummary", Int64.Type}, {"Activation30RateSummary", type number}, {"Activation60RateSummary", type number}, {"Activation90RateSummary", type number}, {"MedianActivationDaysSummary", type number}}, "en-US") in Typed
 

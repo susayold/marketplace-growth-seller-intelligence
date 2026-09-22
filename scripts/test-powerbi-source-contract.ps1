@@ -64,7 +64,8 @@ foreach ($tableName in $csvTableContracts.Keys) {
         $sourceAliases[$_.Groups[2].Value] = $_.Groups[1].Value
     }
     $missingColumns = $requiredColumns | Where-Object {
-        ($_ -notin $headers) -and (($sourceAliases[$_] ?? $_) -notin $headers)
+        $alias = if ($sourceAliases.ContainsKey($_)) { $sourceAliases[$_] } else { $_ }
+        ($_ -notin $headers) -and ($alias -notin $headers)
     }
     if ($missingColumns) {
         throw "$tableName has fields absent from $($csvTableContracts[$tableName]): $($missingColumns -join ', ')"
@@ -76,5 +77,33 @@ if ($LASTEXITCODE -eq 0 -and $legacyReferences) {
     throw ('Legacy or unsupported report references found:' + [Environment]::NewLine + ($legacyReferences -join [Environment]::NewLine))
 }
 if ($LASTEXITCODE -gt 1) { throw 'Unable to scan Power BI definitions.' }
+
+$activationRows = @(Import-Csv -LiteralPath (Join-Path $dataRoot 'reports\tables\powerbi_activation_cohort.csv'))
+foreach ($row in $activationRows) {
+    foreach ($horizon in @('30', '60', '90')) {
+        $observable = [int]$row.("Observable${horizon}D")
+        $activated = [int]$row.("Activated${horizon}D")
+        $rateText = [string]$row.("Activation${horizon}Rate")
+        if ($observable -eq 0 -and $rateText.Trim() -ne '') {
+            throw "Activation${horizon}Rate must be blank when Observable${horizon}D is zero for $($row.Cohort)."
+        }
+        if ($observable -gt 0 -and $activated -gt $observable) {
+            throw "Activated${horizon}D exceeds Observable${horizon}D for $($row.Cohort)."
+        }
+    }
+}
+
+$rootHeaders = (Import-Csv -LiteralPath (Join-Path $dataRoot 'reports\tables\powerbi_root_cause_register.csv') | Select-Object -First 1).PSObject.Properties.Name
+$forbiddenRootFields = @('Impact', 'Severity', 'Frequency', 'PriorityScore')
+$invalidRootFields = $forbiddenRootFields | Where-Object { $_ -in $rootHeaders }
+if ($invalidRootFields) {
+    throw ('Root-cause source still exposes synthetic scoring fields: ' + ($invalidRootFields -join ', '))
+}
+
+$decisions = @(Import-Csv -LiteralPath (Join-Path $dataRoot 'reports\tables\powerbi_decision_register.csv'))
+$d04 = $decisions | Where-Object { $_.Action -match 'top 1/5/10/20%' } | Select-Object -First 1
+if (-not $d04 -or $d04.Priority -ne 'P2' -or $d04.TimeHorizon -ne 'monthly') {
+    throw 'Decision register D04 priority/cadence contract failed.'
+}
 
 Write-Output 'Power BI source contract passed.'

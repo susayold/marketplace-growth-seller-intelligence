@@ -45,16 +45,16 @@
                           "Entity": "RootCauseRegister"
                         }
                       },
-                      "Property": "Impact"
+                      "Property": "HypothesesTested"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "RootCauseRegister.Impact",
-              "nativeQueryRef": "Impact",
+              "queryRef": "RootCauseRegister.HypothesesTested",
+              "nativeQueryRef": "HypothesesTested",
               "active": true,
-              "displayName": "Impact"
+              "displayName": "Hypotheses tested"
             },
             {
               "field": {
@@ -66,16 +66,16 @@
                           "Entity": "RootCauseRegister"
                         }
                       },
-                      "Property": "Severity"
+                      "Property": "SupportedHypotheses"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "RootCauseRegister.Severity",
-              "nativeQueryRef": "Severity",
+              "queryRef": "RootCauseRegister.SupportedHypotheses",
+              "nativeQueryRef": "SupportedHypotheses",
               "active": true,
-              "displayName": "Severity"
+              "displayName": "Supported hypotheses"
             },
             {
               "field": {
@@ -87,16 +87,16 @@
                           "Entity": "RootCauseRegister"
                         }
                       },
-                      "Property": "Frequency"
+                      "Property": "PlausibleHypotheses"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "RootCauseRegister.Frequency",
-              "nativeQueryRef": "Frequency",
+              "queryRef": "RootCauseRegister.PlausibleHypotheses",
+              "nativeQueryRef": "PlausibleHypotheses",
               "active": true,
-              "displayName": "Frequency"
+              "displayName": "Plausible hypotheses"
             },
             {
               "field": {
@@ -108,16 +108,16 @@
                           "Entity": "RootCauseRegister"
                         }
                       },
-                      "Property": "PriorityScore"
+                      "Property": "InconclusiveHypotheses"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "RootCauseRegister.PriorityScore",
-              "nativeQueryRef": "PriorityScore",
+              "queryRef": "RootCauseRegister.InconclusiveHypotheses",
+              "nativeQueryRef": "InconclusiveHypotheses",
               "active": true,
-              "displayName": "Priority Score"
+              "displayName": "Inconclusive paths"
             }
           ]
         }
@@ -261,7 +261,7 @@
                     "FillRule": {
                       "Input": {
                         "SelectRef": {
-                          "ExpressionName": "RootCauseRegister.Impact"
+                          "ExpressionName": "RootCauseRegister.Hypotheses tested"
                         }
                       },
                       "FillRule": {
@@ -325,7 +325,7 @@
                 }
               }
             ],
-            "metadata": "RootCauseRegister.Impact"
+            "metadata": "RootCauseRegister.Hypotheses tested"
           }
         },
         {
@@ -337,7 +337,7 @@
                     "FillRule": {
                       "Input": {
                         "SelectRef": {
-                          "ExpressionName": "RootCauseRegister.Severity"
+                          "ExpressionName": "RootCauseRegister.Supported hypotheses"
                         }
                       },
                       "FillRule": {
@@ -401,7 +401,7 @@
                 }
               }
             ],
-            "metadata": "RootCauseRegister.Severity"
+            "metadata": "RootCauseRegister.Supported hypotheses"
           }
         },
         {
@@ -413,7 +413,7 @@
                     "FillRule": {
                       "Input": {
                         "SelectRef": {
-                          "ExpressionName": "RootCauseRegister.Frequency"
+                          "ExpressionName": "RootCauseRegister.Plausible hypotheses"
                         }
                       },
                       "FillRule": {
@@ -477,7 +477,7 @@
                 }
               }
             ],
-            "metadata": "RootCauseRegister.Frequency"
+            "metadata": "RootCauseRegister.Plausible hypotheses"
           }
         },
         {
@@ -489,7 +489,7 @@
                     "FillRule": {
                       "Input": {
                         "SelectRef": {
-                          "ExpressionName": "RootCauseRegister.PriorityScore"
+                          "ExpressionName": "RootCauseRegister.Inconclusive paths"
                         }
                       },
                       "FillRule": {
@@ -553,7 +553,7 @@
                 }
               }
             ],
-            "metadata": "RootCauseRegister.PriorityScore"
+            "metadata": "RootCauseRegister.Inconclusive paths"
           }
         }
       ],

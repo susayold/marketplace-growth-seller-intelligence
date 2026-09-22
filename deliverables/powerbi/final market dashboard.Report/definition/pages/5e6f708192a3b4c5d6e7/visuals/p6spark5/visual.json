@@ -45,16 +45,16 @@
                           "Entity": "RootCauseRegister"
                         }
                       },
-                      "Property": "PriorityScore"
+                      "Property": "PlausibleHypotheses"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "RootCauseRegister.PriorityScore",
-              "nativeQueryRef": "PriorityScore",
+              "queryRef": "RootCauseRegister.PlausibleHypotheses",
+              "nativeQueryRef": "PlausibleHypotheses",
               "active": true,
-              "displayName": "Priority Score"
+              "displayName": "Plausible hypotheses"
             }
           ]
         }
@@ -213,7 +213,7 @@
             }
           },
           "selector": {
-            "metadata": "RootCauseRegister.PriorityScore"
+            "metadata": "RootCauseRegister.PlausibleHypotheses"
           }
         }
       ],
@@ -244,7 +244,7 @@
             }
           },
           "selector": {
-            "metadata": "RootCauseRegister.PriorityScore"
+            "metadata": "RootCauseRegister.PlausibleHypotheses"
           }
         }
       ]

@@ -17,7 +17,7 @@ table DecisionRegister
 		formatString: #,0
 		lineageTag: 58be5882-6bd3-4d19-9a71-e93d976894f7
 
-	measure 'Decision 30-60D' = COUNTROWS ( FILTER ( DecisionRegister, CONTAINSSTRING ( DecisionRegister[TimeHorizon], "30D" ) || CONTAINSSTRING ( DecisionRegister[TimeHorizon], "60D" ) || CONTAINSSTRING ( DecisionRegister[Action], "30" ) || CONTAINSSTRING ( DecisionRegister[Action], "60" ) ) )
+	measure 'Decision P2 Actions' = COUNTROWS ( FILTER ( DecisionRegister, DecisionRegister[Priority] = "P2" ) )
 		formatString: #,0
 		lineageTag: 9e56f147-ee3b-4492-90b0-029d2499c3df
 
@@ -37,7 +37,7 @@ table DecisionRegister
 		formatString: General
 		lineageTag: 8c4d3154-69b3-4042-ce3b-4a3da5e71904
 
-	measure 'Decision 30-60D Delta Label' = VAR Total = COUNTROWS ( DecisionRegister ) RETURN "▲ " & FORMAT ( DIVIDE ( [Decision 30-60D], Total ), "0.0%" ) & " within 30–60D"
+	measure 'Decision P2 Delta Label' = VAR Total = COUNTROWS ( DecisionRegister ) RETURN "• " & FORMAT ( [Decision P2 Actions], "0" ) & " P2 action reviewed monthly"
 		formatString: General
 		lineageTag: 9d5e4265-70c4-4153-df4c-5a4ea6f83005
 

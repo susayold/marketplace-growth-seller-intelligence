@@ -38,25 +38,32 @@ foreach ($file in @('headline_metrics.json', 'decision_register.csv', 'decision_
 
 $tableOut = Join-Path $OutputRoot 'reports\\tables'
 
-# Activation: cohort visual plus global v3 KPI values.  Every cohort figure is
-# calculated from the canonical seller-level activation timing output.
+# Activation: cohort visual plus global v3 KPI values. Every fixed-window
+# denominator is the subset with a complete observation window for that
+# horizon. A non-mature cohort is therefore blank, not zero.
 $activation = Read-Csv 'tables/seller_activation_timing.csv'
 $activationRows = foreach ($group in ($activation | Where-Object {$_.activation_eligible -eq 'True'} | Group-Object cohort_month | Sort-Object Name)) {
     $rows = @($group.Group)
     $eligible = $rows.Count
-    $active30 = @($rows | Where-Object {$_.activated_le_30d -eq '1'}).Count
-    $active60 = @($rows | Where-Object {$_.activated_le_60d -eq '1'}).Count
-    $active90 = @($rows | Where-Object {$_.activated_le_90d -eq '1'}).Count
+    $observable30 = @($rows | Where-Object {$_.observable_30d -eq '1'}).Count
+    $observable60 = @($rows | Where-Object {$_.observable_60d -eq '1'}).Count
+    $observable90 = @($rows | Where-Object {$_.observable_90d -eq '1'}).Count
+    $active30 = @($rows | Where-Object {$_.observable_30d -eq '1' -and $_.activated_le_30d -eq '1'}).Count
+    $active60 = @($rows | Where-Object {$_.observable_60d -eq '1' -and $_.activated_le_60d -eq '1'}).Count
+    $active90 = @($rows | Where-Object {$_.observable_90d -eq '1' -and $_.activated_le_90d -eq '1'}).Count
     $timed = @($rows | Where-Object { $_.activation_event -eq '1' -and $_.days_to_first_sale -ne '' } | ForEach-Object {[double]$_.days_to_first_sale})
     [pscustomobject]@{
         Cohort = $group.Name
         SellersClosed = $eligible
+        Observable30D = $observable30
+        Observable60D = $observable60
+        Observable90D = $observable90
         Activated30D = $active30
         Activated60D = $active60
         Activated90D = $active90
-        Activation30Rate = if($eligible){$active30/$eligible}else{$null}
-        Activation60Rate = if($eligible){$active60/$eligible}else{$null}
-        Activation90Rate = if($eligible){$active90/$eligible}else{$null}
+        Activation30Rate = if($observable30){$active30/$observable30}else{$null}
+        Activation60Rate = if($observable60){$active60/$observable60}else{$null}
+        Activation90Rate = if($observable90){$active90/$observable90}else{$null}
         MedianDaysToActivate = if($timed.Count){($timed | Sort-Object)[[math]::Floor(($timed.Count-1)/2)]}else{$null}
     }
 }
@@ -70,10 +77,10 @@ $activationRows | ForEach-Object {
 }
 $activationRows | Export-Csv (Join-Path $tableOut 'powerbi_activation_cohort.csv') -NoTypeInformation -Encoding utf8
 
-# Commercial: seller tiers are canonical fields; totals, shares and AOV are
-# calculated from the canonical seller segmentation table. Growth is calculated
-# from the seller-month mart across the latest two executive-complete months;
-# it is never filled with a demo percentage.
+# Commercial: seller tiers are canonical fields; segment rows remain useful for
+# comparison, while page-level Orders/AOV cards are bound to the marketplace
+# headline measures in the semantic model. Growth is calculated from the
+# seller-month mart across the latest two executive-complete months.
 $segments = Read-Csv 'tables/seller_segmentation.csv'
 $totalGmv = ($segments | Measure-Object -Property total_gmv_proxy -Sum).Sum
 $tierBySeller = @{}
@@ -186,22 +193,56 @@ $retentionRows = foreach ($group in ($retention | Group-Object cohort_month | So
 }
 $retentionRows | Export-Csv (Join-Path $tableOut 'powerbi_retention_cohort.csv') -NoTypeInformation -Encoding utf8
 
-# Root-cause register uses release cases.  Scores are transparent display
-# rankings based on hypotheses tested and evidence status, never invented
-# business impact values.
+# Root-cause register uses the governed hypothesis matrix. The output exposes
+# evidence status and hypothesis counts instead of synthetic business Impact,
+# Frequency, Severity, or PriorityScore fields.
 $rootCases = Read-Csv 'root_cause_case_summary.csv'
+$hypotheses = Read-Csv 'root_cause_hypothesis_matrix.csv'
+$actionability = @{
+    'RC1' = 'Immediate measurement gate'
+    'RC2' = 'Weekly scorecard'
+    'RC3' = 'Near-term onboarding test'
+    'RC4' = 'Monthly monitoring'
+    'RC5' = 'Immediate operational investigation'
+    'RC6' = 'Diagnostic drilldown'
+}
+$owners = @{
+    'RC1' = 'Data / BI'
+    'RC2' = 'Commercial Analytics'
+    'RC3' = 'Seller Operations'
+    'RC4' = 'Commercial Analytics'
+    'RC5' = 'Customer Experience'
+    'RC6' = 'Marketplace Analytics'
+}
 $rootRows = foreach ($case in $rootCases) {
-    $status = [string]$case.statuses
-    $severity = if($status -match 'Confirmed'){5}elseif($status -match 'Supported'){4}else{3}
-    $owner = switch -Regex ($case.case_id) {'RC2' {'Commercial'; break}; 'RC3' {'Seller Ops'; break}; 'RC5' {'Operations'; break}; default {'Marketplace'}}
+    $caseHypotheses = @($hypotheses | Where-Object {$_.case_id -eq $case.case_id})
+    $results = @($caseHypotheses | ForEach-Object {[string]$_.result})
+    $supported = @($results | Where-Object {$_ -match '^(Confirmed|Supported)'}).Count
+    $plausible = @($results | Where-Object {$_ -match '^Plausible'}).Count
+    $rejected = @($results | Where-Object {$_ -match '^Rejected'}).Count
+    $inconclusive = @($results | Where-Object {$_ -match '^Inconclusive'}).Count
+    $evidenceStatus = if ($results -match '^Confirmed') {
+        'Confirmed measurement issue'
+    } elseif ($results -match '^Supported') {
+        ($results | Where-Object {$_ -match '^Supported'} | Select-Object -First 1)
+    } elseif ($results -match '^Plausible') {
+        'Plausible contributor'
+    } elseif ($results -match '^Inconclusive') {
+        'Inconclusive'
+    } else {
+        'No supported evidence'
+    }
     [pscustomobject]@{
-        Driver = $case.case_id
-        Metric = $case.trigger
-        Impact = [double]$case.hypotheses_tested
-        Severity = $severity
-        Frequency = [int]$case.hypotheses_tested
-        PriorityScore = $severity * [int]$case.hypotheses_tested
-        Owner = $owner
+        Case = $case.case_id
+        Driver = $case.trigger
+        EvidenceStatus = $evidenceStatus
+        HypothesesTested = [int]$caseHypotheses.Count
+        SupportedHypotheses = $supported
+        PlausibleHypotheses = $plausible
+        RejectedHypotheses = $rejected
+        InconclusiveHypotheses = $inconclusive
+        Actionability = $actionability[[string]$case.case_id]
+        Owner = $owners[[string]$case.case_id]
     }
 }
 $rootRows | Export-Csv (Join-Path $tableOut 'powerbi_root_cause_register.csv') -NoTypeInformation -Encoding utf8

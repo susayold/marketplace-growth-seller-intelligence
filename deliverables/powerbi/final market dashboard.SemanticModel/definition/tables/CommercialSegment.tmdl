@@ -1,15 +1,15 @@
 table CommercialSegment
 	lineageTag: 69c06a94-e36b-44fb-a4df-61bf01e5b0da
 
-	measure 'Commercial GMV' = SUM ( CommercialSegment[GMV_M] )
+	measure 'Commercial GMV' = [GMV Proxy (R$M)]
 		formatString: 0.00
 		lineageTag: 00c0bdca-3793-4332-9fae-7c930989de6a
 
-	measure 'Commercial Orders' = SUM ( CommercialSegment[Orders_K] )
+	measure 'Commercial Orders' = [Orders (K)]
 		formatString: 0.0
 		lineageTag: 7a59739a-9764-4b00-99e5-5b3084e62a25
 
-	measure 'Commercial AOV' = DIVIDE ( SUMX ( CommercialSegment, CommercialSegment[GMV_M] * 1000000 ), SUMX ( CommercialSegment, CommercialSegment[Orders_K] * 1000 ) )
+	measure 'Commercial AOV' = [Average Order Value]
 		formatString: R$ #,0.0
 		lineageTag: 492b359c-fc11-4013-8072-c8e61f48df67
 

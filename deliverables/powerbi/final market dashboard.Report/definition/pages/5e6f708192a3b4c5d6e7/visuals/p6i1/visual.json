@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Late Delivery is P1",
+                    "value": "Late delivery needs investigation",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "22px",
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Highest severity and frequency.",
+                    "value": "Late orders average 1.73 fewer review points than on-time orders.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "17px",

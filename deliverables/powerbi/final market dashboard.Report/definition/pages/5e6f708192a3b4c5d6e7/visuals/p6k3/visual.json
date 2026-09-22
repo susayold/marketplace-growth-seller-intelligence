@@ -23,11 +23,11 @@
                       "Entity": "RootCauseRegister"
                     }
                   },
-                  "Property": "Root High Severity"
+                  "Property": "Root Supported Signals"
                 }
               },
-              "queryRef": "RootCauseRegister.Root High Severity",
-              "nativeQueryRef": "Root High Severity",
+              "queryRef": "RootCauseRegister.Root Supported Signals",
+              "nativeQueryRef": "Root Supported Signals",
               "active": true
             }
           ]
@@ -48,7 +48,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'High severity'"
+                  "Value": "'Supported signals'"
                 }
               }
             },

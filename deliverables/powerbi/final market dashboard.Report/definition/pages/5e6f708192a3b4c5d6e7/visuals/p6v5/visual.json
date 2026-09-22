@@ -45,16 +45,16 @@
                           "Entity": "RootCauseRegister"
                         }
                       },
-                      "Property": "Severity"
+                      "Property": "HypothesesTested"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "RootCauseRegister.Severity",
-              "nativeQueryRef": "Severity",
+              "queryRef": "RootCauseRegister.HypothesesTested",
+              "nativeQueryRef": "HypothesesTested",
               "active": true,
-              "displayName": "Severity"
+              "displayName": "Hypotheses tested"
             }
           ]
         }

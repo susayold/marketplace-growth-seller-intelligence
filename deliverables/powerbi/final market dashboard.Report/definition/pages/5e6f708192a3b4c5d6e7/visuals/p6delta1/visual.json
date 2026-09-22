@@ -23,11 +23,11 @@
                       "Entity": "RootCauseRegister"
                     }
                   },
-                  "Property": "Root GMV Impact Delta Label"
+                  "Property": "Root Cases Delta Label"
                 }
               },
-              "queryRef": "RootCauseRegister.Root GMV Impact Delta Label",
-              "nativeQueryRef": "Root GMV Impact Delta Label",
+              "queryRef": "RootCauseRegister.Root Cases Delta Label",
+              "nativeQueryRef": "Root Cases Delta Label",
               "active": true
             }
           ]

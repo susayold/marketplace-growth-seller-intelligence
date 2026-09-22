@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CommercialSegment"
+                      "Entity": "Snapshot"
                     }
                   },
-                  "Property": "Commercial Orders"
+                  "Property": "Orders (K)"
                 }
               },
-              "queryRef": "CommercialSegment.Commercial Orders",
-              "nativeQueryRef": "Commercial Orders",
+              "queryRef": "Snapshot.Orders (K)",
+              "nativeQueryRef": "Orders (K)",
               "active": true
             }
           ]

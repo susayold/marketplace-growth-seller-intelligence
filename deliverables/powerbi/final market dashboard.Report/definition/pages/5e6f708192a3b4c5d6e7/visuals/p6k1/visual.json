@@ -23,11 +23,11 @@
                       "Entity": "RootCauseRegister"
                     }
                   },
-                  "Property": "Root P1 Drivers"
+                  "Property": "Root Cases"
                 }
               },
-              "queryRef": "RootCauseRegister.Root P1 Drivers",
-              "nativeQueryRef": "Root P1 Drivers",
+              "queryRef": "RootCauseRegister.Root Cases",
+              "nativeQueryRef": "Root Cases",
               "active": true
             }
           ]
@@ -48,7 +48,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'P1 drivers'"
+                  "Value": "'Diagnostic cases'"
                 }
               }
             },

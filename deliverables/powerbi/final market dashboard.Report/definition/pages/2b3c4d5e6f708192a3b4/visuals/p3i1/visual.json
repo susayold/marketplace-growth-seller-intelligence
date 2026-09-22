@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Aug is strongest",
+                    "value": "Activation improves with time",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "22px",
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Best 90D activation and retention.",
+                    "value": "30D activation remains the main early-funnel bottleneck.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "17px",

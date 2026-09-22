@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Scale efficient acquisition",
+                    "value": "Acquisition scorecard",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "14px",
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Test Referral while building the category playbook.",
+                    "value": "P1 channel scorecard reviewed weekly with downstream value guardrails.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11px",

@@ -23,11 +23,11 @@
                       "Entity": "RootCauseRegister"
                     }
                   },
-                  "Property": "Root Order Impact Delta Label"
+                  "Property": "Root Hypotheses Delta Label"
                 }
               },
-              "queryRef": "RootCauseRegister.Root Order Impact Delta Label",
-              "nativeQueryRef": "Root Order Impact Delta Label",
+              "queryRef": "RootCauseRegister.Root Hypotheses Delta Label",
+              "nativeQueryRef": "Root Hypotheses Delta Label",
               "active": true
             }
           ]

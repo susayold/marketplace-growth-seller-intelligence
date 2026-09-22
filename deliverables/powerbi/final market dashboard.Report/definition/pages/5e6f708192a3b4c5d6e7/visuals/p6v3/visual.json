@@ -39,13 +39,13 @@
                       "Entity": "RootCauseRegister"
                     }
                   },
-                  "Property": "Metric"
+                  "Property": "EvidenceStatus"
                 }
               },
-              "queryRef": "RootCauseRegister.Metric",
-              "nativeQueryRef": "Metric",
+              "queryRef": "RootCauseRegister.EvidenceStatus",
+              "nativeQueryRef": "EvidenceStatus",
               "active": true,
-              "displayName": "Metric"
+              "displayName": "Evidence status"
             },
             {
               "field": {
@@ -55,13 +55,13 @@
                       "Entity": "RootCauseRegister"
                     }
                   },
-                  "Property": "Impact"
+                  "Property": "HypothesesTested"
                 }
               },
-              "queryRef": "RootCauseRegister.Impact",
-              "nativeQueryRef": "Impact",
+              "queryRef": "RootCauseRegister.HypothesesTested",
+              "nativeQueryRef": "HypothesesTested",
               "active": true,
-              "displayName": "Impact"
+              "displayName": "Hypotheses tested"
             },
             {
               "field": {
@@ -71,13 +71,13 @@
                       "Entity": "RootCauseRegister"
                     }
                   },
-                  "Property": "Severity"
+                  "Property": "SupportedHypotheses"
                 }
               },
-              "queryRef": "RootCauseRegister.Severity",
-              "nativeQueryRef": "Severity",
+              "queryRef": "RootCauseRegister.SupportedHypotheses",
+              "nativeQueryRef": "SupportedHypotheses",
               "active": true,
-              "displayName": "Severity"
+              "displayName": "Supported hypotheses"
             },
             {
               "field": {
@@ -87,13 +87,13 @@
                       "Entity": "RootCauseRegister"
                     }
                   },
-                  "Property": "Frequency"
+                  "Property": "PlausibleHypotheses"
                 }
               },
-              "queryRef": "RootCauseRegister.Frequency",
-              "nativeQueryRef": "Frequency",
+              "queryRef": "RootCauseRegister.PlausibleHypotheses",
+              "nativeQueryRef": "PlausibleHypotheses",
               "active": true,
-              "displayName": "Frequency"
+              "displayName": "Plausible hypotheses"
             },
             {
               "field": {
@@ -103,13 +103,13 @@
                       "Entity": "RootCauseRegister"
                     }
                   },
-                  "Property": "PriorityScore"
+                  "Property": "InconclusiveHypotheses"
                 }
               },
-              "queryRef": "RootCauseRegister.PriorityScore",
-              "nativeQueryRef": "PriorityScore",
+              "queryRef": "RootCauseRegister.InconclusiveHypotheses",
+              "nativeQueryRef": "InconclusiveHypotheses",
               "active": true,
-              "displayName": "Priority Score"
+              "displayName": "Inconclusive paths"
             },
             {
               "field": {
@@ -420,7 +420,7 @@
             }
           },
           "selector": {
-            "metadata": "RootCauseRegister.Impact"
+            "metadata": "RootCauseRegister.Hypotheses tested"
           }
         },
         {
@@ -476,7 +476,7 @@
             }
           },
           "selector": {
-            "metadata": "RootCauseRegister.Severity"
+            "metadata": "RootCauseRegister.Supported hypotheses"
           }
         },
         {
@@ -532,7 +532,7 @@
             }
           },
           "selector": {
-            "metadata": "RootCauseRegister.Frequency"
+            "metadata": "RootCauseRegister.Plausible hypotheses"
           }
         },
         {
@@ -588,7 +588,7 @@
             }
           },
           "selector": {
-            "metadata": "RootCauseRegister.PriorityScore"
+            "metadata": "RootCauseRegister.Inconclusive paths"
           }
         }
       ]

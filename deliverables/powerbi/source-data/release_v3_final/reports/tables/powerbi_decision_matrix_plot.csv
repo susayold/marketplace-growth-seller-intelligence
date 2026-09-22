@@ -1,4 +1,4 @@
-"Action","Pillar","Priority","ExpectedImpact","Effort","Owner","TimeHorizon","Status"
+﻿"Action","Pillar","Priority","ExpectedImpact","Effort","Owner","TimeHorizon","Status"
 "Exclude or visibly flag incomplete periods before reporting a trend.","Data / BI","P1","3","2","Data / BI","daily","Ready"
 "Govern channels with a scorecard covering MQL volume, conversion, matched-seller value, activation and M3 retention as a guardrail.","Seller Acquisition","P1","2","2","Seller Acquisition","weekly","Ready"
 "Instrument onboarding checkpoints at 7, 30 and 60 days and test interventions rather than assuming a causal fix.","Seller Operations","P1","2","3","Seller Operations","weekly","Ready"

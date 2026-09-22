@@ -763,6 +763,13 @@
       "total": [
         {
           "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
             "fontColor": {
               "solid": {
                 "color": {
