@@ -101,6 +101,8 @@ table AcquisitionChannel
 		summarizeBy: sum
 		sourceColumn: downstream_orders
 
+	annotation PBI_ResultType = Table
+
 	partition AcquisitionChannel = m
 		mode: import
 		source = let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\mart_acquisition_channel.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Renamed = Table.RenameColumns(Headers, {{"origin_group", "Channel"}}), Typed = Table.TransformColumnTypes(Renamed, {{"Channel", type text}, {"mqls", Int64.Type}, {"converted_sellers", Int64.Type}, {"matched_sellers", Int64.Type}, {"conversion_rate", type number}, {"gmv_per_matched_seller", type number}, {"downstream_gmv_proxy", type number}, {"downstream_orders", Int64.Type}}, "en-US") in Typed

@@ -1,6 +1,6 @@
 # MarketLens — Marketplace Growth & Seller Intelligence
 
-[View the live report](https://susayold.github.io/marketplace-growth-seller-intelligence/) · [Download the final PDF](deliverables/final-market-dashboard.pdf) · [Open the Power BI project](deliverables/powerbi/final%20market%20dashboard.pbip)
+[View the live report](https://susayold.github.io/marketplace-growth-seller-intelligence/) · [Download the prior PDF export](deliverables/final-market-dashboard.pdf) · [Open the updated Power BI project](deliverables/powerbi/final%20market%20dashboard.pbip)
 
 This portfolio case study evaluates marketplace health across seller acquisition,
 activation, retention, commercial concentration, customer experience, root-cause
@@ -28,7 +28,8 @@ diagnosis, and a governed action agenda.
 ## Final release contents
 
 - `deliverables/powerbi/` — editable PBIP source.
-- `deliverables/final-market-dashboard.pdf` — exported seven-page report.
+- `deliverables/final-market-dashboard.pdf` — prior exported seven-page report;
+  re-export is pending from the updated PBIP.
 - `deliverables/powerbi/source-data/release_v3_final/reports/` — small governed
   analytical outputs required to refresh the model.
 - `scripts/build-powerbi-canonical-inputs.ps1` — reproducibly builds the
@@ -53,7 +54,9 @@ separate, governed release outputs rather than demo inputs.
 1. Open `deliverables/powerbi/final market dashboard.pbip` in Power BI Desktop.
 2. In Power Query, change the single `DataRoot` parameter only if the repository
    is located somewhere other than the value saved in the project.
-3. Refresh the model, check the seven pages, then export the PDF.
+3. Refresh the model, check the seven pages, save the PBIP, then export a new
+   PDF. Synchronize website previews and the release manifest only after that
+   export.
 
 The raw Olist files are intentionally not committed. The project ships the
 small analytical release tables needed by the Power BI model.

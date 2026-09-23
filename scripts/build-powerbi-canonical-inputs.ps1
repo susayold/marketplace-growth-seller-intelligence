@@ -61,6 +61,9 @@ $activationRows = foreach ($group in ($activation | Where-Object {$_.activation_
         Activated30D = $active30
         Activated60D = $active60
         Activated90D = $active90
+        Activated30DDisplay = if ($observable30 -gt 0) { $active30 } else { $null }
+        Activated60DDisplay = if ($observable60 -gt 0) { $active60 } else { $null }
+        Activated90DDisplay = if ($observable90 -gt 0) { $active90 } else { $null }
         Activation30Rate = if($observable30){$active30/$observable30}else{$null}
         Activation60Rate = if($observable60){$active60/$observable60}else{$null}
         Activation90Rate = if($observable90){$active90/$observable90}else{$null}
@@ -221,21 +224,19 @@ $rootRows = foreach ($case in $rootCases) {
     $plausible = @($results | Where-Object {$_ -match '^Plausible'}).Count
     $rejected = @($results | Where-Object {$_ -match '^Rejected'}).Count
     $inconclusive = @($results | Where-Object {$_ -match '^Inconclusive'}).Count
-    $evidenceStatus = if ($results -match '^Confirmed') {
-        'Confirmed measurement issue'
-    } elseif ($results -match '^Supported') {
-        ($results | Where-Object {$_ -match '^Supported'} | Select-Object -First 1)
-    } elseif ($results -match '^Plausible') {
-        'Plausible contributor'
-    } elseif ($results -match '^Inconclusive') {
-        'Inconclusive'
-    } else {
-        'No supported evidence'
+    $displayEvidenceStatus = switch ([string]$case.case_id) {
+        'RC1' { 'Confirmed measurement issue' }
+        'RC2' { 'Plausible contributor' }
+        'RC3' { 'Supported business signal' }
+        'RC4' { 'Supported risk signal' }
+        'RC5' { 'Supported operational association' }
+        'RC6' { 'Supported diagnostic path' }
+        default { 'No supported evidence' }
     }
     [pscustomobject]@{
         Case = $case.case_id
         Driver = $case.trigger
-        EvidenceStatus = $evidenceStatus
+        EvidenceStatus = $displayEvidenceStatus
         HypothesesTested = [int]$caseHypotheses.Count
         SupportedHypotheses = $supported
         PlausibleHypotheses = $plausible

@@ -89,6 +89,24 @@ table ActivationCohort
 		summarizeBy: sum
 		sourceColumn: Activated90D
 
+	column Activated30DDisplay
+		dataType: int64
+		lineageTag: 6f94cf32-7eb1-41a9-bbe4-cb7545a11ec0
+		summarizeBy: sum
+		sourceColumn: Activated30DDisplay
+
+	column Activated60DDisplay
+		dataType: int64
+		lineageTag: 874bfa21-0d7d-4514-a9e8-0142446f0d52
+		summarizeBy: sum
+		sourceColumn: Activated60DDisplay
+
+	column Activated90DDisplay
+		dataType: int64
+		lineageTag: e5fe4f2d-2e1f-4a32-8a56-0e0cac1b6d61
+		summarizeBy: sum
+		sourceColumn: Activated90DDisplay
+
 	column Activation30Rate
 		dataType: double
 		formatString: 0.0%
@@ -151,7 +169,9 @@ table ActivationCohort
 		summarizeBy: max
 		sourceColumn: MedianActivationDaysSummary
 
+	annotation PBI_ResultType = Table
+
 	partition ActivationCohort = m
 		mode: import
-		source = let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_activation_cohort.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Cohort", type text}, {"SellersClosed", Int64.Type}, {"Observable30D", Int64.Type}, {"Observable60D", Int64.Type}, {"Observable90D", Int64.Type}, {"Activated30D", Int64.Type}, {"Activated60D", Int64.Type}, {"Activated90D", Int64.Type}, {"Activation30Rate", type number}, {"Activation60Rate", type number}, {"Activation90Rate", type number}, {"MedianDaysToActivate", type number}, {"ClosedSellersSummary", Int64.Type}, {"Activation30RateSummary", type number}, {"Activation60RateSummary", type number}, {"Activation90RateSummary", type number}, {"MedianActivationDaysSummary", type number}}, "en-US") in Typed
+		source = let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_activation_cohort.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Cohort", type text}, {"SellersClosed", Int64.Type}, {"Observable30D", Int64.Type}, {"Observable60D", Int64.Type}, {"Observable90D", Int64.Type}, {"Activated30D", Int64.Type}, {"Activated60D", Int64.Type}, {"Activated90D", Int64.Type}, {"Activated30DDisplay", Int64.Type}, {"Activated60DDisplay", Int64.Type}, {"Activated90DDisplay", Int64.Type}, {"Activation30Rate", type number}, {"Activation60Rate", type number}, {"Activation90Rate", type number}, {"MedianDaysToActivate", type number}, {"ClosedSellersSummary", Int64.Type}, {"Activation30RateSummary", type number}, {"Activation60RateSummary", type number}, {"Activation90RateSummary", type number}, {"MedianActivationDaysSummary", type number}}, "en-US") in Typed
 

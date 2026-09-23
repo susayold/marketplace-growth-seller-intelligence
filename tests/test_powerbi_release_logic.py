@@ -33,6 +33,11 @@ def test_activation_uses_mature_observation_windows() -> None:
                 assert rate == ""
             else:
                 assert math.isclose(float(rate), numerator / denominator, rel_tol=1e-9)
+            display = row[f"Activated{horizon}DDisplay"].strip()
+            if denominator == 0:
+                assert display == ""
+            else:
+                assert int(display) == numerator
 
 
 def test_root_cause_register_is_evidence_oriented() -> None:
@@ -59,6 +64,9 @@ def test_root_cause_register_is_evidence_oriented() -> None:
             int(row["InconclusiveHypotheses"]),
         ]
         assert sum(parts) == int(row["HypothesesTested"])
+    rc5 = next(row for row in rows if row["Case"] == "RC5")
+    assert rc5["EvidenceStatus"] == "Supported operational association"
+    assert "mechanism" not in rc5["EvidenceStatus"].lower()
 
 
 def test_decision_register_keeps_d04_priority_and_cadence() -> None:
@@ -94,6 +102,9 @@ def test_forbidden_stale_report_language_is_absent() -> None:
         "Highest severity and frequency",
         "Driver Impact Ranking",
         "Priority Score",
+        "January cohort",
+        "Lower activation and weaker R1 retention",
+        "Supported business mechanism",
     )
     paths = list(REPORT.rglob("*.json")) + list(MODEL.rglob("*.tmdl"))
     for path in paths:
@@ -113,3 +124,41 @@ def test_page4_headline_cards_use_canonical_snapshot_measures() -> None:
         measure = projection["field"]["Measure"]
         assert measure["Expression"]["SourceRef"]["Entity"] == "Snapshot"
         assert measure["Property"] == expected_property
+
+
+def test_report_labels_match_governed_semantics() -> None:
+    def visual(page: str, name: str) -> dict:
+        return json.loads(
+            (REPORT / "pages" / page / "visuals" / name / "visual.json").read_text(
+                encoding="utf-8-sig"
+            )
+        )
+
+    p5_matrix = visual("4d5e6f708192a3b4c5d6", "p5v6")
+    p5_rows = p5_matrix["visual"]["query"]["queryState"]["Rows"]["projections"]
+    assert p5_rows[0]["displayName"] == "Delivery Status"
+
+    p6_scatter = visual("5e6f708192a3b4c5d6e7", "p6v1")
+    category = p6_scatter["visual"]["query"]["queryState"]["Category"]["projections"][0]
+    assert category["queryRef"] == "RootCauseRegister.Case"
+    assert category["displayName"] == "Root-Cause Case"
+    assert "columnFormatting" not in p6_scatter["visual"]["objects"]
+
+    p6_table = visual("5e6f708192a3b4c5d6e7", "p6v3")
+    assert "columnFormatting" not in p6_table["visual"]["objects"]
+
+    p7_matrix = visual("6f708192a3b4c5d6e7f8", "p7v1")
+    fields = [
+        projection["displayName"]
+        for role in ("Size", "X", "Y")
+        for projection in p7_matrix["visual"]["query"]["queryState"][role]["projections"]
+    ]
+    assert fields == ["Evidence Strength", "Actionability", "Evidence Strength"]
+    for name in ("p7spark1", "p7spark2", "p7spark3", "p7spark4", "p7spark5"):
+        spark = visual("6f708192a3b4c5d6e7f8", name)
+        projection = spark["visual"]["query"]["queryState"]["Y"]["projections"][0]
+        assert projection["displayName"] == "Evidence Strength"
+
+    commercial = (MODEL / "tables" / "CommercialSegment.tmdl").read_text(encoding="utf-8")
+    assert "column AOV\n\t\tdataType: double\n\t\tformatString: R$ #,0.0" in commercial
+    assert "lineageTag: 34c8fc0d-d9e5-4145-8eb8-e90d46452edb\n\t\tsummarizeBy: average" in commercial

@@ -35,6 +35,8 @@ table RetentionCohort
 		summarizeBy: average
 		sourceColumn: R3
 
+	annotation PBI_ResultType = Table
+
 	partition RetentionCohort = m
 		mode: import
 		source = let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_retention_cohort.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Cohort", type text}, {"R0", type number}, {"R1", type number}, {"R2", type number}, {"R3", type number}}, "en-US") in Typed

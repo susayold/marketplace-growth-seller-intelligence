@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "No causal claim",
+                    "value": "Operational focus",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "14px",
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Use these associations to guide investigation, not assert causality.",
+                    "value": "Prioritize late-delivery investigation where order volume and review penalty are largest.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11px",

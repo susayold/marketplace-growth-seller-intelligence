@@ -74,7 +74,7 @@
               "queryRef": "DecisionMatrix.ExpectedImpact",
               "nativeQueryRef": "ExpectedImpact",
               "active": true,
-              "displayName": "Expected Impact"
+              "displayName": "Evidence Strength"
             }
           ]
         },
@@ -99,7 +99,7 @@
               "queryRef": "DecisionMatrix.Effort",
               "nativeQueryRef": "Effort",
               "active": true,
-              "displayName": "Effort Level"
+              "displayName": "Actionability"
             }
           ]
         },
@@ -124,7 +124,7 @@
               "queryRef": "DecisionMatrix.ExpectedImpact",
               "nativeQueryRef": "ExpectedImpact",
               "active": true,
-              "displayName": "Expected Impact"
+              "displayName": "Evidence Strength"
             }
           ]
         }

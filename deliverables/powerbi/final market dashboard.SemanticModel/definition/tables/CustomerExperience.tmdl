@@ -102,6 +102,8 @@ table CustomerExperience
 		summarizeBy: max
 		sourceColumn: SummaryLowReviewRate
 
+	annotation PBI_ResultType = Table
+
 	partition CustomerExperience = m
 		mode: import
 		source = let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_customer_experience.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Segment", type text}, {"Orders", Int64.Type}, {"LateRate", type number}, {"AvgReview", type number}, {"LowReviewRate", type number}, {"AverageScheduleGapDays", type number}, {"SummaryLateRate", type number}, {"SummaryAvgReview", type number}, {"SummaryLowReviewRate", type number}}, "en-US") in Typed

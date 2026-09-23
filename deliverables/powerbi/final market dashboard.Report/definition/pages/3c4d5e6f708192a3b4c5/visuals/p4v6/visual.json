@@ -96,7 +96,7 @@
               "queryRef": "CommercialSegment.Orders_K",
               "nativeQueryRef": "Orders_K",
               "active": true,
-              "displayName": "Orders (K)"
+              "displayName": "Seller-linked Orders (K)"
             },
             {
               "field": {

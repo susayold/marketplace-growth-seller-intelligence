@@ -71,7 +71,7 @@ table CommercialSegment
 		dataType: double
 		formatString: R$ #,0.0
 		lineageTag: 34c8fc0d-d9e5-4145-8eb8-e90d46452edb
-		summarizeBy: sum
+		summarizeBy: average
 		sourceColumn: AOV
 
 	column GrowthRate
@@ -87,6 +87,8 @@ table CommercialSegment
 		lineageTag: a5dc075c-2f3e-4738-95e0-0970c4c553c2
 		summarizeBy: average
 		sourceColumn: ShareGMV
+
+	annotation PBI_ResultType = Table
 
 	partition CommercialSegment = m
 		mode: import

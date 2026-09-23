@@ -35,7 +35,7 @@ credentials, gateway, or query editing are required.
 After the first refresh, use Desktop to inspect the seven rendered pages and
 export a new PDF before publishing a binary release.
 
-## Verified sign-off — 2026-09-21
+## Prior verified sign-off — 2026-09-21
 
 - PBIP opened from the repository and full model refresh completed successfully.
 - All governed model partitions report `Ready` after refresh.
@@ -47,3 +47,12 @@ export a new PDF before publishing a binary release.
   refresh; website preview PNGs and the PDF use the same verified snapshots.
 - Static checks passed: no legacy Demo/Partner/mock/CX field references and no
   malformed report-definition JSON.
+
+## Pending final Desktop sign-off — updated PBIP
+
+- The PBIP source now contains display-safe activation numerators, refreshed
+  evidence wording and report-label fixes, and corrected visual field bindings.
+- Automated source contracts, report-definition validation, and the Python test
+  suite pass for those changes.
+- Refresh the PBIP in Desktop, inspect all seven pages, save, and export a new
+  PDF before representing the existing PDF or website previews as current.

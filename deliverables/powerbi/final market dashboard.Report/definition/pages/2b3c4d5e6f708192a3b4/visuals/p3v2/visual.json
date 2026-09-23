@@ -66,14 +66,14 @@
                           "Entity": "ActivationCohort"
                         }
                       },
-                      "Property": "Activated30D"
+                      "Property": "Activated30DDisplay"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "ActivationCohort.Activated30D",
-              "nativeQueryRef": "Activated30D",
+              "queryRef": "ActivationCohort.Activated30DDisplay",
+              "nativeQueryRef": "Activated30DDisplay",
               "active": true,
               "displayName": "Activated Within 30 Days"
             },
@@ -87,14 +87,14 @@
                           "Entity": "ActivationCohort"
                         }
                       },
-                      "Property": "Activated60D"
+                      "Property": "Activated60DDisplay"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "ActivationCohort.Activated60D",
-              "nativeQueryRef": "Activated60D",
+              "queryRef": "ActivationCohort.Activated60DDisplay",
+              "nativeQueryRef": "Activated60DDisplay",
               "active": true,
               "displayName": "Activated Within 60 Days"
             },
@@ -108,14 +108,14 @@
                           "Entity": "ActivationCohort"
                         }
                       },
-                      "Property": "Activated90D"
+                      "Property": "Activated90DDisplay"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "ActivationCohort.Activated90D",
-              "nativeQueryRef": "Activated90D",
+              "queryRef": "ActivationCohort.Activated90DDisplay",
+              "nativeQueryRef": "Activated90DDisplay",
               "active": true,
               "displayName": "Activated Within 90 Days"
             }
@@ -315,7 +315,7 @@
             }
           },
           "selector": {
-            "metadata": "ActivationCohort.Activated30D"
+            "metadata": "ActivationCohort.Activated30DDisplay"
           }
         },
         {
@@ -344,7 +344,7 @@
             }
           },
           "selector": {
-            "metadata": "ActivationCohort.Activated60D"
+            "metadata": "ActivationCohort.Activated60DDisplay"
           }
         },
         {
@@ -373,7 +373,7 @@
             }
           },
           "selector": {
-            "metadata": "ActivationCohort.Activated90D"
+            "metadata": "ActivationCohort.Activated90DDisplay"
           }
         }
       ],

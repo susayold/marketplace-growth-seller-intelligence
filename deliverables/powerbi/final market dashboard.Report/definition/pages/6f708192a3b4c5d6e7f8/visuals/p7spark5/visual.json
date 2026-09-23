@@ -54,7 +54,7 @@
               "queryRef": "DecisionRegister.ExpectedImpact",
               "nativeQueryRef": "ExpectedImpact",
               "active": true,
-              "displayName": "Expected Impact"
+              "displayName": "Evidence Strength"
             }
           ]
         }

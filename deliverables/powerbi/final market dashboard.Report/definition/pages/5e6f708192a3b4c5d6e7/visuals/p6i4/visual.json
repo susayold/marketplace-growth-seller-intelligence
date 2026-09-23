@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Observational only",
+                    "value": "Investigation sequence",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "14px",
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Diagnostic prioritization guides investigation; it does not establish causality.",
+                    "value": "Validate measurement first, then test acquisition, activation, concentration, delivery and category hypotheses.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11px",

@@ -113,15 +113,25 @@ def main() -> None:
             denominator = int(row[f"Observable{horizon}D"] or 0)
             numerator = int(row[f"Activated{horizon}D"] or 0)
             rate = row[f"Activation{horizon}Rate"].strip()
+            display = row[f"Activated{horizon}DDisplay"].strip()
             if denominator == 0 and rate:
                 raise AssertionError(f"immature {horizon}D cohort is not blank: {row['Cohort']}")
+            if denominator == 0 and display:
+                raise AssertionError(f"immature {horizon}D count is not blank: {row['Cohort']}")
             if denominator > 0 and not math.isclose(float(rate), numerator / denominator, rel_tol=1e-9):
                 raise AssertionError(f"activation {horizon}D rate mismatch: {row['Cohort']}")
+            if denominator > 0 and int(display) != numerator:
+                raise AssertionError(f"activation {horizon}D display-count mismatch: {row['Cohort']}")
 
     with ROOT_CAUSE_SOURCE.open(newline="", encoding="utf-8-sig") as handle:
         root_headers = set(next(csv.reader(handle)))
     if root_headers & {"Impact", "Severity", "Frequency", "PriorityScore"}:
         raise AssertionError("root-cause source still exposes synthetic scoring fields")
+    with ROOT_CAUSE_SOURCE.open(newline="", encoding="utf-8-sig") as handle:
+        root_rows = list(csv.DictReader(handle))
+    rc5 = next((row for row in root_rows if row["Case"] == "RC5"), None)
+    if not rc5 or rc5["EvidenceStatus"] != "Supported operational association":
+        raise AssertionError("RC5 must use the governed operational-association wording")
 
     with DECISION_SOURCE.open(newline="", encoding="utf-8-sig") as handle:
         release_decisions = list(csv.DictReader(handle))
@@ -135,6 +145,7 @@ def main() -> None:
         r"Best 90D activation|Strategic leads value|Strategic and Growth|"
         r"P1 commercial action with a 90D horizon|Highest severity and frequency|"
         r"Lowest conversion and longest cycle|Referral is efficient|Slightly Late|"
+        r"January cohort|Lower activation and weaker R1 retention|Supported business mechanism|"
         r"time horizons|Target Horizon|"
         r"Driver Impact Ranking|Priority Score|PROTOTYPE.*MOCK|CancelRate|"
         r"MedianDeliveryDays|BLOCKED_DESKTOP_NOT_INSTALLED",
@@ -145,6 +156,44 @@ def main() -> None:
             if path.is_file() and path.suffix.lower() in {".json", ".tmdl", ".html", ".js"}:
                 if forbidden.search(path.read_text(encoding="utf-8", errors="ignore")):
                     raise AssertionError(f"forbidden legacy text in {path.relative_to(ROOT)}")
+
+    def read_visual(page: str, visual: str) -> dict:
+        return json.loads(
+            (REPORT / "definition" / "pages" / page / "visuals" / visual / "visual.json").read_text(
+                encoding="utf-8-sig"
+            )
+        )
+
+    p5_matrix = read_visual("4d5e6f708192a3b4c5d6", "p5v6")
+    row_label = p5_matrix["visual"]["query"]["queryState"]["Rows"]["projections"][0]["displayName"]
+    if row_label != "Delivery Status":
+        raise AssertionError("customer-experience matrix must use the Delivery Status row label")
+
+    p6_scatter = read_visual("5e6f708192a3b4c5d6e7", "p6v1")
+    category = p6_scatter["visual"]["query"]["queryState"]["Category"]["projections"][0]
+    if category["queryRef"] != "RootCauseRegister.Case" or category["displayName"] != "Root-Cause Case":
+        raise AssertionError("root-cause scatter must use the stable Case field")
+    p6_table = read_visual("5e6f708192a3b4c5d6e7", "p6v3")
+    if "columnFormatting" in p6_table["visual"]["objects"]:
+        raise AssertionError("root-cause table retains stale column-format metadata")
+
+    p7_matrix = read_visual("6f708192a3b4c5d6e7f8", "p7v1")
+    p7_labels = [
+        projection["displayName"]
+        for role in ("Size", "X", "Y")
+        for projection in p7_matrix["visual"]["query"]["queryState"][role]["projections"]
+    ]
+    if p7_labels != ["Evidence Strength", "Actionability", "Evidence Strength"]:
+        raise AssertionError("decision matrix labels do not match governed evidence semantics")
+    for visual in ("p7spark1", "p7spark2", "p7spark3", "p7spark4", "p7spark5"):
+        payload = read_visual("6f708192a3b4c5d6e7f8", visual)
+        label = payload["visual"]["query"]["queryState"]["Y"]["projections"][0]["displayName"]
+        if label != "Evidence Strength":
+            raise AssertionError(f"{visual} does not expose Evidence Strength")
+
+    commercial = (MODEL / "definition" / "tables" / "CommercialSegment.tmdl").read_text(encoding="utf-8")
+    if "lineageTag: 34c8fc0d-d9e5-4145-8eb8-e90d46452edb\n\t\tsummarizeBy: average" not in commercial:
+        raise AssertionError("CommercialSegment[AOV] must default to average")
 
     if (ROOT / "dist" / "data.js").exists():
         raise AssertionError("stale dist/data.js must not be shipped")

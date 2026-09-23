@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "January cohort",
+                    "value": "Compare mature cohorts only",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "22px",
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Lower activation and weaker R1 retention need review.",
+                    "value": "30D, 60D and 90D performance should only be compared where the full observation window is available.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "17px",

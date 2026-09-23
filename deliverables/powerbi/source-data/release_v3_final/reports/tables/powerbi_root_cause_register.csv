@@ -3,5 +3,5 @@
 "RC2","Actionable origins show different conversion rates and sparse groups have wide uncertainty.","Plausible contributor","3","0","1","2","0","Weekly scorecard","Commercial Analytics"
 "RC3","Canonical v3: observed activator median is 44.3 days; 30-day activation is 15.8% over 825 observable sellers.","Supported business signal","3","1","1","0","1","Near-term onboarding test","Seller Operations"
 "RC4","Top 20% of sellers account for 82.7% of seller GMV proxy.","Supported risk signal","3","1","0","1","1","Monthly monitoring","Commercial Analytics"
-"RC5","Late orders have lower reviews and a higher low-review rate than on-time orders.","Supported business mechanism","3","1","1","1","0","Immediate operational investigation","Customer Experience"
+"RC5","Late orders have lower reviews and a higher low-review rate than on-time orders.","Supported operational association","3","1","1","1","0","Immediate operational investigation","Customer Experience"
 "RC6","Selected high-value category cool_stuff falls 46.5% from 2018-07 to 2018-08 while retaining sufficient historical volume.","Supported diagnostic path","4","1","1","0","2","Diagnostic drilldown","Marketplace Analytics"

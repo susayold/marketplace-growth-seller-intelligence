@@ -101,6 +101,8 @@ table RootCauseRegister
 		summarizeBy: none
 		sourceColumn: Owner
 
+	annotation PBI_ResultType = Table
+
 	partition RootCauseRegister = m
 		mode: import
 		source = let Source = Csv.Document(File.Contents(DataRoot & "\\reports\\tables\\powerbi_root_cause_register.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]), Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]), Typed = Table.TransformColumnTypes(Headers, {{"Case", type text}, {"Driver", type text}, {"EvidenceStatus", type text}, {"HypothesesTested", Int64.Type}, {"SupportedHypotheses", Int64.Type}, {"PlausibleHypotheses", Int64.Type}, {"RejectedHypotheses", Int64.Type}, {"InconclusiveHypotheses", Int64.Type}, {"Actionability", type text}, {"Owner", type text}}, "en-US") in Typed

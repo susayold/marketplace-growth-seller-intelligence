@@ -61,12 +61,16 @@ foreach ($tableName in $csvTableContracts.Keys) {
     $file = Join-Path $dataRoot ('reports\tables\' + $csvTableContracts[$tableName])
     $headers = (Import-Csv -LiteralPath $file | Select-Object -First 1).PSObject.Properties.Name
     $definition = Join-Path $tableRoot ($tableName + '.tmdl')
+    $definitionText = Get-Content -LiteralPath $definition -Raw
+    if ($definitionText -notmatch 'PBI_ResultType\s*=\s*Table') {
+        throw "$tableName is an import table but lacks PBI_ResultType = Table metadata."
+    }
     $requiredColumns = Select-String -LiteralPath $definition -Pattern '^\s*sourceColumn:\s*(.+)$' |
         ForEach-Object { $_.Matches[0].Groups[1].Value.Trim('"') }
     # Power Query may rename a governed source field before the model column
     # is bound. Keep the contract check aware of those explicit mappings.
     $sourceAliases = @{}
-    $partition = Get-Content -LiteralPath $definition -Raw
+    $partition = $definitionText
     [regex]::Matches($partition, '\{\{"([^\"]+)",\s*"([^\"]+)"\}\}') | ForEach-Object {
         $sourceAliases[$_.Groups[2].Value] = $_.Groups[1].Value
     }
@@ -90,12 +94,19 @@ foreach ($row in $activationRows) {
     foreach ($horizon in @('30', '60', '90')) {
         $observable = [int]$row.("Observable${horizon}D")
         $activated = [int]$row.("Activated${horizon}D")
+        $displayText = [string]$row.("Activated${horizon}DDisplay")
         $rateText = [string]$row.("Activation${horizon}Rate")
         if ($observable -eq 0 -and $rateText.Trim() -ne '') {
             throw "Activation${horizon}Rate must be blank when Observable${horizon}D is zero for $($row.Cohort)."
         }
+        if ($observable -eq 0 -and $displayText.Trim() -ne '') {
+            throw "Activated${horizon}DDisplay must be blank when Observable${horizon}D is zero for $($row.Cohort)."
+        }
         if ($observable -gt 0 -and $activated -gt $observable) {
             throw "Activated${horizon}D exceeds Observable${horizon}D for $($row.Cohort)."
+        }
+        if ($observable -gt 0 -and [int]$displayText -ne $activated) {
+            throw "Activated${horizon}DDisplay does not match the observed numerator for $($row.Cohort)."
         }
     }
 }
@@ -105,6 +116,11 @@ $forbiddenRootFields = @('Impact', 'Severity', 'Frequency', 'PriorityScore')
 $invalidRootFields = $forbiddenRootFields | Where-Object { $_ -in $rootHeaders }
 if ($invalidRootFields) {
     throw ('Root-cause source still exposes synthetic scoring fields: ' + ($invalidRootFields -join ', '))
+}
+$rc5 = Import-Csv -LiteralPath (Join-Path $dataRoot 'reports\tables\powerbi_root_cause_register.csv') |
+    Where-Object { $_.Case -eq 'RC5' } | Select-Object -First 1
+if (-not $rc5 -or $rc5.EvidenceStatus -ne 'Supported operational association') {
+    throw 'RC5 must use the governed operational-association wording.'
 }
 
 $decisions = @(Import-Csv -LiteralPath (Join-Path $dataRoot 'reports\tables\powerbi_decision_register.csv'))
