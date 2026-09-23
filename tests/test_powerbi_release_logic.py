@@ -69,6 +69,19 @@ def test_root_cause_register_is_evidence_oriented() -> None:
     assert "mechanism" not in rc5["EvidenceStatus"].lower()
 
 
+def test_activation_kpi_deltas_are_suppressed_without_mature_comparison() -> None:
+    text = (MODEL / "tables" / "ActivationCohort.tmdl").read_text(encoding="utf-8")
+    for name in (
+        "Activation Closed Sellers Delta Label",
+        "Activation 30D Delta Label",
+        "Activation 60D Delta Label",
+        "Activation 90D Delta Label",
+        "Activation Median Days Delta Label",
+    ):
+        assert f"measure '{name}' = BLANK ()" in text
+    assert "prior cohort" not in text.lower()
+
+
 def test_decision_register_keeps_d04_priority_and_cadence() -> None:
     rows = read_csv(SOURCE / "reports" / "tables" / "powerbi_decision_register.csv")
     assert len(rows) == 5
