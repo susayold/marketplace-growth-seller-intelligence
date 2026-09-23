@@ -19,12 +19,16 @@ PAGES = [
 
 
 def main() -> None:
-    # Scale-2 bridge snapshots include a 2502x1408 report canvas at (0, 176).
-    # Crop the Power BI canvas only; exclude Desktop chrome and the Filters pane.
-    images = [
-        Image.open(ROOT / page).convert("RGB").crop((0, 176, 2502, 1584))
-        for page in PAGES
-    ]
+    # Legacy snapshots are 2904x1720 and contain the report canvas at (0, 176).
+    # Current verified canvas snapshots are already cropped to 2064x1161.
+    # Do not apply the legacy crop to the current size: PIL pads out-of-bounds
+    # crops with black pixels, which makes the exported PDF look truncated.
+    images = []
+    for page in PAGES:
+        image = Image.open(ROOT / page).convert("RGB")
+        if image.width >= 2502 and image.height >= 1584:
+            image = image.crop((0, 176, 2502, 1584))
+        images.append(image)
     DASHBOARD.mkdir(parents=True, exist_ok=True)
     for index, image in enumerate(images, start=1):
         image.save(DASHBOARD / f"page-{index}.png", "PNG", optimize=True)
