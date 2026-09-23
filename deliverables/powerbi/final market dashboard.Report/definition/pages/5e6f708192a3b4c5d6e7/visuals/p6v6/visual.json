@@ -23,13 +23,13 @@
                       "Entity": "RootCauseRegister"
                     }
                   },
-                  "Property": "Driver"
+                  "Property": "Case"
                 }
               },
-              "queryRef": "RootCauseRegister.Driver",
-              "nativeQueryRef": "Driver",
+              "queryRef": "RootCauseRegister.Case",
+              "nativeQueryRef": "Case",
               "active": true,
-              "displayName": "Issue Driver"
+              "displayName": "Case"
             }
           ]
         },
@@ -54,7 +54,7 @@
               "queryRef": "RootCauseRegister.HypothesesTested",
               "nativeQueryRef": "HypothesesTested",
               "active": true,
-              "displayName": "Hypotheses tested"
+              "displayName": "Tested"
             },
             {
               "field": {
@@ -75,7 +75,7 @@
               "queryRef": "RootCauseRegister.SupportedHypotheses",
               "nativeQueryRef": "SupportedHypotheses",
               "active": true,
-              "displayName": "Supported hypotheses"
+              "displayName": "Supported"
             },
             {
               "field": {
@@ -96,7 +96,7 @@
               "queryRef": "RootCauseRegister.PlausibleHypotheses",
               "nativeQueryRef": "PlausibleHypotheses",
               "active": true,
-              "displayName": "Plausible hypotheses"
+              "displayName": "Plausible"
             },
             {
               "field": {
@@ -117,7 +117,7 @@
               "queryRef": "RootCauseRegister.InconclusiveHypotheses",
               "nativeQueryRef": "InconclusiveHypotheses",
               "active": true,
-              "displayName": "Inconclusive paths"
+              "displayName": "Inconclusive"
             }
           ]
         }
