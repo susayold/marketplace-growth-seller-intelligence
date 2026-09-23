@@ -23,13 +23,13 @@
                       "Entity": "RootCauseRegister"
                     }
                   },
-                  "Property": "Driver"
+                  "Property": "Case"
                 }
               },
-              "queryRef": "RootCauseRegister.Driver",
-              "nativeQueryRef": "Driver",
+              "queryRef": "RootCauseRegister.Case",
+              "nativeQueryRef": "Case",
               "active": true,
-              "displayName": "Issue Driver"
+              "displayName": "Root-Cause Case"
             }
           ]
         },
@@ -261,12 +261,12 @@
                             "Entity": "RootCauseRegister"
                           }
                         },
-                        "Property": "Driver"
+                        "Property": "Case"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Late Delivery'"
+                        "Value": "'RC5'"
                       }
                     }
                   }
@@ -313,12 +313,12 @@
                             "Entity": "RootCauseRegister"
                           }
                         },
-                        "Property": "Driver"
+                        "Property": "Case"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Seller Concentration'"
+                        "Value": "'RC4'"
                       }
                     }
                   }
@@ -365,12 +365,12 @@
                             "Entity": "RootCauseRegister"
                           }
                         },
-                        "Property": "Driver"
+                        "Property": "Case"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Activation Delay'"
+                        "Value": "'RC3'"
                       }
                     }
                   }
@@ -417,12 +417,12 @@
                             "Entity": "RootCauseRegister"
                           }
                         },
-                        "Property": "Driver"
+                        "Property": "Case"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Low Referral Scale'"
+                        "Value": "'RC2'"
                       }
                     }
                   }
@@ -469,12 +469,12 @@
                             "Entity": "RootCauseRegister"
                           }
                         },
-                        "Property": "Driver"
+                        "Property": "Case"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'Category Mix'"
+                        "Value": "'RC6'"
                       }
                     }
                   }
@@ -521,12 +521,12 @@
                             "Entity": "RootCauseRegister"
                           }
                         },
-                        "Property": "Driver"
+                        "Property": "Case"
                       }
                     },
                     "Right": {
                       "Literal": {
-                        "Value": "'State Concentration'"
+                        "Value": "'RC1'"
                       }
                     }
                   }

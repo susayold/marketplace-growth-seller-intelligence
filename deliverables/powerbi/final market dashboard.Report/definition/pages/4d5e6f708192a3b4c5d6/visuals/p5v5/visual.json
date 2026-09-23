@@ -29,7 +29,7 @@
               "queryRef": "CustomerExperience.Segment",
               "nativeQueryRef": "Segment",
               "active": true,
-              "displayName": "Seller Segment"
+              "displayName": "Delivery Status"
             }
           ]
         },

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "p3v3",
   "position": {
-    "x": 1595,
+    "x": 1525,
     "y": 350,
     "z": 24000,
     "height": 250,
-    "width": 285,
+    "width": 355,
     "tabOrder": 24000
   },
   "visual": {
@@ -53,7 +53,8 @@
               },
               "queryRef": "RetentionCohort.R0",
               "nativeQueryRef": "R0",
-              "active": true
+              "active": true,
+              "displayName": "M0"
             },
             {
               "field": {
@@ -73,7 +74,8 @@
               },
               "queryRef": "RetentionCohort.R1",
               "nativeQueryRef": "R1",
-              "active": true
+              "active": true,
+              "displayName": "M1"
             },
             {
               "field": {
@@ -93,7 +95,8 @@
               },
               "queryRef": "RetentionCohort.R2",
               "nativeQueryRef": "R2",
-              "active": true
+              "active": true,
+              "displayName": "M2"
             },
             {
               "field": {
@@ -113,7 +116,8 @@
               },
               "queryRef": "RetentionCohort.R3",
               "nativeQueryRef": "R3",
-              "active": true
+              "active": true,
+              "displayName": "M3"
             }
           ]
         }
@@ -640,6 +644,13 @@
       "total": [
         {
           "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
             "fontColor": {
               "solid": {
                 "color": {

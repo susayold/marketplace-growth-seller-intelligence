@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CommercialSegment"
+                      "Entity": "Snapshot"
                     }
                   },
-                  "Property": "Commercial Top Segment Share"
+                  "Property": "Top 20% GMV"
                 }
               },
-              "queryRef": "CommercialSegment.Commercial Top Segment Share",
-              "nativeQueryRef": "Commercial Top Segment Share",
+              "queryRef": "Snapshot.Top 20% GMV",
+              "nativeQueryRef": "Top 20% GMV",
               "active": true
             }
           ]
@@ -48,7 +48,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top segment share'"
+                "Value": "'Top 20% seller share'"
                 }
               }
             },

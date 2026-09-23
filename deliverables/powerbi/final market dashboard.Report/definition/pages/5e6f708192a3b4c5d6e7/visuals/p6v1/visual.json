@@ -10,7 +10,7 @@
     "tabOrder": 22000
   },
   "visual": {
-    "visualType": "scatterChart",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
         "Category": {
@@ -33,7 +33,7 @@
             }
           ]
         },
-        "Size": {
+        "Y": {
           "projections": [
             {
               "field": {
@@ -56,10 +56,7 @@
               "active": true,
               "displayName": "Supported hypotheses"
             }
-          ]
-        },
-        "X": {
-          "projections": [
+          ,
             {
               "field": {
                 "Aggregation": {
@@ -70,21 +67,39 @@
                           "Entity": "RootCauseRegister"
                         }
                       },
-                      "Property": "HypothesesTested"
+                      "Property": "PlausibleHypotheses"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "RootCauseRegister.HypothesesTested",
-              "nativeQueryRef": "HypothesesTested",
+              "queryRef": "RootCauseRegister.PlausibleHypotheses",
+              "nativeQueryRef": "PlausibleHypotheses",
               "active": true,
-              "displayName": "Hypotheses tested"
+              "displayName": "Plausible hypotheses"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RootCauseRegister"
+                        }
+                      },
+                      "Property": "RejectedHypotheses"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "RootCauseRegister.RejectedHypotheses",
+              "nativeQueryRef": "RejectedHypotheses",
+              "active": true,
+              "displayName": "Rejected hypotheses"
             }
-          ]
-        },
-        "Y": {
-          "projections": [
+          ,
             {
               "field": {
                 "Aggregation": {
@@ -298,7 +313,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },

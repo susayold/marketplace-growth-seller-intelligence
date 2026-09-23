@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "CommercialSegment"
+                      "Entity": "Snapshot"
                     }
                   },
-                  "Property": "Commercial Top Segment Share"
+                  "Property": "Seller Gini"
                 }
               },
-              "queryRef": "CommercialSegment.Commercial Top Segment Share",
-              "nativeQueryRef": "Commercial Top Segment Share",
+              "queryRef": "Snapshot.Seller Gini",
+              "nativeQueryRef": "Seller Gini",
               "active": true
             }
           ]
@@ -48,7 +48,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top segment share'"
+                "Value": "'Seller Gini'"
                 }
               }
             },
@@ -133,7 +133,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#0D9488'"
+                      "Value": "'#7C3AED'"
                     }
                   }
                 }
