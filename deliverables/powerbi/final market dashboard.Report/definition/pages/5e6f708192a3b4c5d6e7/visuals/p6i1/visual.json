@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Late delivery needs investigation",
+                    "value": "Investigate late delivery",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "22px",
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Late orders average 1.73 fewer review points than on-time orders.",
+                    "value": "Late reviews are 1.73 points lower.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "17px",

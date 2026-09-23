@@ -128,8 +128,9 @@ def test_affected_matrix_totals_are_hidden() -> None:
                 encoding="utf-8-sig"
             )
         )
-        total = payload["visual"]["objects"]["total"][0]["properties"]["show"]
-        assert total["expr"]["Literal"]["Value"] == "false"
+        properties = payload["visual"]["objects"]
+        row_subtotals = properties["general"][0]["properties"]["rowSubtotals"]
+        assert row_subtotals["expr"]["Literal"]["Value"] == "false"
 
 
 def test_forbidden_stale_report_language_is_absent() -> None:
