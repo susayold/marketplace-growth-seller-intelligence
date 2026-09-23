@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "30D is the bottleneck",
+                    "value": "30D bottleneck",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "22px",
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "30D activation remains the bottleneck.",
+                    "value": "30D activation is the lowest rate.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "17px",

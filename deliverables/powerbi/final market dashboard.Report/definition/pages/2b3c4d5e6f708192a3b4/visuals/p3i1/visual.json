@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Activation improves with time",
+                    "value": "Activation improves",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "22px",
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "30D activation remains the main early-funnel bottleneck.",
+                    "value": "30D is the early bottleneck.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "17px",

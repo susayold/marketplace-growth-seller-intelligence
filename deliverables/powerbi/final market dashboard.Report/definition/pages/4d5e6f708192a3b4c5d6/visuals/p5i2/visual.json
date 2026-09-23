@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Late orders show a 54.0% low-review rate versus 9.2% for on-time orders.",
+                    "value": "54.0% late vs 9.2% on-time.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "17px",

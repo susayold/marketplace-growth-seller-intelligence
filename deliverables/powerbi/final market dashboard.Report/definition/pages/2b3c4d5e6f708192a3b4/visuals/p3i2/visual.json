@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Compare mature cohorts only",
+                    "value": "Mature cohorts",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "22px",
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "30D, 60D and 90D performance should only be compared where the full observation window is available.",
+                    "value": "Use full observation windows.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "17px",

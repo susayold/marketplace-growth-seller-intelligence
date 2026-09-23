@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Late delivery & reviews",
+                    "value": "Late orders review lower",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "22px",
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Late segment has the lowest score.",
+                    "value": "Late score: 2.57 vs 4.29 on-time.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "17px",

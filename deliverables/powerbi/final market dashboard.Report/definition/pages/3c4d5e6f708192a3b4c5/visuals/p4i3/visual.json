@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Value remains concentrated",
+                    "value": "Concentration risk",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "22px",
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "High-value sellers contribute most marketplace value; monitor resilience.",
+                    "value": "Monitor reliance on high-value sellers.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "17px",

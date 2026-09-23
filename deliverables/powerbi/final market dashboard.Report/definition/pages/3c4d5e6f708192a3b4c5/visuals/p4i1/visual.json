@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "High-value sellers lead GMV",
+                    "value": "High-value tier leads",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "22px",
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "The high-value tier contributes 82.7% of GMV proxy.",
+                    "value": "82.7% of GMV comes from this tier.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "17px",
