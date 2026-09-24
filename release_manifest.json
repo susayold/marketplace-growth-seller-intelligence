@@ -2649,7 +2649,7 @@
   },
   {
     "path": "deliverables/RELEASE_QA.md",
-    "bytes": 2478
+    "bytes": 3103
   },
   {
     "path": "dist/app.js",
@@ -2905,11 +2905,11 @@
   },
   {
     "path": "powerbi/README.md",
-    "bytes": 1476
+    "bytes": 1705
   },
   {
     "path": "README.md",
-    "bytes": 3219
+    "bytes": 3688
   },
   {
     "path": "release_manifest.json",
