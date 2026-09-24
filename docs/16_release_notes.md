@@ -8,19 +8,21 @@
 - Added expanded automated tests, CI workflow, release log and portfolio assets.
 - Preserved remote-only storage: raw data, tables and charts live in Drive; GitHub stores code, documentation and reviewable small artifacts.
 
-Power BI was intentionally held until the analytical release was stable; the
-PBIP and reconciliation are included in v1.0. Its latest source-level fixes
-require a final Desktop refresh and PDF re-export before the PDF is treated as
-current.
-
-
 ## v1.2 additional analytical coverage
 
 - Added reusable seller segmentation and eligibility-aware retention by acquisition origin.
-- Added conversion confidence intervals, Cramers V, Mann-Whitney plus bootstrap review validation, and eligible M3 retention-by-origin testing.
+- Added conversion confidence intervals, Cramer's V, Mann-Whitney plus bootstrap review validation, and eligible M3 retention-by-origin testing.
 - Updated the statistical-validation notebook and added detailed QA output.
 
+## Final Power BI release — 2026-09-24
 
-## Release update — 2026-09-12
-
-Added and verified the daily marketplace and seller-month marts from row-level source, added a parameterized build script and provenance QA, updated the Power BI pack to consume the new grains, and refreshed the plan audit. The seven-page PBIP/PDF/web release was validated on 2026-09-21; subsequent PBIP source fixes are pending final Desktop refresh, PDF re-export, and website synchronization.
+- Final Power BI source commit: `561d9b6867f919708a9aff1fa86119381c225aff`.
+- Completed final Desktop refresh and seven-page visual QA.
+- Removed invalid matrix totals and stale/duplicated report artifacts.
+- Finalized activation/retention, commercial, CX, root-cause and decision-center presentation.
+- Published the fresh seven-page PDF in commit `87de2a3`.
+- Final PDF SHA-256:
+  `488e30011814bde5eb0749014c63dbeacca448aa0fae6884f0b10a7efc3a5f34`.
+- Repository and website PDF copies are byte-identical.
+- GitHub CI and GitHub Pages deployment passed for the final PDF publication.
+- The v1 portfolio scope is frozen except for genuine bug fixes.

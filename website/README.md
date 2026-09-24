@@ -1,36 +1,38 @@
-# MarketLens Website — Page 1 Executive Overview
+# MarketLens Website — final seven-page portfolio release
 
-This branch implements the real-data web version of Page 1 only.
+The GitHub Pages site is the public presentation layer for the final MarketLens
+Power BI case study.
 
-## Data sources
+## Live report
 
-The GitHub Pages workflow copies the following existing project outputs into the deployed site's `data/` directory:
+https://susayold.github.io/marketplace-growth-seller-intelligence/
 
-- `mart_marketplace_monthly.csv`
-- `mart_category_performance.csv`
-- `mart_geography_performance.csv`
-- `delivery_performance.csv`
-- `seller_concentration.csv`
-- `activation_summary.csv`
-- `seller_segmentation.csv`
-- `statistical_validation.csv`
+The site presents all seven Power BI pages:
 
-## Page 1 features
+1. Executive Overview
+2. Seller Acquisition
+3. Seller Activation & Retention
+4. Commercial Performance
+5. Customer Experience & Operations
+6. Root Cause & Diagnostic
+7. Decision Center
 
-- Real GMV, Orders, Active Sellers, AOV, and Late Delivery KPIs
-- Real previous-period KPI deltas
-- KPI mini sparklines
-- GMV + Orders trend
-- Concentration curve anchored to observed seller-share concentration
-- Gini calculated from seller-level lifetime GMV
-- Real Top 5 categories and states
-- Blue sequential matrix heat formatting
-- Real 30D / 90D activation and review-gap highlights
-- Month, Category, and State controls
-- Responsive layout
+## Artifact contract
 
-Pages 2–7 are intentionally left disabled until Page 1 is reviewed and approved.
+- `dist/assets/final-market-dashboard.pdf` is the downloadable final report.
+- The GitHub Pages workflow renders fresh `page-1.png` through `page-7.png`
+  previews from that checked-in PDF during deployment.
 
-## Local preview
+This keeps the live report previews synchronized with the final downloadable PDF.
 
-From repository root, assemble a local preview folder using the same files copied by the deployment workflow, then serve it with a local HTTP server. Opening `website/index.html` directly will not load CSV files reliably because browsers restrict local `file://` fetches.
+## Final release
+
+- Final Power BI source commit: `561d9b6867f919708a9aff1fa86119381c225aff`.
+- Final PDF publication commit: `87de2a32c2ff7561771ee9eebc8cfba307a3bf19`.
+- Final PDF SHA-256:
+  `488e30011814bde5eb0749014c63dbeacca448aa0fae6884f0b10a7efc3a5f34`.
+- GitHub Pages deployment: PASS.
+- Seven live report pages: PASS.
+
+The website is a static portfolio publication layer; governed analytical logic
+remains in the repository's SQL/Python outputs and Power BI PBIP model.
